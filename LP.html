@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Google Local Services Ads Management & Performance Review</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
 </head>
+
 <body>
-  <header style="padding: 45px 0;">
+
+<header style="padding: 45px 0;">
   <div class="container">
     <div class="logo-container">
       <a href="index.html">
@@ -30,10 +35,7 @@
   </div>
 </header>
 
-
-   
-
- <section class="about-section" style="padding-top: 30px;">
+<section class="about-section" style="padding-top: 30px;">
   <div class="container">
     <div style="max-width: 600px; margin: 0 auto;">
 
@@ -56,150 +58,180 @@
         </p>
 
         <ul style="list-style:none; padding:0; margin:0; font-size:14.5px;">
-  <li>✔ Hundreds of LSA accounts set up & optimized</li>
-  <li>✔ Plumbers, HVAC, roofers, electricians & more</li>
-  <li>✔ LSA-first strategy with Google Ads as a supporting channel</li>
-</ul>
+          <li>✔ Hundreds of LSA accounts set up & optimized</li>
+          <li>✔ Plumbers, HVAC, roofers, electricians & more</li>
+          <li>✔ LSA-first strategy with Google Ads as a supporting channel</li>
+        </ul>
 
-<div style="
-  margin-bottom: 26px;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #e6e9ef;
-  border-radius: 12px;
-  font-size: 14.5px;
-  line-height: 1.5;
-">
-  <strong>This is for you if:</strong>
-  <ul style="list-style:none;">
-    <li>- You run a licensed local service business</li>
-    <li>- You want professional management of Google Local Services Ads</li>
-    <li>- You care about lead quality, not just volume</li>
-  </ul>
+        <div style="
+          margin-bottom: 26px;
+          padding: 20px;
+          background: #ffffff;
+          border: 1px solid #e6e9ef;
+          border-radius: 12px;
+          font-size: 14.5px;
+          line-height: 1.5;
+        ">
+          <strong>This is for you if:</strong>
+          <ul style="list-style:none;">
+            <li>- You run a licensed local service business</li>
+            <li>- You want professional management of Google Local Services Ads</li>
+            <li>- You care about lead quality, not just volume</li>
+          </ul>
 
-  <strong>This is NOT for you if:</strong>
-  <ul style="list-style:none;">
-    <li>- You’re looking for a job, training, or free advice</li>
-    <li>- You don’t have a registered service business</li>
-    <li>- You want help unrelated to Google LSA or Google Ads</li>
-  </ul>
-</div>
-
-
+          <strong>This is NOT for you if:</strong>
+          <ul style="list-style:none;">
+            <li>- You’re looking for a job, training, or free advice</li>
+            <li>- You don’t have a registered service business</li>
+            <li>- You want help unrelated to Google LSA or Google Ads</li>
+          </ul>
+        </div>
       </div>
-        <form 
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-success="redirect"
-          netlify-honeypot="bot-field"
-          action="/thank-you.html"
-          class="contact-form"
-          ...
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <p style="display:none">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-          </p>
 
-          <div class="form-group">
-  <label for="lsa-status">Google Local Services Ads Status *</label>
-  <select id="lsa-status" name="lsa-status" required>
-    <option value="">Select one</option>
-    <option value="active">Currently running LSAs</option>
-    <option value="underperforming">Set up but underperforming</option>
-    <option value="need-setup">Need LSA setup</option>
-    <option value="not-eligible">Not eligible / unsure</option>
-  </select>
-</div>
+      <!-- FORM -->
+      <form 
+        id="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-you.html"
+        class="contact-form"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
 
+        <!-- Netlify honeypot -->
+        <p style="display:none">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
 
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
+        <!-- ✅ EXTRA honeypot (kills SEO spam bots) -->
+        <input type="text" name="website_url" style="display:none">
 
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+        <div class="form-group">
+          <label for="lsa-status">Google Local Services Ads Status *</label>
+          <select id="lsa-status" name="lsa-status" required>
+            <option value="">Select one</option>
+            <option value="active">Currently running LSAs</option>
+            <option value="underperforming">Set up but underperforming</option>
+            <option value="need-setup">Need LSA setup</option>
+            <option value="not-eligible">Not eligible / unsure</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
-          <div class="form-group">
-            <label for="business-type">Business Type *</label>
-            <select id="business-type" name="business-type" required>
-              <option value="">Select your business type</option>
-              <option value="plumbing">Plumbing</option>
-              <option value="hvac">HVAC</option>
-              <option value="electrical">Electrical</option>
-              <option value="locksmith">Locksmith</option>
-              <option value="garage-door">Garage Door Repair</option>
-              <option value="roofing">Roofing</option>
-              <option value="flooring">Flooring</option>
-              <option value="cleaning">Cleaning Services</option>
-              <option value="landscaping">Landscaping</option>
-              <option value="pest-control">Pest Control</option>
-              <option value="other">Other (Describe Business)</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
 
-          <div class="form-group">
-  <label for="message">Service Area & Goals *</label>
-  <textarea
-    id="message"
-    name="message"
-    required
-    placeholder="What service do you offer, what city do you serve, and what issue are you trying to fix with your leads? Please describe your licensed service business, service area, and current LSA status."
-  ></textarea>
-</div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
 
+        <div class="form-group">
+          <label for="business-type">Business Type *</label>
+          <select id="business-type" name="business-type" required>
+            <option value="">Select your business type</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="hvac">HVAC</option>
+            <option value="electrical">Electrical</option>
+            <option value="locksmith">Locksmith</option>
+            <option value="garage-door">Garage Door Repair</option>
+            <option value="roofing">Roofing</option>
+            <option value="flooring">Flooring</option>
+            <option value="cleaning">Cleaning Services</option>
+            <option value="landscaping">Landscaping</option>
+            <option value="pest-control">Pest Control</option>
+            <option value="other">Other (Describe Business)</option>
+          </select>
+        </div>
 
+        <div class="form-group">
+          <label for="message">Service Area & Goals *</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="What service do you offer, what city do you serve, and what issue are you trying to fix with your leads?"
+          ></textarea>
+        </div>
 
-          <button type="submit" class="btn-primary large">
-  Review My LSA Setup or Eligibility
-</button>
+        <button type="submit" class="btn-primary large">
+          Review My LSA Setup or Eligibility
+        </button>
 
-<p style="font-size: 12px; margin-top: 10px; color: #6b7280;">
-  We work exclusively with licensed local service businesses.  
-  This is not training or Google support.
-</p>
-<p style="text-align:center; font-size:14px; margin-top:18px;">
-  Need help beyond LSAs?  
-  <strong>We also manage Google Search Ads for service businesses</strong> to support overflow demand and scale lead volume.
-</p>
+        <p style="font-size: 12px; margin-top: 10px; color: #6b7280;">
+          We work exclusively with licensed local service businesses.
+          This is not training or Google support.
+        </p>
 
-        
+        <p style="text-align:center; font-size:14px; margin-top:18px;">
+          Need help beyond LSAs?<br>
+          <strong>We also manage Google Search Ads for service businesses</strong>
+        </p>
+
         <div style="text-align: center; margin-top: 40px; padding: 30px; background: var(--bg-light); border-radius: 12px;">
           <h3>Other Ways to Reach Us</h3>
           <p><strong>Email:</strong> bluegridm@gmail.com</p>
           <p><strong>Response Time:</strong> Within 24 hours</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-        <a href="disclaimer.html">Disclaimer</a>
-      </div>
-      <div>
-        © 2025 Blue Grid Media | bluegridm@gmail.com<br>
-        <em>Where Local Visibility Begins</em>
-      </div>
+      </form>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- FOOTER (UNCHANGED) -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+    <div>
+      © 2025 Blue Grid Media | bluegridm@gmail.com<br>
+      <em>Where Local Visibility Begins</em>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- ✅ FORM PROTECTION SCRIPT -->
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  const message = document.getElementById("message").value.toLowerCase();
+  const blocked = ["http", "www.", ".com", ".org", ".net"];
+
+  for (let word of blocked) {
+    if (message.includes(word)) {
+      alert("Please remove links from your message.");
+      e.preventDefault();
+      return false;
+    }
+  }
+
+  e.preventDefault();
+  grecaptcha.ready(function() {
+    grecaptcha.execute("YOUR_RECAPTCHA_SITE_KEY", {action: "submit"}).then(function(token) {
+      document.getElementById("g-recaptcha-response").value = token;
+      e.target.submit();
+    });
+  });
+});
+</script>
+
 </body>
 </html>
