@@ -91,8 +91,8 @@
 
       <!-- PRICING -->
       <div style="text-align:center; margin-bottom: 30px;">
-        <h2 style="margin-bottom: 10px;">Monthly Management Fee</h2>
-        <p style="font-size:28px; font-weight:700;">$750 / month</p>
+        <h2 style="margin-bottom: 10px;">Google LSA Monthly Management</h2>
+        <p style="font-size:28px; font-weight:700;">$400 / month</p>
         <p style="font-size:13px; color:#6b7280;">Billed monthly · Cancel anytime</p>
       </div>
 
@@ -108,25 +108,26 @@
         </p>
 
         <div id="paypal-button-container-P-6G3345597U103084HNFQSTNY"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=ARftxT21EPraNrgoLFzPxRP2SlALsV_hsTzdXfcOWRCeRnpBRcC5n2pREX3iMt42II50ccCHPnNeLviv&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-        <script>
-          paypal.Buttons({
-            style: {
-              shape: 'rect',
-              color: 'gold',
-              layout: 'vertical',
-              label: 'subscribe'
-            },
-            createSubscription: function(data, actions) {
-              return actions.subscription.create({
-                plan_id: 'P-6G3345597U103084HNFQSTNY'
-              });
-            },
-            onApprove: function(data, actions) {
-              window.location.href = '/thank-you.html';
-            }
-          }).render('#paypal-button-container-P-6G3345597U103084HNFQSTNY');
-        </script>
+<script src="https://www.paypal.com/sdk/js?client-id=ARftxT21EPraNrgoLFzPxRP2SlALsV_hsTzdXfcOWRCeRnpBRcC5n2pREX3iMt42II50ccCHPnNeLviv&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6G3345597U103084HNFQSTNY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-6G3345597U103084HNFQSTNY'); // Renders the PayPal button
+</script>
       </div>
 
       <p style="text-align:center; font-size:13px; margin-top:20px; color:#6b7280;">
