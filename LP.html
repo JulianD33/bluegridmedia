@@ -7,8 +7,8 @@
   <title>Google Local Services Ads Management & Performance Review</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ✅ reCAPTCHA v3 -->
-  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+  <!-- ✅ reCAPTCHA v3 (SITE KEY ONLY) -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lfcx0ksAAAAAJrhzXxX1on3taI6uEY9iRmJ5Ur2"></script>
 </head>
 
 <body>
@@ -89,25 +89,20 @@
       </div>
 
       <!-- FORM -->
-      <form 
+      <form
         id="contact-form"
         name="contact"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/thank-you.html"
+        action="/.netlify/functions/submit-form"
         class="contact-form"
       >
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+        <input type="hidden" name="form_time" id="form_time" />
 
-        <!-- Netlify honeypot -->
-        <p style="display:none">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-
-        <!-- ✅ EXTRA honeypot (kills SEO spam bots) -->
-        <input type="text" name="website_url" style="display:none">
+        <!-- 🐝 Honeypots -->
+        <input type="text" name="website_url" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
 
         <div class="form-group">
           <label for="lsa-status">Google Local Services Ads Status *</label>
@@ -208,30 +203,39 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-
-<!-- ✅ FORM PROTECTION SCRIPT -->
 <script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  const message = document.getElementById("message").value.toLowerCase();
-  const blocked = ["http", "www.", ".com", ".org", ".net"];
+  // ⏱️ Record load time
+  document.getElementById("form_time").value = Date.now();
 
-  for (let word of blocked) {
-    if (message.includes(word)) {
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    const elapsed = Date.now() - document.getElementById("form_time").value;
+    const message = document.getElementById("message").value.toLowerCase();
+
+    const blocked = ["http://", "https://", "www.", ".com", ".net", ".org", "<a", "[url="];
+
+    if (elapsed < 3000) {
+      alert("Please take a moment to complete the form.");
+      e.preventDefault();
+      return;
+    }
+
+    if (blocked.some(b => message.includes(b))) {
       alert("Please remove links from your message.");
       e.preventDefault();
-      return false;
+      return;
     }
-  }
 
-  e.preventDefault();
-  grecaptcha.ready(function() {
-    grecaptcha.execute("YOUR_RECAPTCHA_SITE_KEY", {action: "submit"}).then(function(token) {
-      document.getElementById("g-recaptcha-response").value = token;
-      e.target.submit();
+    e.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute(
+        "6Lfcx0ksAAAAAJrhzXxX1on3taI6uEY9iRmJ5Ur2",
+        { action: "submit" }
+      ).then(function(token) {
+        document.getElementById("g-recaptcha-response").value = token;
+        e.target.submit();
+      });
     });
   });
-});
 </script>
 
 </body>
