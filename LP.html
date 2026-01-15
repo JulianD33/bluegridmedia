@@ -205,39 +205,44 @@
 </footer>
 
 <script>
-  // ⏱️ Record load time
+  // Record load time
   document.getElementById("form_time").value = Date.now();
 
   document.getElementById("contact-form").addEventListener("submit", function(e) {
-    const elapsed = Date.now() - document.getElementById("form_time").value;
+    const elapsed = Date.now() - Number(document.getElementById("form_time").value);
     const message = document.getElementById("message").value.toLowerCase();
 
     const blocked = ["http://", "https://", "www.", ".com", ".net", ".org", "<a", "[url="];
 
     if (elapsed < 3000) {
-      alert("Please take a moment to complete the form.");
       e.preventDefault();
+      alert("Please take a moment to complete the form.");
       return;
     }
 
     if (blocked.some(b => message.includes(b))) {
-      alert("Please remove links from your message.");
       e.preventDefault();
+      alert("Please remove links from your message.");
       return;
     }
 
-    e.preventDefault();
-    grecaptcha.ready(function() {
-      grecaptcha.execute(
-        "6Lfcx0ksAAAAAJrhzXxX1on3taI6uEY9iRmJ5Ur2",
-        { action: "submit" }
-      ).then(function(token) {
-        document.getElementById("g-recaptcha-response").value = token;
-        e.target.submit();
+    // ❌ DO NOT preventDefault here
+    // Let Netlify handle the submission natively
+
+    // OPTIONAL: add recaptcha token without blocking
+    if (typeof grecaptcha !== "undefined") {
+      grecaptcha.ready(function() {
+        grecaptcha.execute(
+          "6Lfcx0ksAAAAAJrhzXxX1on3taI6uEY9iRmJ5Ur2",
+          { action: "submit" }
+        ).then(function(token) {
+          document.getElementById("g-recaptcha-response").value = token;
+        });
       });
-    });
+    }
   });
 </script>
+
 
   <form name="contact" data-netlify="true" hidden>
   <input type="text" name="name">
