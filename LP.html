@@ -90,11 +90,11 @@
 
       <!-- FORM -->
       <form
-        id="contact-form"
-        name="contact"
-        method="POST"
-        action="/.netlify/functions/submit-form"
-        class="contact-form"
+      name="contact"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  action="/thank-you.html"
       >
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
