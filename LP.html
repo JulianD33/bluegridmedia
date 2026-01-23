@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Google Local Services Ads Management & Performance Review</title>
-
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -37,26 +38,74 @@
   <div class="container">
     <div style="max-width: 600px; margin: 0 auto;">
 
+      <!-- TRUST / CREDIBILITY -->
+      <div style="
+        margin-bottom: 22px;
+        padding: 16px 18px;
+        text-align: center;
+        background: #f7f9fc;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      ">
+        <p style="
+          margin: 0 0 6px 0;
+          font-weight: 600;
+          font-size: 16px;
+          color: #0f2a44;
+        ">
+          Trusted by local service businesses nationwide
+        </p>
+
+        <ul style="list-style:none; padding:0; margin:0; font-size:14.5px;">
+          <li>✔ Hundreds of LSA accounts set up & optimized</li>
+          <li>✔ Plumbers, HVAC, roofers, electricians & more</li>
+          <li>✔ LSA-first strategy with Google Ads as a supporting channel</li>
+        </ul>
+
+        <div style="
+          margin-bottom: 26px;
+          padding: 20px;
+          background: #ffffff;
+          border: 1px solid #e6e9ef;
+          border-radius: 12px;
+          font-size: 14.5px;
+          line-height: 1.5;
+        ">
+          <strong>This is for you if:</strong>
+          <ul style="list-style:none;">
+            <li>- You run a licensed local service business</li>
+            <li>- You want professional management of Google Local Services Ads</li>
+            <li>- You care about lead quality, not just volume</li>
+          </ul>
+
+          <strong>This is NOT for you if:</strong>
+          <ul style="list-style:none;">
+            <li>- You’re looking for a job, training, or free advice</li>
+            <li>- You don’t have a registered service business</li>
+            <li>- You want help unrelated to Google LSA or Google Ads</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- FORM -->
       <form
         id="contact-form"
         name="contact"
         method="POST"
-        action="/thank-you.html"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        action="/.netlify/functions/submit-form"
+        class="contact-form"
       >
-        <!-- REQUIRED FOR NETLIFY -->
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="form_time" id="form_time">
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+        <input type="hidden" name="form_time" id="form_time" />
 
-        <!-- HONEYPOTS -->
-        <input type="text" name="bot-field" style="display:none">
-        <input type="text" name="website_url" style="display:none">
+        <!-- 🐝 Honeypots -->
+        <input type="text" name="website_url" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
 
         <div class="form-group">
-          <label>Google Local Services Ads Status *</label>
-          <select name="lsa-status" required>
+          <label for="lsa-status">Google Local Services Ads Status *</label>
+          <select id="lsa-status" name="lsa-status" required>
             <option value="">Select one</option>
             <option value="active">Currently running LSAs</option>
             <option value="underperforming">Set up but underperforming</option>
@@ -66,43 +115,45 @@
         </div>
 
         <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required>
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
         </div>
 
         <div class="form-group">
-          <label>Phone *</label>
-          <input type="tel" name="phone" required>
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required>
         </div>
 
         <div class="form-group">
-          <label>Business Type *</label>
-          <select name="business-type" required>
-            <option value="">Select</option>
-            <option>Plumbing</option>
-            <option>HVAC</option>
-            <option>Electrical</option>
-            <option>Roofing</option>
-            <option>Locksmith</option>
-            <option>Cleaning</option>
-            <option>Landscaping</option>
-            <option>Pest Control</option>
-            <option>Other</option>
+          <label for="business-type">Business Type *</label>
+          <select id="business-type" name="business-type" required>
+            <option value="">Select your business type</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="hvac">HVAC</option>
+            <option value="electrical">Electrical</option>
+            <option value="locksmith">Locksmith</option>
+            <option value="garage-door">Garage Door Repair</option>
+            <option value="roofing">Roofing</option>
+            <option value="flooring">Flooring</option>
+            <option value="cleaning">Cleaning Services</option>
+            <option value="landscaping">Landscaping</option>
+            <option value="pest-control">Pest Control</option>
+            <option value="other">Other (Describe Business)</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Service Area & Goals *</label>
+          <label for="message">Service Area & Goals *</label>
           <textarea
             id="message"
             name="message"
             required
-            placeholder="What service do you offer, what city do you serve, and what issue are you trying to fix?"
+            placeholder="What service do you offer, what city do you serve, and what issue are you trying to fix with your leads?"
           ></textarea>
         </div>
 
@@ -110,47 +161,125 @@
           Request LSA Management Review
         </button>
 
-        <p style="font-size:12px;margin-top:10px;color:#6b7280;">
-          LSA management starts at $500/month. Established businesses only.
+        <p style="font-size: 12px; margin-top: 10px; color: #6b7280;">
+          We work exclusively with licensed local service businesses.
+          LSA management starts at $500/month. We work with established service businesses only.
+          This is not training or Google support.
         </p>
+
+        <p style="text-align:center; font-size:14px; margin-top:18px;">
+          Need help beyond LSAs?<br>
+          <strong>We also manage Google Search Ads for service businesses</strong>
+        </p>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: var(--bg-light); border-radius: 12px;">
+          <h3>Other Ways to Reach Us</h3>
+          <p><strong>Email:</strong> bluegridm@gmail.com</p>
+          <p><strong>Response Time:</strong> Within 24 hours</p>
+        </div>
+
       </form>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    © 2025 Blue Grid Media | bluegridm@gmail.com
-  </div>
-</footer>
 
-<!-- JS: VALIDATION ONLY (NO SUBMIT BLOCKING) -->
+
 <script>
+  // ⏱️ Record load time
   document.getElementById("form_time").value = Date.now();
 
   document.getElementById("contact-form").addEventListener("submit", function(e) {
-    const elapsed = Date.now() - Number(document.getElementById("form_time").value);
-    const msg = document.getElementById("message").value.toLowerCase();
+    const elapsed = Date.now() - document.getElementById("form_time").value;
+    const message = document.getElementById("message").value.toLowerCase();
 
-    const blocked = ["http://", "https://", "www.", ".com", ".net", ".org"];
+    const blocked = ["http://", "https://", "www.", ".com", ".net", ".org", "<a", "[url="];
 
     if (elapsed < 3000) {
-      e.preventDefault();
       alert("Please take a moment to complete the form.");
+      e.preventDefault();
       return;
     }
 
-    if (blocked.some(b => msg.includes(b))) {
+    if (blocked.some(b => message.includes(b))) {
+      alert("Please remove links from your message.");
       e.preventDefault();
-      alert("Links are not allowed.");
+      return;
     }
+
+    e.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute(
+        "6Lfcx0ksAAAAAJrhzXxX1on3taI6uEY9iRmJ5Ur2",
+        { action: "submit" }
+      ).then(function(token) {
+        document.getElementById("g-recaptcha-response").value = token;
+        e.target.submit();
+      });
+    });
   });
 </script>
 
-<!-- NETLIFY DETECTION FALLBACK -->
-<form name="contact" data-netlify="true" hidden>
-  <input type="text" name="name">
-</form>
+<footer style="padding: 40px 0; margin-top: 60px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <div style="margin-bottom: 18px;">
+
+      </div>
+      <div>
+        © 2025 Blue Grid Media | bluegridm@gmail.com<br>
+        <em>Where Local Visibility Begins</em>
+      </div>
+       <div style="
+      display:flex;
+      gap:14px;
+      align-items:center;
+    ">
+
+      <!-- LINKEDIN -->
+      <a 
+        href="https://www.linkedin.com/company/bluegrid-media"
+        target="_blank"
+        rel="noopener"
+        aria-label="LinkedIn"
+        style="display:inline-flex; align-items:center;"
+      >
+        <img 
+    src="linkedin.svg"
+    alt="LinkedIn"
+    width="40"
+    height="40"
+    style="opacity:2;"
+  >
+      </a>
+
+      <!-- REDDIT -->
+      <a 
+        href="https://www.reddit.com/user/BlueGridMedia"
+        target="_blank"
+        rel="noopener"
+        aria-label="Reddit"
+        style="display:inline-flex; align-items:center;"
+      >
+        <img 
+    src="reddit.svg"
+    alt="Reddit"
+    width="40"
+    height="40"
+    style="opacity:2;"
+  >
+      </a>
+
+    </div>
+    </div>
+  </footer>
 
 </body>
 </html>
