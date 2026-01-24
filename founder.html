@@ -79,7 +79,7 @@
       </p>
 
       <!-- HOW I WORK -->
-      <h2>How I Work</h2>
+      <h2>How We Work</h2>
       <ul>
         <li>Search-first strategy focused on local and high-intent demand</li>
         <li>Lean account structures that prioritize Quality Score and relevance</li>
@@ -91,31 +91,25 @@
       <!-- CTA -->
       <div style="text-align:center; margin-top:50px;">
         <a href="contact.html" class="btn-primary large">
-          Work With Me
+          Work With Us
         </a>
       </div>
+
+     
 
     </div>
   </div>
 </section>
 
-<footer style="padding: 40px 0; margin-top: 60px;">
-  <div class="container" style="text-align:center;">
-    <div class="footer-links" style="margin-bottom: 15px;">
-      <a href="index.html">Home</a> |
-      <a href="services.html">Services</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms & Conditions</a> |
-      <a href="disclaimer.html">Disclaimer</a>
-    </div>
-    <div>
-      © 2025 Blue Grid Media<br>
-      <em>Where Local Visibility Begins</em>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 
 </body>
 </html>

@@ -50,22 +50,14 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-        <a href="disclaimer.html">Disclaimer</a>
-      </div>
-      <div>
-        © 2025 Blue Grid Media | contact@bluegridmedia.com<br>
-        <em>Where Local Visibility Begins</em>
-      </div>
-    </div>
-  </footer>
+  <!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

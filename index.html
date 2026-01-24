@@ -63,8 +63,8 @@
     Services
   </a>
 
-  <a href="founder.html" class="btn-secondary">
-    Founder
+  <a href="team.html" class="btn-secondary">
+    Our Team
   </a>
 
 </div>
@@ -73,7 +73,7 @@
 
 </div>
 
-      <div class="tagline" style="margin-top: 30px; color: rgba(255,255,255,0.9);">
+      <div class="tagline" style="margin-top: 5px; color: rgba(255,255,255,0.9);">
         Precision Ads. Real Results.
       </div>
     </div>
@@ -280,66 +280,15 @@
     </div>
   </div>
 
-  <footer style="padding: 40px 0; margin-top: 60px;">
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <div style="margin-bottom: 18px;">
-
-      </div>
-      <div>
-        © 2025 Blue Grid Media | bluegridm@gmail.com<br>
-        <em>Where Local Visibility Begins</em>
-      </div>
-       <div style="
-      display:flex;
-      gap:14px;
-      align-items:center;
-    ">
-
-      <!-- LINKEDIN -->
-      <a 
-        href="https://www.linkedin.com/company/bluegrid-media"
-        target="_blank"
-        rel="noopener"
-        aria-label="LinkedIn"
-        style="display:inline-flex; align-items:center;"
-      >
-        <img 
-    src="linkedin.svg"
-    alt="LinkedIn"
-    width="40"
-    height="40"
-    style="opacity:2;"
-  >
-      </a>
-
-      <!-- REDDIT -->
-      <a 
-        href="https://www.reddit.com/user/BlueGridMedia"
-        target="_blank"
-        rel="noopener"
-        aria-label="Reddit"
-        style="display:inline-flex; align-items:center;"
-      >
-        <img 
-    src="reddit.svg"
-    alt="Reddit"
-    width="40"
-    height="40"
-    style="opacity:2;"
-  >
-      </a>
-
-    </div>
-    </div>
-  </footer>
+  <!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 
   <script src="script.js"></script>
 </body>
