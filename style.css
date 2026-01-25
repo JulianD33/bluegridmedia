@@ -1,3 +1,21 @@
+.container .insight-box {
+  max-width: 900px;
+  margin: 50px auto 0;
+  padding: 28px 32px;
+  background: #ffffff;
+  border-left: 5px solid #23638f;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.container .insight-box p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2d3e50;
+}
+
+
 .team-card {
   text-align: center;
   background: #ffffff;
@@ -33,6 +51,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
+   background-color: #f1f5f9;
 }
 
 .container {
@@ -524,10 +543,17 @@ footer {
 }
 
 .footer-links a {
+  color: #ffffff;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+
+.footer-links a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-  opacity: 0.8;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 

@@ -15,7 +15,6 @@
   gtag('config', 'AW-17840803263');
 </script>
 
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Blue Grid Media</title>
@@ -27,26 +26,72 @@
 <body>
 
 <!-- HEADER -->
-<header style="padding: 60px 0;">
+<header style="padding: 45px 0 55px;">
   <div class="container" style="text-align:center;">
-    <div class="logo-container" style="margin-bottom: 20px;">
+
+    <div class="logo-container" style="margin-bottom: 25px;">
       <a href="index.html">
         <img src="logo.png" alt="Blue Grid Media" class="logo">
       </a>
     </div>
+
     <h1>Contact Us</h1>
-    <p>Ready to dominate your local market? Let's talk.</p>
-  </div>
-   <p style="margin-top: 12px; font-weight: 600; color: #adc5da;">
+
+    <p style="max-width:650px;margin:15px auto;">
+      Ready to dominate your local market? Let's talk.
+    </p>
+
+    <!-- Proof Line -->
+    <p style="margin-top:10px;font-size:1rem;opacity:0.85;">
+      Helping service businesses generate qualified leads since 2023
+    </p>
+
+    <!-- CTA Button -->
+    <div style="margin-top:25px;">
+      <a href="#contact-form" class="btn-primary large">
+        Get My Free LSA Review
+      </a>
+    </div>
+
+    <!-- Authority Icons -->
+    <div style="
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+      font-size:14px;
+      opacity:0.9;
+    ">
+      <span>✔ LSA Specialists</span>
+      <span>✔ No Long Contracts</span>
+      <span>✔ Lead-Focused</span>
+    </div>
+
+    <!-- Warning -->
+    <p style="
+      margin-top:22px;
+      font-weight:600;
+      color:#adc5da;
+    ">
       ⚠️ We only work with licensed, service-based businesses.
+    </p>
+
+  </div>
 </header>
+
+
+<!-- BACKGROUND LAYER -->
+<section class="contact-support">
 
 <!-- MAIN SECTION -->
 <section class="about-section" style="padding: 40px 0;">
+
   <div class="container">
     <div style="max-width: 600px; margin: 0 auto;">
 
-      <!-- TRUST / CREDIBILITY -->
+
+      <!-- TRUST BOX -->
       <div style="
         margin-bottom: 30px;
         padding: 20px;
@@ -55,6 +100,7 @@
         border-radius: 10px;
         box-shadow: 0 6px 18px rgba(0,0,0,0.04);
       ">
+
         <p style="
           margin: 0 0 10px 0;
           font-weight: 600;
@@ -65,13 +111,15 @@
         </p>
 
         <ul style="list-style:none; padding:0; margin:0; font-size:14.5px;">
-          <li>✔ Hundreds of LSA accounts set up & optimized</li>
-          <li>✔ Plumbers, HVAC, roofers, electricians & more</li>
-          <li>✔ LSA-first strategy with Google Ads as a supporting channel</li>
+          <li>✔ Hundreds of LSA accounts optimized</li>
+          <li>✔ Plumbers, HVAC, Roofers & More</li>
+          <li>✔ LSA-First Strategy</li>
         </ul>
+
       </div>
 
-      <!-- QUALIFICATION BOX -->
+
+      <!-- QUALIFICATION -->
       <div style="
         margin-bottom: 40px;
         padding: 20px;
@@ -81,23 +129,29 @@
         font-size: 14.5px;
         line-height: 1.6;
       ">
+
         <strong>This is for you if:</strong>
+
         <ul style="list-style:none; padding-left:0; margin-top:8px;">
-          <li>- You run a licensed local service business</li>
-          <li>- You want professional management of Google Local Services Ads</li>
-          <li>- You care about lead quality, not just volume</li>
+          <li>- Licensed service business</li>
+          <li>- Want professional LSA management</li>
+          <li>- Care about lead quality</li>
         </ul>
 
         <strong>This is NOT for you if:</strong>
+
         <ul style="list-style:none; padding-left:0; margin-top:8px;">
-          <li>- You’re looking for a job, training, or free advice</li>
-          <li>- You don’t have a registered service business</li>
-          <li>- You want help unrelated to Google LSA or Google Ads</li>
+          <li>- Looking for a job or training</li>
+          <li>- No registered business</li>
+          <li>- Not focused on LSAs</li>
         </ul>
+
       </div>
+
 
       <!-- FORM -->
       <form 
+        id="contact-form"
         name="contact"
         method="POST"
         data-netlify="true"
@@ -105,79 +159,92 @@
         action="/thank-you.html"
         class="contact-form"
       >
+
         <input type="hidden" name="form-name" value="contact" />
 
         <p style="display:none">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          <label>Don’t fill this out: <input name="bot-field" /></label>
         </p>
 
+
         <div class="form-group">
-          <label for="lsa-status">Google Local Services Ads Status *</label>
-          <select id="lsa-status" name="lsa-status" required>
+          <label>Google LSA Status *</label>
+          <select name="lsa-status" required>
             <option value="">Select one</option>
-            <option value="active">Currently running LSAs</option>
-            <option value="underperforming">Set up but underperforming</option>
-            <option value="need-setup">Need LSA setup</option>
-            <option value="not-eligible">Not eligible / unsure</option>
+            <option>Currently Running</option>
+            <option>Underperforming</option>
+            <option>Need Setup</option>
+            <option>Not Sure</option>
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required>
-        </div>
 
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required>
+          <label>Full Name *</label>
+          <input type="text" name="name" required>
         </div>
 
-        <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
 
         <div class="form-group">
-          <label for="business-type">Business Type *</label>
-          <select id="business-type" name="business-type" required>
-            <option value="">Select your business type</option>
-            <option value="plumbing">Plumbing</option>
-            <option value="hvac">HVAC</option>
-            <option value="electrical">Electrical</option>
-            <option value="locksmith">Locksmith</option>
-            <option value="garage-door">Garage Door Repair</option>
-            <option value="roofing">Roofing</option>
-            <option value="flooring">Flooring</option>
-            <option value="cleaning">Cleaning Services</option>
-            <option value="landscaping">Landscaping</option>
-            <option value="pest-control">Pest Control</option>
-            <option value="other">Other (Describe Business)</option>
+          <label>Email *</label>
+          <input type="email" name="email" required>
+        </div>
+
+
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+
+        <div class="form-group">
+          <label>Business Type *</label>
+          <select name="business-type" required>
+            <option value="">Select</option>
+            <option>Plumbing</option>
+            <option>HVAC</option>
+            <option>Electrical</option>
+            <option>Roofing</option>
+            <option>Cleaning</option>
+            <option>Landscaping</option>
+            <option>Pest Control</option>
+            <option>Other</option>
           </select>
         </div>
 
+
         <div class="form-group">
-          <label for="message">Service Area & Goals *</label>
+          <label>Service Area & Goals *</label>
           <textarea
-            id="message"
             name="message"
             required
-            placeholder="What service do you offer, what city do you serve, and what issue are you trying to fix with your leads?"
+            placeholder="City, services, and main issue you're facing"
           ></textarea>
         </div>
 
+
         <button type="submit" class="btn-primary large">
-  Review My LSA Setup or Eligibility
+          Review My LSA Setup
         </button>
 
-        <p style="text-align:center; font-size:12px; margin-top:12px; color:#6b7280;">
-          We work exclusively with licensed local service businesses.
+
+        <p style="
+          text-align:center;
+          font-size:12px;
+          margin-top:12px;
+          color:#6b7280;
+        ">
+          Licensed service businesses only.
         </p>
 
-        <p style="text-align:center; font-size:14px; margin-top:18px;">
+
+        <p style="text-align:center;font-size:14px;margin-top:18px;">
           Need help beyond LSAs?<br>
-          <strong>We also manage Google Search Ads for service businesses</strong> to support overflow demand and scale lead volume.
+          <strong>We also manage Google Search Ads</strong>
         </p>
+
       </form>
+
 
       <!-- CONTACT INFO -->
       <div style="
@@ -187,25 +254,32 @@
         background: var(--bg-light);
         border-radius: 12px;
       ">
+
         <h3>Other Ways to Reach Us</h3>
         <p><strong>Email:</strong> bluegridm@gmail.com</p>
         <p><strong>Response Time:</strong> Within 24 hours</p>
+
       </div>
 
     </div>
   </div>
 </section>
 
+</section>
+
+
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
+
 <script>
   fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
+    .then(r => r.text())
+    .then(d => {
+      document.getElementById("footer-placeholder").innerHTML = d;
     });
 </script>
 
 <script src="script.js"></script>
+
 </body>
 </html>
