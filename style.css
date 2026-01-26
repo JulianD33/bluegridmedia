@@ -1,3 +1,35 @@
+/* Improve spacing in blog/article sections */
+
+.article-content p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.article-content ul {
+  margin: 20px 0 25px;
+  padding-left: 22px;
+}
+
+.article-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.article-content h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.article-content h3 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.article-content h2.major-heading {
+  margin-top: 70px;
+}
+
+
 .container .insight-box {
   max-width: 900px;
   margin: 50px auto 0;
