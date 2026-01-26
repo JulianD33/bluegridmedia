@@ -217,6 +217,73 @@
       .service-card { max-width: 100%; }
     }
   </style>
+
+  <!-- FAQ Schema (must match the visible FAQ questions/answers on this page) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is my business eligible for Local Services Ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local Services Ads are available to many service-based businesses, including legal, dental, home services, real estate, and financial professionals. Eligibility depends on your industry and region. We’ll help you verify your qualifications and get set up if you’re approved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I invest in Local Services Ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most businesses start with $1,000–$1,500/month, but your budget can be tailored to your goals and market size. Since you’re only charged for verified leads, every dollar is focused on real customer opportunities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What qualifies as a lead in this program?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A qualified lead is someone who contacts your business directly from your ad — whether by phone, message, or booking — and is located within your service area. Google filters out spam and irrelevant inquiries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you guarantee I’ll get leads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While no marketing channel can guarantee lead volume, we make sure your profile is optimized, verified, and positioned to show when real customers are searching. Most clients begin receiving leads shortly after going live."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I track performance and results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide simple, visual reports showing how many leads you received, how much you spent, and how your campaign is trending. You’ll also have access to Google’s dashboard to review call recordings and dispute unqualified leads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does Google LSA setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most accounts are verified and go live within 7–10 business days once documentation and background checks are complete. Timelines can vary slightly by industry and region."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you manage leads and disputes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We monitor lead quality, dispute invalid or irrelevant leads in Google's dashboard, and continuously optimize targeting and settings to protect your budget and improve ROI."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -327,6 +394,18 @@
       <details class="faq-item">
         <summary>How do I track performance and results?</summary>
         <p>We provide simple, visual reports showing how many leads you received, how much you spent, and how your campaign is trending. You’ll also have access to Google’s dashboard to review call recordings and dispute unqualified leads.</p>
+      </details>
+
+      <!-- New: timeline question (visible + in schema) -->
+      <details class="faq-item">
+        <summary>How long does Google LSA setup take?</summary>
+        <p>Most accounts are verified and go live within 7–10 business days once documentation and background checks are complete. Timelines can vary slightly by industry and region.</p>
+      </details>
+
+      <!-- New: disputes & lead management question (visible + in schema) -->
+      <details class="faq-item">
+        <summary>Do you manage leads and disputes?</summary>
+        <p>Yes. We monitor lead quality, dispute invalid or irrelevant leads in Google's dashboard, and continuously optimize targeting and settings to protect your budget and improve ROI.</p>
       </details>
 
     </div>
