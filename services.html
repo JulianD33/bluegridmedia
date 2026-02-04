@@ -211,10 +211,11 @@
 
     /* FAQ Section Styling (Matches CTA / Header Theme) */
     .faq-section {
-      background: linear-gradient(to right, #13344d, #23638f);
-      padding: 80px 20px;
-      margin-top: 60px;
-    }
+  background: linear-gradient(to right, #13344d, #23638f);
+  padding: 80px 20px;
+  margin-top: 0;
+}
+
 
     .faq-section h2 {
       color: #ffffff;
@@ -237,6 +238,32 @@
       .cta-section p { font-size: 1rem; }
       .service-card { max-width: 100%; }
     }
+
+    /* === Remove gap between CTA and FAQ === */
+
+/* Reduce bottom space of CTA */
+.cta-section {
+  padding-bottom: 30px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Reduce top space of FAQ */
+.faq-section {
+  padding-top: 30px !important;
+  margin-top: 0 !important;
+}
+
+/* Remove extra heading margin */
+.faq-section h2 {
+  margin-top: 0 !important;
+}
+
+/* Safety: prevent body bg from bleeding */
+.cta-section,
+.faq-section {
+  display: block;
+}
+
   </style>
 
   <!-- FAQ Schema (must match the visible FAQ questions/answers on this page) -->
@@ -387,7 +414,7 @@
   </section>
 
   <!-- FAQ (now on matching blue background; FAQ cards remain white) -->
-  <div class="faq-section" style="margin-top: 60px;">
+  <div class="faq-section">
     <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">FAQs About Local Services Ads</h2>
 
     <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
