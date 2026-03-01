@@ -625,6 +625,7 @@ h2 {
 /* Prevent section-level link color rules from bleeding into buttons */
 a.btn-primary { color: white !important; }
 a.btn-secondary { color: white !important; }
+a.btn-secondary.light { color: var(--primary) !important; }
 
 .section-divider {
   max-width: 80px;
