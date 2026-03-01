@@ -216,6 +216,8 @@
 
 <body>
 
+  <div id="nav-placeholder"></div>
+
 <header style="padding: 35px 0;">
   <div class="container" style="text-align:center;">
 
@@ -473,11 +475,18 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
     });
+  });
+  fetch("/footer.html").then(r => r.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
 </script>
 
 </body>
