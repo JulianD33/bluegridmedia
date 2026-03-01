@@ -144,6 +144,8 @@
 
   <link rel="stylesheet" href="/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://bluegridmedia.com/google-lsa-ranking-factors" />
@@ -201,6 +203,16 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
 
+    .btn-primary {
+      display: inline-block;
+      background: #0ea5a4;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
   </style>
 </head>
 
@@ -210,6 +222,15 @@
 
 <header>
   <div class="container" style="text-align:center;">
+
+<header style="padding: 35px 0;">
+  <div class="container" style="text-align:center;">
+
+    <div class="logo-container" style="margin-bottom: 20px;">
+      <a href="/">
+        <img src="logo.png" alt="Blue Grid Media" class="logo">
+      </a>
+    </div>
 
     <h1>Google LSA Ranking Factors</h1>
 
@@ -411,6 +432,7 @@
 
         <p style="margin-top:12px;">
           <a href="/contact.html" class="btn-primary large">Get A Free LSA Profile Audit</a>
+          <a href="/contact" class="btn-primary large">Get A Free LSA Profile Audit</a>
         </p>
 
         <h2>Common Mistakes Home Service Businesses Make with LSA (And Exactly How To Fix Them)</h2>
@@ -478,6 +500,11 @@
 
         <p style="font-size:13px; color:#6b7280; margin-top:40px;">
           Results vary by market, competition, and how consistently optimizations are maintained. Blue Grid Media can audit your LSA setup and identify exactly where you're losing ranking and leads — <a href="/contact.html">book a free review</a>.
+          <a href="/contact" class="btn-primary large">Get a Free LSA Ranking Audit</a>
+        </div>
+
+        <p style="font-size:13px; color:#6b7280; margin-top:40px;">
+          Results vary by market, competition, and how consistently optimizations are maintained. Blue Grid Media can audit your LSA setup and identify exactly where you're losing ranking and leads — <a href="/contact">book a free review</a>.
         </p>
 
       </div>
@@ -506,8 +533,13 @@
     })
     .catch(() => {
       document.getElementById("footer-placeholder").innerHTML = '<footer style="padding:36px 0; text-align:center; color:#6b7280;">© 2026 Blue Grid Media</footer>';
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
     });
 </script>
 
 </body>
+</html>
 </html>
