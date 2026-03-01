@@ -21,21 +21,17 @@
 <link rel="canonical" href="https://www.bluegridmedia.com/Free-LSA-audit">
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
 <!-- HEADER -->
-<header style="padding: 45px 0 25px;">
-  <div class="container" style="text-align:center;">
-
-    <div class="logo-container" style="margin-bottom: 25px;">
-      <a href="/">
-        <img src="logo.png" alt="Blue Grid Media" class="logo">
-      </a>
-    </div>
-
+<header>
+  <div class="container">
     <h1>Get Your Free LSA Audit</h1>
 
     <p style="max-width:650px;margin:15px auto;">
@@ -295,7 +291,16 @@ Start with your free LSA audit and see exactly how we can boost your local ad pe
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch("footer.html")
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
+    });
+  });
+  fetch("/footer.html")
     .then(r => r.text())
     .then(d => {
       document.getElementById("footer-placeholder").innerHTML = d;
