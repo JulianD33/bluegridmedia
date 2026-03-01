@@ -142,6 +142,8 @@
   }
   </script>
 
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -215,6 +217,11 @@
 </head>
 
 <body>
+
+  <div id="nav-placeholder"></div>
+
+<header>
+  <div class="container" style="text-align:center;">
 
 <header style="padding: 35px 0;">
   <div class="container" style="text-align:center;">
@@ -424,6 +431,7 @@
         </ol>
 
         <p style="margin-top:12px;">
+          <a href="/contact.html" class="btn-primary large">Get A Free LSA Profile Audit</a>
           <a href="/contact" class="btn-primary large">Get A Free LSA Profile Audit</a>
         </p>
 
@@ -487,6 +495,11 @@
         </p>
 
         <div style="text-align:center; margin-top:30px; margin-bottom:60px;">
+          <a href="/contact.html" class="btn-primary large">Get a Free LSA Ranking Audit</a>
+        </div>
+
+        <p style="font-size:13px; color:#6b7280; margin-top:40px;">
+          Results vary by market, competition, and how consistently optimizations are maintained. Blue Grid Media can audit your LSA setup and identify exactly where you're losing ranking and leads — <a href="/contact.html">book a free review</a>.
           <a href="/contact" class="btn-primary large">Get a Free LSA Ranking Audit</a>
         </div>
 
@@ -504,6 +517,22 @@
 <div id="footer-placeholder"></div>
 
 <script>
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
+    });
+  });
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(() => {
+      document.getElementById("footer-placeholder").innerHTML = '<footer style="padding:36px 0; text-align:center; color:#6b7280;">© 2026 Blue Grid Media</footer>';
   fetch("footer.html")
     .then(response => response.text())
     .then(data => {
@@ -512,4 +541,5 @@
 </script>
 
 </body>
+</html>
 </html>
