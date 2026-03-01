@@ -21,15 +21,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terms & Conditions - Blue Grid Media</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header style="padding: 60px 0;">
+  <div id="nav-placeholder"></div>
+  <header>
     <div class="container">
-      <div class="logo-container">
-        <a href="index.html">
-          <img src="logo.png" alt="Blue Grid Media" class="logo">
-        </a>
+      <div style="display:none"><!-- logo moved to nav --></div>
       </div>
       <h1>Terms & Conditions</h1>
       <p>Terms Governing Our Services and Your Use of Our Website</p>
@@ -76,7 +74,16 @@
   <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-  fetch("footer.html")
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
+    });
+  });
+  fetch("/footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;

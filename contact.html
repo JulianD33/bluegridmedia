@@ -1,540 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Google Analytics 4
-  gtag('config', 'G-WEMSC670ZR');
-
-  // Google Ads
-  gtag('config', 'AW-17840803263');
-</script>
-<link rel="canonical" href="https://www.bluegridmedia.com/contact">
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WEMSC670ZR');
+    gtag('config', 'AW-17840803263');
+  </script>
+  <link rel="canonical" href="https://www.bluegridmedia.com/contact">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Blue Grid Media</title>
-
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header style="padding: 45px 0 55px;">
-  <div class="container" style="text-align:center;">
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
 
-    <div class="logo-container" style="margin-bottom: 25px;">
-      <a href="/">
-        <img src="logo.png" alt="Blue Grid Media" class="logo">
-      </a>
+  <header>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Ready to dominate your local market? Let's talk.</p>
+      <p style="font-size:0.95rem;opacity:0.8;margin-top:-20px;">Helping service businesses generate qualified leads through proven local advertising strategies.</p>
+      <div class="cta-buttons" style="margin-top:28px;">
+        <a href="#contact-form" class="btn-secondary large">Get My Free LSA Consultation</a>
+      </div>
+      <div class="hero-features">
+        <span class="badge">&#10003; LSA Specialists</span>
+        <span class="badge">&#10003; No Long Contracts</span>
+        <span class="badge">&#10003; Lead-Focused</span>
+      </div>
     </div>
+  </header>
 
-    <h1>Contact Us</h1>
+  <section class="about-section" style="padding: 60px 0;">
+    <div class="container">
+      <div style="max-width: 620px; margin: 0 auto;">
 
-    <p style="max-width:650px;margin:15px auto;">
-      Ready to dominate your local market? Let's talk.
-    </p>
+        <!-- Trust box -->
+        <div class="feature-card fade-up" style="text-align:left;margin-bottom:32px;border-top-color:var(--accent);">
+          <p style="font-weight:700;font-size:1rem;color:var(--text-dark);margin-bottom:10px;">Trusted by local service businesses nationwide</p>
+          <ul style="list-style:none;padding:0;margin:0;font-size:0.95rem;color:var(--text-light);line-height:2;">
+            <li>&#10003; Hundreds of LSA accounts optimized</li>
+            <li>&#10003; Plumbers, HVAC, Roofers &amp; More</li>
+            <li>&#10003; LSA-First Strategy</li>
+          </ul>
+        </div>
 
-    <!-- Proof Line -->
-    <p style="margin-top:10px;font-size:1rem;opacity:0.85;">
-Helping service businesses generate qualified leads through proven local advertising strategies.    </p>
+        <!-- Form -->
+        <form
+          id="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you.html"
+          class="contact-form fade-up"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
-    <!-- CTA Button -->
-    <div style="margin-top:25px;">
-      <a href="#contact-form" class="btn-secondary large">
-        Get My Free LSA Consultation
-      </a>
-    </div>
+          <div class="form-group">
+            <label>Google LSA Status *</label>
+            <select name="lsa-status" required>
+              <option value="">Select one</option>
+              <option>Currently Running</option>
+              <option>Underperforming</option>
+              <option>Need Setup</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
 
-    <!-- Authority Icons -->
-    <div style="
-      margin-top:45px;
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-      font-size:14px;
-      opacity:0.9;
-    ">
-      <span>✔ LSA Specialists</span>
-      <span>✔ No Long Contracts</span>
-      <span>✔ Lead-Focused</span>
-    </div>
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="name" required>
+          </div>
 
-    <!-- Warning -->
-    <p style="
-      margin-top:22px;
-      font-weight:600;
-      color:#adc5da;
-    ">
-Start with your free consultation and find out what we can do for you.    </p>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" required>
+          </div>
 
-  </div>
-</header>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="phone" required>
+          </div>
 
+          <div class="form-group">
+            <label>Business Type *</label>
+            <select name="business-type" required>
+              <option value="">Select</option>
+              <option>Plumbing</option>
+              <option>HVAC</option>
+              <option>Electrical</option>
+              <option>Roofing</option>
+              <option>Cleaning</option>
+              <option>Landscaping</option>
+              <option>Pest Control</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-<!-- BACKGROUND LAYER -->
-<section class="contact-support">
+          <div class="form-group">
+            <label>Service Area &amp; Goals *</label>
+            <textarea name="message" required placeholder="City, services, and main issue you're facing"></textarea>
+          </div>
 
-<!-- MAIN SECTION -->
-<section class="about-section" style="padding: 40px 0;">
+          <div class="form-submit">
+            <button type="submit" class="btn-primary large">Get My Free LSA Consultation</button>
+          </div>
 
-  <div class="container">
-    <div style="max-width: 600px; margin: 0 auto;">
+          <p style="text-align:center;font-size:0.8rem;margin-top:10px;color:var(--text-light);">Licensed service businesses only.</p>
+          <p style="text-align:center;font-size:0.9rem;margin-top:16px;color:var(--text-body);">
+            Need help beyond LSAs?<br>
+            <strong>We also manage Google Search Ads to increase local visibility when your location favors competition in LSAs.</strong>
+          </p>
+        </form>
 
-
-      <!-- TRUST BOX -->
-      <div style="
-        margin-bottom: 30px;
-        padding: 20px;
-        text-align: center;
-        background: #f7f9fc;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      ">
-
-        <p style="
-          margin: 0 0 10px 0;
-          font-weight: 600;
-          font-size: 16px;
-          color: #0f2a44;
-        ">
-          Trusted by local service businesses nationwide
-        </p>
-
-        <ul style="list-style:none; padding:0; margin:0; font-size:14.5px;">
-          <li>✔ Hundreds of LSA accounts optimized</li>
-          <li>✔ Plumbers, HVAC, Roofers & More</li>
-          <li>✔ LSA-First Strategy</li>
-        </ul>
+        <!-- Contact info -->
+        <div class="feature-card fade-up" style="text-align:center;margin-top:32px;">
+          <h3 style="margin-bottom:16px;font-size:1.1rem;">Other Ways to Reach Us</h3>
+          <p style="margin-bottom:8px;"><strong>Email:</strong> <a href="mailto:contact@bluegridmedia.com" style="color:var(--primary);">contact@bluegridmedia.com</a></p>
+          <p style="margin-bottom:8px;"><strong>Phone:</strong> <a href="tel:+18064592162" style="color:var(--primary);">+1 (806) 459-2162</a></p>
+          <p><strong>Response Time:</strong> Within 24 hours</p>
+        </div>
 
       </div>
-
-
-      <!-- FORM -->
-      <form 
-        id="contact-form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/thank-you.html"
-        class="contact-form"
-      >
-
-        <input type="hidden" name="form-name" value="contact" />
-
-        <p style="display:none">
-          <label>Don’t fill this out: <input name="bot-field" /></label>
-        </p>
-
-
-        <div class="form-group">
-          <label>Google LSA Status *</label>
-          <select name="lsa-status" required>
-            <option value="">Select one</option>
-            <option>Currently Running</option>
-            <option>Underperforming</option>
-            <option>Need Setup</option>
-            <option>Not Sure</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Phone *</label>
-          <input type="tel" name="phone" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Business Type *</label>
-          <select name="business-type" required>
-            <option value="">Select</option>
-            <option>Plumbing</option>
-            <option>HVAC</option>
-            <option>Electrical</option>
-            <option>Roofing</option>
-            <option>Cleaning</option>
-            <option>Landscaping</option>
-            <option>Pest Control</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <label>Service Area & Goals *</label>
-          <textarea
-            name="message"
-            required
-            placeholder="City, services, and main issue you're facing"
-          ></textarea>
-        </div>
-
-
-        <button type="submit" class="btn-primary large">
-          Get My Free LSA Consultation
-        </button>
-
-
-        <p style="
-          text-align:center;
-          font-size:12px;
-          margin-top:12px;
-          color:#6b7280;
-        ">
-          Licensed service businesses only.
-        </p>
-
-
-        <p style="text-align:center;font-size:14px;margin-top:18px;">
-          Need help beyond LSAs?<br>
-          <strong>We also manage Google Search Ads To Increase Local Visibility When Your Location Favors Competition In LSAs</strong>
-        </p>
-
-      </form>
-
-
-      <!-- CONTACT INFO -->
-      <!-- CONTACT INFO -->
-<div style="
-  text-align: center;
-  margin-top: 40px;
-  padding: 30px;
-  background: var(--bg-light);
-  border-radius: 12px;
-">
-
-  <h3>Other Ways to Reach Us</h3>
-
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:contact@bluegridmedia.com">
-      contact@bluegridmedia.com
-    </a>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <a href="tel:+18064592162">
-      +1 (806) 459-2162
-    </a>
-  </p>
-
-  <p><strong>Response Time:</strong> Within 24 hours</p>
-
-</div>
-
-
     </div>
-  </div>
-</section>
+  </section>
 
-</section>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
 
-
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-
-<script>
-  fetch("footer.html")
-    .then(r => r.text())
-    .then(d => {
-      document.getElementById("footer-placeholder").innerHTML = d;
+  <script>
+    fetch("/nav.html").then(r => r.text()).then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+      const nav = document.getElementById("siteNav");
+      window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+      const hamburger = document.getElementById("navHamburger");
+      const navLinks  = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        hamburger.classList.toggle("open", open);
+        hamburger.setAttribute("aria-expanded", open);
+      });
     });
-</script>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Google Analytics 4
-  gtag('config', 'G-WEMSC670ZR');
-
-  // Google Ads
-  gtag('config', 'AW-17840803263');
-</script>
-<link rel="canonical" href="https://www.bluegridmedia.com/contact">
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Blue Grid Media</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header style="padding: 45px 0 55px;">
-  <div class="container" style="text-align:center;">
-
-    <div class="logo-container" style="margin-bottom: 25px;">
-      <a href="/">
-        <img src="logo.png" alt="Blue Grid Media" class="logo">
-      </a>
-    </div>
-
-    <h1>Contact Us</h1>
-
-    <p style="max-width:650px;margin:15px auto;">
-      Ready to dominate your local market? Let's talk.
-    </p>
-
-    <!-- Proof Line -->
-    <p style="margin-top:10px;font-size:1rem;opacity:0.85;">
-Helping service businesses generate qualified leads through proven local advertising strategies.    </p>
-
-    <!-- CTA Button -->
-    <div style="margin-top:25px;">
-      <a href="#contact-form" class="btn-secondary large">
-        Get My Free LSA Consultation
-      </a>
-    </div>
-
-    <!-- Authority Icons -->
-    <div style="
-      margin-top:45px;
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-      font-size:14px;
-      opacity:0.9;
-    ">
-      <span>✔ LSA Specialists</span>
-      <span>✔ No Long Contracts</span>
-      <span>✔ Lead-Focused</span>
-    </div>
-
-    <!-- Warning -->
-    <p style="
-      margin-top:22px;
-      font-weight:600;
-      color:#adc5da;
-    ">
-Start with your free consultation and find out what we can do for you.    </p>
-
-  </div>
-</header>
-
-
-<!-- BACKGROUND LAYER -->
-<section class="contact-support">
-
-<!-- MAIN SECTION -->
-<section class="about-section" style="padding: 40px 0;">
-
-  <div class="container">
-    <div style="max-width: 600px; margin: 0 auto;">
-
-
-      <!-- TRUST BOX -->
-      <div style="
-        margin-bottom: 30px;
-        padding: 20px;
-        text-align: center;
-        background: #f7f9fc;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      ">
-
-        <p style="
-          margin: 0 0 10px 0;
-          font-weight: 600;
-          font-size: 16px;
-          color: #0f2a44;
-        ">
-          Trusted by local service businesses nationwide
-        </p>
-
-        <ul style="list-style:none; padding:0; margin:0; font-size:14.5px;">
-          <li>✔ Hundreds of LSA accounts optimized</li>
-          <li>✔ Plumbers, HVAC, Roofers & More</li>
-          <li>✔ LSA-First Strategy</li>
-        </ul>
-
-      </div>
-
-
-      <!-- FORM -->
-      <form 
-        id="contact-form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/thank-you.html"
-        class="contact-form"
-      >
-
-        <input type="hidden" name="form-name" value="contact" />
-
-        <p style="display:none">
-          <label>Don’t fill this out: <input name="bot-field" /></label>
-        </p>
-
-
-        <div class="form-group">
-          <label>Google LSA Status *</label>
-          <select name="lsa-status" required>
-            <option value="">Select one</option>
-            <option>Currently Running</option>
-            <option>Underperforming</option>
-            <option>Need Setup</option>
-            <option>Not Sure</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Phone *</label>
-          <input type="tel" name="phone" required>
-        </div>
-
-
-        <div class="form-group">
-          <label>Business Type *</label>
-          <select name="business-type" required>
-            <option value="">Select</option>
-            <option>Plumbing</option>
-            <option>HVAC</option>
-            <option>Electrical</option>
-            <option>Roofing</option>
-            <option>Cleaning</option>
-            <option>Landscaping</option>
-            <option>Pest Control</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <label>Service Area & Goals *</label>
-          <textarea
-            name="message"
-            required
-            placeholder="City, services, and main issue you're facing"
-          ></textarea>
-        </div>
-
-
-        <button type="submit" class="btn-primary large">
-          Get My Free LSA Consultation
-        </button>
-
-
-        <p style="
-          text-align:center;
-          font-size:12px;
-          margin-top:12px;
-          color:#6b7280;
-        ">
-          Licensed service businesses only.
-        </p>
-
-
-        <p style="text-align:center;font-size:14px;margin-top:18px;">
-          Need help beyond LSAs?<br>
-          <strong>We also manage Google Search Ads To Increase Local Visibility When Your Location Favors Competition In LSAs</strong>
-        </p>
-
-      </form>
-
-
-      <!-- CONTACT INFO -->
-      <!-- CONTACT INFO -->
-<div style="
-  text-align: center;
-  margin-top: 40px;
-  padding: 30px;
-  background: var(--bg-light);
-  border-radius: 12px;
-">
-
-  <h3>Other Ways to Reach Us</h3>
-
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:contact@bluegridmedia.com">
-      contact@bluegridmedia.com
-    </a>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <a href="tel:+18064592162">
-      +1 (806) 459-2162
-    </a>
-  </p>
-
-  <p><strong>Response Time:</strong> Within 24 hours</p>
-
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-</section>
-
-
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-
-<script>
-  fetch("footer.html")
-    .then(r => r.text())
-    .then(d => {
-      document.getElementById("footer-placeholder").innerHTML = d;
+    fetch("/footer.html").then(r => r.text()).then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
     });
-</script>
-
-<script src="script.js"></script>
-
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>

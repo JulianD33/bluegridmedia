@@ -144,7 +144,7 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://bluegridmedia.com/plumbing-ads-playbook-google-local-services-ads-vs-google-ads-2026-guide" />
@@ -224,7 +224,9 @@
 
 <body>
 
-<header style="padding: 35px 0;">
+  <div id="nav-placeholder"></div>
+
+<header>
   <div class="container" style="text-align:center;">
     <div class="logo-container" style="margin-bottom: 20px;">
       <a href="/">
@@ -449,7 +451,16 @@ Please review and refund/mark invalid.
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch("footer.html")
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
+    });
+  });
+  fetch("/footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;

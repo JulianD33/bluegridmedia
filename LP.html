@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Google Local Services Ads Management & Performance Review</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
@@ -25,14 +25,10 @@
 
 <body>
 
-<header style="padding: 45px 0;">
-  <div class="container">
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="logo.png" alt="Blue Grid Media" class="logo">
-      </a>
-    </div>
+  <div id="nav-placeholder"></div>
 
+<header>
+  <div class="container">
     <h1>Google Local Services Ads Management for Local Service Businesses</h1>
 
     <p>
@@ -241,7 +237,16 @@
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-  fetch("footer.html")
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
+    });
+  });
+  fetch("/footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;

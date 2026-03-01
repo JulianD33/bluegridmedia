@@ -20,18 +20,16 @@
   <title>Case Study – HVAC Lead Growth with LSA & Google Ads | Blue Grid Media</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header style="padding: 35px 0;">
-  <div class="container" style="text-align:center;">
-    <div class="logo-container" style="margin-bottom: 20px;">
-      <a href="index.html">
-        <img src="logo.png" alt="Blue Grid Media" class="logo">
-      </a>
-    </div>
+  <!-- NAV -->
+  <div id="nav-placeholder"></div>
+
+<header>
+  <div class="container">
     <h1>Case Study: HVAC Local Service Business</h1>
     <p>Scaling lead volume using Google Local Services Ads and Google Search</p>
   </div>
@@ -161,13 +159,22 @@
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    const hamburger = document.getElementById("navHamburger");
+    const navLinks  = document.getElementById("navLinks");
+    hamburger.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      hamburger.classList.toggle("open", open);
+      hamburger.setAttribute("aria-expanded", open);
     });
+  });
+  fetch("/footer.html").then(r => r.text()).then(html => {
+    document.getElementById("footer-placeholder").innerHTML = html;
+  });
 </script>
-
 </body>
 </html>
 
