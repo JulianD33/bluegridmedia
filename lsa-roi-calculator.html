@@ -695,27 +695,6 @@
       padding: 1.5rem;
       text-align: center;
       box-shadow: 0 8px 24px rgba(14,165,164,0.25);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .sidebar-cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .sidebar-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(14,165,164,0.35);
-    }
-    .sidebar-cta:hover::before {
-      opacity: 1;
     }
     .sidebar-cta h3 {
       color: #d1fafa;
@@ -730,7 +709,7 @@
       margin-bottom: 1rem;
     }
     .sidebar-cta a {
-      display: block;
+      display: inline-block;
       background: #fff;
       color: #0f2d4e;
       font-weight: 700;
@@ -740,11 +719,15 @@
       text-decoration: none;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
     }
     .sidebar-cta a:hover { 
       background: #f0fafa;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .sidebar-cta a:active {
+      transform: translateY(0);
     }
     .sidebar-card {
       background: linear-gradient(135deg, #f8fafc, #ffffff);
@@ -752,12 +735,7 @@
       border-radius: 10px;
       padding: 1.5rem;
       margin-top: 1.5rem;
-      transition: all 0.3s ease;
       box-shadow: 0 2px 8px rgba(15,23,42,0.03);
-    }
-    .sidebar-card:hover {
-      box-shadow: 0 6px 16px rgba(15,23,42,0.06);
-      transform: translateY(-2px);
     }
     .sidebar-card h3 {
       font-size: 0.82rem;
