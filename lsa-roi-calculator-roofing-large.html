@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WEMSC670ZR');
+    gtag('config', 'AW-17840803263');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>LSA ROI Calculator for Roofers in Competitive Markets | Blue Grid Media</title>
+
+  <meta name="description" content="Roofing LSA calculator for large metros. Estimate CPL, booked jobs, and ROAS for roofers.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bluegridmedia.com/lsa-roi-calculator-roofing-large.html" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LSA ROI Calculator for Roofers in Competitive Markets | Blue Grid Media" />
+  <meta property="og:description" content="Roofing LSA calculator for large metros. Estimate CPL, booked jobs, and ROAS for roofers." />
+  <meta property="og:url" content="https://bluegridmedia.com/lsa-roi-calculator-roofing-large.html" />
+  <meta property="og:image" content="https://bluegridmedia.com/assets/images/calculator-og/roofing-large.png" />
+  <meta property="og:site_name" content="Blue Grid Media" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LSA ROI Calculator for Roofers in Competitive Markets | Blue Grid Media" />
+  <meta name="twitter:description" content="Roofing LSA calculator for large metros. Estimate CPL, booked jobs, and ROAS for roofers." />
+  <meta name="twitter:image" content="https://bluegridmedia.com/assets/images/calculator-og/roofing-large.png" />
+
+  <!-- JSON-LD: WebApplication + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Google LSA ROI Calculator",
+        "url": "https://bluegridmedia.com/lsa-roi-calculator",
+        "description": "Free calculator that estimates Google Local Services Ads cost per lead, monthly lead volume, booked jobs, and ROAS by industry and market.",
+        "applicationCategory": "BusinessApplication",
+        "author": {
+          "@type": "Person",
+          "name": "Julian Diep",
+          "url": "https://bluegridmedia.com/about"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Blue Grid Media"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegridmedia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://bluegridmedia.com/resources" },
+          { "@type": "ListItem", "position": 3, "name": "LSA ROI Calculator", "item": "https://bluegridmedia.com/lsa-roi-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I estimate booked jobs from LSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Booked jobs = (Monthly budget ÷ Cost per lead) × Call answer rate × Booking rate on answered calls. Use our free LSA ROI calculator to plug in your industry, budget, and conversion rates for an instant estimate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good cost per lead for Google Local Services Ads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CPL varies by industry and market. HVAC and plumbing often run $25–$80 per lead in mid-size markets; roofing $35–$100; pest control and landscaping $20–$55. Large metros typically cost 1.3x; small or rural markets can be 0.8x."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does cost per booked job matter more than CPL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cost per lead only tells you what you pay when the phone rings. Cost per booked job is what you pay when the job is on the schedule. Only booked jobs turn into revenue, so optimizing for cost per booked job keeps focus on the metric that actually drives results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What market size should I select in the LSA calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose Small market / rural if you serve a smaller or less competitive area (CPL multiplier 0.8x), Mid-size for most US markets (1.0x), or Large / competitive metro for big cities where CPL is typically 1.3x the industry average."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is ROAS calculated for LSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ROAS (return on ad spend) = Monthly revenue from booked jobs ÷ Monthly LSA budget. For example, $10,000 revenue on $2,000 spend is 5x ROAS. If you have recurring revenue, use the LTV-adjusted ROAS for a truer picture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the LSA calculator for recurring revenue businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Turn on 'Recurring revenue' and enter your average monthly value per customer and typical retention in months. The calculator will show customer lifetime value and LTV-adjusted ROAS, which is especially useful for pest control, lawn care, and HVAC maintenance plans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I improve my LSA economics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Focus on four levers: reviews (higher ratings and volume), answer rate (don't miss calls), job type completeness (enable every service you offer), and disputing invalid leads promptly. Improving any of these can lower effective cost per booked job and raise ROAS."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Use the LSA ROI Calculator",
+        "description": "Step-by-step guide to estimate your Google Local Services Ads cost per lead, booked jobs, and return on ad spend.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Select your industry",
+            "text": "Choose your industry from the dropdown (e.g. HVAC, Plumbing, Roofing). Each option uses typical cost-per-lead ranges for that trade."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Choose market size",
+            "text": "Pick Small market / rural, Mid-size market, or Large / competitive metro. This adjusts the estimated CPL for your area."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Enter your monthly LSA budget",
+            "text": "Enter the dollar amount you plan to spend on Local Services Ads per month (minimum $300)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Enter average job value and conversion rates",
+            "text": "Add your typical job value in dollars, then set call answer rate and booking rate on answered calls using the sliders. If you have recurring revenue, turn that on and enter monthly value and retention."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review your results",
+            "text": "The calculator shows estimated CPL, leads per month, booked jobs, cost per booked job, monthly revenue, and ROAS. Use the insight and 'What If' scenarios to see how improving one lever changes the numbers."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Page layout: two columns on desktop */
+    .calculator-page-wrap {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .calculator-page-wrap { grid-template-columns: 1fr; }
+      .calculator-sidebar { order: 2; }
+    }
+
+    /* Breadcrumb */
+    .article-breadcrumb {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+    .article-breadcrumb a { color: #0ea5a4; text-decoration: none; }
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    /* Calculator input panel */
+    .calc-panel {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      padding: 28px 32px 32px;
+      margin-bottom: 32px;
+    }
+    .calc-panel h3 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .calc-row {
+      margin-bottom: 20px;
+    }
+    .calc-row:last-child { margin-bottom: 0; }
+    .calc-row label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .calc-row select,
+    .calc-row input[type="number"] {
+      width: 100%;
+      max-width: 320px;
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+    }
+    .calc-row select:focus,
+    .calc-row input[type="number"]:focus {
+      outline: none;
+      border-color: #0ea5a4;
+      box-shadow: 0 0 0 3px rgba(14,165,164,0.15);
+    }
+    .market-radios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .market-radios label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 400;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+    .market-radios input { accent-color: #0ea5a4; cursor: pointer; }
+
+    /* Toggle */
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .toggle-switch {
+      width: 44px;
+      height: 24px;
+      background: #e2e8f0;
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .toggle-switch.on { background: #0ea5a4; }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+    .toggle-switch.on::after { transform: translateX(20px); }
+    .toggle-label { font-size: 0.9rem; color: #64748b; }
+    .recurring-fields { margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+    .recurring-fields.hidden { display: none; }
+
+    /* Sliders */
+    .slider-wrap { margin-top: 8px; max-width: 320px; }
+    .slider-wrap input[type="range"] {
+      width: 100%;
+      height: 8px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .slider-wrap input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #0ea5a4;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(14,165,164,0.4);
+    }
+    .slider-value { font-size: 0.95rem; font-weight: 600; color: #0ea5a4; }
+
+    /* Results dashboard */
+    .results-section { margin-bottom: 40px; }
+    .results-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .result-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      padding: 20px;
+      border: 1px solid #f1f5f9;
+    }
+    .result-card .metric-name {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #64748b;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .result-card .metric-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0ea5a4;
+      margin-bottom: 8px;
+    }
+    .result-card .metric-desc {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    /* Insight line */
+    .insight-line {
+      background: #f0fafa;
+      border: 1px solid #b8e6e6;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .results-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      align-items: center;
+    }
+    .results-action-btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+    }
+    .results-action-btn:hover {
+      border-color: #0ea5a4;
+      color: #0ea5a4;
+    }
+    .results-action-btn-primary {
+      background: #0ea5a4;
+      color: #fff;
+      border-color: #0ea5a4;
+    }
+    .results-action-btn-primary:hover {
+      background: #0b8f8e;
+      color: #fff;
+      border-color: #0b8f8e;
+    }
+    .email-results-form {
+      margin-top: 20px;
+      padding: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+    .email-results-form.hidden { display: none; }
+    .email-results-intro { margin-bottom: 16px; font-size: 0.9rem; color: #64748b; }
+    .email-results-label {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .email-results-label input {
+      display: block;
+      margin-top: 4px;
+      padding: 8px 12px;
+      width: 100%;
+      max-width: 280px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .email-results-buttons { margin-top: 16px; display: flex; gap: 12px; align-items: center; }
+    .email-results-success { color: #0ea5a4; font-weight: 600; }
+
+    /* What If section */
+    .whatif-section {
+      background: #f7f9fc;
+      border-radius: 14px;
+      padding: 28px 32px 32px;
+      margin-bottom: 40px;
+    }
+    .whatif-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 22px;
+    }
+    .whatif-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 700px) { .whatif-grid { grid-template-columns: 1fr; } }
+    .whatif-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      border: 1px solid #e2e8f0;
+    }
+    .whatif-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .whatif-card .delta {
+      font-size: 0.9rem;
+      color: #0ea5a4;
+      font-weight: 600;
+    }
+
+    /* Sidebar (match article pages) */
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f2d4e, #0ea5a4);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .sidebar-cta h3 {
+      color: #d1fafa;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .sidebar-cta p {
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+    .sidebar-cta a {
+      display: block;
+      background: #fff;
+      color: #0f2d4e;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1rem;
+      border-radius: 7px;
+      text-decoration: none;
+    }
+    .sidebar-cta a:hover { background: #f0fafa; }
+    .sidebar-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .sidebar-card h3 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .sidebar-card ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar-card ul li { padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; font-size: 0.92rem; }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+    .sidebar-card a { color: #0ea5a4; text-decoration: none; }
+    .sidebar-card a:hover { text-decoration: underline; }
+
+    /* Content below calculator */
+    .calculator-content { margin-top: 48px; }
+    .calculator-content h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .calculator-content h2:first-child { margin-top: 0; }
+    .calculator-content p {
+      margin-bottom: 18px;
+      line-height: 1.7;
+      color: #334155;
+    }
+    .calculator-content ul {
+      margin: 18px 0 24px;
+      padding-left: 22px;
+    }
+    .calculator-content li { margin-bottom: 8px; line-height: 1.6; }
+    .calculator-content a { color: #0ea5a4; font-weight: 500; text-decoration: none; }
+    .calculator-content a:hover { text-decoration: underline; }
+
+    /* CTA box after content */
+    .calculator-cta-box {
+      background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
+      color: #fff;
+      border-radius: 14px;
+      padding: 36px 40px;
+      margin-top: 48px;
+      text-align: center;
+    }
+    .calculator-cta-box h2 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .calculator-cta-box p {
+      color: #e2e8f0;
+      margin-bottom: 24px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .calculator-cta-box .btn-primary {
+      background: #fff;
+      color: #0f2d4e !important;
+    }
+    .calculator-cta-box .btn-primary:hover { background: #f0fafa; }
+
+    /* Embed mode: hide nav/footer, show attribution bar */
+    body.embed-mode .site-nav,
+    body.embed-mode .site-footer { display: none !important; }
+    body.embed-mode { padding-top: 0; }
+    .embed-attribution {
+      display: none;
+      padding: 10px 20px;
+      background: #f1f5f9;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    body.embed-mode .embed-attribution {
+      display: block;
+    }
+    .embed-attribution a { color: #0ea5a4; font-weight: 600; text-decoration: none; }
+    .embed-attribution a:hover { text-decoration: underline; }
+    .embed-cta-box {
+      background: #f0fafa;
+      border: 1px solid #b8e6e6;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+    .embed-cta-box h3 { font-size: 1.1rem; margin-bottom: 12px; color: #0f172a; }
+    .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 14px; }
+    .embed-code-wrap {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin-bottom: 12px;
+    }
+    .embed-code-wrap code { white-space: pre; }
+  </style>
+</head>
+<body>
+  <script>window.__LSA_SNAPSHOT = {"industry":"roofing","market":"large","budget":3000,"jobValue":8000};</script>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <span class="logo-inner">
+          <svg class="logo-svg" width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0"  y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="logo-text">
+            <span class="logo-name">Blue Grid</span>
+            <span class="logo-sub">Media</span>
+          </span>
+        </span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <a href="/free-lsa-consultation.html" class="nav-cta">Free Consultation</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header style="padding: 35px 0;">
+    <div class="container" style="text-align: center;">
+      <h1>Free Google LSA ROI Calculator</h1>
+      <p style="max-width: 640px; margin: 12px auto 0;">
+        Estimate your cost per lead, booked jobs, and return on ad spend by industry and market — in seconds.
+      </p>
+    </div>
+  </header>
+
+  <div class="embed-attribution">
+    Powered by <a href="https://bluegridmedia.com/lsa-roi-calculator" target="_blank" rel="noopener">Blue Grid Media</a> — Free LSA ROI Calculator
+  </div>
+
+  <section class="about-section" style="padding: 40px 0 60px;">
+    <div class="container">
+      <div class="calculator-page-wrap">
+
+        <div class="calculator-main">
+
+          <div class="article-breadcrumb">
+            <a href="/">Home</a> &rsaquo; <a href="/resources">Resources</a> &rsaquo; LSA ROI Calculator
+          </div>
+
+          <!-- Step 1: Your Business -->
+          <div class="calc-panel">
+            <h3>Step 1: Your Business</h3>
+            <div class="calc-row">
+              <label for="industry">Industry</label>
+              <select id="industry" aria-label="Select your industry">
+                <option value="52" data-slug="hvac">HVAC</option>
+                <option value="57" data-slug="plumbing">Plumbing</option>
+                <option value="67" data-slug="roofing">Roofing</option>
+                <option value="50" data-slug="electrical">Electrical</option>
+                <option value="50" data-slug="water-damage-restoration">Water Damage Restoration</option>
+                <option value="52" data-slug="general-contractors">General Contractors</option>
+                <option value="38" data-slug="pest-control">Pest Control</option>
+                <option value="35" data-slug="landscaping">Landscaping / Lawn Care</option>
+                <option value="28" data-slug="house-cleaning">House Cleaning</option>
+                <option value="35" data-slug="appliance-repair">Appliance Repair</option>
+                <option value="35" data-slug="garage-door">Garage Door</option>
+                <option value="32" data-slug="locksmith">Locksmith</option>
+                <option value="42" data-slug="tree-services">Tree Services</option>
+                <option value="175" data-slug="lawyers">Lawyers</option>
+                <option value="65" data-slug="dentists">Dentists</option>
+                <option value="52" data-slug="chiropractors">Chiropractors</option>
+                <option value="80" data-slug="real-estate-agents">Real Estate Agents</option>
+                <option value="42" data-slug="other-home-services">Other Home Services</option>
+              </select>
+            </div>
+            <div class="calc-row">
+              <label>Market size</label>
+              <div class="market-radios">
+                <label><input type="radio" name="market" value="0.8" data-market="small" checked> Small market / rural</label>
+                <label><input type="radio" name="market" value="1.0" data-market="mid"> Mid-size market</label>
+                <label><input type="radio" name="market" value="1.3" data-market="large"> Large / competitive metro</label>
+              </div>
+            </div>
+            <div class="calc-row">
+              <label for="budget">Monthly LSA budget ($)</label>
+              <input type="number" id="budget" min="300" value="1500" step="50" aria-label="Monthly LSA budget in dollars">
+            </div>
+          </div>
+
+          <!-- Step 2: Your Jobs -->
+          <div class="calc-panel">
+            <h3>Step 2: Your Jobs</h3>
+            <div class="calc-row">
+              <label for="jobValue">Average job value ($)</label>
+              <input type="number" id="jobValue" min="0" value="350" step="25" aria-label="Average job value in dollars">
+            </div>
+            <div class="calc-row">
+              <label>Recurring revenue?</label>
+              <div class="toggle-wrap">
+                <div class="toggle-switch" id="recurringToggle" role="switch" aria-checked="false" tabindex="0"></div>
+                <span class="toggle-label" id="recurringLabel">No</span>
+              </div>
+              <div class="recurring-fields hidden" id="recurringFields">
+                <div class="calc-row">
+                  <label for="monthlyRecurring">Average monthly recurring value per customer ($)</label>
+                  <input type="number" id="monthlyRecurring" min="0" value="50" step="5">
+                </div>
+                <div class="calc-row">
+                  <label for="retentionMonths">Average customer retention (months)</label>
+                  <input type="number" id="retentionMonths" min="1" value="24" step="1">
+                </div>
+              </div>
+            </div>
+            <div class="calc-row">
+              <label>Call answer rate</label>
+              <div class="slider-wrap">
+                <input type="range" id="answerRate" min="50" max="100" value="75" aria-label="Call answer rate percent">
+                <span class="slider-value" id="answerRateVal">75%</span>
+              </div>
+            </div>
+            <div class="calc-row">
+              <label>Booking rate on answered calls</label>
+              <div class="slider-wrap">
+                <input type="range" id="bookingRate" min="20" max="80" value="45" aria-label="Booking rate percent">
+                <span class="slider-value" id="bookingRateVal">45%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="results-section">
+            <h2>Your estimated results</h2>
+            <div class="results-grid" id="resultsGrid">
+              <div class="result-card">
+                <div class="metric-name">Estimated CPL</div>
+                <div class="metric-value" id="outCpl">—</div>
+                <div class="metric-desc">What you'll likely pay per lead in your market</div>
+              </div>
+              <div class="result-card">
+                <div class="metric-name">Leads Per Month</div>
+                <div class="metric-value" id="outLeads">—</div>
+                <div class="metric-desc">Estimated monthly lead volume at this budget</div>
+              </div>
+              <div class="result-card">
+                <div class="metric-name">Booked Jobs / Month</div>
+                <div class="metric-value" id="outBooked">—</div>
+                <div class="metric-desc">Jobs you'll likely book after answer and conversion rates</div>
+              </div>
+              <div class="result-card">
+                <div class="metric-name">Cost Per Booked Job</div>
+                <div class="metric-value" id="outCostPerJob">—</div>
+                <div class="metric-desc">Your real cost per job, not per lead</div>
+              </div>
+              <div class="result-card">
+                <div class="metric-name">Monthly Revenue from LSA</div>
+                <div class="metric-value" id="outRevenue">—</div>
+                <div class="metric-desc">Estimated revenue from booked jobs</div>
+              </div>
+              <div class="result-card">
+                <div class="metric-name">ROAS</div>
+                <div class="metric-value" id="outRoas">—</div>
+                <div class="metric-desc">Return on every dollar you spend</div>
+              </div>
+              <div class="result-card recurring-only hidden" id="cardLtv">
+                <div class="metric-name">Customer Lifetime Value</div>
+                <div class="metric-value" id="outLtv">—</div>
+                <div class="metric-desc">What each acquired customer is worth over time</div>
+              </div>
+              <div class="result-card recurring-only hidden" id="cardLtvRoas">
+                <div class="metric-name">LTV-Adjusted ROAS</div>
+                <div class="metric-value" id="outLtvRoas">—</div>
+                <div class="metric-desc">Your true return accounting for recurring revenue</div>
+              </div>
+            </div>
+            <p class="insight-line" id="insightLine"></p>
+            <div class="results-actions">
+              <button type="button" class="results-action-btn" id="copyLinkBtn" aria-label="Copy shareable link">Copy link</button>
+              <button type="button" class="results-action-btn" id="exportCsvBtn">Export CSV</button>
+              <button type="button" class="results-action-btn results-action-btn-primary" id="emailResultsBtn">Email my results</button>
+            </div>
+            <div class="email-results-form hidden" id="emailResultsForm">
+              <p class="email-results-intro">We'll send this scenario to your inbox so you can share or revisit it later.</p>
+              <form name="lsa-calculator-email" method="POST" data-netlify="true" netlify-honeypot="bot" id="emailResultsNetlifyForm">
+                <input type="hidden" name="form-name" value="lsa-calculator-email">
+                <p class="hidden"><label>Don't fill this out: <input name="bot"></label></p>
+                <label class="email-results-label">Email <input type="email" name="email" required placeholder="you@example.com"></label>
+                <label class="email-results-label">Name (optional) <input type="text" name="name" placeholder="Your name"></label>
+                <textarea name="results_summary" id="emailResultsSummary" class="hidden" aria-hidden="true"></textarea>
+                <div class="email-results-buttons">
+                  <button type="submit" class="btn-primary">Send my results</button>
+                  <button type="button" class="results-action-btn" id="emailResultsCancel">Cancel</button>
+                </div>
+              </form>
+              <p class="email-results-success hidden" id="emailResultsSuccess">Thanks! Check your email for the results.</p>
+            </div>
+          </div>
+
+          <!-- What If -->
+          <div class="whatif-section">
+            <h2>What If You Improved One Thing?</h2>
+            <div class="whatif-grid">
+              <div class="whatif-card">
+                <h4>Scenario A: Answer rate +15%</h4>
+                <p class="delta" id="whatifA"></p>
+              </div>
+              <div class="whatif-card">
+                <h4>Scenario B: Booking rate +10%</h4>
+                <p class="delta" id="whatifB"></p>
+              </div>
+              <div class="whatif-card">
+                <h4>Scenario C: Budget +50%</h4>
+                <p class="delta" id="whatifC"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explanatory content -->
+          <div class="calculator-content">
+            <div class="embed-cta-box">
+            <h3>Share or embed this calculator</h3>
+            <p>Partner sites and industry blogs can embed the tool with attribution for high-quality backlinks. Copy the code below:</p>
+            <div class="embed-code-wrap"><code id="embedCodeSnippet">&lt;iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"&gt;&lt;/iframe&gt;</code></div>
+            <button type="button" class="results-action-btn" id="copyEmbedBtn">Copy embed code</button>
+          </div>
+
+            <h2>How This Calculator Works</h2>
+            <p>
+              The CPL ranges are based on aggregated data from managed LSA accounts across US markets. Market multipliers reflect real pricing differences between rural, mid-size, and metro areas. Answer rate and booking rate defaults are conservative industry averages — your actual performance may be better or worse.
+            </p>
+
+            <h2>Why Cost Per Booked Job Matters More Than CPL</h2>
+            <p>
+              Cost per lead tells you what you pay when the phone rings. Cost per booked job tells you what you pay when the job is on the schedule. Leads can be wrong numbers, out-of-area, or no-shows. Only booked jobs turn into revenue. If you optimize for CPL alone, you might be tempted to chase cheap leads that don't convert. Optimizing for cost per booked job keeps the focus on the number that actually moves the needle: how much you spend to put a paying customer on the calendar.
+            </p>
+            <p>
+              Once you know your real cost per booked job, you can decide whether to scale budget, improve answer rate, or invest in conversion (booking rate). The calculator above gives you a starting point; your LSA dashboard and CRM will give you the real numbers to act on.
+            </p>
+
+            <h2>How to Improve Your LSA Economics</h2>
+            <ul>
+              <li><strong>Reviews</strong> — Higher ratings and more recent reviews improve ranking and often lower CPL. <a href="/google-lsa-ranking-factors">LSA ranking factors</a>.</li>
+              <li><strong>Answer rate</strong> — Missing calls hurts ranking and kills revenue. Staff phones or use a reliable answering service. <a href="/lsa-no-calls-guide">Why you're not getting calls</a>.</li>
+              <li><strong>Job type completeness</strong> — Enable every service you actually offer so you appear for more searches.</li>
+              <li><strong>Lead dispute process</strong> — Dispute invalid leads promptly so you get credits and keep your metrics clean.</li>
+            </ul>
+
+            <h2>The Recurring Revenue Multiplier</h2>
+            <p>
+              For pest control, house cleaning, lawn care, and HVAC maintenance plans, the first job is only the beginning. A one-time $200 service that turns into a $60/month contract for two years is worth $1,640 in lifetime value — not $200. When you turn on "Recurring revenue" in the calculator, you're seeing how that LTV changes your effective return on ad spend.
+            </p>
+            <p>
+              Businesses with strong recurring revenue can afford to pay more per lead because each acquired customer pays back over time. If your model includes recurring revenue, use the LTV-adjusted ROAS to judge whether scaling LSA makes sense. See <a href="/google-lsa-for-pest-control">LSA for pest control</a> and <a href="/google-lsa-for-hvac-companies">LSA for HVAC companies</a> for industry-specific strategies.
+            </p>
+          </div>
+
+          <!-- CTA box -->
+          <div class="calculator-cta-box">
+            <h2>Want to Know What These Numbers Look Like for Your Specific Market?</h2>
+            <p>
+              The calculator gives you a solid estimate. A real audit gives you exact numbers — what competitors in your area are spending, what CPL you should realistically expect, and what's holding back your lead volume right now.
+            </p>
+            <a href="/contact" class="btn-primary large">Get a Free LSA Audit</a>
+          </div>
+        </div>
+
+        <aside class="calculator-sidebar">
+          <div class="sidebar-cta">
+            <h3>Free LSA Audit</h3>
+            <p>Find out what's costing you leads — no charge, no obligation.</p>
+            <a href="/contact">Request Audit</a>
+          </div>
+          <div class="sidebar-card">
+            <h3>Quick CPL reference (top 6 trades)</h3>
+            <ul>
+              <li>HVAC: ~$25–$80</li>
+              <li>Plumbing: ~$40–$75</li>
+              <li>Roofing: ~$35–$100</li>
+              <li>Electrical: ~$25–$80</li>
+              <li>Pest Control: ~$20–$60</li>
+              <li>Landscaping: ~$20–$55</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h3>Related guides</h3>
+            <ul>
+              <li><a href="/how-much-does-google-lsa-cost">How Much Does Google LSA Cost?</a></li>
+              <li><a href="/google-lsa-ranking-factors">LSA Ranking Factors</a></li>
+              <li><a href="/lsa-no-calls-guide">Why You're Not Getting LSA Calls</a></li>
+              <li><a href="/google-lsa-for-hvac-companies">LSA for HVAC Companies</a></li>
+              <li><a href="/google-lsa-for-pest-control">LSA for Pest Control</a></li>
+              <li><a href="/google-lsa-for-roofers">LSA for Roofers</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-cta-strip">
+      <div class="footer-cta-inner">
+        <p class="footer-cta-text">Ready to get more calls from Google?</p>
+        <a href="/free-lsa-consultation.html" class="footer-cta-btn">Book a Free Consultation</a>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Main footer navigation">
+        <p class="footer-col-heading">Pages</p>
+        <ul class="nav-col">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/team.html">Our Team</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Legal footer navigation">
+        <p class="footer-col-heading">Legal</p>
+        <ul class="nav-col">
+          <li><a href="/founder.html">Founder</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+        </ul>
+      </nav>
+      <div class="footer-right">
+        <a href="/index.html" class="footer-brand-logo">
+          <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0"  y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="footer-brand-text">
+            <span class="footer-brand-name">Blue Grid</span>
+            <span class="footer-brand-sub">Media</span>
+          </span>
+        </a>
+        <p class="brand-tag">Independent LSA specialists helping local trades get qualified leads.</p>
+        <div class="footer-contact" aria-label="Contact information">
+          <p class="footer-col-heading" style="text-align:right;">Contact</p>
+          <p class="contact-links">
+            <a href="mailto:contact@bluegridmedia.com">contact@bluegridmedia.com</a><br>
+            <a href="tel:+18064592162">+1 (806) 459-2162</a>
+          </p>
+          <div class="footer-socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/company/bluegrid-media" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.reddit.com/user/BlueGridMedia" target="_blank" rel="noopener" aria-label="Reddit">
+              <img src="/reddit.svg" alt="Reddit">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Blue Grid Media</span>
+        <span class="footer-bottom-tagline">Where Local Visibility Begins</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var industry = document.getElementById('industry');
+      var marketRadios = document.querySelectorAll('input[name="market"]');
+      var budget = document.getElementById('budget');
+      var jobValue = document.getElementById('jobValue');
+      var recurringToggle = document.getElementById('recurringToggle');
+      var recurringFields = document.getElementById('recurringFields');
+      var recurringLabel = document.getElementById('recurringLabel');
+      var monthlyRecurring = document.getElementById('monthlyRecurring');
+      var retentionMonths = document.getElementById('retentionMonths');
+      var answerRate = document.getElementById('answerRate');
+      var bookingRate = document.getElementById('bookingRate');
+      var answerRateVal = document.getElementById('answerRateVal');
+      var bookingRateVal = document.getElementById('bookingRateVal');
+
+      var outCpl = document.getElementById('outCpl');
+      var outLeads = document.getElementById('outLeads');
+      var outBooked = document.getElementById('outBooked');
+      var outCostPerJob = document.getElementById('outCostPerJob');
+      var outRevenue = document.getElementById('outRevenue');
+      var outRoas = document.getElementById('outRoas');
+      var outLtv = document.getElementById('outLtv');
+      var outLtvRoas = document.getElementById('outLtvRoas');
+      var cardLtv = document.getElementById('cardLtv');
+      var cardLtvRoas = document.getElementById('cardLtvRoas');
+      var insightLine = document.getElementById('insightLine');
+      var whatifA = document.getElementById('whatifA');
+      var whatifB = document.getElementById('whatifB');
+      var whatifC = document.getElementById('whatifC');
+
+      var lastResult = {};
+
+      function getIndustrySlug() {
+        var opt = industry.options[industry.selectedIndex];
+        return opt && opt.getAttribute('data-slug') ? opt.getAttribute('data-slug') : 'hvac';
+      }
+      function setIndustryBySlug(slug) {
+        var opts = industry.options;
+        for (var i = 0; i < opts.length; i++) {
+          if (opts[i].getAttribute('data-slug') === slug) {
+            industry.selectedIndex = i;
+            return true;
+          }
+        }
+        return false;
+      }
+      function getMarketSlug() {
+        var r = document.querySelector('input[name="market"]:checked');
+        if (!r) return 'mid';
+        return r.getAttribute('data-market') || (r.value === '0.8' ? 'small' : r.value === '1.3' ? 'large' : 'mid');
+      }
+      function setMarketBySlug(slug) {
+        var s = String(slug).toLowerCase();
+        marketRadios.forEach(function(r) {
+          r.checked = r.getAttribute('data-market') === s;
+        });
+      }
+
+      function getParams() {
+        var p = {
+          industry: getIndustrySlug(),
+          market: getMarketSlug(),
+          budget: Math.max(300, parseInt(budget.value, 10) || 1500),
+          jobValue: parseInt(jobValue.value, 10) || 350,
+          recurring: isRecurring() ? 1 : 0,
+          monthlyRecurring: parseInt(monthlyRecurring.value, 10) || 50,
+          retentionMonths: parseInt(retentionMonths.value, 10) || 24,
+          answerRate: parseInt(answerRate.value, 10) || 75,
+          bookingRate: parseInt(bookingRate.value, 10) || 45
+        };
+        return p;
+      }
+      function applyParams(p) {
+        if (p.industry) setIndustryBySlug(p.industry);
+        if (p.market) setMarketBySlug(p.market);
+        if (p.budget != null && p.budget >= 300) budget.value = p.budget;
+        if (p.jobValue != null && p.jobValue >= 0) jobValue.value = p.jobValue;
+        if (p.recurring) {
+          recurringToggle.classList.add('on');
+          recurringToggle.setAttribute('aria-checked', 'true');
+          recurringLabel.textContent = 'Yes';
+          recurringFields.classList.remove('hidden');
+        } else {
+          recurringToggle.classList.remove('on');
+          recurringToggle.setAttribute('aria-checked', 'false');
+          recurringLabel.textContent = 'No';
+          recurringFields.classList.add('hidden');
+        }
+        if (p.monthlyRecurring != null) monthlyRecurring.value = p.monthlyRecurring;
+        if (p.retentionMonths != null) retentionMonths.value = p.retentionMonths;
+        if (p.answerRate != null && p.answerRate >= 50 && p.answerRate <= 100) {
+          answerRate.value = p.answerRate;
+          answerRateVal.textContent = p.answerRate + '%';
+        }
+        if (p.bookingRate != null && p.bookingRate >= 20 && p.bookingRate <= 80) {
+          bookingRate.value = p.bookingRate;
+          bookingRateVal.textContent = p.bookingRate + '%';
+        }
+      }
+      function paramsToQuery(p) {
+        var parts = [];
+        if (p.industry) parts.push('industry=' + encodeURIComponent(p.industry));
+        if (p.market) parts.push('market=' + encodeURIComponent(p.market));
+        if (p.budget != null) parts.push('budget=' + p.budget);
+        if (p.jobValue != null) parts.push('jobValue=' + p.jobValue);
+        if (p.recurring) parts.push('recurring=1');
+        if (p.recurring && p.monthlyRecurring != null) parts.push('monthlyRecurring=' + p.monthlyRecurring);
+        if (p.recurring && p.retentionMonths != null) parts.push('retentionMonths=' + p.retentionMonths);
+        if (p.answerRate != null) parts.push('answerRate=' + p.answerRate);
+        if (p.bookingRate != null) parts.push('bookingRate=' + p.bookingRate);
+        return parts.length ? '?' + parts.join('&') : '';
+      }
+      function parseQuery() {
+        var q = window.location.search.slice(1);
+        if (!q) return null;
+        var p = {};
+        q.split('&').forEach(function(pair) {
+          var i = pair.indexOf('=');
+          if (i < 0) return;
+          var k = decodeURIComponent(pair.slice(0, i));
+          var v = decodeURIComponent(pair.slice(i + 1));
+          if (k === 'industry') p.industry = v;
+          else if (k === 'market') p.market = v;
+          else if (k === 'budget') p.budget = parseInt(v, 10);
+          else if (k === 'jobValue') p.jobValue = parseInt(v, 10);
+          else if (k === 'recurring') p.recurring = v === '1' ? 1 : 0;
+          else if (k === 'monthlyRecurring') p.monthlyRecurring = parseInt(v, 10);
+          else if (k === 'retentionMonths') p.retentionMonths = parseInt(v, 10);
+          else if (k === 'answerRate') p.answerRate = parseInt(v, 10);
+          else if (k === 'bookingRate') p.bookingRate = parseInt(v, 10);
+        });
+        return Object.keys(p).length ? p : null;
+      }
+      function updateHistory() {
+        var p = getParams();
+        var query = paramsToQuery(p);
+        var url = window.location.pathname + query;
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState({}, '', url);
+        }
+      }
+
+      function getMarketMultiplier() {
+        var r = document.querySelector('input[name="market"]:checked');
+        return r ? parseFloat(r.value) : 1;
+      }
+      function isRecurring() {
+        return recurringToggle.classList.contains('on');
+      }
+      function fmtMoney(n) {
+        if (n === null || isNaN(n) || n < 0) return '—';
+        return '$' + Math.round(n).toLocaleString();
+      }
+      function fmtNum(n) {
+        if (n === null || isNaN(n) || n < 0) return '—';
+        if (n >= 10) return Math.round(n).toLocaleString();
+        return n % 1 === 0 ? String(n) : n.toFixed(1);
+      }
+      function fmtRoas(x) {
+        if (x === null || isNaN(x) || x <= 0) return '—';
+        return x.toFixed(1) + 'x';
+      }
+
+      function runCalc() {
+        var midpointCpl = parseFloat(industry.value) || 50;
+        var mult = getMarketMultiplier();
+        var adjCpl = midpointCpl * mult;
+        var b = parseFloat(budget.value) || 0;
+        var jv = parseFloat(jobValue.value) || 0;
+        var ans = parseInt(answerRate.value, 10) / 100;
+        var book = parseInt(bookingRate.value, 10) / 100;
+
+        if (b < 300) b = 300;
+        budget.value = b;
+
+        var leads = b / adjCpl;
+        var answered = leads * ans;
+        var booked = answered * book;
+        var costPerJob = booked > 0 ? b / booked : null;
+        var revenue = booked * jv;
+        var roas = b > 0 ? revenue / b : null;
+
+        var ltv = null, ltvRoasVal = null;
+        if (isRecurring()) {
+          var mr = parseFloat(monthlyRecurring.value) || 0;
+          var ret = parseFloat(retentionMonths.value) || 1;
+          ltv = mr * ret;
+          var ltvRevenue = booked * ltv;
+          ltvRoasVal = b > 0 ? ltvRevenue / b : null;
+        }
+
+        lastResult = {
+          adjCpl: adjCpl, leads: leads, booked: booked, costPerJob: costPerJob,
+          revenue: revenue, roas: roas, ltv: ltv, ltvRoasVal: ltvRoasVal
+        };
+
+        outCpl.textContent = fmtMoney(adjCpl);
+        outLeads.textContent = fmtNum(leads);
+        outBooked.textContent = fmtNum(booked);
+        outCostPerJob.textContent = fmtMoney(costPerJob);
+        outRevenue.textContent = fmtMoney(revenue);
+        outRoas.textContent = fmtRoas(roas);
+
+        if (isRecurring()) {
+          cardLtv.classList.remove('hidden');
+          cardLtvRoas.classList.remove('hidden');
+          outLtv.textContent = fmtMoney(ltv);
+          outLtvRoas.textContent = fmtRoas(ltvRoasVal);
+        } else {
+          cardLtv.classList.add('hidden');
+          cardLtvRoas.classList.add('hidden');
+        }
+
+        var insight = '';
+        if (roas != null) {
+          if (roas < 3) insight = 'Your numbers are tight. This usually means answer rate or booking rate needs work before scaling budget. Let\'s look at your setup.';
+          else if (roas <= 7) insight = 'Solid foundation. Improving your answer rate or review score could push this significantly higher.';
+          else insight = 'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
+        }
+        insightLine.textContent = insight;
+
+        var ansPlus = Math.min(100, (ans * 100) + 15) / 100;
+        var bookedA = leads * ansPlus * book;
+        var roasA = b > 0 ? (bookedA * jv) / b : null;
+        var dBookedA = bookedA - booked;
+        whatifA.textContent = (dBookedA >= 0 ? '+' : '') + fmtNum(dBookedA) + ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
+
+        var bookPlus = Math.min(80, (book * 100) + 10) / 100;
+        var bookedB = answered * bookPlus;
+        var roasB = b > 0 ? (bookedB * jv) / b : null;
+        var dBookedB = bookedB - booked;
+        whatifB.textContent = (dBookedB >= 0 ? '+' : '') + fmtNum(dBookedB) + ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
+
+        var b50 = b * 1.5;
+        var leads50 = b50 / adjCpl;
+        var answered50 = leads50 * ans;
+        var booked50 = answered50 * book;
+        var revenue50 = booked50 * jv;
+        whatifC.textContent = '+' + fmtNum(leads50 - leads) + ' leads, ' + fmtMoney(revenue50 - revenue) + ' revenue (same CPL & rates)';
+
+        updateHistory();
+      }
+
+      function getCsvContent() {
+        var p = getParams();
+        var r = lastResult;
+        var rows = [
+          ['LSA ROI Calculator - Results', ''],
+          ['Inputs', ''],
+          ['Industry', p.industry || ''],
+          ['Market', p.market || ''],
+          ['Monthly budget ($)', p.budget || ''],
+          ['Average job value ($)', p.jobValue || ''],
+          ['Recurring revenue', p.recurring ? 'Yes' : 'No'],
+          ['Answer rate (%)', p.answerRate || ''],
+          ['Booking rate (%)', p.bookingRate || ''],
+          ['', ''],
+          ['Results', ''],
+          ['Estimated CPL', r.adjCpl != null ? r.adjCpl : ''],
+          ['Leads per month', r.leads != null ? r.leads : ''],
+          ['Booked jobs per month', r.booked != null ? r.booked : ''],
+          ['Cost per booked job ($)', r.costPerJob != null ? r.costPerJob : ''],
+          ['Monthly revenue ($)', r.revenue != null ? r.revenue : ''],
+          ['ROAS', r.roas != null ? r.roas + 'x' : '']
+        ];
+        if (r.ltv != null) {
+          rows.push(['Customer LTV ($)', r.ltv]);
+          rows.push(['LTV-adjusted ROAS', r.ltvRoasVal != null ? r.ltvRoasVal.toFixed(1) + 'x' : '']);
+        }
+        return rows.map(function(row) {
+          return row.map(function(cell) {
+            var s = String(cell);
+            if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) return '"' + s.replace(/"/g, '""') + '"';
+            return s;
+          }).join(',');
+        }).join('\n');
+      }
+
+      recurringToggle.addEventListener('click', function() {
+        var on = recurringToggle.classList.toggle('on');
+        recurringToggle.setAttribute('aria-checked', on);
+        recurringLabel.textContent = on ? 'Yes' : 'No';
+        recurringFields.classList.toggle('hidden', !on);
+        runCalc();
+      });
+      recurringToggle.addEventListener('keydown', function(e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          recurringToggle.click();
+        }
+      });
+
+      answerRate.addEventListener('input', function() {
+        answerRateVal.textContent = answerRate.value + '%';
+        runCalc();
+      });
+      bookingRate.addEventListener('input', function() {
+        bookingRateVal.textContent = bookingRate.value + '%';
+        runCalc();
+      });
+
+      industry.addEventListener('change', runCalc);
+      budget.addEventListener('input', runCalc);
+      jobValue.addEventListener('input', runCalc);
+      monthlyRecurring.addEventListener('input', runCalc);
+      retentionMonths.addEventListener('input', runCalc);
+      marketRadios.forEach(function(r) { r.addEventListener('change', runCalc); });
+
+      document.getElementById('copyLinkBtn').addEventListener('click', function() {
+        var url = window.location.origin + window.location.pathname + paramsToQuery(getParams());
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function() {
+            this.textContent = 'Copied!';
+            var btn = this;
+            setTimeout(function() { btn.textContent = 'Copy link'; }, 2000);
+          }.bind(this));
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = url;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          this.textContent = 'Copied!';
+          var btn = this;
+          setTimeout(function() { btn.textContent = 'Copy link'; }, 2000);
+        }
+      });
+
+      document.getElementById('exportCsvBtn').addEventListener('click', function() {
+        var csv = getCsvContent();
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'lsa-roi-calculator-results.csv';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      var emailForm = document.getElementById('emailResultsForm');
+      var emailFormForm = document.getElementById('emailResultsNetlifyForm');
+      var emailSummary = document.getElementById('emailResultsSummary');
+      var emailSuccess = document.getElementById('emailResultsSuccess');
+      document.getElementById('emailResultsBtn').addEventListener('click', function() {
+        emailForm.classList.remove('hidden');
+        emailSuccess.classList.add('hidden');
+        emailSummary.value = getCsvContent();
+      });
+      document.getElementById('emailResultsCancel').addEventListener('click', function() {
+        emailForm.classList.add('hidden');
+      });
+      if (emailFormForm) {
+        emailFormForm.addEventListener('submit', function() {
+          emailSummary.value = getCsvContent();
+        });
+      }
+      if (emailFormForm) {
+        emailFormForm.addEventListener('submit', function(ev) {
+          emailSummary.value = getCsvContent();
+          var form = this;
+          var action = form.getAttribute('action') || window.location.pathname || 'lsa-roi-calculator.html';
+          if (action.indexOf('?') < 0 && window.location.search) action += window.location.search;
+          var formData = new FormData(form);
+          fetch(action, { method: 'POST', body: formData })
+            .then(function() {
+              form.classList.add('hidden');
+              emailSuccess.classList.remove('hidden');
+            })
+            .catch(function() {
+              form.classList.add('hidden');
+              emailSuccess.classList.remove('hidden');
+            });
+          ev.preventDefault();
+        });
+      }
+
+      var embedSnippet = '<iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"></iframe>';
+      document.getElementById('copyEmbedBtn').addEventListener('click', function() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(embedSnippet).then(function() {
+            this.textContent = 'Copied!';
+            var btn = this;
+            setTimeout(function() { btn.textContent = 'Copy embed code'; }, 2000);
+          }.bind(this));
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = embedSnippet;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          this.textContent = 'Copied!';
+          var btn = this;
+          setTimeout(function() { btn.textContent = 'Copy embed code'; }, 2000);
+        }
+      });
+
+      var initial = parseQuery() || (window.__LSA_SNAPSHOT || null);
+      if (initial) applyParams(initial);
+      runCalc();
+    })();
+  </script>
+  <script>
+    (function() {
+      var search = window.location.search || '';
+      if (search.indexOf('embed=1') >= 0 || search.indexOf('embed=1&') >= 0) {
+        document.body.classList.add('embed-mode');
+      }
+    })();
+  </script>
+
+  <script>
+    (function() {
+      var nav = document.getElementById("siteNav");
+      if (nav) window.addEventListener("scroll", function() { nav.classList.toggle("scrolled", window.scrollY > 20); });
+      var hamburger = document.getElementById("navHamburger");
+      var navLinks = document.getElementById("navLinks");
+      if (hamburger && navLinks) hamburger.addEventListener("click", function() {
+        var open = navLinks.classList.toggle("open");
+        hamburger.classList.toggle("open", open);
+        hamburger.setAttribute("aria-expanded", open);
+      });
+    })();
+  </script>
+
+</body>
+</html>

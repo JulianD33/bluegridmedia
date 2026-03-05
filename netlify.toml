@@ -1,0 +1,8 @@
+# Netlify build configuration
+# Run calculator snapshot generator during deploy so static snapshot pages are published.
+
+[build]
+  command = "node scripts/build-calculator-snapshots.js"
+  publish = "."
+  # If you use a different build (e.g. npm run build), chain the snapshot script:
+  # command = "npm run build && node scripts/build-calculator-snapshots.js"
