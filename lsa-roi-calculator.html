@@ -226,20 +226,24 @@
       background: #ffffff;
       border-radius: 16px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 6px 24px rgba(15,23,42,0.06);
-      padding: 24px;
-      margin-bottom: 24px;
+      box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+      padding: 26px 28px;
+      margin-bottom: 28px;
       box-sizing: border-box;
       max-width: 100%;
       overflow: visible;
+      transition: box-shadow 0.2s ease;
+    }
+    .calc-panel:hover {
+      box-shadow: 0 14px 38px rgba(15,23,42,0.08);
     }
     .calc-panel h3 {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       color: #64748b;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .calc-row {
       margin-bottom: 20px;
@@ -255,25 +259,20 @@
     .calc-row select,
     .calc-row input[type="number"] {
       width: 100%;
-      max-width: 100%;
-      padding: 10px 14px;
+      max-width: 360px;
+      padding: 12px 14px;
+      border-radius: 10px;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
       font-family: 'Poppins', sans-serif;
       font-size: 0.95rem;
       box-sizing: border-box;
-    }
-    @media (min-width: 768px) {
-      .calc-row select,
-      .calc-row input[type="number"] {
-        max-width: 320px;
-      }
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .calc-row select:focus,
     .calc-row input[type="number"]:focus {
       outline: none;
-      border-color: #0ea5a4;
-      box-shadow: 0 0 0 3px rgba(14,165,164,0.15);
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 4px rgba(20,184,166,0.12);
     }
     .market-radios {
       display: flex;
@@ -357,12 +356,12 @@
 
     /* ── Results dashboard ── */
     .results-section {
-      margin-top: 24px;
+      margin-top: 26px;
       margin-bottom: 36px;
       min-width: 0;
       max-width: 100%;
       background: #f8fafc;
-      padding: 24px;
+      padding: 26px;
       border-radius: 16px;
       border: 1px solid #e2e8f0;
       box-sizing: border-box;
@@ -388,8 +387,8 @@
       background: #ffffff;
       border-radius: 14px;
       border: 1px solid #e2e8f0;
-      padding: 18px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(15,23,42,0.05);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       min-width: 0;
       max-width: 100%;
@@ -397,7 +396,7 @@
     }
     .result-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
     }
     .result-card .metric-name {
       font-size: 0.78rem;
@@ -408,7 +407,7 @@
       margin-bottom: 4px;
     }
     .result-card .metric-value {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: #0ea5a4;
       margin-bottom: 6px;
@@ -421,14 +420,14 @@
 
     /* ── Insight line ── */
     .insight-line {
-      background: #f0fdfc;
+      background: #f0fdfa;
       border: 1px solid #ccfbf1;
       border-radius: 12px;
-      padding: 16px 20px;
-      margin-top: 20px;
+      padding: 18px 20px;
+      margin-top: 22px;
       font-size: 0.95rem;
       color: #334155;
-      line-height: 1.55;
+      line-height: 1.6;
     }
     .results-actions {
       display: flex;
@@ -530,18 +529,14 @@
       }
     }
     .whatif-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px 16px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px 18px;
       border: 1px solid #e2e8f0;
+      box-shadow: 0 3px 10px rgba(15,23,42,0.04);
       min-width: 0;
       max-width: 100%;
       box-sizing: border-box;
-    }
-    @media (min-width: 768px) {
-      .whatif-card {
-        padding: 16px 18px;
-      }
     }
     .whatif-card h4 {
       font-size: 0.88rem;
