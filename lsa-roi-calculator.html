@@ -173,8 +173,9 @@
   <style>
     /* ── Overflow / viewport protection ── */
     html, body {
-      max-width: 100%;
+      max-width: 100vw;
       overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     /* ── Section wrapper ── */
@@ -182,8 +183,8 @@
       width: 100%;
       max-width: 1120px;
       margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
       box-sizing: border-box;
     }
 
@@ -191,9 +192,9 @@
     .calculator-page-wrap {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 280px;
-      gap: 3rem;
+      gap: 2rem;
       width: 100%;
-      max-width: 1120px;
+      max-width: 100%;
       margin: 0 auto;
       min-width: 0;
       box-sizing: border-box;
@@ -201,12 +202,13 @@
     @media (max-width: 900px) {
       .calculator-page-wrap {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
       }
       .calculator-sidebar { order: 2; }
     }
     .calculator-main {
       min-width: 0;
+      max-width: 100%;
       overflow-x: hidden;
     }
 
@@ -224,8 +226,15 @@
       background: #fff;
       border-radius: 14px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      padding: 24px 28px 28px;
-      margin-bottom: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .calc-panel {
+        padding: 24px 28px 28px;
+      }
     }
     .calc-panel h3 {
       font-size: 0.82rem;
@@ -249,7 +258,7 @@
     .calc-row select,
     .calc-row input[type="number"] {
       width: 100%;
-      max-width: 320px;
+      max-width: 100%;
       padding: 10px 14px;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
@@ -257,11 +266,10 @@
       font-size: 0.95rem;
       box-sizing: border-box;
     }
-    /* On small screens let inputs fill the column */
-    @media (max-width: 480px) {
+    @media (min-width: 768px) {
       .calc-row select,
       .calc-row input[type="number"] {
-        max-width: 100%;
+        max-width: 320px;
       }
     }
     .calc-row select:focus,
@@ -322,9 +330,13 @@
     .recurring-fields.hidden { display: none; }
 
     /* ── Sliders ── */
-    .slider-wrap { margin-top: 8px; max-width: 320px; }
-    @media (max-width: 480px) {
-      .slider-wrap { max-width: 100%; }
+    .slider-wrap { 
+      margin-top: 8px; 
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px) {
+      .slider-wrap { max-width: 320px; }
     }
     .slider-wrap input[type="range"] {
       width: 100%;
@@ -348,8 +360,10 @@
 
     /* ── Results dashboard ── */
     .results-section {
+      margin-top: 20px;
       margin-bottom: 32px;
       min-width: 0;
+      max-width: 100%;
     }
     .results-section h2 {
       font-size: 1.25rem;
@@ -360,19 +374,30 @@
     }
     .results-grid {
       display: grid;
-      /* Never let a column be narrower than it can fit — collapses gracefully */
-      grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
+      gap: 12px;
       min-width: 0;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .results-grid {
+        gap: 14px;
+      }
     }
     .result-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      /* More horizontal padding, tighter vertical */
-      padding: 18px 24px;
+      padding: 16px;
       border: 1px solid #f1f5f9;
       min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px) {
+      .result-card {
+        padding: 18px 24px;
+      }
     }
     .result-card .metric-name {
       font-size: 0.78rem;
@@ -458,14 +483,14 @@
       margin-top: 4px;
       padding: 8px 12px;
       width: 100%;
-      max-width: 280px;
+      max-width: 100%;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
       box-sizing: border-box;
     }
-    @media (max-width: 480px) {
-      .email-results-label input { max-width: 100%; }
+    @media (min-width: 768px) {
+      .email-results-label input { max-width: 280px; }
     }
     .email-results-buttons { margin-top: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .email-results-success { color: #0ea5a4; font-weight: 600; }
@@ -474,8 +499,15 @@
     .whatif-section {
       background: #f7f9fc;
       border-radius: 14px;
-      padding: 24px 28px 28px;
+      padding: 20px;
       margin-bottom: 32px;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .whatif-section {
+        padding: 24px 28px 28px;
+      }
     }
     .whatif-section h2 {
       font-size: 1.15rem;
@@ -486,19 +518,30 @@
     }
     .whatif-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 12px;
       min-width: 0;
+      max-width: 100%;
     }
-    @media (max-width: 600px) {
-      .whatif-grid { grid-template-columns: 1fr; }
+    @media (min-width: 600px) {
+      .whatif-grid { 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
     }
     .whatif-card {
       background: #fff;
       border-radius: 10px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       border: 1px solid #e2e8f0;
       min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px) {
+      .whatif-card {
+        padding: 16px 18px;
+      }
     }
     .whatif-card h4 {
       font-size: 0.88rem;
@@ -594,8 +637,15 @@
       background: #f0fafa;
       border: 1px solid #b8e6e6;
       border-radius: 12px;
-      padding: 22px 24px;
+      padding: 18px;
       margin-bottom: 32px;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .embed-cta-box {
+        padding: 22px 24px;
+      }
     }
     .embed-cta-box h3 { font-size: 1.05rem; margin-bottom: 10px; color: #0f172a; }
     .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
@@ -622,9 +672,16 @@
       background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
       color: #fff;
       border-radius: 14px;
-      padding: 32px 36px;
+      padding: 24px 20px;
       margin-top: 40px;
       text-align: center;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .calculator-cta-box {
+        padding: 32px 36px;
+      }
     }
     .calculator-cta-box h2 {
       color: #fff;
@@ -718,7 +775,7 @@
     Powered by <a href="https://bluegridmedia.com/lsa-roi-calculator" target="_blank" rel="noopener">Blue Grid Media</a> — Free LSA ROI Calculator
   </div>
 
-  <section class="about-section" style="padding: 32px 0 56px;">
+  <section class="about-section" style="padding: 24px 0 56px;">
     <div class="container">
       <div class="calculator-page-wrap">
 
