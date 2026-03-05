@@ -347,7 +347,7 @@
     .toggle-switch:hover {
       background: #cbd5e1;
     }
-    .toggle-switch.on { 
+    .toggle-switch.on {
       background: linear-gradient(135deg, #0ea5a4, #14b8a6);
     }
     .toggle-switch.on:hover {
@@ -365,7 +365,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .toggle-switch.on::after { 
+    .toggle-switch.on::after {
       transform: translateX(20px);
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
@@ -374,8 +374,8 @@
     .recurring-fields.hidden { display: none; }
 
     /* ── Sliders ── */
-    .slider-wrap { 
-      margin-top: 8px; 
+    .slider-wrap {
+      margin-top: 8px;
       max-width: 100%;
       box-sizing: border-box;
     }
@@ -584,6 +584,8 @@
       border-color: transparent;
       box-shadow: 0 6px 16px rgba(14,165,164,0.35);
     }
+
+    /* ── Email results form ── */
     .email-results-form {
       margin-top: 16px;
       padding: 24px;
@@ -593,9 +595,9 @@
       box-shadow: 0 4px 12px rgba(15,23,42,0.04);
     }
     .email-results-form.hidden { display: none; }
-    .email-results-intro { 
-      margin-bottom: 18px; 
-      font-size: 0.95rem; 
+    .email-results-intro {
+      margin-bottom: 18px;
+      font-size: 0.95rem;
       color: #475569;
       line-height: 1.6;
     }
@@ -627,20 +629,30 @@
     @media (min-width: 768px) {
       .email-results-label input { max-width: 360px; }
     }
-    .email-results-buttons { 
-      margin-top: 18px; 
-      display: flex; 
-      gap: 12px; 
-      align-items: center; 
-      flex-wrap: wrap; 
+    .email-results-buttons {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .email-results-success { 
-      color: #0ea5a4; 
+    .email-results-success {
+      color: #0ea5a4;
       font-weight: 600;
       font-size: 0.95rem;
       padding: 12px 16px;
       background: #f0fdfa;
       border: 1px solid #ccfbf1;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .email-results-error {
+      color: #dc2626;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
       border-radius: 8px;
       margin-top: 12px;
     }
@@ -682,7 +694,7 @@
       max-width: 100%;
     }
     @media (min-width: 600px) {
-      .whatif-grid { 
+      .whatif-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
       }
@@ -750,7 +762,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       cursor: pointer;
     }
-    .sidebar-cta a:hover { 
+    .sidebar-cta a:hover {
       background: #f0fafa;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -815,9 +827,7 @@
       max-width: 100%;
     }
     @media (min-width: 768px) {
-      .embed-cta-box {
-        padding: 22px 24px;
-      }
+      .embed-cta-box { padding: 22px 24px; }
     }
     .embed-cta-box h3 { font-size: 1.05rem; margin-bottom: 10px; color: #0f172a; }
     .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
@@ -833,7 +843,6 @@
       margin-bottom: 12px;
       box-sizing: border-box;
     }
-    /* Wrap long embed strings instead of forcing horizontal scroll */
     .embed-code-wrap code {
       white-space: pre-wrap;
       word-break: break-all;
@@ -888,6 +897,9 @@
       max-width: 100%;
       height: auto;
     }
+
+    /* ── Utility ── */
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -1077,17 +1089,22 @@
                 <div class="metric-desc">Your true return accounting for recurring revenue</div>
               </div>
             </div>
+
             <p class="insight-line" id="insightLine"></p>
+
             <div class="results-actions">
               <button type="button" class="results-action-btn" id="copyLinkBtn" aria-label="Copy shareable link">Copy link</button>
               <button type="button" class="results-action-btn" id="exportCsvBtn">Export CSV</button>
               <button type="button" class="results-action-btn results-action-btn-primary" id="emailResultsBtn">Email my results</button>
             </div>
+
+            <!-- Email results form — POSTs JSON to /.netlify/functions/email-results -->
             <div class="email-results-form hidden" id="emailResultsForm">
               <p class="email-results-intro">We'll send your personalized LSA results to your inbox so you can share them with your team or revisit later.</p>
-              <form name="lsa-calculator-email" method="POST" data-netlify="true" netlify-honeypot="bot" id="emailResultsNetlifyForm">
-                <input type="hidden" name="form-name" value="lsa-calculator-email">
-                <p class="hidden"><label>Don't fill this out: <input name="bot"></label></p>
+              <form id="emailResultsInnerForm" novalidate>
+                <!-- Honeypot -->
+                <p style="display:none;"><label>Don't fill this out: <input name="bot" tabindex="-1" autocomplete="off" id="botField"></label></p>
+
                 <label class="email-results-label">
                   Email address *
                   <input type="email" name="email" required placeholder="you@example.com" id="emailInput">
@@ -1100,24 +1117,17 @@
                   Business name (optional)
                   <input type="text" name="business" placeholder="Your company" id="businessInput">
                 </label>
-                <input type="hidden" name="industry" id="emailIndustry">
-                <input type="hidden" name="market" id="emailMarket">
-                <input type="hidden" name="budget" id="emailBudget">
-                <input type="hidden" name="job_value" id="emailJobValue">
-                <input type="hidden" name="estimated_cpl" id="emailCpl">
-                <input type="hidden" name="leads_per_month" id="emailLeads">
-                <input type="hidden" name="booked_jobs" id="emailBooked">
-                <input type="hidden" name="cost_per_job" id="emailCostPerJob">
-                <input type="hidden" name="monthly_revenue" id="emailRevenue">
-                <input type="hidden" name="roas" id="emailRoas">
-                <textarea name="results_summary" id="emailResultsSummary" class="hidden" aria-hidden="true"></textarea>
+
                 <div class="email-results-buttons">
-                  <button type="submit" class="btn-primary" id="emailSubmitBtn">Send my results</button>
+                  <button type="submit" class="results-action-btn results-action-btn-primary" id="emailSubmitBtn">Send my results</button>
                   <button type="button" class="results-action-btn" id="emailResultsCancel">Cancel</button>
                 </div>
               </form>
               <p class="email-results-success hidden" id="emailResultsSuccess">
                 ✓ Results sent! Check your inbox (and spam folder) for your personalized LSA analysis.
+              </p>
+              <p class="email-results-error hidden" id="emailResultsError">
+                ✗ Something went wrong. Please try again or email us at <a href="mailto:contact@bluegridmedia.com">contact@bluegridmedia.com</a>.
               </p>
             </div>
           </div>
@@ -1296,85 +1306,69 @@
   </footer>
 
   <script>
-    (function() {
+    (function () {
+      /* ── Animate a numeric metric value ── */
       function animateValue(element, start, end, duration, formatter) {
         start = start || 0;
         if (start === end) {
           element.textContent = formatter ? formatter(end) : end;
           return;
         }
-
-        const range = end - start;
-        const startTime = performance.now();
-
+        var range = end - start;
+        var startTime = performance.now();
         function update(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const value = start + range * progress;
-
-          element.textContent = formatter
-            ? formatter(value)
-            : Math.round(value);
-
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          }
+          var elapsed = currentTime - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var value = start + range * progress;
+          element.textContent = formatter ? formatter(value) : Math.round(value);
+          if (progress < 1) requestAnimationFrame(update);
         }
-
         requestAnimationFrame(update);
       }
 
-      var prevValues = {
-        cpl: 0,
-        leads: 0,
-        booked: 0,
-        costPerJob: 0,
-        revenue: 0,
-        roas: 0
-      };
+      var prevValues = { cpl: 0, leads: 0, booked: 0, costPerJob: 0, revenue: 0, roas: 0 };
 
-      var industry = document.getElementById('industry');
-      var marketRadios = document.querySelectorAll('input[name="market"]');
-      var budget = document.getElementById('budget');
-      var jobValue = document.getElementById('jobValue');
-      var recurringToggle = document.getElementById('recurringToggle');
-      var recurringFields = document.getElementById('recurringFields');
-      var recurringLabel = document.getElementById('recurringLabel');
+      /* ── DOM refs ── */
+      var industry         = document.getElementById('industry');
+      var marketRadios     = document.querySelectorAll('input[name="market"]');
+      var budget           = document.getElementById('budget');
+      var jobValue         = document.getElementById('jobValue');
+      var recurringToggle  = document.getElementById('recurringToggle');
+      var recurringFields  = document.getElementById('recurringFields');
+      var recurringLabel   = document.getElementById('recurringLabel');
       var monthlyRecurring = document.getElementById('monthlyRecurring');
-      var retentionMonths = document.getElementById('retentionMonths');
-      var answerRate = document.getElementById('answerRate');
-      var bookingRate = document.getElementById('bookingRate');
-      var answerRateVal = document.getElementById('answerRateVal');
-      var bookingRateVal = document.getElementById('bookingRateVal');
+      var retentionMonths  = document.getElementById('retentionMonths');
+      var answerRate       = document.getElementById('answerRate');
+      var bookingRate      = document.getElementById('bookingRate');
+      var answerRateVal    = document.getElementById('answerRateVal');
+      var bookingRateVal   = document.getElementById('bookingRateVal');
 
-      var outCpl = document.getElementById('outCpl');
-      var outLeads = document.getElementById('outLeads');
-      var outBooked = document.getElementById('outBooked');
+      var outCpl        = document.getElementById('outCpl');
+      var outLeads      = document.getElementById('outLeads');
+      var outBooked     = document.getElementById('outBooked');
       var outCostPerJob = document.getElementById('outCostPerJob');
-      var outRevenue = document.getElementById('outRevenue');
-      var outRoas = document.getElementById('outRoas');
-      var outLtv = document.getElementById('outLtv');
-      var outLtvRoas = document.getElementById('outLtvRoas');
-      var cardLtv = document.getElementById('cardLtv');
-      var cardLtvRoas = document.getElementById('cardLtvRoas');
-      var insightLine = document.getElementById('insightLine');
-      var whatifA = document.getElementById('whatifA');
-      var whatifB = document.getElementById('whatifB');
-      var whatifC = document.getElementById('whatifC');
+      var outRevenue    = document.getElementById('outRevenue');
+      var outRoas       = document.getElementById('outRoas');
+      var outLtv        = document.getElementById('outLtv');
+      var outLtvRoas    = document.getElementById('outLtvRoas');
+      var cardLtv       = document.getElementById('cardLtv');
+      var cardLtvRoas   = document.getElementById('cardLtvRoas');
+      var insightLine   = document.getElementById('insightLine');
+      var whatifA       = document.getElementById('whatifA');
+      var whatifB       = document.getElementById('whatifB');
+      var whatifC       = document.getElementById('whatifC');
 
       var lastResult = {};
 
+      /* ── Helpers ── */
       function getIndustrySlug() {
         var opt = industry.options[industry.selectedIndex];
-        return opt && opt.getAttribute('data-slug') ? opt.getAttribute('data-slug') : 'hvac';
+        return opt && opt.getAttribute('data-slug') ? opt.getAttribute('data-slug') : '';
       }
       function setIndustryBySlug(slug) {
         var opts = industry.options;
         for (var i = 0; i < opts.length; i++) {
-          if (opts[i].getAttribute('data-slug') === slug) {
-            industry.selectedIndex = i;
-            return true;
-          }
+          if (opts[i].getAttribute('data-slug') === slug) { industry.selectedIndex = i; return true; }
         }
         return false;
       }
@@ -1385,24 +1379,49 @@
       }
       function setMarketBySlug(slug) {
         var s = String(slug).toLowerCase();
-        marketRadios.forEach(function(r) {
-          r.checked = r.getAttribute('data-market') === s;
-        });
+        marketRadios.forEach(function (r) { r.checked = r.getAttribute('data-market') === s; });
+      }
+      function getMarketMultiplier() {
+        var r = document.querySelector('input[name="market"]:checked');
+        return r ? parseFloat(r.value) : 1;
+      }
+      function isRecurring() { return recurringToggle.classList.contains('on'); }
+
+      function fmtMoney(n) {
+        if (n === null || isNaN(n) || n < 0) return '—';
+        return '$' + Math.round(n).toLocaleString();
+      }
+      function fmtNum(n) {
+        if (n === null || isNaN(n) || n < 0) return '—';
+        if (n >= 10) return Math.round(n).toLocaleString();
+        return n % 1 === 0 ? String(n) : n.toFixed(1);
+      }
+      function fmtRoas(x) {
+        if (x === null || isNaN(x) || x <= 0) return '—';
+        return x.toFixed(1) + 'x';
+      }
+      function debounce(fn, delay) {
+        var t;
+        return function () {
+          var self = this, args = arguments;
+          clearTimeout(t);
+          t = setTimeout(function () { fn.apply(self, args); }, delay);
+        };
       }
 
+      /* ── URL state ── */
       function getParams() {
-        var p = {
-          industry: getIndustrySlug(),
-          market: getMarketSlug(),
-          budget: Math.max(300, parseInt(budget.value, 10) || 1500),
-          jobValue: parseInt(jobValue.value, 10) || 350,
-          recurring: isRecurring() ? 1 : 0,
+        return {
+          industry:        getIndustrySlug(),
+          market:          getMarketSlug(),
+          budget:          Math.max(300, parseInt(budget.value, 10) || 1500),
+          jobValue:        parseInt(jobValue.value, 10) || 350,
+          recurring:       isRecurring() ? 1 : 0,
           monthlyRecurring: parseInt(monthlyRecurring.value, 10) || 50,
           retentionMonths: parseInt(retentionMonths.value, 10) || 24,
-          answerRate: parseInt(answerRate.value, 10) || 75,
-          bookingRate: parseInt(bookingRate.value, 10) || 45
+          answerRate:      parseInt(answerRate.value, 10) || 75,
+          bookingRate:     parseInt(bookingRate.value, 10) || 45
         };
-        return p;
       }
       function applyParams(p) {
         if (p.industry) setIndustryBySlug(p.industry);
@@ -1421,8 +1440,8 @@
           recurringFields.classList.add('hidden');
         }
         if (p.monthlyRecurring != null) monthlyRecurring.value = p.monthlyRecurring;
-        if (p.retentionMonths != null) retentionMonths.value = p.retentionMonths;
-        if (p.answerRate != null && p.answerRate >= 50 && p.answerRate <= 100) {
+        if (p.retentionMonths  != null) retentionMonths.value  = p.retentionMonths;
+        if (p.answerRate  != null && p.answerRate  >= 50 && p.answerRate  <= 100) {
           answerRate.value = p.answerRate;
           answerRateVal.textContent = p.answerRate + '%';
           answerRate.setAttribute('aria-valuenow', p.answerRate);
@@ -1436,13 +1455,15 @@
       function paramsToQuery(p) {
         var parts = [];
         if (p.industry) parts.push('industry=' + encodeURIComponent(p.industry));
-        if (p.market) parts.push('market=' + encodeURIComponent(p.market));
-        if (p.budget != null) parts.push('budget=' + p.budget);
+        if (p.market)   parts.push('market='   + encodeURIComponent(p.market));
+        if (p.budget   != null) parts.push('budget='   + p.budget);
         if (p.jobValue != null) parts.push('jobValue=' + p.jobValue);
-        if (p.recurring) parts.push('recurring=1');
-        if (p.recurring && p.monthlyRecurring != null) parts.push('monthlyRecurring=' + p.monthlyRecurring);
-        if (p.recurring && p.retentionMonths != null) parts.push('retentionMonths=' + p.retentionMonths);
-        if (p.answerRate != null) parts.push('answerRate=' + p.answerRate);
+        if (p.recurring) {
+          parts.push('recurring=1');
+          if (p.monthlyRecurring != null) parts.push('monthlyRecurring=' + p.monthlyRecurring);
+          if (p.retentionMonths  != null) parts.push('retentionMonths='  + p.retentionMonths);
+        }
+        if (p.answerRate  != null) parts.push('answerRate='  + p.answerRate);
         if (p.bookingRate != null) parts.push('bookingRate=' + p.bookingRate);
         return parts.length ? '?' + parts.join('&') : '';
       }
@@ -1450,275 +1471,208 @@
         var q = window.location.search.slice(1);
         if (!q) return null;
         var p = {};
-        q.split('&').forEach(function(pair) {
+        q.split('&').forEach(function (pair) {
           var i = pair.indexOf('=');
           if (i < 0) return;
           var k = decodeURIComponent(pair.slice(0, i));
           var v = decodeURIComponent(pair.slice(i + 1));
-          if (k === 'industry') p.industry = v;
-          else if (k === 'market') p.market = v;
-          else if (k === 'budget') p.budget = parseInt(v, 10);
-          else if (k === 'jobValue') p.jobValue = parseInt(v, 10);
-          else if (k === 'recurring') p.recurring = v === '1' ? 1 : 0;
+          if      (k === 'industry')        p.industry        = v;
+          else if (k === 'market')          p.market          = v;
+          else if (k === 'budget')          p.budget          = parseInt(v, 10);
+          else if (k === 'jobValue')        p.jobValue        = parseInt(v, 10);
+          else if (k === 'recurring')       p.recurring       = v === '1' ? 1 : 0;
           else if (k === 'monthlyRecurring') p.monthlyRecurring = parseInt(v, 10);
           else if (k === 'retentionMonths') p.retentionMonths = parseInt(v, 10);
-          else if (k === 'answerRate') p.answerRate = parseInt(v, 10);
-          else if (k === 'bookingRate') p.bookingRate = parseInt(v, 10);
+          else if (k === 'answerRate')      p.answerRate      = parseInt(v, 10);
+          else if (k === 'bookingRate')     p.bookingRate     = parseInt(v, 10);
         });
         return Object.keys(p).length ? p : null;
       }
       function updateHistory() {
-        var p = getParams();
-        var query = paramsToQuery(p);
-        var url = window.location.pathname + query;
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState({}, '', url);
-        }
+        var url = window.location.pathname + paramsToQuery(getParams());
+        if (window.history && window.history.replaceState) window.history.replaceState({}, '', url);
       }
 
-      function getMarketMultiplier() {
-        var r = document.querySelector('input[name="market"]:checked');
-        return r ? parseFloat(r.value) : 1;
-      }
-      function isRecurring() {
-        return recurringToggle.classList.contains('on');
-      }
-      function fmtMoney(n) {
-        if (n === null || isNaN(n) || n < 0) return '—';
-        return '$' + Math.round(n).toLocaleString();
-      }
-      function fmtNum(n) {
-        if (n === null || isNaN(n) || n < 0) return '—';
-        if (n >= 10) return Math.round(n).toLocaleString();
-        return n % 1 === 0 ? String(n) : n.toFixed(1);
-      }
-      function fmtRoas(x) {
-        if (x === null || isNaN(x) || x <= 0) return '—';
-        return x.toFixed(1) + 'x';
-      }
-
-      function debounce(fn, delay) {
-        var t;
-        return function() {
-          var self = this;
-          var args = arguments;
-          clearTimeout(t);
-          t = setTimeout(function() { fn.apply(self, args); }, delay);
-        };
-      }
-
-      function runCalc() {
-        var midpointCpl = parseFloat(industry.value);
-        if (!midpointCpl || midpointCpl <= 0) {
-          // Clear results if no industry selected
-          outCpl.textContent = '—';
-          outLeads.textContent = '—';
-          outBooked.textContent = '—';
-          outCostPerJob.textContent = '—';
-          outRevenue.textContent = '—';
-          outRoas.textContent = '—';
-          insightLine.textContent = 'Select your industry and enter your budget to see estimated results.';
-          whatifA.textContent = '—';
-          whatifB.textContent = '—';
-          whatifC.textContent = '—';
-          return;
-        }
-        
-        var mult = getMarketMultiplier();
-        var adjCpl = midpointCpl * mult;
-        var b = parseFloat(budget.value) || 0;
-        var jv = parseFloat(jobValue.value) || 0;
-        var ans = parseInt(answerRate.value, 10) / 100;
-        var book = parseInt(bookingRate.value, 10) / 100;
-
-        if (b < 300) {
-          outCpl.textContent = fmtMoney(adjCpl);
-          outLeads.textContent = '—';
-          outBooked.textContent = '—';
-          outCostPerJob.textContent = '—';
-          outRevenue.textContent = '—';
-          outRoas.textContent = '—';
-          insightLine.textContent = 'Enter a monthly budget of at least $300 to see results.';
-          whatifA.textContent = '—';
-          whatifB.textContent = '—';
-          whatifC.textContent = '—';
-          return;
-        }
-
-        var leads = b / adjCpl;
-        var answered = leads * ans;
-        var booked = answered * book;
-        var costPerJob = booked > 0 ? b / booked : null;
-        var revenue = booked * jv;
-        var roas = b > 0 ? revenue / b : null;
-
-        var ltv = null, ltvRoasVal = null;
-        if (isRecurring()) {
-          var mr = parseFloat(monthlyRecurring.value) || 0;
-          var ret = parseFloat(retentionMonths.value) || 1;
-          ltv = mr * ret;
-          var ltvRevenue = booked * ltv;
-          ltvRoasVal = b > 0 ? ltvRevenue / b : null;
-        }
-
-        lastResult = {
-          adjCpl: adjCpl, leads: leads, booked: booked, costPerJob: costPerJob,
-          revenue: revenue, roas: roas, ltv: ltv, ltvRoasVal: ltvRoasVal
-        };
-
-        animateValue(outCpl, prevValues.cpl, adjCpl, 400, fmtMoney);
-        prevValues.cpl = adjCpl;
-
-        animateValue(outLeads, prevValues.leads, leads, 400, fmtNum);
-        prevValues.leads = leads;
-
-        animateValue(outBooked, prevValues.booked, booked, 400, fmtNum);
-        prevValues.booked = booked;
-
-        animateValue(outCostPerJob, prevValues.costPerJob, costPerJob, 400, fmtMoney);
-        prevValues.costPerJob = costPerJob;
-
-        animateValue(outRevenue, prevValues.revenue, revenue, 400, fmtMoney);
-        prevValues.revenue = revenue;
-
-        animateValue(outRoas, prevValues.roas, roas, 400, fmtRoas);
-        prevValues.roas = roas;
-
-        if (isRecurring()) {
-          cardLtv.classList.remove('hidden');
-          cardLtvRoas.classList.remove('hidden');
-          outLtv.textContent = fmtMoney(ltv);
-          outLtvRoas.textContent = fmtRoas(ltvRoasVal);
-        } else {
-          cardLtv.classList.add('hidden');
-          cardLtvRoas.classList.add('hidden');
-        }
-
-        var insight = '';
-        if (roas != null) {
-          if (roas < 3) insight = 'Your numbers are tight. This usually means answer rate or booking rate needs work before scaling budget. Let\'s look at your setup.';
-          else if (roas <= 7) insight = 'Solid foundation. Improving your answer rate or review score could push this significantly higher.';
-          else insight = 'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
-        }
-        insightLine.textContent = insight;
-
-        var ansPlus = Math.min(100, (ans * 100) + 15) / 100;
-        var bookedA = leads * ansPlus * book;
-        var roasA = b > 0 ? (bookedA * jv) / b : null;
-        var dBookedA = bookedA - booked;
-        whatifA.textContent = (dBookedA >= 0 ? '+' : '') + fmtNum(dBookedA) + ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
-
-        var bookPlus = Math.min(80, (book * 100) + 10) / 100;
-        var bookedB = answered * bookPlus;
-        var roasB = b > 0 ? (bookedB * jv) / b : null;
-        var dBookedB = bookedB - booked;
-        whatifB.textContent = (dBookedB >= 0 ? '+' : '') + fmtNum(dBookedB) + ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
-
-        var b50 = b * 1.5;
-        var leads50 = b50 / adjCpl;
-        var answered50 = leads50 * ans;
-        var booked50 = answered50 * book;
-        var revenue50 = booked50 * jv;
-        whatifC.textContent = '+' + fmtNum(leads50 - leads) + ' leads, ' + fmtMoney(revenue50 - revenue) + ' revenue (same CPL & rates)';
-
-        updateHistory();
-      }
-
-      var debouncedRunCalc = debounce(runCalc, 200);
-
+      /* ── CSV export ── */
       function getCsvContent() {
         var p = getParams();
         var r = lastResult;
         var rows = [
           ['LSA ROI Calculator - Results', ''],
           ['Inputs', ''],
-          ['Industry', p.industry || ''],
-          ['Market', p.market || ''],
-          ['Monthly budget ($)', p.budget || ''],
+          ['Industry',           p.industry  || ''],
+          ['Market',             p.market    || ''],
+          ['Monthly budget ($)', p.budget    || ''],
           ['Average job value ($)', p.jobValue || ''],
-          ['Recurring revenue', p.recurring ? 'Yes' : 'No'],
-          ['Answer rate (%)', p.answerRate || ''],
-          ['Booking rate (%)', p.bookingRate || ''],
+          ['Recurring revenue',  p.recurring ? 'Yes' : 'No'],
+          ['Answer rate (%)',    p.answerRate  || ''],
+          ['Booking rate (%)',   p.bookingRate || ''],
           ['', ''],
           ['Results', ''],
-          ['Estimated CPL', r.adjCpl != null ? r.adjCpl : ''],
-          ['Leads per month', r.leads != null ? r.leads : ''],
-          ['Booked jobs per month', r.booked != null ? r.booked : ''],
+          ['Estimated CPL',          r.adjCpl     != null ? r.adjCpl     : ''],
+          ['Leads per month',        r.leads      != null ? r.leads      : ''],
+          ['Booked jobs per month',  r.booked     != null ? r.booked     : ''],
           ['Cost per booked job ($)', r.costPerJob != null ? r.costPerJob : ''],
-          ['Monthly revenue ($)', r.revenue != null ? r.revenue : ''],
-          ['ROAS', r.roas != null ? r.roas + 'x' : '']
+          ['Monthly revenue ($)',    r.revenue    != null ? r.revenue    : ''],
+          ['ROAS',                   r.roas       != null ? r.roas + 'x' : '']
         ];
         if (r.ltv != null) {
-          rows.push(['Customer LTV ($)', r.ltv]);
-          rows.push(['LTV-adjusted ROAS', r.ltvRoasVal != null ? r.ltvRoasVal.toFixed(1) + 'x' : '']);
+          rows.push(['Customer LTV ($)',    r.ltv]);
+          rows.push(['LTV-adjusted ROAS',  r.ltvRoasVal != null ? r.ltvRoasVal.toFixed(1) + 'x' : '']);
         }
-        return rows.map(function(row) {
-          return row.map(function(cell) {
+        return rows.map(function (row) {
+          return row.map(function (cell) {
             var s = String(cell);
-            if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) return '"' + s.replace(/"/g, '""') + '"';
+            if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0)
+              return '"' + s.replace(/"/g, '""') + '"';
             return s;
           }).join(',');
         }).join('\n');
       }
 
-      recurringToggle.addEventListener('click', function() {
+      /* ── Main calculation ── */
+      function runCalc() {
+        var midpointCpl = parseFloat(industry.value);
+        if (!midpointCpl || midpointCpl <= 0) {
+          outCpl.textContent = outLeads.textContent = outBooked.textContent =
+          outCostPerJob.textContent = outRevenue.textContent = outRoas.textContent = '—';
+          insightLine.textContent = 'Select your industry and enter your budget to see estimated results.';
+          whatifA.textContent = whatifB.textContent = whatifC.textContent = '—';
+          return;
+        }
+
+        var mult      = getMarketMultiplier();
+        var adjCpl    = midpointCpl * mult;
+        var b         = parseFloat(budget.value)   || 0;
+        var jv        = parseFloat(jobValue.value)  || 0;
+        var ans       = parseInt(answerRate.value,  10) / 100;
+        var book      = parseInt(bookingRate.value, 10) / 100;
+
+        if (b < 300) {
+          outCpl.textContent = fmtMoney(adjCpl);
+          outLeads.textContent = outBooked.textContent =
+          outCostPerJob.textContent = outRevenue.textContent = outRoas.textContent = '—';
+          insightLine.textContent = 'Enter a monthly budget of at least $300 to see results.';
+          whatifA.textContent = whatifB.textContent = whatifC.textContent = '—';
+          return;
+        }
+
+        var leads      = b / adjCpl;
+        var answered   = leads * ans;
+        var booked     = answered * book;
+        var costPerJob = booked > 0 ? b / booked : null;
+        var revenue    = booked * jv;
+        var roas       = b > 0 ? revenue / b : null;
+
+        var ltv = null, ltvRoasVal = null;
+        if (isRecurring()) {
+          var mr  = parseFloat(monthlyRecurring.value) || 0;
+          var ret = parseFloat(retentionMonths.value)  || 1;
+          ltv = mr * ret;
+          ltvRoasVal = b > 0 ? (booked * ltv) / b : null;
+        }
+
+        lastResult = { adjCpl, leads, booked, costPerJob, revenue, roas, ltv, ltvRoasVal };
+
+        animateValue(outCpl,        prevValues.cpl,        adjCpl,     400, fmtMoney); prevValues.cpl        = adjCpl;
+        animateValue(outLeads,      prevValues.leads,      leads,      400, fmtNum);   prevValues.leads      = leads;
+        animateValue(outBooked,     prevValues.booked,     booked,     400, fmtNum);   prevValues.booked     = booked;
+        animateValue(outCostPerJob, prevValues.costPerJob, costPerJob, 400, fmtMoney); prevValues.costPerJob = costPerJob;
+        animateValue(outRevenue,    prevValues.revenue,    revenue,    400, fmtMoney); prevValues.revenue    = revenue;
+        animateValue(outRoas,       prevValues.roas,       roas,       400, fmtRoas);  prevValues.roas       = roas;
+
+        if (isRecurring()) {
+          cardLtv.classList.remove('hidden');
+          cardLtvRoas.classList.remove('hidden');
+          outLtv.textContent    = fmtMoney(ltv);
+          outLtvRoas.textContent = fmtRoas(ltvRoasVal);
+        } else {
+          cardLtv.classList.add('hidden');
+          cardLtvRoas.classList.add('hidden');
+        }
+
+        insightLine.textContent =
+          roas == null   ? '' :
+          roas < 3       ? "Your numbers are tight. This usually means answer rate or booking rate needs work before scaling budget. Let's look at your setup." :
+          roas <= 7      ? 'Solid foundation. Improving your answer rate or review score could push this significantly higher.' :
+                           'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
+
+        /* What-if scenarios */
+        var ansPlus  = Math.min(100, (ans  * 100) + 15) / 100;
+        var bookedA  = leads * ansPlus * book;
+        var roasA    = b > 0 ? (bookedA * jv) / b : null;
+        whatifA.textContent = (bookedA - booked >= 0 ? '+' : '') + fmtNum(bookedA - booked) +
+          ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
+
+        var bookPlus = Math.min(80, (book * 100) + 10) / 100;
+        var bookedB  = answered * bookPlus;
+        var roasB    = b > 0 ? (bookedB * jv) / b : null;
+        whatifB.textContent = (bookedB - booked >= 0 ? '+' : '') + fmtNum(bookedB - booked) +
+          ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
+
+        var b50      = b * 1.5;
+        var booked50 = (b50 / adjCpl) * ans * book;
+        whatifC.textContent = '+' + fmtNum((b50 / adjCpl) - leads) + ' leads, ' +
+          fmtMoney(booked50 * jv - revenue) + ' revenue (same CPL & rates)';
+
+        updateHistory();
+      }
+
+      var debouncedRunCalc = debounce(runCalc, 200);
+
+      /* ── Toggle ── */
+      recurringToggle.addEventListener('click', function () {
         var on = recurringToggle.classList.toggle('on');
         recurringToggle.setAttribute('aria-checked', on);
         recurringLabel.textContent = on ? 'Yes' : 'No';
         recurringFields.classList.toggle('hidden', !on);
         runCalc();
       });
-      recurringToggle.addEventListener('keydown', function(e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          recurringToggle.click();
-        }
+      recurringToggle.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); recurringToggle.click(); }
       });
 
-      answerRate.addEventListener('input', function() {
-        var v = answerRate.value;
-        answerRateVal.textContent = v + '%';
-        answerRate.setAttribute('aria-valuenow', v);
+      /* ── Sliders ── */
+      answerRate.addEventListener('input', function () {
+        answerRateVal.textContent = this.value + '%';
+        this.setAttribute('aria-valuenow', this.value);
         debouncedRunCalc();
       });
-      bookingRate.addEventListener('input', function() {
-        var v = bookingRate.value;
-        bookingRateVal.textContent = v + '%';
-        bookingRate.setAttribute('aria-valuenow', v);
+      bookingRate.addEventListener('input', function () {
+        bookingRateVal.textContent = this.value + '%';
+        this.setAttribute('aria-valuenow', this.value);
         debouncedRunCalc();
       });
 
+      /* ── Input listeners ── */
       industry.addEventListener('change', debouncedRunCalc);
       budget.addEventListener('input', debouncedRunCalc);
       jobValue.addEventListener('input', debouncedRunCalc);
       monthlyRecurring.addEventListener('input', debouncedRunCalc);
       retentionMonths.addEventListener('input', debouncedRunCalc);
-      marketRadios.forEach(function(r) { r.addEventListener('change', debouncedRunCalc); });
+      marketRadios.forEach(function (r) { r.addEventListener('change', debouncedRunCalc); });
 
-      document.getElementById('copyLinkBtn').addEventListener('click', function() {
+      /* ── Copy link ── */
+      document.getElementById('copyLinkBtn').addEventListener('click', function () {
         var url = window.location.origin + window.location.pathname + paramsToQuery(getParams());
+        var btn = this;
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(url).then(function() {
-            this.textContent = 'Copied!';
-            var btn = this;
-            setTimeout(function() { btn.textContent = 'Copy link'; }, 2000);
-          }.bind(this));
+          navigator.clipboard.writeText(url).then(function () {
+            btn.textContent = 'Copied!';
+            setTimeout(function () { btn.textContent = 'Copy link'; }, 2000);
+          });
         } else {
           var ta = document.createElement('textarea');
-          ta.value = url;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          this.textContent = 'Copied!';
-          var btn = this;
-          setTimeout(function() { btn.textContent = 'Copy link'; }, 2000);
+          ta.value = url; document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); document.body.removeChild(ta);
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = 'Copy link'; }, 2000);
         }
       });
 
-      document.getElementById('exportCsvBtn').addEventListener('click', function() {
-        var csv = getCsvContent();
-        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      /* ── Export CSV ── */
+      document.getElementById('exportCsvBtn').addEventListener('click', function () {
+        var blob = new Blob([getCsvContent()], { type: 'text/csv;charset=utf-8' });
         var a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
         a.download = 'lsa-roi-calculator-results.csv';
@@ -1726,146 +1680,132 @@
         URL.revokeObjectURL(a.href);
       });
 
-      var emailForm = document.getElementById('emailResultsForm');
-      var emailFormForm = document.getElementById('emailResultsNetlifyForm');
-      var emailSummary = document.getElementById('emailResultsSummary');
-      var emailSuccess = document.getElementById('emailResultsSuccess');
+      /* ── Email results ── */
+      var emailFormWrap  = document.getElementById('emailResultsForm');
+      var emailInnerForm = document.getElementById('emailResultsInnerForm');
+      var emailSuccess   = document.getElementById('emailResultsSuccess');
+      var emailError     = document.getElementById('emailResultsError');
       var emailSubmitBtn = document.getElementById('emailSubmitBtn');
-      
-      function populateEmailFields() {
-        var p = getParams();
-        var r = lastResult;
-        
-        document.getElementById('emailIndustry').value = p.industry || '';
-        document.getElementById('emailMarket').value = p.market || '';
-        document.getElementById('emailBudget').value = p.budget || '';
-        document.getElementById('emailJobValue').value = p.jobValue || '';
-        document.getElementById('emailCpl').value = r.adjCpl != null ? fmtMoney(r.adjCpl) : '';
-        document.getElementById('emailLeads').value = r.leads != null ? fmtNum(r.leads) : '';
-        document.getElementById('emailBooked').value = r.booked != null ? fmtNum(r.booked) : '';
-        document.getElementById('emailCostPerJob').value = r.costPerJob != null ? fmtMoney(r.costPerJob) : '';
-        document.getElementById('emailRevenue').value = r.revenue != null ? fmtMoney(r.revenue) : '';
-        document.getElementById('emailRoas').value = r.roas != null ? fmtRoas(r.roas) : '';
-        
-        var summary = 'LSA ROI Calculator Results\n\n';
-        summary += 'Industry: ' + (p.industry || 'N/A') + '\n';
-        summary += 'Market: ' + (p.market || 'N/A') + '\n';
-        summary += 'Monthly Budget: $' + (p.budget || 'N/A') + '\n';
-        summary += 'Average Job Value: $' + (p.jobValue || 'N/A') + '\n\n';
-        summary += 'RESULTS:\n';
-        summary += '• Estimated CPL: ' + (r.adjCpl != null ? fmtMoney(r.adjCpl) : 'N/A') + '\n';
-        summary += '• Leads per month: ' + (r.leads != null ? fmtNum(r.leads) : 'N/A') + '\n';
-        summary += '• Booked jobs per month: ' + (r.booked != null ? fmtNum(r.booked) : 'N/A') + '\n';
-        summary += '• Cost per booked job: ' + (r.costPerJob != null ? fmtMoney(r.costPerJob) : 'N/A') + '\n';
-        summary += '• Monthly revenue: ' + (r.revenue != null ? fmtMoney(r.revenue) : 'N/A') + '\n';
-        summary += '• ROAS: ' + (r.roas != null ? fmtRoas(r.roas) : 'N/A') + '\n';
-        
-        emailSummary.value = summary;
-      }
-      
-      document.getElementById('emailResultsBtn').addEventListener('click', function() {
-        populateEmailFields();
-        emailForm.classList.remove('hidden');
+
+      document.getElementById('emailResultsBtn').addEventListener('click', function () {
+        emailFormWrap.classList.remove('hidden');
         emailSuccess.classList.add('hidden');
-        emailFormForm.classList.remove('hidden');
+        emailError.classList.add('hidden');
+        emailInnerForm.classList.remove('hidden');
         document.getElementById('emailInput').focus();
       });
-      
-      document.getElementById('emailResultsCancel').addEventListener('click', function() {
-        emailForm.classList.add('hidden');
-        emailFormForm.reset();
-      });
-      
-      if (emailFormForm) {
-        emailFormForm.addEventListener('submit', function(ev) {
-          ev.preventDefault();
-          
-          emailSubmitBtn.textContent = 'Sending...';
-          emailSubmitBtn.disabled = true;
-          
-          populateEmailFields();
-          
-          var form = this;
-          var formData = new FormData(form);
-          
-          fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-          })
-          .then(function() {
-            emailFormForm.classList.add('hidden');
-            emailSuccess.classList.remove('hidden');
-            emailSubmitBtn.textContent = 'Send my results';
-            emailSubmitBtn.disabled = false;
-            form.reset();
-            
-            setTimeout(function() {
-              emailForm.classList.add('hidden');
-            }, 5000);
-          })
-          .catch(function(err) {
-            console.error('Form submission error:', err);
-            emailSubmitBtn.textContent = 'Error - Try again';
-            emailSubmitBtn.disabled = false;
-            
-            setTimeout(function() {
-              emailSubmitBtn.textContent = 'Send my results';
-            }, 3000);
-          });
-        });
-      }
 
+      document.getElementById('emailResultsCancel').addEventListener('click', function () {
+        emailFormWrap.classList.add('hidden');
+        emailInnerForm.reset();
+        emailSuccess.classList.add('hidden');
+        emailError.classList.add('hidden');
+      });
+
+      emailInnerForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+
+        var emailVal = document.getElementById('emailInput').value.trim();
+        if (!emailVal) { document.getElementById('emailInput').focus(); return; }
+
+        emailSubmitBtn.textContent = 'Sending…';
+        emailSubmitBtn.disabled = true;
+        emailError.classList.add('hidden');
+
+        var p = getParams();
+        var r = lastResult;
+
+        var payload = {
+          email:           emailVal,
+          name:            document.getElementById('nameInput').value.trim(),
+          business:        document.getElementById('businessInput').value.trim(),
+          bot:             document.getElementById('botField').value,
+          industry:        p.industry,
+          market:          p.market,
+          budget:          p.budget,
+          job_value:       p.jobValue,
+          estimated_cpl:   r.adjCpl     != null ? fmtMoney(r.adjCpl)     : 'N/A',
+          leads_per_month: r.leads      != null ? fmtNum(r.leads)         : 'N/A',
+          booked_jobs:     r.booked     != null ? fmtNum(r.booked)        : 'N/A',
+          cost_per_job:    r.costPerJob != null ? fmtMoney(r.costPerJob)  : 'N/A',
+          monthly_revenue: r.revenue    != null ? fmtMoney(r.revenue)     : 'N/A',
+          roas:            r.roas       != null ? fmtRoas(r.roas)         : 'N/A'
+        };
+
+        if (r.ltv != null) {
+          payload.ltv      = fmtMoney(r.ltv);
+          payload.ltv_roas = r.ltvRoasVal != null ? fmtRoas(r.ltvRoasVal) : 'N/A';
+        }
+
+        fetch('/.netlify/functions/email-results', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          emailSubmitBtn.textContent = 'Send my results';
+          emailSubmitBtn.disabled = false;
+          if (data.ok) {
+            emailInnerForm.classList.add('hidden');
+            emailSuccess.classList.remove('hidden');
+            emailInnerForm.reset();
+            setTimeout(function () { emailFormWrap.classList.add('hidden'); }, 6000);
+          } else {
+            emailError.classList.remove('hidden');
+          }
+        })
+        .catch(function (err) {
+          console.error('email-results error:', err);
+          emailSubmitBtn.textContent = 'Send my results';
+          emailSubmitBtn.disabled = false;
+          emailError.classList.remove('hidden');
+        });
+      });
+
+      /* ── Copy embed code ── */
       var embedSnippet = '<iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"></iframe>';
-      document.getElementById('copyEmbedBtn').addEventListener('click', function() {
+      document.getElementById('copyEmbedBtn').addEventListener('click', function () {
+        var btn = this;
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(embedSnippet).then(function() {
-            this.textContent = 'Copied!';
-            var btn = this;
-            setTimeout(function() { btn.textContent = 'Copy embed code'; }, 2000);
-          }.bind(this));
+          navigator.clipboard.writeText(embedSnippet).then(function () {
+            btn.textContent = 'Copied!';
+            setTimeout(function () { btn.textContent = 'Copy embed code'; }, 2000);
+          });
         } else {
           var ta = document.createElement('textarea');
-          ta.value = embedSnippet;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          this.textContent = 'Copied!';
-          var btn = this;
-          setTimeout(function() { btn.textContent = 'Copy embed code'; }, 2000);
+          ta.value = embedSnippet; document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); document.body.removeChild(ta);
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = 'Copy embed code'; }, 2000);
         }
       });
 
+      /* ── Init ── */
       var initial = parseQuery() || (window.__LSA_SNAPSHOT || null);
-      if (initial) {
-        applyParams(initial);
-        runCalc();
-      } else {
-        // Show placeholder state on initial load
-        insightLine.textContent = 'Select your industry and enter your budget to see estimated results.';
-      }
+      if (initial) { applyParams(initial); runCalc(); }
+      else { insightLine.textContent = 'Select your industry and enter your budget to see estimated results.'; }
     })();
   </script>
+
   <script>
-    (function() {
-      var search = window.location.search || '';
-      if (search.indexOf('embed=1') >= 0 || search.indexOf('embed=1&') >= 0) {
+    (function () {
+      if ((window.location.search || '').indexOf('embed=1') >= 0) {
         document.body.classList.add('embed-mode');
       }
     })();
   </script>
 
   <script>
-    (function() {
-      var nav = document.getElementById("siteNav");
-      if (nav) window.addEventListener("scroll", function() { nav.classList.toggle("scrolled", window.scrollY > 20); });
-      var hamburger = document.getElementById("navHamburger");
-      var navLinks = document.getElementById("navLinks");
-      if (hamburger && navLinks) hamburger.addEventListener("click", function() {
-        var open = navLinks.classList.toggle("open");
-        hamburger.classList.toggle("open", open);
-        hamburger.setAttribute("aria-expanded", open);
+    (function () {
+      var nav = document.getElementById('siteNav');
+      if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 20); });
+      var hamburger = document.getElementById('navHamburger');
+      var navLinks  = document.getElementById('navLinks');
+      if (hamburger && navLinks) hamburger.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', open);
       });
     })();
   </script>
