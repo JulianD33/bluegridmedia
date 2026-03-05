@@ -586,35 +586,64 @@
     }
     .email-results-form {
       margin-top: 16px;
-      padding: 20px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      padding: 24px;
+      background: linear-gradient(135deg, #f8fafc, #ffffff);
+      border: 1.5px solid #e2e8f0;
       border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.04);
     }
     .email-results-form.hidden { display: none; }
-    .email-results-intro { margin-bottom: 16px; font-size: 0.9rem; color: #64748b; }
+    .email-results-intro { 
+      margin-bottom: 18px; 
+      font-size: 0.95rem; 
+      color: #475569;
+      line-height: 1.6;
+    }
     .email-results-label {
       display: block;
-      margin-bottom: 12px;
-      font-size: 0.9rem;
-      font-weight: 500;
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
     }
     .email-results-label input {
       display: block;
-      margin-top: 4px;
-      padding: 8px 12px;
+      margin-top: 6px;
+      padding: 10px 14px;
       width: 100%;
       max-width: 100%;
-      border: 1px solid #e2e8f0;
+      border: 1.5px solid #e2e8f0;
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
       box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    .email-results-label input:focus {
+      outline: none;
+      border-color: #0ea5a4;
+      box-shadow: 0 0 0 3px rgba(14,165,164,0.1);
     }
     @media (min-width: 768px) {
-      .email-results-label input { max-width: 280px; }
+      .email-results-label input { max-width: 360px; }
     }
-    .email-results-buttons { margin-top: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .email-results-success { color: #0ea5a4; font-weight: 600; }
+    .email-results-buttons { 
+      margin-top: 18px; 
+      display: flex; 
+      gap: 12px; 
+      align-items: center; 
+      flex-wrap: wrap; 
+    }
+    .email-results-success { 
+      color: #0ea5a4; 
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
 
     /* ── What If section ── */
     .whatif-section {
@@ -1055,19 +1084,41 @@
               <button type="button" class="results-action-btn results-action-btn-primary" id="emailResultsBtn">Email my results</button>
             </div>
             <div class="email-results-form hidden" id="emailResultsForm">
-              <p class="email-results-intro">We'll send this scenario to your inbox so you can share or revisit it later.</p>
+              <p class="email-results-intro">We'll send your personalized LSA results to your inbox so you can share them with your team or revisit later.</p>
               <form name="lsa-calculator-email" method="POST" data-netlify="true" netlify-honeypot="bot" id="emailResultsNetlifyForm">
                 <input type="hidden" name="form-name" value="lsa-calculator-email">
                 <p class="hidden"><label>Don't fill this out: <input name="bot"></label></p>
-                <label class="email-results-label">Email <input type="email" name="email" required placeholder="you@example.com"></label>
-                <label class="email-results-label">Name (optional) <input type="text" name="name" placeholder="Your name"></label>
+                <label class="email-results-label">
+                  Email address *
+                  <input type="email" name="email" required placeholder="you@example.com" id="emailInput">
+                </label>
+                <label class="email-results-label">
+                  Name (optional)
+                  <input type="text" name="name" placeholder="Your name" id="nameInput">
+                </label>
+                <label class="email-results-label">
+                  Business name (optional)
+                  <input type="text" name="business" placeholder="Your company" id="businessInput">
+                </label>
+                <input type="hidden" name="industry" id="emailIndustry">
+                <input type="hidden" name="market" id="emailMarket">
+                <input type="hidden" name="budget" id="emailBudget">
+                <input type="hidden" name="job_value" id="emailJobValue">
+                <input type="hidden" name="estimated_cpl" id="emailCpl">
+                <input type="hidden" name="leads_per_month" id="emailLeads">
+                <input type="hidden" name="booked_jobs" id="emailBooked">
+                <input type="hidden" name="cost_per_job" id="emailCostPerJob">
+                <input type="hidden" name="monthly_revenue" id="emailRevenue">
+                <input type="hidden" name="roas" id="emailRoas">
                 <textarea name="results_summary" id="emailResultsSummary" class="hidden" aria-hidden="true"></textarea>
                 <div class="email-results-buttons">
-                  <button type="submit" class="btn-primary">Send my results</button>
+                  <button type="submit" class="btn-primary" id="emailSubmitBtn">Send my results</button>
                   <button type="button" class="results-action-btn" id="emailResultsCancel">Cancel</button>
                 </div>
               </form>
-              <p class="email-results-success hidden" id="emailResultsSuccess">Thanks! Check your email for the results.</p>
+              <p class="email-results-success hidden" id="emailResultsSuccess">
+                ✓ Results sent! Check your inbox (and spam folder) for your personalized LSA analysis.
+              </p>
             </div>
           </div>
 
@@ -1679,36 +1730,89 @@
       var emailFormForm = document.getElementById('emailResultsNetlifyForm');
       var emailSummary = document.getElementById('emailResultsSummary');
       var emailSuccess = document.getElementById('emailResultsSuccess');
+      var emailSubmitBtn = document.getElementById('emailSubmitBtn');
+      
+      function populateEmailFields() {
+        var p = getParams();
+        var r = lastResult;
+        
+        document.getElementById('emailIndustry').value = p.industry || '';
+        document.getElementById('emailMarket').value = p.market || '';
+        document.getElementById('emailBudget').value = p.budget || '';
+        document.getElementById('emailJobValue').value = p.jobValue || '';
+        document.getElementById('emailCpl').value = r.adjCpl != null ? fmtMoney(r.adjCpl) : '';
+        document.getElementById('emailLeads').value = r.leads != null ? fmtNum(r.leads) : '';
+        document.getElementById('emailBooked').value = r.booked != null ? fmtNum(r.booked) : '';
+        document.getElementById('emailCostPerJob').value = r.costPerJob != null ? fmtMoney(r.costPerJob) : '';
+        document.getElementById('emailRevenue').value = r.revenue != null ? fmtMoney(r.revenue) : '';
+        document.getElementById('emailRoas').value = r.roas != null ? fmtRoas(r.roas) : '';
+        
+        var summary = 'LSA ROI Calculator Results\n\n';
+        summary += 'Industry: ' + (p.industry || 'N/A') + '\n';
+        summary += 'Market: ' + (p.market || 'N/A') + '\n';
+        summary += 'Monthly Budget: $' + (p.budget || 'N/A') + '\n';
+        summary += 'Average Job Value: $' + (p.jobValue || 'N/A') + '\n\n';
+        summary += 'RESULTS:\n';
+        summary += '• Estimated CPL: ' + (r.adjCpl != null ? fmtMoney(r.adjCpl) : 'N/A') + '\n';
+        summary += '• Leads per month: ' + (r.leads != null ? fmtNum(r.leads) : 'N/A') + '\n';
+        summary += '• Booked jobs per month: ' + (r.booked != null ? fmtNum(r.booked) : 'N/A') + '\n';
+        summary += '• Cost per booked job: ' + (r.costPerJob != null ? fmtMoney(r.costPerJob) : 'N/A') + '\n';
+        summary += '• Monthly revenue: ' + (r.revenue != null ? fmtMoney(r.revenue) : 'N/A') + '\n';
+        summary += '• ROAS: ' + (r.roas != null ? fmtRoas(r.roas) : 'N/A') + '\n';
+        
+        emailSummary.value = summary;
+      }
+      
       document.getElementById('emailResultsBtn').addEventListener('click', function() {
+        populateEmailFields();
         emailForm.classList.remove('hidden');
         emailSuccess.classList.add('hidden');
-        emailSummary.value = getCsvContent();
+        emailFormForm.classList.remove('hidden');
+        document.getElementById('emailInput').focus();
       });
+      
       document.getElementById('emailResultsCancel').addEventListener('click', function() {
         emailForm.classList.add('hidden');
+        emailFormForm.reset();
       });
-      if (emailFormForm) {
-        emailFormForm.addEventListener('submit', function() {
-          emailSummary.value = getCsvContent();
-        });
-      }
+      
       if (emailFormForm) {
         emailFormForm.addEventListener('submit', function(ev) {
-          emailSummary.value = getCsvContent();
-          var form = this;
-          var action = form.getAttribute('action') || window.location.pathname || 'lsa-roi-calculator.html';
-          if (action.indexOf('?') < 0 && window.location.search) action += window.location.search;
-          var formData = new FormData(form);
-          fetch(action, { method: 'POST', body: formData })
-            .then(function() {
-              form.classList.add('hidden');
-              emailSuccess.classList.remove('hidden');
-            })
-            .catch(function() {
-              form.classList.add('hidden');
-              emailSuccess.classList.remove('hidden');
-            });
           ev.preventDefault();
+          
+          emailSubmitBtn.textContent = 'Sending...';
+          emailSubmitBtn.disabled = true;
+          
+          populateEmailFields();
+          
+          var form = this;
+          var formData = new FormData(form);
+          
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          })
+          .then(function() {
+            emailFormForm.classList.add('hidden');
+            emailSuccess.classList.remove('hidden');
+            emailSubmitBtn.textContent = 'Send my results';
+            emailSubmitBtn.disabled = false;
+            form.reset();
+            
+            setTimeout(function() {
+              emailForm.classList.add('hidden');
+            }, 5000);
+          })
+          .catch(function(err) {
+            console.error('Form submission error:', err);
+            emailSubmitBtn.textContent = 'Error - Try again';
+            emailSubmitBtn.disabled = false;
+            
+            setTimeout(function() {
+              emailSubmitBtn.textContent = 'Send my results';
+            }, 3000);
+          });
         });
       }
 
