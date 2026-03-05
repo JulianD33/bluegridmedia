@@ -247,6 +247,7 @@
       mask-composite: exclude;
       opacity: 0;
       transition: opacity 0.3s ease;
+      pointer-events: none;
     }
     .calc-panel:hover {
       box-shadow: 0 14px 38px rgba(15,23,42,0.08);
@@ -296,6 +297,7 @@
       box-sizing: border-box;
       background: #ffffff;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: auto;
     }
     .calc-row select:hover,
     .calc-row input[type="number"]:hover {
@@ -308,7 +310,6 @@
       border-color: #14b8a6;
       box-shadow: 0 0 0 4px rgba(20,184,166,0.12);
       background: #ffffff;
-      transform: translateY(-1px);
     }
     .market-radios {
       display: flex;
