@@ -360,10 +360,15 @@
 
     /* ── Results dashboard ── */
     .results-section {
-      margin-top: 20px;
-      margin-bottom: 32px;
+      margin-top: 24px;
+      margin-bottom: 36px;
       min-width: 0;
       max-width: 100%;
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-sizing: border-box;
     }
     .results-section h2 {
       font-size: 1.25rem;
@@ -374,30 +379,28 @@
     }
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
       min-width: 0;
       max-width: 100%;
     }
-    @media (min-width: 768px) {
-      .results-grid {
-        gap: 14px;
-      }
+    .results-grid > * {
+      min-width: 0;
     }
     .result-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      padding: 16px;
-      border: 1px solid #f1f5f9;
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      padding: 18px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
       min-width: 0;
       max-width: 100%;
       box-sizing: border-box;
     }
-    @media (min-width: 768px) {
-      .result-card {
-        padding: 18px 24px;
-      }
+    .result-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
     .result-card .metric-name {
       font-size: 0.78rem;
@@ -408,7 +411,7 @@
       margin-bottom: 4px;
     }
     .result-card .metric-value {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: #0ea5a4;
       margin-bottom: 6px;
@@ -421,12 +424,12 @@
 
     /* ── Insight line ── */
     .insight-line {
-      background: #f0fafa;
-      border: 1px solid #b8e6e6;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin-top: 18px;
-      font-size: 0.93rem;
+      background: #f0fdfc;
+      border: 1px solid #ccfbf1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-size: 0.95rem;
       color: #334155;
       line-height: 1.55;
     }
