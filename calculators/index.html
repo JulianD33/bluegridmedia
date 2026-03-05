@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WEMSC670ZR');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LSA ROI Calculators by Industry | Google Local Services Ads | Blue Grid Media</title>
+  <meta name="description" content="Free Google Local Services Ads ROI calculators for HVAC, plumbing, roofing, electricians, pest control, landscaping, and more. Estimate your cost per lead, booked jobs, and ROAS by trade.">
+  <link rel="canonical" href="https://bluegridmedia.com/calculators/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LSA ROI Calculators by Industry | Blue Grid Media" />
+  <meta property="og:description" content="Free Google Local Services Ads ROI calculators for HVAC, plumbing, roofing, electricians, pest control, landscaping, and more." />
+  <meta property="og:url" content="https://bluegridmedia.com/calculators/" />
+  <meta property="og:site_name" content="Blue Grid Media" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LSA ROI Calculators by Industry | Blue Grid Media" />
+  <meta name="twitter:description" content="Free Google Local Services Ads ROI calculators for HVAC, plumbing, roofing, electricians, pest control, landscaping, and more." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegridmedia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://bluegridmedia.com/calculators/" }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "LSA ROI Calculators by Industry",
+        "url": "https://bluegridmedia.com/calculators/",
+        "description": "Free Google Local Services Ads ROI calculators for home service trades. Estimate cost per lead, booked jobs, and return on ad spend by industry and market size.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Blue Grid Media"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { max-width: 100vw; overflow-x: hidden; box-sizing: border-box; }
+
+    .calc-index-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    .article-breadcrumb {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+    .article-breadcrumb a { color: #0ea5a4; text-decoration: none; }
+    .article-breadcrumb a:hover { text-decoration: underline; }
+
+    .calc-index-intro {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 720px;
+    }
+
+    .calc-index-section-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .calc-index-section-title::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      background: linear-gradient(135deg, #0ea5a4, #14b8a6);
+      border-radius: 2px;
+    }
+
+    .calc-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .calc-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 3px 12px rgba(15,23,42,0.05);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .calc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0ea5a4, #14b8a6);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .calc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.1);
+      border-color: #cbd5e1;
+    }
+    .calc-card:hover::before {
+      opacity: 1;
+    }
+    .calc-card-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .calc-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .calc-card-cpl {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .calc-card-cpl span {
+      color: #0ea5a4;
+      font-weight: 700;
+    }
+    .calc-card-arrow {
+      margin-top: auto;
+      padding-top: 10px;
+      font-size: 0.85rem;
+      color: #0ea5a4;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .calc-index-cta {
+      background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
+      border-radius: 14px;
+      padding: 36px 40px;
+      text-align: center;
+      margin: 48px 0 64px;
+    }
+    .calc-index-cta h2 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .calc-index-cta p {
+      color: #e2e8f0;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      margin-bottom: 22px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .calc-index-cta a {
+      display: inline-block;
+      background: #fff;
+      color: #0f2d4e;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .calc-index-cta a:hover { background: #f0fafa; }
+
+    .calc-index-also {
+      margin-bottom: 60px;
+    }
+    .calc-index-also h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .calc-index-also p {
+      font-size: 0.97rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .calc-index-also a {
+      color: #0ea5a4;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .calc-index-also a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .calc-index-cta { padding: 24px 20px; }
+      .calc-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">
+        <span class="logo-inner">
+          <svg class="logo-svg" width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0"  y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="logo-text">
+            <span class="logo-name">Blue Grid</span>
+            <span class="logo-sub">Media</span>
+          </span>
+        </span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/lsa-roi-calculator.html">Calculator</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <a href="/free-lsa-consultation.html" class="nav-cta">Free Consultation</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header style="padding: 35px 0 20px;">
+    <div class="container" style="text-align: center;">
+      <h1>LSA ROI Calculators by Industry</h1>
+      <p style="max-width: 640px; margin: 12px auto 0; color: #475569;">
+        Free Google Local Services Ads ROI calculators for every major home service trade. Pick your industry to get estimated cost per lead, booked jobs, and return on ad spend.
+      </p>
+    </div>
+  </header>
+
+  <section style="padding: 36px 0 20px;">
+    <div class="calc-index-wrap">
+
+      <div class="article-breadcrumb">
+        <a href="/">Home</a> &rsaquo; <a href="/lsa-roi-calculator.html">LSA ROI Calculator</a> &rsaquo; All Industries
+      </div>
+
+      <p class="calc-index-intro">
+        Each calculator below is pre-loaded with industry-specific CPL benchmarks and links directly to the main calculator with your trade pre-selected. Enter your budget and job value to get an instant estimate of what Google Local Services Ads could generate for your business.
+      </p>
+
+      <!-- Emergency / High-Intent Trades -->
+      <div class="calc-index-section-title">Emergency &amp; High-Intent Trades</div>
+      <div class="calc-card-grid">
+
+        <a href="/calculators/hvac-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🌡️</div>
+          <div class="calc-card-title">HVAC LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$25–$80</span></div>
+          <div class="calc-card-arrow">Calculate my HVAC ROI →</div>
+        </a>
+
+        <a href="/calculators/plumbing-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🔧</div>
+          <div class="calc-card-title">Plumbing LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$40–$75</span></div>
+          <div class="calc-card-arrow">Calculate my Plumbing ROI →</div>
+        </a>
+
+        <a href="/calculators/electrician-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">⚡</div>
+          <div class="calc-card-title">Electrician LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$25–$80</span></div>
+          <div class="calc-card-arrow">Calculate my Electrical ROI →</div>
+        </a>
+
+        <a href="/calculators/garage-door-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🚪</div>
+          <div class="calc-card-title">Garage Door LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$18–$48</span></div>
+          <div class="calc-card-arrow">Calculate my Garage Door ROI →</div>
+        </a>
+
+        <a href="/calculators/appliance-repair-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🍽️</div>
+          <div class="calc-card-title">Appliance Repair LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$18–$48</span></div>
+          <div class="calc-card-arrow">Calculate my Appliance Repair ROI →</div>
+        </a>
+
+      </div>
+
+      <!-- High Job Value Trades -->
+      <div class="calc-index-section-title">High Job Value Trades</div>
+      <div class="calc-card-grid">
+
+        <a href="/calculators/roofing-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🏠</div>
+          <div class="calc-card-title">Roofing LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$35–$100</span></div>
+          <div class="calc-card-arrow">Calculate my Roofing ROI →</div>
+        </a>
+
+        <a href="/calculators/tree-service-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🌳</div>
+          <div class="calc-card-title">Tree Service LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$22–$55</span></div>
+          <div class="calc-card-arrow">Calculate my Tree Service ROI →</div>
+        </a>
+
+      </div>
+
+      <!-- Recurring Revenue Trades -->
+      <div class="calc-index-section-title">Recurring Revenue Trades</div>
+      <div class="calc-card-grid">
+
+        <a href="/calculators/pest-control-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🐛</div>
+          <div class="calc-card-title">Pest Control LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$20–$60</span> · LTV pre-loaded</div>
+          <div class="calc-card-arrow">Calculate my Pest Control ROI →</div>
+        </a>
+
+        <a href="/calculators/landscaping-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🌿</div>
+          <div class="calc-card-title">Landscaping LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$20–$55</span> · LTV pre-loaded</div>
+          <div class="calc-card-arrow">Calculate my Landscaping ROI →</div>
+        </a>
+
+        <a href="/calculators/carpet-cleaning-lsa-roi-calculator.html" class="calc-card">
+          <div class="calc-card-icon">🧹</div>
+          <div class="calc-card-title">Carpet Cleaning LSA ROI Calculator</div>
+          <div class="calc-card-cpl">Typical CPL: <span>$12–$38</span></div>
+          <div class="calc-card-arrow">Calculate my Carpet Cleaning ROI →</div>
+        </a>
+
+      </div>
+
+      <!-- Don't see your trade -->
+      <div class="calc-index-also">
+        <h2>Don't See Your Trade?</h2>
+        <p>
+          The <a href="/lsa-roi-calculator.html">main LSA ROI calculator</a> supports 18 industries including water damage restoration, general contractors, locksmiths, lawyers, dentists, chiropractors, real estate agents, and more. Select your industry from the dropdown to get an instant estimate.
+        </p>
+        <p>
+          You can also explore our industry-specific LSA guides:
+          <a href="/google-lsa-for-hvac-companies.html">HVAC</a> ·
+          <a href="/google-lsa-for-pest-control.html">Pest Control</a> ·
+          <a href="/google-lsa-for-roofers.html">Roofing</a> ·
+          <a href="/google-lsa-for-electricians.html">Electricians</a> ·
+          <a href="/google-lsa-for-water-damage-restoration.html">Water Damage</a>
+        </p>
+      </div>
+
+      <div class="calc-index-cta">
+        <h2>Want Exact Numbers for Your Market?</h2>
+        <p>The calculators give you solid estimates. A free LSA audit gives you exact numbers — what competitors in your area are spending, what CPL to expect, and what's holding back your lead volume right now.</p>
+        <a href="/contact.html">Get a Free LSA Audit</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-cta-strip">
+      <div class="footer-cta-inner">
+        <p class="footer-cta-text">Ready to get more calls from Google?</p>
+        <a href="/free-lsa-consultation.html" class="footer-cta-btn">Book a Free Consultation</a>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Main footer navigation">
+        <p class="footer-col-heading">Pages</p>
+        <ul class="nav-col">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/team.html">Our Team</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Legal footer navigation">
+        <p class="footer-col-heading">Legal</p>
+        <ul class="nav-col">
+          <li><a href="/founder.html">Founder</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+        </ul>
+      </nav>
+      <div class="footer-right">
+        <a href="/index.html" class="footer-brand-logo">
+          <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0"  y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="0"  width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="13" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="0"  y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="13" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+            <rect x="26" y="26" width="10" height="10" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="footer-brand-text">
+            <span class="footer-brand-name">Blue Grid</span>
+            <span class="footer-brand-sub">Media</span>
+          </span>
+        </a>
+        <p class="brand-tag">Independent LSA specialists helping local trades get qualified leads.</p>
+        <div class="footer-contact" aria-label="Contact information">
+          <p class="footer-col-heading" style="text-align:right;">Contact</p>
+          <p class="contact-links">
+            <a href="mailto:contact@bluegridmedia.com">contact@bluegridmedia.com</a><br>
+            <a href="tel:+18064592162">+1 (806) 459-2162</a>
+          </p>
+          <div class="footer-socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/company/bluegrid-media" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.reddit.com/user/BlueGridMedia" target="_blank" rel="noopener" aria-label="Reddit">
+              <img src="/reddit.svg" alt="Reddit">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Blue Grid Media</span>
+        <span class="footer-bottom-tagline">Where Local Visibility Begins</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 20); });
+      var hamburger = document.getElementById('navHamburger');
+      var navLinks  = document.getElementById('navLinks');
+      if (hamburger && navLinks) hamburger.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', open);
+      });
+    })();
+  </script>
+
+</body>
+</html>
