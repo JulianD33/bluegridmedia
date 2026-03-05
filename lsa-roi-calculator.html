@@ -1091,6 +1091,42 @@
 
   <script>
     (function() {
+      function animateValue(element, start, end, duration, formatter) {
+        start = start || 0;
+        if (start === end) {
+          element.textContent = formatter ? formatter(end) : end;
+          return;
+        }
+
+        const range = end - start;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const value = start + range * progress;
+
+          element.textContent = formatter
+            ? formatter(value)
+            : Math.round(value);
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      var prevValues = {
+        cpl: 0,
+        leads: 0,
+        booked: 0,
+        costPerJob: 0,
+        revenue: 0,
+        roas: 0
+      };
+
       var industry = document.getElementById('industry');
       var marketRadios = document.querySelectorAll('input[name="market"]');
       var budget = document.getElementById('budget');
@@ -1298,12 +1334,23 @@
           revenue: revenue, roas: roas, ltv: ltv, ltvRoasVal: ltvRoasVal
         };
 
-        outCpl.textContent = fmtMoney(adjCpl);
-        outLeads.textContent = fmtNum(leads);
-        outBooked.textContent = fmtNum(booked);
-        outCostPerJob.textContent = fmtMoney(costPerJob);
-        outRevenue.textContent = fmtMoney(revenue);
-        outRoas.textContent = fmtRoas(roas);
+        animateValue(outCpl, prevValues.cpl, adjCpl, 400, fmtMoney);
+        prevValues.cpl = adjCpl;
+
+        animateValue(outLeads, prevValues.leads, leads, 400, fmtNum);
+        prevValues.leads = leads;
+
+        animateValue(outBooked, prevValues.booked, booked, 400, fmtNum);
+        prevValues.booked = booked;
+
+        animateValue(outCostPerJob, prevValues.costPerJob, costPerJob, 400, fmtMoney);
+        prevValues.costPerJob = costPerJob;
+
+        animateValue(outRevenue, prevValues.revenue, revenue, 400, fmtMoney);
+        prevValues.revenue = revenue;
+
+        animateValue(outRoas, prevValues.roas, roas, 400, fmtRoas);
+        prevValues.roas = roas;
 
         if (isRecurring()) {
           cardLtv.classList.remove('hidden');
