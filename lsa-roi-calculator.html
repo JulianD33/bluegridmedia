@@ -171,13 +171,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Overflow protection: page must never exceed viewport width */
+    /* ── Overflow / viewport protection ── */
     html, body {
       max-width: 100%;
       overflow-x: hidden;
     }
 
-    /* Main layout containers */
+    /* ── Section wrapper ── */
     section.about-section .container {
       width: 100%;
       max-width: 1120px;
@@ -187,7 +187,7 @@
       box-sizing: border-box;
     }
 
-    /* Page layout: two columns on desktop */
+    /* ── Two-column page layout ── */
     .calculator-page-wrap {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 280px;
@@ -199,14 +199,18 @@
       box-sizing: border-box;
     }
     @media (max-width: 900px) {
-      .calculator-page-wrap { grid-template-columns: 1fr; }
+      .calculator-page-wrap {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
       .calculator-sidebar { order: 2; }
     }
     .calculator-main {
       min-width: 0;
+      overflow-x: hidden;
     }
 
-    /* Breadcrumb */
+    /* ── Breadcrumb ── */
     .article-breadcrumb {
       font-size: 0.8rem;
       color: #94a3b8;
@@ -215,13 +219,13 @@
     .article-breadcrumb a { color: #0ea5a4; text-decoration: none; }
     .article-breadcrumb a:hover { text-decoration: underline; }
 
-    /* Calculator input panel */
+    /* ── Calculator input panels ── */
     .calc-panel {
       background: #fff;
       border-radius: 14px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      padding: 28px 32px 32px;
-      margin-bottom: 32px;
+      padding: 24px 28px 28px;
+      margin-bottom: 24px;
     }
     .calc-panel h3 {
       font-size: 0.82rem;
@@ -251,6 +255,14 @@
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
       font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    /* On small screens let inputs fill the column */
+    @media (max-width: 480px) {
+      .calc-row select,
+      .calc-row input[type="number"] {
+        max-width: 100%;
+      }
     }
     .calc-row select:focus,
     .calc-row input[type="number"]:focus {
@@ -274,7 +286,7 @@
     }
     .market-radios input { accent-color: #0ea5a4; cursor: pointer; }
 
-    /* Toggle */
+    /* ── Toggle ── */
     .toggle-wrap {
       display: flex;
       align-items: center;
@@ -288,6 +300,7 @@
       border-radius: 12px;
       position: relative;
       cursor: pointer;
+      flex-shrink: 0;
       transition: background 0.2s ease;
     }
     .toggle-switch.on { background: #0ea5a4; }
@@ -308,8 +321,11 @@
     .recurring-fields { margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
     .recurring-fields.hidden { display: none; }
 
-    /* Sliders */
+    /* ── Sliders ── */
     .slider-wrap { margin-top: 8px; max-width: 320px; }
+    @media (max-width: 480px) {
+      .slider-wrap { max-width: 100%; }
+    }
     .slider-wrap input[type="range"] {
       width: 100%;
       height: 8px;
@@ -330,55 +346,62 @@
     }
     .slider-value { font-size: 0.95rem; font-weight: 600; color: #0ea5a4; }
 
-    /* Results dashboard */
-    .results-section { margin-bottom: 40px; min-width: 0; }
+    /* ── Results dashboard ── */
+    .results-section {
+      margin-bottom: 32px;
+      min-width: 0;
+    }
     .results-section h2 {
       font-size: 1.25rem;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      text-align: left;
     }
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 18px;
+      /* Never let a column be narrower than it can fit — collapses gracefully */
+      grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+      gap: 14px;
       min-width: 0;
     }
     .result-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      padding: 20px;
+      /* More horizontal padding, tighter vertical */
+      padding: 18px 24px;
       border: 1px solid #f1f5f9;
+      min-width: 0;
     }
     .result-card .metric-name {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: #64748b;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .result-card .metric-value {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #0ea5a4;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .result-card .metric-desc {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: #64748b;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
-    /* Insight line */
+    /* ── Insight line ── */
     .insight-line {
       background: #f0fafa;
       border: 1px solid #b8e6e6;
       border-radius: 10px;
-      padding: 16px 20px;
-      margin-top: 24px;
-      font-size: 0.95rem;
+      padding: 14px 18px;
+      margin-top: 18px;
+      font-size: 0.93rem;
       color: #334155;
       line-height: 1.55;
     }
@@ -386,7 +409,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 16px;
       align-items: center;
     }
     .results-action-btn {
@@ -399,6 +422,7 @@
       font-weight: 500;
       color: #334155;
       cursor: pointer;
+      white-space: nowrap;
     }
     .results-action-btn:hover {
       border-color: #0ea5a4;
@@ -415,7 +439,7 @@
       border-color: #0b8f8e;
     }
     .email-results-form {
-      margin-top: 20px;
+      margin-top: 16px;
       padding: 20px;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -438,49 +462,58 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
     }
-    .email-results-buttons { margin-top: 16px; display: flex; gap: 12px; align-items: center; }
+    @media (max-width: 480px) {
+      .email-results-label input { max-width: 100%; }
+    }
+    .email-results-buttons { margin-top: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .email-results-success { color: #0ea5a4; font-weight: 600; }
 
-    /* What If section */
+    /* ── What If section ── */
     .whatif-section {
       background: #f7f9fc;
       border-radius: 14px;
-      padding: 28px 32px 32px;
-      margin-bottom: 40px;
+      padding: 24px 28px 28px;
+      margin-bottom: 32px;
     }
     .whatif-section h2 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
+      text-align: left;
     }
     .whatif-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
       min-width: 0;
     }
-    @media (max-width: 700px) { .whatif-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .whatif-grid { grid-template-columns: 1fr; }
+    }
     .whatif-card {
       background: #fff;
       border-radius: 10px;
-      padding: 18px;
+      padding: 16px 18px;
       border: 1px solid #e2e8f0;
+      min-width: 0;
     }
     .whatif-card h4 {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: #0f172a;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .whatif-card .delta {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #0ea5a4;
       font-weight: 600;
+      word-break: break-word;
     }
 
-    /* Sidebar (match article pages) */
+    /* ── Sidebar ── */
     .sidebar-cta {
       background: linear-gradient(135deg, #0f2d4e, #0ea5a4);
       color: #fff;
@@ -532,46 +565,76 @@
     .sidebar-card a { color: #0ea5a4; text-decoration: none; }
     .sidebar-card a:hover { text-decoration: underline; }
 
-    /* Content below calculator */
-    .calculator-content { margin-top: 48px; }
+    /* ── Explanatory content below calculator ── */
+    .calculator-content { margin-top: 40px; }
     .calculator-content h2 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #0f172a;
-      margin-top: 40px;
-      margin-bottom: 16px;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      text-align: left;
     }
     .calculator-content h2:first-child { margin-top: 0; }
     .calculator-content p {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       line-height: 1.7;
       color: #334155;
     }
     .calculator-content ul {
-      margin: 18px 0 24px;
+      margin: 16px 0 22px;
       padding-left: 22px;
     }
     .calculator-content li { margin-bottom: 8px; line-height: 1.6; }
     .calculator-content a { color: #0ea5a4; font-weight: 500; text-decoration: none; }
     .calculator-content a:hover { text-decoration: underline; }
 
-    /* CTA box after content */
+    /* ── Embed / share box ── */
+    .embed-cta-box {
+      background: #f0fafa;
+      border: 1px solid #b8e6e6;
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 32px;
+    }
+    .embed-cta-box h3 { font-size: 1.05rem; margin-bottom: 10px; color: #0f172a; }
+    .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
+    .embed-code-wrap {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.78rem;
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    /* Wrap long embed strings instead of forcing horizontal scroll */
+    .embed-code-wrap code {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    /* ── Bottom CTA box ── */
     .calculator-cta-box {
       background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
       color: #fff;
       border-radius: 14px;
-      padding: 36px 40px;
-      margin-top: 48px;
+      padding: 32px 36px;
+      margin-top: 40px;
       text-align: center;
     }
     .calculator-cta-box h2 {
       color: #fff;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      text-align: center;
     }
     .calculator-cta-box p {
       color: #e2e8f0;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
@@ -582,7 +645,7 @@
     }
     .calculator-cta-box .btn-primary:hover { background: #f0fafa; }
 
-    /* Embed mode: hide nav/footer, show attribution bar */
+    /* ── Embed mode ── */
     body.embed-mode .site-nav,
     body.embed-mode .site-footer { display: none !important; }
     body.embed-mode { padding-top: 0; }
@@ -594,38 +657,12 @@
       font-size: 0.85rem;
       color: #64748b;
     }
-    body.embed-mode .embed-attribution {
-      display: block;
-    }
+    body.embed-mode .embed-attribution { display: block; }
     .embed-attribution a { color: #0ea5a4; font-weight: 600; text-decoration: none; }
     .embed-attribution a:hover { text-decoration: underline; }
-    .embed-cta-box {
-      background: #f0fafa;
-      border: 1px solid #b8e6e6;
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin-top: 32px;
-    }
-    .embed-cta-box h3 { font-size: 1.1rem; margin-bottom: 12px; color: #0f172a; }
-    .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 14px; }
-    .embed-code-wrap {
-      background: #1e293b;
-      color: #e2e8f0;
-      padding: 14px 18px;
-      border-radius: 8px;
-      font-family: monospace;
-      font-size: 0.8rem;
-      max-width: 100%;
-      overflow-x: auto;
-      margin-bottom: 12px;
-      box-sizing: border-box;
-    }
-    .embed-code-wrap code { white-space: pre; }
 
-    /* iframe, images, embeds: respect viewport width */
-    .calculator-page-wrap iframe,
-    .calculator-content img,
-    .embed-cta-box iframe {
+    /* ── Global media / iframe safety ── */
+    img, iframe, video, embed, object {
       max-width: 100%;
       height: auto;
     }
@@ -681,7 +718,7 @@
     Powered by <a href="https://bluegridmedia.com/lsa-roi-calculator" target="_blank" rel="noopener">Blue Grid Media</a> — Free LSA ROI Calculator
   </div>
 
-  <section class="about-section" style="padding: 40px 0 60px;">
+  <section class="about-section" style="padding: 32px 0 56px;">
     <div class="container">
       <div class="calculator-page-wrap">
 
@@ -861,11 +898,11 @@
           <!-- Explanatory content -->
           <div class="calculator-content">
             <div class="embed-cta-box">
-            <h3>Share or embed this calculator</h3>
-            <p>Partner sites and industry blogs can embed the tool with attribution for high-quality backlinks. Copy the code below:</p>
-            <div class="embed-code-wrap"><code id="embedCodeSnippet">&lt;iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"&gt;&lt;/iframe&gt;</code></div>
-            <button type="button" class="results-action-btn" id="copyEmbedBtn">Copy embed code</button>
-          </div>
+              <h3>Share or embed this calculator</h3>
+              <p>Partner sites and industry blogs can embed the tool with attribution for high-quality backlinks. Copy the code below:</p>
+              <div class="embed-code-wrap"><code id="embedCodeSnippet">&lt;iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"&gt;&lt;/iframe&gt;</code></div>
+              <button type="button" class="results-action-btn" id="copyEmbedBtn">Copy embed code</button>
+            </div>
 
             <h2>How This Calculator Works</h2>
             <p>

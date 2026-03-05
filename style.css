@@ -48,6 +48,11 @@
    ========================= */
 html { scroll-behavior: smooth; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -58,8 +63,10 @@ body {
 
 .container {
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 /* =========================
