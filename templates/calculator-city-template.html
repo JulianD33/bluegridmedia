@@ -10,18 +10,20 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}} | Blue Grid Media</title>
+  <title>{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media</title>
   <meta name="description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Estimate your cost per lead, booked jobs, and return on ad spend in the {{CITY}} market.">
   <link rel="canonical" href="https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}} | Blue Grid Media" />
+  <meta property="og:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta property="og:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Estimate your cost per lead, booked jobs, and return on ad spend." />
   <meta property="og:url" content="https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}" />
   <meta property="og:site_name" content="Blue Grid Media" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}} | Blue Grid Media" />
+  <meta name="twitter:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}." />
+
+  <!-- Existing structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,7 +39,7 @@
       },
       {
         "@type": "WebPage",
-        "name": "{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}}",
+        "name": "{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead & ROI",
         "url": "https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}",
         "description": "Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}.",
         "publisher": {
@@ -48,6 +50,57 @@
     ]
   }
   </script>
+
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much do Google Local Services Ads cost for {{INDUSTRY_LABEL}} companies in {{CITY}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cost per lead for {{INDUSTRY_LABEL}} businesses in {{CITY}}, {{STATE}} typically ranges based on competition, seasonality, and your Google Guaranteed rating. Use the calculator on this page to get a personalized estimate based on your budget and market conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the {{CITY}} {{INDUSTRY_LABEL}} market competitive for LSA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{CITY}} is one of the largest metro markets in the US, which means both higher lead volume potential and more competition among {{INDUSTRY_LABEL}} providers. A strong Google Guaranteed profile and fast response time are key ranking factors in competitive markets like {{CITY}}."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many leads can I expect from LSA in {{CITY}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lead volume depends on your budget, your industry's average CPL in {{CITY}}, and how well your profile is optimized. The calculator on this page uses real benchmark data to give you a realistic estimate for the {{CITY}} market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROI for {{INDUSTRY_LABEL}} LSA campaigns in {{CITY}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most well-optimized {{INDUSTRY_LABEL}} LSA campaigns in large markets like {{CITY}} achieve a return on ad spend (ROAS) of 5x–15x or more, depending on average job value and close rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get started with Google LSA in {{CITY}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To run LSA in {{CITY}}, you'll need to complete Google's background check, obtain the Google Guaranteed or Google Screened badge, and set up your service area to include {{CITY}} and surrounding zip codes."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -75,9 +128,33 @@
       margin-bottom: 36px;
       max-width: 720px;
     }
-
     .city-calc-intro strong {
       color: #0f172a;
+    }
+
+    /* City Market Overview */
+    .city-market-overview {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0ea5a4;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+    .city-market-overview h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .city-market-overview p {
+      font-size: 0.97rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .city-market-overview p:last-child {
+      margin-bottom: 0;
     }
 
     .iframe-wrapper {
@@ -88,7 +165,6 @@
       box-shadow: 0 4px 20px rgba(15,23,42,0.07);
       margin-bottom: 48px;
     }
-
     .iframe-wrapper iframe {
       width: 100%;
       min-height: 780px;
@@ -160,7 +236,7 @@
     .city-calc-cta a:hover { background: #f0fafa; }
 
     .related-cities {
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
     .related-cities h2 {
       font-size: 1.1rem;
@@ -187,13 +263,43 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .related-cities ul li a:hover {
-      background: #e0f2f1;
+    .related-cities ul li a:hover { background: #e0f2f1; }
+
+    /* Related industries section */
+    .related-industries {
+      margin-bottom: 56px;
     }
+    .related-industries h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .related-industries ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-industries ul li a {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #0ea5a4;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .related-industries ul li a:hover { background: #e0f2f1; }
 
     @media (max-width: 600px) {
       .city-calc-cta { padding: 24px 20px; }
       .iframe-wrapper iframe { min-height: 900px; }
+      .city-market-overview { padding: 18px 16px; }
     }
   </style>
 </head>
@@ -258,6 +364,17 @@
         This calculator is pre-loaded with <strong>{{CITY}}, {{STATE}}</strong> market data for <strong>{{INDUSTRY_LABEL}}</strong> companies. Enter your monthly ad budget and average job value to instantly see how many leads, booked jobs, and how much revenue Google Local Services Ads could generate for your business in the {{CITY}} area.
       </p>
 
+      <!-- City Market Overview -->
+      <section class="city-market-overview">
+        <h2>{{INDUSTRY_LABEL}} Market Overview — {{CITY}}, {{STATE}}</h2>
+        <p>
+          The {{CITY}}, {{STATE}} market is one of the largest metro areas in the United States. {{INDUSTRY_LABEL}} companies here typically see strong demand for emergency services, maintenance, and same-day jobs. Google Local Services Ads can be a strong lead source for businesses operating in the {{CITY}} metro area.
+        </p>
+        <p>
+          In competitive markets like {{CITY}}, ranking in Google Local Services Ads often depends on your review rating, response time, and profile optimization. Companies that actively manage their Google Guaranteed profiles tend to generate significantly more qualified leads.
+        </p>
+      </section>
+
       <div class="iframe-wrapper">
         <iframe
           src="/lsa-roi-calculator.html?industry={{INDUSTRY}}&city={{CITY_SLUG}}&embed=1"
@@ -306,10 +423,19 @@
         </div>
       </div>
 
+      <!-- Related Cities -->
       <div class="related-cities">
         <h2>{{INDUSTRY_LABEL}} LSA Calculators — Other Cities</h2>
         <ul>
           {{RELATED_CITY_LINKS}}
+        </ul>
+      </div>
+
+      <!-- Related Industries for same city -->
+      <div class="related-industries">
+        <h2>Other LSA ROI Calculators for {{CITY}}</h2>
+        <ul>
+          {{RELATED_INDUSTRY_LINKS}}
         </ul>
       </div>
 

@@ -63,17 +63,17 @@ const CITIES = [
 //    (kept here so the script can re-write the full file without losing them)
 // ---------------------------------------------------------------------------
 const STATIC_CALCULATOR_URLS = [
-  { loc: 'https://bluegridmedia.com/calculators/',                              lastmod: '2026-05-01', priority: '0.8' },
-  { loc: 'https://bluegridmedia.com/calculators/hvac-lsa-roi-calculator',       lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/plumbing-lsa-roi-calculator',   lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/electrician-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/roofing-lsa-roi-calculator',    lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/pest-control-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/garage-door-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/landscaping-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/tree-service-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/carpet-cleaning-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
-  { loc: 'https://bluegridmedia.com/calculators/appliance-repair-lsa-roi-calculator',lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/',                                    lastmod: '2026-05-01', priority: '0.8' },
+  { loc: 'https://bluegridmedia.com/calculators/hvac-lsa-roi-calculator',             lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/plumbing-lsa-roi-calculator',         lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/electrician-lsa-roi-calculator',      lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/roofing-lsa-roi-calculator',          lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/pest-control-lsa-roi-calculator',     lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/garage-door-lsa-roi-calculator',      lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/landscaping-lsa-roi-calculator',      lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/tree-service-lsa-roi-calculator',     lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/carpet-cleaning-lsa-roi-calculator',  lastmod: '2026-05-01', priority: '0.7' },
+  { loc: 'https://bluegridmedia.com/calculators/appliance-repair-lsa-roi-calculator', lastmod: '2026-05-01', priority: '0.7' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -90,14 +90,25 @@ const BASE_URL      = 'https://bluegridmedia.com';
 // ---------------------------------------------------------------------------
 
 /**
- * Build the related-city pill links for a given industry,
- * excluding the current city.
+ * Build related-city pill links for a given industry, excluding the current city.
  */
 function buildRelatedCityLinks(industry, currentCitySlug) {
   return CITIES
     .filter(c => c.slug !== currentCitySlug)
     .map(c =>
       `<li><a href="/calculators/${industry.slug}-lsa-roi-calculator-${c.slug}.html">${c.name}, ${c.state}</a></li>`
+    )
+    .join('\n          ');
+}
+
+/**
+ * Build related-industry pill links for a given city, excluding the current industry.
+ */
+function buildRelatedIndustryLinks(currentIndustrySlug, city) {
+  return INDUSTRIES
+    .filter(i => i.slug !== currentIndustrySlug)
+    .map(i =>
+      `<li><a href="/calculators/${i.slug}-lsa-roi-calculator-${city.slug}.html">${i.label} LSA ROI Calculator — ${city.name}</a></li>`
     )
     .join('\n          ');
 }
@@ -115,12 +126,13 @@ function replaceAll(template, variable, value) {
 function renderPage(template, industry, city) {
   let html = template;
 
-  html = replaceAll(html, 'INDUSTRY',           industry.slug);
-  html = replaceAll(html, 'INDUSTRY_LABEL',     industry.label);
-  html = replaceAll(html, 'CITY',               city.name);
-  html = replaceAll(html, 'CITY_SLUG',          city.slug);
-  html = replaceAll(html, 'STATE',              city.state);
-  html = replaceAll(html, 'RELATED_CITY_LINKS', buildRelatedCityLinks(industry, city.slug));
+  html = replaceAll(html, 'INDUSTRY',               industry.slug);
+  html = replaceAll(html, 'INDUSTRY_LABEL',         industry.label);
+  html = replaceAll(html, 'CITY',                   city.name);
+  html = replaceAll(html, 'CITY_SLUG',              city.slug);
+  html = replaceAll(html, 'STATE',                  city.state);
+  html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
+  html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
 
   return html;
 }
