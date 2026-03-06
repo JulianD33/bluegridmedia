@@ -11,8 +11,6 @@
     gtag('config', 'AW-17840803263');
   </script>
 
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -20,25 +18,19 @@
 
   <meta name="description" content="Plug in your industry, budget, and job value. Our free LSA calculator shows your estimated cost per lead, leads per month, booked jobs, and exact return on ad spend — in seconds.">
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://bluegridmedia.com/lsa-roi-calculator" />
-
-  <!-- Robots -->
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Free Google LSA ROI Calculator: Estimate Your Cost Per Lead &amp; Return | Blue Grid Media" />
   <meta property="og:description" content="Plug in your industry, budget, and job value. Our free LSA calculator shows your estimated cost per lead, leads per month, booked jobs, and exact return on ad spend — in seconds." />
   <meta property="og:url" content="https://bluegridmedia.com/lsa-roi-calculator" />
   <meta property="og:site_name" content="Blue Grid Media" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Free Google LSA ROI Calculator: Estimate Your Cost Per Lead &amp; Return | Blue Grid Media" />
   <meta name="twitter:description" content="Plug in your industry, budget, and job value. Our free LSA calculator shows your estimated cost per lead, leads per month, booked jobs, and exact return on ad spend — in seconds." />
 
-  <!-- JSON-LD: WebApplication + BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -173,14 +165,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ── Overflow / viewport protection ── */
     html, body {
       max-width: 100vw;
       overflow-x: hidden;
       box-sizing: border-box;
     }
 
-    /* ── Section wrapper ── */
     section.about-section .container {
       width: 100%;
       max-width: 1120px;
@@ -190,7 +180,6 @@
       box-sizing: border-box;
     }
 
-    /* ── Two-column page layout ── */
     .calculator-page-wrap {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 280px;
@@ -214,7 +203,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Breadcrumb ── */
     .article-breadcrumb {
       font-size: 0.8rem;
       color: #94a3b8;
@@ -223,7 +211,6 @@
     .article-breadcrumb a { color: #0ea5a4; text-decoration: none; }
     .article-breadcrumb a:hover { text-decoration: underline; }
 
-    /* ── Calculator input panels ── */
     .calc-panel {
       background: #ffffff;
       border-radius: 16px;
@@ -255,9 +242,7 @@
       box-shadow: 0 14px 38px rgba(15,23,42,0.08);
       transform: translateY(-2px);
     }
-    .calc-panel:hover::before {
-      opacity: 1;
-    }
+    .calc-panel:hover::before { opacity: 1; }
     .calc-panel h3 {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -276,9 +261,7 @@
       background: linear-gradient(135deg, #0ea5a4, #14b8a6);
       border-radius: 2px;
     }
-    .calc-row {
-      margin-bottom: 20px;
-    }
+    .calc-row { margin-bottom: 20px; }
     .calc-row:last-child { margin-bottom: 0; }
     .calc-row label {
       display: block;
@@ -329,7 +312,6 @@
     }
     .market-radios input { accent-color: #0ea5a4; cursor: pointer; }
 
-    /* ── Toggle ── */
     .toggle-wrap {
       display: flex;
       align-items: center;
@@ -346,15 +328,9 @@
       flex-shrink: 0;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .toggle-switch:hover {
-      background: #cbd5e1;
-    }
-    .toggle-switch.on {
-      background: linear-gradient(135deg, #0ea5a4, #14b8a6);
-    }
-    .toggle-switch.on:hover {
-      background: linear-gradient(135deg, #0b8f8e, #0ea5a4);
-    }
+    .toggle-switch:hover { background: #cbd5e1; }
+    .toggle-switch.on { background: linear-gradient(135deg, #0ea5a4, #14b8a6); }
+    .toggle-switch.on:hover { background: linear-gradient(135deg, #0b8f8e, #0ea5a4); }
     .toggle-switch::after {
       content: '';
       position: absolute;
@@ -375,15 +351,12 @@
     .recurring-fields { margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
     .recurring-fields.hidden { display: none; }
 
-    /* ── Sliders ── */
     .slider-wrap {
       margin-top: 8px;
       max-width: 100%;
       box-sizing: border-box;
     }
-    @media (min-width: 768px) {
-      .slider-wrap { max-width: 320px; }
-    }
+    @media (min-width: 768px) { .slider-wrap { max-width: 320px; } }
     .slider-wrap input[type="range"] {
       width: 100%;
       height: 8px;
@@ -407,12 +380,9 @@
       transform: scale(1.15);
       box-shadow: 0 4px 12px rgba(14,165,164,0.5);
     }
-    .slider-wrap input[type="range"]::-webkit-slider-thumb:active {
-      transform: scale(1.05);
-    }
+    .slider-wrap input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.05); }
     .slider-value { font-size: 0.95rem; font-weight: 600; color: #0ea5a4; }
 
-    /* ── Results dashboard ── */
     .results-section {
       margin-top: 26px;
       margin-bottom: 36px;
@@ -451,10 +421,7 @@
       align-items: center;
       gap: 10px;
     }
-    .results-section h2::before {
-      content: '📊';
-      font-size: 1.3rem;
-    }
+    .results-section h2::before { content: '📊'; font-size: 1.3rem; }
     .results-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -462,9 +429,7 @@
       min-width: 0;
       max-width: 100%;
     }
-    .results-grid > * {
-      min-width: 0;
-    }
+    .results-grid > * { min-width: 0; }
     .result-card {
       background: #ffffff;
       border-radius: 14px;
@@ -494,9 +459,7 @@
       box-shadow: 0 12px 28px rgba(15,23,42,0.1);
       border-color: #cbd5e1;
     }
-    .result-card:hover::before {
-      opacity: 1;
-    }
+    .result-card:hover::before { opacity: 1; }
     .result-card .metric-name {
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -515,16 +478,9 @@
       margin-bottom: 6px;
       transition: transform 0.2s ease;
     }
-    .result-card:hover .metric-value {
-      transform: scale(1.05);
-    }
-    .result-card .metric-desc {
-      font-size: 0.8rem;
-      color: #64748b;
-      line-height: 1.4;
-    }
+    .result-card:hover .metric-value { transform: scale(1.05); }
+    .result-card .metric-desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; }
 
-    /* ── Insight line ── */
     .insight-line {
       background: linear-gradient(135deg, #f0fdfa, #ffffff);
       border: 1.5px solid #ccfbf1;
@@ -571,9 +527,7 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(14,165,164,0.15);
     }
-    .results-action-btn:active {
-      transform: translateY(0);
-    }
+    .results-action-btn:active { transform: translateY(0); }
     .results-action-btn-primary {
       background: linear-gradient(135deg, #0ea5a4, #14b8a6);
       color: #fff;
@@ -587,7 +541,6 @@
       box-shadow: 0 6px 16px rgba(14,165,164,0.35);
     }
 
-    /* ── Email results form ── */
     .email-results-form {
       margin-top: 16px;
       padding: 24px;
@@ -597,19 +550,8 @@
       box-shadow: 0 4px 12px rgba(15,23,42,0.04);
     }
     .email-results-form.hidden { display: none; }
-    .email-results-intro {
-      margin-bottom: 18px;
-      font-size: 0.95rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-    .email-results-label {
-      display: block;
-      margin-bottom: 14px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #334155;
-    }
+    .email-results-intro { margin-bottom: 18px; font-size: 0.95rem; color: #475569; line-height: 1.6; }
+    .email-results-label { display: block; margin-bottom: 14px; font-size: 0.88rem; font-weight: 600; color: #334155; }
     .email-results-label input {
       display: block;
       margin-top: 6px;
@@ -628,16 +570,8 @@
       border-color: #0ea5a4;
       box-shadow: 0 0 0 3px rgba(14,165,164,0.1);
     }
-    @media (min-width: 768px) {
-      .email-results-label input { max-width: 360px; }
-    }
-    .email-results-buttons {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    @media (min-width: 768px) { .email-results-label input { max-width: 360px; } }
+    .email-results-buttons { margin-top: 18px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .email-results-success {
       color: #0ea5a4;
       font-weight: 600;
@@ -659,7 +593,6 @@
       margin-top: 12px;
     }
 
-    /* ── What If section ── */
     .whatif-section {
       background: #ffffff;
       border-radius: 16px;
@@ -671,9 +604,7 @@
       box-shadow: 0 4px 16px rgba(15,23,42,0.04);
       transition: box-shadow 0.3s ease;
     }
-    .whatif-section:hover {
-      box-shadow: 0 8px 24px rgba(15,23,42,0.06);
-    }
+    .whatif-section:hover { box-shadow: 0 8px 24px rgba(15,23,42,0.06); }
     .whatif-section h2 {
       font-size: 1.15rem;
       font-weight: 700;
@@ -684,10 +615,7 @@
       align-items: center;
       gap: 10px;
     }
-    .whatif-section h2::before {
-      content: '🎯';
-      font-size: 1.2rem;
-    }
+    .whatif-section h2::before { content: '🎯'; font-size: 1.2rem; }
     .whatif-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -695,12 +623,7 @@
       min-width: 0;
       max-width: 100%;
     }
-    @media (min-width: 600px) {
-      .whatif-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-    }
+    @media (min-width: 600px) { .whatif-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
     .whatif-card {
       background: linear-gradient(135deg, #f8fafc, #ffffff);
       border-radius: 12px;
@@ -710,27 +633,15 @@
       max-width: 100%;
       box-sizing: border-box;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
     }
     .whatif-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(15,23,42,0.08);
       border-color: #cbd5e1;
     }
-    .whatif-card h4 {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-    .whatif-card .delta {
-      font-size: 0.88rem;
-      color: #0ea5a4;
-      font-weight: 600;
-      word-break: break-word;
-    }
+    .whatif-card h4 { font-size: 0.88rem; font-weight: 600; color: #0f172a; margin-bottom: 10px; }
+    .whatif-card .delta { font-size: 0.88rem; color: #0ea5a4; font-weight: 600; word-break: break-word; }
 
-    /* ── Sidebar ── */
     .sidebar-cta {
       background: linear-gradient(135deg, #0f2d4e, #0ea5a4);
       color: #fff;
@@ -739,18 +650,8 @@
       text-align: center;
       box-shadow: 0 8px 24px rgba(14,165,164,0.25);
     }
-    .sidebar-cta h3 {
-      color: #d1fafa;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-    .sidebar-cta p {
-      color: #e2e8f0;
-      font-size: 0.88rem;
-      margin-bottom: 1rem;
-    }
+    .sidebar-cta h3 { color: #d1fafa; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+    .sidebar-cta p { color: #e2e8f0; font-size: 0.88rem; margin-bottom: 1rem; }
     .sidebar-cta a {
       display: inline-block;
       background: #fff;
@@ -769,9 +670,7 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .sidebar-cta a:active {
-      transform: translateY(0);
-    }
+    .sidebar-cta a:active { transform: translateY(0); }
     .sidebar-card {
       background: linear-gradient(135deg, #f8fafc, #ffffff);
       border: 1px solid #e2e8f0;
@@ -780,45 +679,22 @@
       margin-top: 1.5rem;
       box-shadow: 0 2px 8px rgba(15,23,42,0.03);
     }
-    .sidebar-card h3 {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #64748b;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+    .sidebar-card h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 700; margin-bottom: 1rem; }
     .sidebar-card ul { list-style: none; padding: 0; margin: 0; }
     .sidebar-card ul li { padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; font-size: 0.92rem; }
     .sidebar-card ul li:last-child { border-bottom: none; }
     .sidebar-card a { color: #0ea5a4; text-decoration: none; }
     .sidebar-card a:hover { text-decoration: underline; }
 
-    /* ── Explanatory content below calculator ── */
     .calculator-content { margin-top: 40px; }
-    .calculator-content h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 36px;
-      margin-bottom: 14px;
-      text-align: left;
-    }
+    .calculator-content h2 { font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-top: 36px; margin-bottom: 14px; text-align: left; }
     .calculator-content h2:first-child { margin-top: 0; }
-    .calculator-content p {
-      margin-bottom: 16px;
-      line-height: 1.7;
-      color: #334155;
-    }
-    .calculator-content ul {
-      margin: 16px 0 22px;
-      padding-left: 22px;
-    }
+    .calculator-content p { margin-bottom: 16px; line-height: 1.7; color: #334155; }
+    .calculator-content ul { margin: 16px 0 22px; padding-left: 22px; }
     .calculator-content li { margin-bottom: 8px; line-height: 1.6; }
     .calculator-content a { color: #0ea5a4; font-weight: 500; text-decoration: none; }
     .calculator-content a:hover { text-decoration: underline; }
 
-    /* ── Embed / share box ── */
     .embed-cta-box {
       background: #f0fafa;
       border: 1px solid #b8e6e6;
@@ -828,9 +704,7 @@
       box-sizing: border-box;
       max-width: 100%;
     }
-    @media (min-width: 768px) {
-      .embed-cta-box { padding: 22px 24px; }
-    }
+    @media (min-width: 768px) { .embed-cta-box { padding: 22px 24px; } }
     .embed-cta-box h3 { font-size: 1.05rem; margin-bottom: 10px; color: #0f172a; }
     .embed-cta-box p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
     .embed-code-wrap {
@@ -845,12 +719,8 @@
       margin-bottom: 12px;
       box-sizing: border-box;
     }
-    .embed-code-wrap code {
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
+    .embed-code-wrap code { white-space: pre-wrap; word-break: break-all; }
 
-    /* ── Bottom CTA box ── */
     .calculator-cta-box {
       background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
       color: #fff;
@@ -859,26 +729,23 @@
       margin-top: 40px;
       text-align: center;
     }
-    .calculator-cta-box h2 {
-      color: #fff;
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .calculator-cta-box p {
-      color: #e2e8f0;
-      margin-bottom: 22px;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .calculator-cta-box .btn-primary {
-      background: #fff;
-      color: #0f2d4e !important;
-    }
+    .calculator-cta-box h2 { color: #fff; font-size: 1.35rem; margin-bottom: 10px; text-align: center; }
+    .calculator-cta-box p { color: #e2e8f0; margin-bottom: 22px; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .calculator-cta-box .btn-primary { background: #fff; color: #0f2d4e !important; }
     .calculator-cta-box .btn-primary:hover { background: #f0fafa; }
 
-    /* ── Embed mode ── */
+    /* CPL banner (shown on city pages) */
+    .city-cpl-banner {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 20px;
+      font-size: 0.97rem;
+    }
+
     body.embed-mode .site-nav,
     body.embed-mode .site-footer { display: none !important; }
     body.embed-mode { padding-top: 0; }
@@ -894,13 +761,7 @@
     .embed-attribution a { color: #0ea5a4; font-weight: 600; text-decoration: none; }
     .embed-attribution a:hover { text-decoration: underline; }
 
-    /* ── Global media / iframe safety ── */
-    img, iframe, video, embed, object {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* ── Utility ── */
+    img, iframe, video, embed, object { max-width: 100%; height: auto; }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -972,24 +833,24 @@
               <label for="industry">Industry</label>
               <select id="industry" aria-label="Select your industry">
                 <option value="" data-slug="">Select your industry...</option>
-                <option value="52" data-slug="hvac">HVAC</option>
-                <option value="57" data-slug="plumbing">Plumbing</option>
-                <option value="67" data-slug="roofing">Roofing</option>
-                <option value="50" data-slug="electrical">Electrical</option>
-                <option value="50" data-slug="water-damage-restoration">Water Damage Restoration</option>
-                <option value="52" data-slug="general-contractors">General Contractors</option>
-                <option value="38" data-slug="pest-control">Pest Control</option>
-                <option value="35" data-slug="landscaping">Landscaping / Lawn Care</option>
-                <option value="28" data-slug="house-cleaning">House Cleaning</option>
-                <option value="35" data-slug="appliance-repair">Appliance Repair</option>
-                <option value="35" data-slug="garage-door">Garage Door</option>
-                <option value="32" data-slug="locksmith">Locksmith</option>
-                <option value="42" data-slug="tree-services">Tree Services</option>
+                <option value="52"  data-slug="hvac">HVAC</option>
+                <option value="57"  data-slug="plumbing">Plumbing</option>
+                <option value="67"  data-slug="roofing">Roofing</option>
+                <option value="50"  data-slug="electrician">Electrical / Electrician</option>
+                <option value="50"  data-slug="water-damage-restoration">Water Damage Restoration</option>
+                <option value="52"  data-slug="general-contractors">General Contractors</option>
+                <option value="38"  data-slug="pest-control">Pest Control</option>
+                <option value="35"  data-slug="landscaping">Landscaping / Lawn Care</option>
+                <option value="28"  data-slug="house-cleaning">House Cleaning</option>
+                <option value="35"  data-slug="appliance-repair">Appliance Repair</option>
+                <option value="35"  data-slug="garage-door">Garage Door</option>
+                <option value="32"  data-slug="locksmith">Locksmith</option>
+                <option value="42"  data-slug="tree-service">Tree Services</option>
                 <option value="175" data-slug="lawyers">Lawyers</option>
-                <option value="65" data-slug="dentists">Dentists</option>
-                <option value="52" data-slug="chiropractors">Chiropractors</option>
-                <option value="80" data-slug="real-estate-agents">Real Estate Agents</option>
-                <option value="42" data-slug="other-home-services">Other Home Services</option>
+                <option value="65"  data-slug="dentists">Dentists</option>
+                <option value="52"  data-slug="chiropractors">Chiropractors</option>
+                <option value="80"  data-slug="real-estate-agents">Real Estate Agents</option>
+                <option value="42"  data-slug="other-home-services">Other Home Services</option>
               </select>
             </div>
             <div class="calc-row">
@@ -1047,7 +908,6 @@
           </div>
 
           <!-- Results -->
-           <p id="cityCplText"></p>
           <div class="results-section">
             <h2>Your estimated results</h2>
             <div class="results-grid" id="resultsGrid" role="status" aria-live="polite" aria-atomic="true">
@@ -1101,13 +961,10 @@
               <button type="button" class="results-action-btn results-action-btn-primary" id="emailResultsBtn">Email my results</button>
             </div>
 
-            <!-- Email results form — POSTs JSON to /.netlify/functions/email-results -->
             <div class="email-results-form hidden" id="emailResultsForm">
               <p class="email-results-intro">We'll send your personalized LSA results to your inbox so you can share them with your team or revisit later.</p>
               <form id="emailResultsInnerForm" novalidate>
-                <!-- Honeypot -->
                 <p style="display:none;"><label>Don't fill this out: <input name="bot" tabindex="-1" autocomplete="off" id="botField"></label></p>
-
                 <label class="email-results-label">
                   Email address *
                   <input type="email" name="email" required placeholder="you@example.com" id="emailInput">
@@ -1120,7 +977,6 @@
                   Business name (optional)
                   <input type="text" name="business" placeholder="Your company" id="businessInput">
                 </label>
-
                 <div class="email-results-buttons">
                   <button type="submit" class="results-action-btn results-action-btn-primary" id="emailSubmitBtn">Send my results</button>
                   <button type="button" class="results-action-btn" id="emailResultsCancel">Cancel</button>
@@ -1193,7 +1049,6 @@
             </p>
           </div>
 
-          <!-- CTA box -->
           <div class="calculator-cta-box">
             <h2>Want to Know What These Numbers Look Like for Your Specific Market?</h2>
             <p>
@@ -1309,470 +1164,521 @@
   </footer>
 
   <script>
-    // ---------------------------------------------------
-// Read URL parameters (industry + city)
-// ---------------------------------------------------
-const params = new URLSearchParams(window.location.search);
+  // =============================================================================
+  // LSA ROI CALCULATOR — SINGLE UNIFIED SCRIPT
+  // =============================================================================
+  (function () {
+    'use strict';
 
-const industrySlug = params.get("industry") || "hvac";
-const city = params.get("city") || "national";
+    // -------------------------------------------------------------------------
+    // 1. DATA — Base CPL ranges by industry slug (mid-size market baseline)
+    //    Keys must exactly match the data-slug attributes on the <option> elements.
+    // -------------------------------------------------------------------------
+    var BASE_CPL = {
+      'hvac':                     { low: 40,  high: 85  },
+      'plumbing':                 { low: 35,  high: 80  },
+      'electrician':              { low: 30,  high: 70  },
+      'roofing':                  { low: 50,  high: 120 },
+      'pest-control':             { low: 25,  high: 60  },
+      'landscaping':              { low: 30,  high: 70  },
+      'tree-service':             { low: 45,  high: 110 },
+      'carpet-cleaning':          { low: 20,  high: 55  },
+      'appliance-repair':         { low: 25,  high: 65  },
+      'garage-door':              { low: 30,  high: 75  },
+      'water-damage-restoration': { low: 45,  high: 100 },
+      'general-contractors':      { low: 40,  high: 90  },
+      'house-cleaning':           { low: 20,  high: 50  },
+      'locksmith':                { low: 25,  high: 55  },
+      'lawyers':                  { low: 120, high: 300 },
+      'dentists':                 { low: 50,  high: 110 },
+      'chiropractors':            { low: 35,  high: 80  },
+      'real-estate-agents':       { low: 60,  high: 140 },
+      'other-home-services':      { low: 30,  high: 70  }
+    };
 
-const cityName = city.replace(/-/g, " ");
-const cityTitle = cityName.replace(/\b\w/g, l => l.toUpperCase());
+    // -------------------------------------------------------------------------
+    // 2. DATA — City competition multipliers
+    // -------------------------------------------------------------------------
+    var CITY_MULTIPLIER = {
+      'new-york':      1.35,
+      'los-angeles':   1.30,
+      'chicago':       1.20,
+      'houston':       1.05,
+      'phoenix':       1.10,
+      'philadelphia':  1.15,
+      'san-antonio':   1.05,
+      'san-diego':     1.20,
+      'dallas':        1.00,
+      'san-jose':      1.25,
+      'austin':        1.10,
+      'jacksonville':  1.05,
+      'fort-worth':    1.05,
+      'columbus':      1.05,
+      'charlotte':     1.10,
+      'indianapolis':  1.05,
+      'san-francisco': 1.40,
+      'seattle':       1.25,
+      'denver':        1.10,
+      'nashville':     0.95
+    };
 
-document.getElementById("cityCplText").textContent =
-`Estimated CPL in ${cityTitle}: $${adjustedMin} – $${adjustedMax}`;
+    // -------------------------------------------------------------------------
+    // 3. READ URL PARAMETERS — single source of truth
+    // -------------------------------------------------------------------------
+    var urlParams      = new URLSearchParams(window.location.search);
+    var urlIndustry    = (urlParams.get('industry') || '').toLowerCase().trim();
+    var urlCity        = (urlParams.get('city')     || '').toLowerCase().trim();
 
-// ---------------------------------------------------
-// Read URL parameters (industry + city)
-// ---------------------------------------------------
-const params = new URLSearchParams(window.location.search);
-
-const industrySlug = params.get("industry") || "hvac";
-const city = params.get("city") || "national";
-
-const cityName = city.replace("-", " ");
-const cityTitle = cityName.replace(/\b\w/g, l => l.toUpperCase());
-
-// ---------------------------------------------------
-// Base CPL ranges by industry
-// ---------------------------------------------------
-const BASE_CPL = {
-  hvac: [45, 90],
-  plumbing: [40, 80],
-  electrical: [35, 70],
-  roofing: [60, 120],
-  "pest-control": [35, 65],
-  landscaping: [30, 55],
-  "tree-services": [45, 85],
-  "appliance-repair": [30, 60],
-  "garage-door": [35, 70],
-  locksmith: [30, 60],
-  dentists: [60, 120],
-  lawyers: [150, 350]
-};
-
-// ---------------------------------------------------
-// City competition multipliers
-// ---------------------------------------------------
-const CITY_MULTIPLIER = {
-  "new-york": 1.35,
-  "los-angeles": 1.30,
-  "chicago": 1.25,
-  "houston": 1.15,
-  "phoenix": 1.10,
-  "philadelphia": 1.15,
-  "san-antonio": 1.05,
-  "san-diego": 1.20,
-  "dallas": 1.15,
-  "san-jose": 1.25,
-  "austin": 1.10,
-  "jacksonville": 1.05,
-  "fort-worth": 1.05,
-  "columbus": 1.05,
-  "charlotte": 1.10,
-  "indianapolis": 1.05,
-  "san-francisco": 1.35,
-  "seattle": 1.30,
-  "denver": 1.20,
-  "nashville": 1.15
-};
-
-// ---------------------------------------------------
-// Calculate adjusted CPL
-// ---------------------------------------------------
-const baseRange = BASE_CPL[industrySlug] || [40, 80];
-const multiplier = CITY_MULTIPLIER[city] || 1;
-
-const adjustedMin = Math.round(baseRange[0] * multiplier);
-const adjustedMax = Math.round(baseRange[1] * multiplier);
-
-// midpoint used by calculator
-const midpointCpl = (adjustedMin + adjustedMax) / 2;
-
-// ---------------------------------------------------
-// Display CPL range on page
-// ---------------------------------------------------
-const cityCpl = document.getElementById("cityCplText");
-
-if (cityCpl) {
-  cityCpl.textContent =
-  `Estimated CPL in ${cityTitle}: $${adjustedMin} – $${adjustedMax}`;
-}
-
-
-
-    (function () {
-      /* ── Animate a numeric metric value ── */
-      function animateValue(element, start, end, duration, formatter) {
-        start = start || 0;
-        if (start === end) {
-          element.textContent = formatter ? formatter(end) : end;
-          return;
-        }
-        var range = end - start;
-        var startTime = performance.now();
-        function update(currentTime) {
-          var elapsed = currentTime - startTime;
-          var progress = Math.min(elapsed / duration, 1);
-          var value = start + range * progress;
-          element.textContent = formatter ? formatter(value) : Math.round(value);
-          if (progress < 1) requestAnimationFrame(update);
-        }
-        requestAnimationFrame(update);
-      }
-
-      var prevValues = { cpl: 0, leads: 0, booked: 0, costPerJob: 0, revenue: 0, roas: 0 };
-
-      /* ── DOM refs ── */
-      var industry         = document.getElementById('industry');
-      var marketRadios     = document.querySelectorAll('input[name="market"]');
-      var budget           = document.getElementById('budget');
-      var jobValue         = document.getElementById('jobValue');
-
-      /* ---------------------------------------------------
-Auto-select industry from URL
---------------------------------------------------- */
-
-if (industry) {
-  for (let option of industry.options) {
-    if (option.dataset.slug === industrySlug) {
-      option.selected = true;
-      break;
+    // -------------------------------------------------------------------------
+    // 4. COMPUTE CITY-ADJUSTED CPL — called once here, reused everywhere
+    //    Returns { low, high, midpoint, cityMultiplier } for the URL industry+city.
+    //    If no URL industry, returns null (calculator uses dropdown + market radio).
+    // -------------------------------------------------------------------------
+    function computeUrlCpl(industrySlug, citySlug) {
+      var base = BASE_CPL[industrySlug];
+      if (!base) return null;
+      var mult    = (citySlug && CITY_MULTIPLIER[citySlug]) ? CITY_MULTIPLIER[citySlug] : 1;
+      var low     = Math.round(base.low  * mult);
+      var high    = Math.round(base.high * mult);
+      var midpoint = (low + high) / 2;
+      return { low: low, high: high, midpoint: midpoint, cityMultiplier: mult };
     }
-  }
-}
-      var recurringToggle  = document.getElementById('recurringToggle');
-      var recurringFields  = document.getElementById('recurringFields');
-      var recurringLabel   = document.getElementById('recurringLabel');
-      var monthlyRecurring = document.getElementById('monthlyRecurring');
-      var retentionMonths  = document.getElementById('retentionMonths');
-      var answerRate       = document.getElementById('answerRate');
-      var bookingRate      = document.getElementById('bookingRate');
-      var answerRateVal    = document.getElementById('answerRateVal');
-      var bookingRateVal   = document.getElementById('bookingRateVal');
 
-      
+    // Pre-compute once for the URL parameters (may be null if no URL industry)
+    var urlCplData = urlIndustry ? computeUrlCpl(urlIndustry, urlCity) : null;
 
-      var outCpl        = document.getElementById('outCpl');
-      var outLeads      = document.getElementById('outLeads');
-      var outBooked     = document.getElementById('outBooked');
-      var outCostPerJob = document.getElementById('outCostPerJob');
-      var outRevenue    = document.getElementById('outRevenue');
-      var outRoas       = document.getElementById('outRoas');
-      var outLtv        = document.getElementById('outLtv');
-      var outLtvRoas    = document.getElementById('outLtvRoas');
-      var cardLtv       = document.getElementById('cardLtv');
-      var cardLtvRoas   = document.getElementById('cardLtvRoas');
-      var insightLine   = document.getElementById('insightLine');
-      var whatifA       = document.getElementById('whatifA');
-      var whatifB       = document.getElementById('whatifB');
-      var whatifC       = document.getElementById('whatifC');
+    // -------------------------------------------------------------------------
+    // 5. DOM REFERENCES
+    // -------------------------------------------------------------------------
+    var industryEl       = document.getElementById('industry');
+    var marketRadios     = document.querySelectorAll('input[name="market"]');
+    var budgetEl         = document.getElementById('budget');
+    var jobValueEl       = document.getElementById('jobValue');
+    var recurringToggle  = document.getElementById('recurringToggle');
+    var recurringFields  = document.getElementById('recurringFields');
+    var recurringLabel   = document.getElementById('recurringLabel');
+    var monthlyRecurring = document.getElementById('monthlyRecurring');
+    var retentionMonths  = document.getElementById('retentionMonths');
+    var answerRate       = document.getElementById('answerRate');
+    var bookingRate      = document.getElementById('bookingRate');
+    var answerRateVal    = document.getElementById('answerRateVal');
+    var bookingRateVal   = document.getElementById('bookingRateVal');
 
-      var lastResult = {};
+    var outCpl        = document.getElementById('outCpl');
+    var outLeads      = document.getElementById('outLeads');
+    var outBooked     = document.getElementById('outBooked');
+    var outCostPerJob = document.getElementById('outCostPerJob');
+    var outRevenue    = document.getElementById('outRevenue');
+    var outRoas       = document.getElementById('outRoas');
+    var outLtv        = document.getElementById('outLtv');
+    var outLtvRoas    = document.getElementById('outLtvRoas');
+    var cardLtv       = document.getElementById('cardLtv');
+    var cardLtvRoas   = document.getElementById('cardLtvRoas');
+    var insightLine   = document.getElementById('insightLine');
+    var whatifA       = document.getElementById('whatifA');
+    var whatifB       = document.getElementById('whatifB');
+    var whatifC       = document.getElementById('whatifC');
 
-      /* ── Helpers ── */
-      function getIndustrySlug() {
-        var opt = industry.options[industry.selectedIndex];
-        return opt && opt.getAttribute('data-slug') ? opt.getAttribute('data-slug') : '';
+    // -------------------------------------------------------------------------
+    // 6. AUTO-SELECT INDUSTRY FROM URL (if present)
+    // -------------------------------------------------------------------------
+    if (urlIndustry && industryEl) {
+      var opts = industryEl.options;
+      for (var i = 0; i < opts.length; i++) {
+        if ((opts[i].getAttribute('data-slug') || '').toLowerCase() === urlIndustry) {
+          industryEl.selectedIndex = i;
+          break;
+        }
       }
-      function setIndustryBySlug(slug) {
-        var opts = industry.options;
+    }
+
+    // -------------------------------------------------------------------------
+    // 7. SHOW CITY CPL BANNER (optional — only when city param exists)
+    // -------------------------------------------------------------------------
+    if (urlCity && urlCplData) {
+      var cityLabel = urlCity.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      var banner    = document.createElement('p');
+      banner.className = 'city-cpl-banner';
+      banner.textContent = 'Estimated CPL in ' + cityLabel + ': $' + urlCplData.low + ' \u2013 $' + urlCplData.high;
+      // Insert before the results section
+      var resultsSection = document.querySelector('.results-section');
+      if (resultsSection && resultsSection.parentNode) {
+        resultsSection.parentNode.insertBefore(banner, resultsSection);
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    // 8. HELPERS
+    // -------------------------------------------------------------------------
+    var prevValues = { cpl: 0, leads: 0, booked: 0, costPerJob: 0, revenue: 0, roas: 0 };
+    var lastResult = {};
+
+    function animateValue(element, start, end, duration, formatter) {
+      if (!element) return;
+      start = start || 0;
+      if (start === end) { element.textContent = formatter ? formatter(end) : end; return; }
+      var range     = end - start;
+      var startTime = performance.now();
+      function update(currentTime) {
+        var elapsed  = currentTime - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var value    = start + range * progress;
+        element.textContent = formatter ? formatter(value) : Math.round(value);
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    function fmtMoney(n) {
+      if (n === null || n === undefined || isNaN(n) || n < 0) return '—';
+      return '$' + Math.round(n).toLocaleString();
+    }
+    function fmtNum(n) {
+      if (n === null || n === undefined || isNaN(n) || n < 0) return '—';
+      if (n >= 10) return Math.round(n).toLocaleString();
+      return n % 1 === 0 ? String(n) : n.toFixed(1);
+    }
+    function fmtRoas(x) {
+      if (x === null || x === undefined || isNaN(x) || x <= 0) return '—';
+      return x.toFixed(1) + 'x';
+    }
+    function debounce(fn, delay) {
+      var t;
+      return function () {
+        var self = this, args = arguments;
+        clearTimeout(t);
+        t = setTimeout(function () { fn.apply(self, args); }, delay);
+      };
+    }
+
+    function getIndustrySlug() {
+      if (!industryEl) return '';
+      var opt = industryEl.options[industryEl.selectedIndex];
+      return (opt && opt.getAttribute('data-slug')) ? opt.getAttribute('data-slug').toLowerCase() : '';
+    }
+    function getMarketSlug() {
+      var r = document.querySelector('input[name="market"]:checked');
+      if (!r) return 'mid';
+      return r.getAttribute('data-market') || 'mid';
+    }
+    function getMarketMultiplier() {
+      var r = document.querySelector('input[name="market"]:checked');
+      return r ? parseFloat(r.value) : 1.0;
+    }
+    function isRecurring() {
+      return recurringToggle ? recurringToggle.classList.contains('on') : false;
+    }
+
+    // -------------------------------------------------------------------------
+    // 9. RESOLVE MIDPOINT CPL — single source of truth for the calculation engine
+    //    Priority:
+    //      a) If URL has industry + city → use city-adjusted CPL (urlCplData)
+    //      b) If URL has industry only   → use BASE_CPL × market radio multiplier
+    //      c) Otherwise                  → use dropdown selection × market radio multiplier
+    // -------------------------------------------------------------------------
+    function resolveMidpointCpl() {
+      // (a) URL industry + city → city-adjusted, ignore market radio
+      if (urlIndustry && urlCity && urlCplData) {
+        return urlCplData.midpoint;
+      }
+
+      // (b) URL industry only → BASE_CPL × market radio
+      if (urlIndustry && urlCplData) {
+        return urlCplData.midpoint * getMarketMultiplier();
+      }
+
+      // (c) Dropdown selection × market radio
+      var slug = getIndustrySlug();
+      if (!slug) return 0;
+      var base = BASE_CPL[slug];
+      if (!base) return 0;
+      var midBase = (base.low + base.high) / 2;
+      return midBase * getMarketMultiplier();
+    }
+
+    // -------------------------------------------------------------------------
+    // 10. URL STATE — share / history
+    // -------------------------------------------------------------------------
+    function getParams() {
+      return {
+        industry:         getIndustrySlug(),
+        market:           getMarketSlug(),
+        budget:           Math.max(300, parseInt(budgetEl ? budgetEl.value : 0, 10) || 1500),
+        jobValue:         parseInt(jobValueEl ? jobValueEl.value : 0, 10) || 350,
+        recurring:        isRecurring() ? 1 : 0,
+        monthlyRecurring: parseInt(monthlyRecurring ? monthlyRecurring.value : 0, 10) || 50,
+        retentionMonths:  parseInt(retentionMonths  ? retentionMonths.value  : 0, 10) || 24,
+        answerRate:       parseInt(answerRate  ? answerRate.value  : 75, 10) || 75,
+        bookingRate:      parseInt(bookingRate ? bookingRate.value : 45, 10) || 45
+      };
+    }
+
+    function paramsToQuery(p) {
+      var parts = [];
+      if (p.industry) parts.push('industry=' + encodeURIComponent(p.industry));
+      if (p.market)   parts.push('market='   + encodeURIComponent(p.market));
+      if (p.budget   != null) parts.push('budget='   + p.budget);
+      if (p.jobValue != null) parts.push('jobValue=' + p.jobValue);
+      if (p.recurring) {
+        parts.push('recurring=1');
+        if (p.monthlyRecurring != null) parts.push('monthlyRecurring=' + p.monthlyRecurring);
+        if (p.retentionMonths  != null) parts.push('retentionMonths='  + p.retentionMonths);
+      }
+      if (p.answerRate  != null) parts.push('answerRate='  + p.answerRate);
+      if (p.bookingRate != null) parts.push('bookingRate=' + p.bookingRate);
+      // Preserve city/industry URL params if present
+      if (urlCity)     parts.push('city='     + encodeURIComponent(urlCity));
+      return parts.length ? '?' + parts.join('&') : '';
+    }
+
+    function updateHistory() {
+      var url = window.location.pathname + paramsToQuery(getParams());
+      if (window.history && window.history.replaceState) window.history.replaceState({}, '', url);
+    }
+
+    function applyParams(p) {
+      if (p.industry && industryEl) {
+        var opts = industryEl.options;
         for (var i = 0; i < opts.length; i++) {
-          if (opts[i].getAttribute('data-slug') === slug) { industry.selectedIndex = i; return true; }
-        }
-        return false;
-      }
-      function getMarketSlug() {
-        var r = document.querySelector('input[name="market"]:checked');
-        if (!r) return 'mid';
-        return r.getAttribute('data-market') || (r.value === '0.8' ? 'small' : r.value === '1.3' ? 'large' : 'mid');
-      }
-      function setMarketBySlug(slug) {
-        var s = String(slug).toLowerCase();
-        marketRadios.forEach(function (r) { r.checked = r.getAttribute('data-market') === s; });
-      }
-      function getMarketMultiplier() {
-        var r = document.querySelector('input[name="market"]:checked');
-        return r ? parseFloat(r.value) : 1;
-      }
-      function isRecurring() { return recurringToggle.classList.contains('on'); }
-
-      function fmtMoney(n) {
-        if (n === null || isNaN(n) || n < 0) return '—';
-        return '$' + Math.round(n).toLocaleString();
-      }
-      function fmtNum(n) {
-        if (n === null || isNaN(n) || n < 0) return '—';
-        if (n >= 10) return Math.round(n).toLocaleString();
-        return n % 1 === 0 ? String(n) : n.toFixed(1);
-      }
-      function fmtRoas(x) {
-        if (x === null || isNaN(x) || x <= 0) return '—';
-        return x.toFixed(1) + 'x';
-      }
-      function debounce(fn, delay) {
-        var t;
-        return function () {
-          var self = this, args = arguments;
-          clearTimeout(t);
-          t = setTimeout(function () { fn.apply(self, args); }, delay);
-        };
-      }
-
-      /* ── URL state ── */
-      function getParams() {
-        return {
-          industry:        getIndustrySlug(),
-          market:          getMarketSlug(),
-          budget:          Math.max(300, parseInt(budget.value, 10) || 1500),
-          jobValue:        parseInt(jobValue.value, 10) || 350,
-          recurring:       isRecurring() ? 1 : 0,
-          monthlyRecurring: parseInt(monthlyRecurring.value, 10) || 50,
-          retentionMonths: parseInt(retentionMonths.value, 10) || 24,
-          answerRate:      parseInt(answerRate.value, 10) || 75,
-          bookingRate:     parseInt(bookingRate.value, 10) || 45
-        };
-      }
-      function applyParams(p) {
-        if (p.industry) setIndustryBySlug(p.industry);
-        if (p.market) setMarketBySlug(p.market);
-        if (p.budget != null && p.budget >= 300) budget.value = p.budget;
-        if (p.jobValue != null && p.jobValue >= 0) jobValue.value = p.jobValue;
-        if (p.recurring) {
-          recurringToggle.classList.add('on');
-          recurringToggle.setAttribute('aria-checked', 'true');
-          recurringLabel.textContent = 'Yes';
-          recurringFields.classList.remove('hidden');
-        } else {
-          recurringToggle.classList.remove('on');
-          recurringToggle.setAttribute('aria-checked', 'false');
-          recurringLabel.textContent = 'No';
-          recurringFields.classList.add('hidden');
-        }
-        if (p.monthlyRecurring != null) monthlyRecurring.value = p.monthlyRecurring;
-        if (p.retentionMonths  != null) retentionMonths.value  = p.retentionMonths;
-        if (p.answerRate  != null && p.answerRate  >= 50 && p.answerRate  <= 100) {
-          answerRate.value = p.answerRate;
-          answerRateVal.textContent = p.answerRate + '%';
-          answerRate.setAttribute('aria-valuenow', p.answerRate);
-        }
-        if (p.bookingRate != null && p.bookingRate >= 20 && p.bookingRate <= 80) {
-          bookingRate.value = p.bookingRate;
-          bookingRateVal.textContent = p.bookingRate + '%';
-          bookingRate.setAttribute('aria-valuenow', p.bookingRate);
+          if ((opts[i].getAttribute('data-slug') || '') === p.industry) { industryEl.selectedIndex = i; break; }
         }
       }
-      function paramsToQuery(p) {
-        var parts = [];
-        if (p.industry) parts.push('industry=' + encodeURIComponent(p.industry));
-        if (p.market)   parts.push('market='   + encodeURIComponent(p.market));
-        if (p.budget   != null) parts.push('budget='   + p.budget);
-        if (p.jobValue != null) parts.push('jobValue=' + p.jobValue);
-        if (p.recurring) {
-          parts.push('recurring=1');
-          if (p.monthlyRecurring != null) parts.push('monthlyRecurring=' + p.monthlyRecurring);
-          if (p.retentionMonths  != null) parts.push('retentionMonths='  + p.retentionMonths);
-        }
-        if (p.answerRate  != null) parts.push('answerRate='  + p.answerRate);
-        if (p.bookingRate != null) parts.push('bookingRate=' + p.bookingRate);
-        return parts.length ? '?' + parts.join('&') : '';
+      if (p.market) {
+        marketRadios.forEach(function (r) { r.checked = r.getAttribute('data-market') === p.market; });
       }
-      function parseQuery() {
-        var q = window.location.search.slice(1);
-        if (!q) return null;
-        var p = {};
-        q.split('&').forEach(function (pair) {
-          var i = pair.indexOf('=');
-          if (i < 0) return;
-          var k = decodeURIComponent(pair.slice(0, i));
-          var v = decodeURIComponent(pair.slice(i + 1));
-          if      (k === 'industry')        p.industry        = v;
-          else if (k === 'market')          p.market          = v;
-          else if (k === 'budget')          p.budget          = parseInt(v, 10);
-          else if (k === 'jobValue')        p.jobValue        = parseInt(v, 10);
-          else if (k === 'recurring')       p.recurring       = v === '1' ? 1 : 0;
-          else if (k === 'monthlyRecurring') p.monthlyRecurring = parseInt(v, 10);
-          else if (k === 'retentionMonths') p.retentionMonths = parseInt(v, 10);
-          else if (k === 'answerRate')      p.answerRate      = parseInt(v, 10);
-          else if (k === 'bookingRate')     p.bookingRate     = parseInt(v, 10);
-        });
-        return Object.keys(p).length ? p : null;
+      if (p.budget   != null && p.budget   >= 300 && budgetEl)   budgetEl.value   = p.budget;
+      if (p.jobValue != null && p.jobValue >= 0   && jobValueEl) jobValueEl.value = p.jobValue;
+      if (p.recurring && recurringToggle) {
+        recurringToggle.classList.add('on');
+        recurringToggle.setAttribute('aria-checked', 'true');
+        if (recurringLabel)  recurringLabel.textContent = 'Yes';
+        if (recurringFields) recurringFields.classList.remove('hidden');
       }
-      function updateHistory() {
-        var url = window.location.pathname + paramsToQuery(getParams());
-        if (window.history && window.history.replaceState) window.history.replaceState({}, '', url);
+      if (p.monthlyRecurring != null && monthlyRecurring) monthlyRecurring.value = p.monthlyRecurring;
+      if (p.retentionMonths  != null && retentionMonths)  retentionMonths.value  = p.retentionMonths;
+      if (p.answerRate  != null && answerRate  && p.answerRate  >= 50 && p.answerRate  <= 100) {
+        answerRate.value = p.answerRate;
+        if (answerRateVal) answerRateVal.textContent = p.answerRate + '%';
+        answerRate.setAttribute('aria-valuenow', p.answerRate);
+      }
+      if (p.bookingRate != null && bookingRate && p.bookingRate >= 20 && p.bookingRate <= 80) {
+        bookingRate.value = p.bookingRate;
+        if (bookingRateVal) bookingRateVal.textContent = p.bookingRate + '%';
+        bookingRate.setAttribute('aria-valuenow', p.bookingRate);
+      }
+    }
+
+    function parseQuery() {
+      var q = window.location.search.slice(1);
+      if (!q) return null;
+      var p = {};
+      q.split('&').forEach(function (pair) {
+        var idx = pair.indexOf('=');
+        if (idx < 0) return;
+        var k = decodeURIComponent(pair.slice(0, idx));
+        var v = decodeURIComponent(pair.slice(idx + 1));
+        if      (k === 'industry')         p.industry         = v;
+        else if (k === 'market')           p.market           = v;
+        else if (k === 'budget')           p.budget           = parseInt(v, 10);
+        else if (k === 'jobValue')         p.jobValue         = parseInt(v, 10);
+        else if (k === 'recurring')        p.recurring        = v === '1' ? 1 : 0;
+        else if (k === 'monthlyRecurring') p.monthlyRecurring = parseInt(v, 10);
+        else if (k === 'retentionMonths')  p.retentionMonths  = parseInt(v, 10);
+        else if (k === 'answerRate')       p.answerRate       = parseInt(v, 10);
+        else if (k === 'bookingRate')      p.bookingRate      = parseInt(v, 10);
+      });
+      return Object.keys(p).length ? p : null;
+    }
+
+    // -------------------------------------------------------------------------
+    // 11. CSV EXPORT
+    // -------------------------------------------------------------------------
+    function getCsvContent() {
+      var p = getParams();
+      var r = lastResult;
+      var rows = [
+        ['LSA ROI Calculator - Results', ''],
+        ['Inputs', ''],
+        ['Industry',              p.industry  || ''],
+        ['Market',                p.market    || ''],
+        ['Monthly budget ($)',    p.budget    || ''],
+        ['Average job value ($)', p.jobValue  || ''],
+        ['Recurring revenue',     p.recurring ? 'Yes' : 'No'],
+        ['Answer rate (%)',       p.answerRate  || ''],
+        ['Booking rate (%)',      p.bookingRate || ''],
+        ['', ''],
+        ['Results', ''],
+        ['Estimated CPL',           r.adjCpl     != null ? r.adjCpl     : ''],
+        ['Leads per month',         r.leads      != null ? r.leads      : ''],
+        ['Booked jobs per month',   r.booked     != null ? r.booked     : ''],
+        ['Cost per booked job ($)', r.costPerJob != null ? r.costPerJob : ''],
+        ['Monthly revenue ($)',     r.revenue    != null ? r.revenue    : ''],
+        ['ROAS',                    r.roas       != null ? r.roas + 'x' : '']
+      ];
+      if (r.ltv != null) {
+        rows.push(['Customer LTV ($)',   r.ltv]);
+        rows.push(['LTV-adjusted ROAS',  r.ltvRoasVal != null ? r.ltvRoasVal.toFixed(1) + 'x' : '']);
+      }
+      return rows.map(function (row) {
+        return row.map(function (cell) {
+          var s = String(cell);
+          if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0)
+            return '"' + s.replace(/"/g, '""') + '"';
+          return s;
+        }).join(',');
+      }).join('\n');
+    }
+
+    // -------------------------------------------------------------------------
+    // 12. MAIN CALCULATION ENGINE
+    // -------------------------------------------------------------------------
+    function runCalc() {
+      var adjCpl = resolveMidpointCpl();
+
+      if (!adjCpl || adjCpl <= 0) {
+        if (outCpl)        outCpl.textContent        = '—';
+        if (outLeads)      outLeads.textContent      = '—';
+        if (outBooked)     outBooked.textContent     = '—';
+        if (outCostPerJob) outCostPerJob.textContent = '—';
+        if (outRevenue)    outRevenue.textContent    = '—';
+        if (outRoas)       outRoas.textContent       = '—';
+        if (insightLine)   insightLine.textContent   = 'Select your industry and enter your budget to see estimated results.';
+        if (whatifA)       whatifA.textContent       = '—';
+        if (whatifB)       whatifB.textContent       = '—';
+        if (whatifC)       whatifC.textContent       = '—';
+        return;
       }
 
-      /* ── CSV export ── */
-      function getCsvContent() {
-        var p = getParams();
-        var r = lastResult;
-        var rows = [
-          ['LSA ROI Calculator - Results', ''],
-          ['Inputs', ''],
-          ['Industry',           p.industry  || ''],
-          ['Market',             p.market    || ''],
-          ['Monthly budget ($)', p.budget    || ''],
-          ['Average job value ($)', p.jobValue || ''],
-          ['Recurring revenue',  p.recurring ? 'Yes' : 'No'],
-          ['Answer rate (%)',    p.answerRate  || ''],
-          ['Booking rate (%)',   p.bookingRate || ''],
-          ['', ''],
-          ['Results', ''],
-          ['Estimated CPL',          r.adjCpl     != null ? r.adjCpl     : ''],
-          ['Leads per month',        r.leads      != null ? r.leads      : ''],
-          ['Booked jobs per month',  r.booked     != null ? r.booked     : ''],
-          ['Cost per booked job ($)', r.costPerJob != null ? r.costPerJob : ''],
-          ['Monthly revenue ($)',    r.revenue    != null ? r.revenue    : ''],
-          ['ROAS',                   r.roas       != null ? r.roas + 'x' : '']
-        ];
-        if (r.ltv != null) {
-          rows.push(['Customer LTV ($)',    r.ltv]);
-          rows.push(['LTV-adjusted ROAS',  r.ltvRoasVal != null ? r.ltvRoasVal.toFixed(1) + 'x' : '']);
-        }
-        return rows.map(function (row) {
-          return row.map(function (cell) {
-            var s = String(cell);
-            if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0)
-              return '"' + s.replace(/"/g, '""') + '"';
-            return s;
-          }).join(',');
-        }).join('\n');
+      var b    = parseFloat(budgetEl   ? budgetEl.value   : 0) || 0;
+      var jv   = parseFloat(jobValueEl ? jobValueEl.value : 0) || 0;
+      var ans  = parseInt(answerRate  ? answerRate.value  : 75, 10) / 100;
+      var book = parseInt(bookingRate ? bookingRate.value : 45, 10) / 100;
+
+      if (b < 300) {
+        if (outCpl)      outCpl.textContent      = fmtMoney(adjCpl);
+        if (outLeads)    outLeads.textContent    = '—';
+        if (outBooked)   outBooked.textContent   = '—';
+        if (outCostPerJob) outCostPerJob.textContent = '—';
+        if (outRevenue)  outRevenue.textContent  = '—';
+        if (outRoas)     outRoas.textContent     = '—';
+        if (insightLine) insightLine.textContent = 'Enter a monthly budget of at least $300 to see results.';
+        if (whatifA)     whatifA.textContent     = '—';
+        if (whatifB)     whatifB.textContent     = '—';
+        if (whatifC)     whatifC.textContent     = '—';
+        return;
       }
 
-      /* ── Main calculation ── */
-      function runCalc() {
-        const industrySlug = getIndustrySlug();
+      var leads      = b / adjCpl;
+      var answered   = leads * ans;
+      var booked     = answered * book;
+      var costPerJob = booked > 0 ? b / booked : null;
+      var revenue    = booked * jv;
+      var roas       = b > 0 ? revenue / b : null;
 
-const baseRange = BASE_CPL[industrySlug] || [40, 80];
-const multiplier = CITY_MULTIPLIER[city] || 1;
+      var ltv = null, ltvRoasVal = null;
+      if (isRecurring()) {
+        var mr  = parseFloat(monthlyRecurring ? monthlyRecurring.value : 0) || 0;
+        var ret = parseFloat(retentionMonths  ? retentionMonths.value  : 1) || 1;
+        ltv        = mr * ret;
+        ltvRoasVal = b > 0 ? (booked * ltv) / b : null;
+      }
 
-const adjustedMin = Math.round(baseRange[0] * multiplier);
-const adjustedMax = Math.round(baseRange[1] * multiplier);
+      lastResult = { adjCpl: adjCpl, leads: leads, booked: booked, costPerJob: costPerJob, revenue: revenue, roas: roas, ltv: ltv, ltvRoasVal: ltvRoasVal };
 
-var midpoint = midpointCpl || 60;
-        if (!midpointCpl || midpointCpl <= 0) {
-          outCpl.textContent = outLeads.textContent = outBooked.textContent =
-          outCostPerJob.textContent = outRevenue.textContent = outRoas.textContent = '—';
-          insightLine.textContent = 'Select your industry and enter your budget to see estimated results.';
-          whatifA.textContent = whatifB.textContent = whatifC.textContent = '—';
-          return;
-        }
+      animateValue(outCpl,        prevValues.cpl,        adjCpl,     400, fmtMoney); prevValues.cpl        = adjCpl;
+      animateValue(outLeads,      prevValues.leads,      leads,      400, fmtNum);   prevValues.leads      = leads;
+      animateValue(outBooked,     prevValues.booked,     booked,     400, fmtNum);   prevValues.booked     = booked;
+      animateValue(outCostPerJob, prevValues.costPerJob, costPerJob, 400, fmtMoney); prevValues.costPerJob = costPerJob;
+      animateValue(outRevenue,    prevValues.revenue,    revenue,    400, fmtMoney); prevValues.revenue    = revenue;
+      animateValue(outRoas,       prevValues.roas,       roas,       400, fmtRoas);  prevValues.roas       = roas;
 
-        var mult      = getMarketMultiplier();
-        var adjCpl    = midpointCpl * mult;
-        var b         = parseFloat(budget.value)   || 0;
-        var jv        = parseFloat(jobValue.value)  || 0;
-        var ans       = parseInt(answerRate.value,  10) / 100;
-        var book      = parseInt(bookingRate.value, 10) / 100;
+      if (isRecurring()) {
+        if (cardLtv)    cardLtv.classList.remove('hidden');
+        if (cardLtvRoas) cardLtvRoas.classList.remove('hidden');
+        if (outLtv)     outLtv.textContent     = fmtMoney(ltv);
+        if (outLtvRoas) outLtvRoas.textContent = fmtRoas(ltvRoasVal);
+      } else {
+        if (cardLtv)    cardLtv.classList.add('hidden');
+        if (cardLtvRoas) cardLtvRoas.classList.add('hidden');
+      }
 
-        if (b < 300) {
-          outCpl.textContent = fmtMoney(adjCpl);
-          outLeads.textContent = outBooked.textContent =
-          outCostPerJob.textContent = outRevenue.textContent = outRoas.textContent = '—';
-          insightLine.textContent = 'Enter a monthly budget of at least $300 to see results.';
-          whatifA.textContent = whatifB.textContent = whatifC.textContent = '—';
-          return;
-        }
-
-        var leads      = b / adjCpl;
-        var answered   = leads * ans;
-        var booked     = answered * book;
-        var costPerJob = booked > 0 ? b / booked : null;
-        var revenue    = booked * jv;
-        var roas       = b > 0 ? revenue / b : null;
-
-        var ltv = null, ltvRoasVal = null;
-        if (isRecurring()) {
-          var mr  = parseFloat(monthlyRecurring.value) || 0;
-          var ret = parseFloat(retentionMonths.value)  || 1;
-          ltv = mr * ret;
-          ltvRoasVal = b > 0 ? (booked * ltv) / b : null;
-        }
-
-        lastResult = { adjCpl, leads, booked, costPerJob, revenue, roas, ltv, ltvRoasVal };
-
-        animateValue(outCpl,        prevValues.cpl,        adjCpl,     400, fmtMoney); prevValues.cpl        = adjCpl;
-        animateValue(outLeads,      prevValues.leads,      leads,      400, fmtNum);   prevValues.leads      = leads;
-        animateValue(outBooked,     prevValues.booked,     booked,     400, fmtNum);   prevValues.booked     = booked;
-        animateValue(outCostPerJob, prevValues.costPerJob, costPerJob, 400, fmtMoney); prevValues.costPerJob = costPerJob;
-        animateValue(outRevenue,    prevValues.revenue,    revenue,    400, fmtMoney); prevValues.revenue    = revenue;
-        animateValue(outRoas,       prevValues.roas,       roas,       400, fmtRoas);  prevValues.roas       = roas;
-
-        if (isRecurring()) {
-          cardLtv.classList.remove('hidden');
-          cardLtvRoas.classList.remove('hidden');
-          outLtv.textContent    = fmtMoney(ltv);
-          outLtvRoas.textContent = fmtRoas(ltvRoasVal);
-        } else {
-          cardLtv.classList.add('hidden');
-          cardLtvRoas.classList.add('hidden');
-        }
-
+      if (insightLine) {
         insightLine.textContent =
-          roas == null   ? '' :
-          roas < 3       ? "Your numbers are tight. This usually means answer rate or booking rate needs work before scaling budget. Let's look at your setup." :
-          roas <= 7      ? 'Solid foundation. Improving your answer rate or review score could push this significantly higher.' :
-                           'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
-
-        /* What-if scenarios */
-        var ansPlus  = Math.min(100, (ans  * 100) + 15) / 100;
-        var bookedA  = leads * ansPlus * book;
-        var roasA    = b > 0 ? (bookedA * jv) / b : null;
-        whatifA.textContent = (bookedA - booked >= 0 ? '+' : '') + fmtNum(bookedA - booked) +
-          ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
-
-        var bookPlus = Math.min(80, (book * 100) + 10) / 100;
-        var bookedB  = answered * bookPlus;
-        var roasB    = b > 0 ? (bookedB * jv) / b : null;
-        whatifB.textContent = (bookedB - booked >= 0 ? '+' : '') + fmtNum(bookedB - booked) +
-          ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
-
-        var b50      = b * 1.5;
-        var booked50 = (b50 / adjCpl) * ans * book;
-        whatifC.textContent = '+' + fmtNum((b50 / adjCpl) - leads) + ' leads, ' +
-          fmtMoney(booked50 * jv - revenue) + ' revenue (same CPL & rates)';
-
-        updateHistory();
+          roas == null ? '' :
+          roas < 3     ? "Your numbers are tight. This usually means answer rate or booking rate needs work before scaling budget. Let's look at your setup." :
+          roas <= 7    ? 'Solid foundation. Improving your answer rate or review score could push this significantly higher.' :
+                         'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
       }
 
-      var debouncedRunCalc = debounce(runCalc, 200);
+      // What-if scenarios
+      var ansPlus = Math.min(100, (ans  * 100) + 15) / 100;
+      var bookedA = leads * ansPlus * book;
+      var roasA   = b > 0 ? (bookedA * jv) / b : null;
+      if (whatifA) whatifA.textContent = (bookedA - booked >= 0 ? '+' : '') + fmtNum(bookedA - booked) +
+        ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
 
-      /* ── Toggle ── */
+      var bookPlus = Math.min(80, (book * 100) + 10) / 100;
+      var bookedB  = answered * bookPlus;
+      var roasB    = b > 0 ? (bookedB * jv) / b : null;
+      if (whatifB) whatifB.textContent = (bookedB - booked >= 0 ? '+' : '') + fmtNum(bookedB - booked) +
+        ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
+
+      var b50      = b * 1.5;
+      var booked50 = (b50 / adjCpl) * ans * book;
+      if (whatifC) whatifC.textContent = '+' + fmtNum((b50 / adjCpl) - leads) + ' leads, ' +
+        fmtMoney(booked50 * jv - revenue) + ' revenue (same CPL & rates)';
+
+      updateHistory();
+    }
+
+    var debouncedRunCalc = debounce(runCalc, 200);
+
+    // -------------------------------------------------------------------------
+    // 13. EVENT LISTENERS
+    // -------------------------------------------------------------------------
+
+    // Recurring toggle
+    if (recurringToggle) {
       recurringToggle.addEventListener('click', function () {
         var on = recurringToggle.classList.toggle('on');
-        recurringToggle.setAttribute('aria-checked', on);
-        recurringLabel.textContent = on ? 'Yes' : 'No';
-        recurringFields.classList.toggle('hidden', !on);
+        recurringToggle.setAttribute('aria-checked', String(on));
+        if (recurringLabel)  recurringLabel.textContent = on ? 'Yes' : 'No';
+        if (recurringFields) recurringFields.classList.toggle('hidden', !on);
         runCalc();
       });
       recurringToggle.addEventListener('keydown', function (e) {
         if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); recurringToggle.click(); }
       });
+    }
 
-      /* ── Sliders ── */
+    // Sliders
+    if (answerRate) {
       answerRate.addEventListener('input', function () {
-        answerRateVal.textContent = this.value + '%';
+        if (answerRateVal) answerRateVal.textContent = this.value + '%';
         this.setAttribute('aria-valuenow', this.value);
         debouncedRunCalc();
       });
+    }
+    if (bookingRate) {
       bookingRate.addEventListener('input', function () {
-        bookingRateVal.textContent = this.value + '%';
+        if (bookingRateVal) bookingRateVal.textContent = this.value + '%';
         this.setAttribute('aria-valuenow', this.value);
         debouncedRunCalc();
       });
+    }
 
-      /* ── Input listeners ── */
-      industry.addEventListener('change', debouncedRunCalc);
-      budget.addEventListener('input', debouncedRunCalc);
-      jobValue.addEventListener('input', debouncedRunCalc);
-      monthlyRecurring.addEventListener('input', debouncedRunCalc);
-      retentionMonths.addEventListener('input', debouncedRunCalc);
-      marketRadios.forEach(function (r) { r.addEventListener('change', debouncedRunCalc); });
+    // Inputs
+    if (industryEl)       industryEl.addEventListener('change', debouncedRunCalc);
+    if (budgetEl)         budgetEl.addEventListener('input', debouncedRunCalc);
+    if (jobValueEl)       jobValueEl.addEventListener('input', debouncedRunCalc);
+    if (monthlyRecurring) monthlyRecurring.addEventListener('input', debouncedRunCalc);
+    if (retentionMonths)  retentionMonths.addEventListener('input', debouncedRunCalc);
+    marketRadios.forEach(function (r) { r.addEventListener('change', debouncedRunCalc); });
 
-      /* ── Copy link ── */
-      document.getElementById('copyLinkBtn').addEventListener('click', function () {
+    // Copy link
+    var copyLinkBtn = document.getElementById('copyLinkBtn');
+    if (copyLinkBtn) {
+      copyLinkBtn.addEventListener('click', function () {
         var url = window.location.origin + window.location.pathname + paramsToQuery(getParams());
         var btn = this;
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1788,9 +1694,12 @@ var midpoint = midpointCpl || 60;
           setTimeout(function () { btn.textContent = 'Copy link'; }, 2000);
         }
       });
+    }
 
-      /* ── Export CSV ── */
-      document.getElementById('exportCsvBtn').addEventListener('click', function () {
+    // Export CSV
+    var exportCsvBtn = document.getElementById('exportCsvBtn');
+    if (exportCsvBtn) {
+      exportCsvBtn.addEventListener('click', function () {
         var blob = new Blob([getCsvContent()], { type: 'text/csv;charset=utf-8' });
         var a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -1798,59 +1707,66 @@ var midpoint = midpointCpl || 60;
         a.click();
         URL.revokeObjectURL(a.href);
       });
+    }
 
-      /* ── Email results ── */
-      var emailFormWrap  = document.getElementById('emailResultsForm');
-      var emailInnerForm = document.getElementById('emailResultsInnerForm');
-      var emailSuccess   = document.getElementById('emailResultsSuccess');
-      var emailError     = document.getElementById('emailResultsError');
-      var emailSubmitBtn = document.getElementById('emailSubmitBtn');
+    // Email results
+    var emailFormWrap  = document.getElementById('emailResultsForm');
+    var emailInnerForm = document.getElementById('emailResultsInnerForm');
+    var emailSuccess   = document.getElementById('emailResultsSuccess');
+    var emailError     = document.getElementById('emailResultsError');
+    var emailSubmitBtn = document.getElementById('emailSubmitBtn');
+    var emailResultsBtn = document.getElementById('emailResultsBtn');
 
-      document.getElementById('emailResultsBtn').addEventListener('click', function () {
-        emailFormWrap.classList.remove('hidden');
-        emailSuccess.classList.add('hidden');
-        emailError.classList.add('hidden');
-        emailInnerForm.classList.remove('hidden');
-        document.getElementById('emailInput').focus();
+    if (emailResultsBtn) {
+      emailResultsBtn.addEventListener('click', function () {
+        if (emailFormWrap)  emailFormWrap.classList.remove('hidden');
+        if (emailSuccess)   emailSuccess.classList.add('hidden');
+        if (emailError)     emailError.classList.add('hidden');
+        if (emailInnerForm) emailInnerForm.classList.remove('hidden');
+        var emailInput = document.getElementById('emailInput');
+        if (emailInput) emailInput.focus();
       });
+    }
 
-      document.getElementById('emailResultsCancel').addEventListener('click', function () {
-        emailFormWrap.classList.add('hidden');
-        emailInnerForm.reset();
-        emailSuccess.classList.add('hidden');
-        emailError.classList.add('hidden');
+    var emailResultsCancel = document.getElementById('emailResultsCancel');
+    if (emailResultsCancel) {
+      emailResultsCancel.addEventListener('click', function () {
+        if (emailFormWrap)  emailFormWrap.classList.add('hidden');
+        if (emailInnerForm) emailInnerForm.reset();
+        if (emailSuccess)   emailSuccess.classList.add('hidden');
+        if (emailError)     emailError.classList.add('hidden');
       });
+    }
 
+    if (emailInnerForm) {
       emailInnerForm.addEventListener('submit', function (ev) {
         ev.preventDefault();
+        var emailInput = document.getElementById('emailInput');
+        var emailVal   = emailInput ? emailInput.value.trim() : '';
+        if (!emailVal) { if (emailInput) emailInput.focus(); return; }
 
-        var emailVal = document.getElementById('emailInput').value.trim();
-        if (!emailVal) { document.getElementById('emailInput').focus(); return; }
-
-        emailSubmitBtn.textContent = 'Sending…';
-        emailSubmitBtn.disabled = true;
-        emailError.classList.add('hidden');
+        if (emailSubmitBtn) { emailSubmitBtn.textContent = 'Sending…'; emailSubmitBtn.disabled = true; }
+        if (emailError) emailError.classList.add('hidden');
 
         var p = getParams();
         var r = lastResult;
 
         var payload = {
           email:           emailVal,
-          name:            document.getElementById('nameInput').value.trim(),
-          business:        document.getElementById('businessInput').value.trim(),
-          bot:             document.getElementById('botField').value,
+          name:            (document.getElementById('nameInput')     || {}).value || '',
+          business:        (document.getElementById('businessInput') || {}).value || '',
+          bot:             (document.getElementById('botField')      || {}).value || '',
           industry:        p.industry,
           market:          p.market,
           budget:          p.budget,
           job_value:       p.jobValue,
-          estimated_cpl:   r.adjCpl     != null ? fmtMoney(r.adjCpl)     : 'N/A',
-          leads_per_month: r.leads      != null ? fmtNum(r.leads)         : 'N/A',
-          booked_jobs:     r.booked     != null ? fmtNum(r.booked)        : 'N/A',
-          cost_per_job:    r.costPerJob != null ? fmtMoney(r.costPerJob)  : 'N/A',
-          monthly_revenue: r.revenue    != null ? fmtMoney(r.revenue)     : 'N/A',
-          roas:            r.roas       != null ? fmtRoas(r.roas)         : 'N/A'
+          estimated_cpl:   r.adjCpl     != null ? fmtMoney(r.adjCpl)    : 'N/A',
+          leads_per_month: r.leads      != null ? fmtNum(r.leads)        : 'N/A',
+          booked_jobs:     r.booked     != null ? fmtNum(r.booked)       : 'N/A',
+          cost_per_job:    r.costPerJob != null ? fmtMoney(r.costPerJob) : 'N/A',
+          monthly_revenue: r.revenue    != null ? fmtMoney(r.revenue)    : 'N/A',
+          roas:            r.roas       != null ? fmtRoas(r.roas)        : 'N/A'
         };
-
         if (r.ltv != null) {
           payload.ltv      = fmtMoney(r.ltv);
           payload.ltv_roas = r.ltvRoasVal != null ? fmtRoas(r.ltvRoasVal) : 'N/A';
@@ -1863,28 +1779,29 @@ var midpoint = midpointCpl || 60;
         })
         .then(function (res) { return res.json(); })
         .then(function (data) {
-          emailSubmitBtn.textContent = 'Send my results';
-          emailSubmitBtn.disabled = false;
+          if (emailSubmitBtn) { emailSubmitBtn.textContent = 'Send my results'; emailSubmitBtn.disabled = false; }
           if (data.ok) {
-            emailInnerForm.classList.add('hidden');
-            emailSuccess.classList.remove('hidden');
-            emailInnerForm.reset();
-            setTimeout(function () { emailFormWrap.classList.add('hidden'); }, 6000);
+            if (emailInnerForm) emailInnerForm.classList.add('hidden');
+            if (emailSuccess)   emailSuccess.classList.remove('hidden');
+            if (emailInnerForm) emailInnerForm.reset();
+            setTimeout(function () { if (emailFormWrap) emailFormWrap.classList.add('hidden'); }, 6000);
           } else {
-            emailError.classList.remove('hidden');
+            if (emailError) emailError.classList.remove('hidden');
           }
         })
         .catch(function (err) {
           console.error('email-results error:', err);
-          emailSubmitBtn.textContent = 'Send my results';
-          emailSubmitBtn.disabled = false;
-          emailError.classList.remove('hidden');
+          if (emailSubmitBtn) { emailSubmitBtn.textContent = 'Send my results'; emailSubmitBtn.disabled = false; }
+          if (emailError) emailError.classList.remove('hidden');
         });
       });
+    }
 
-      /* ── Copy embed code ── */
+    // Copy embed code
+    var copyEmbedBtn = document.getElementById('copyEmbedBtn');
+    if (copyEmbedBtn) {
       var embedSnippet = '<iframe src="https://bluegridmedia.com/lsa-roi-calculator.html?embed=1" width="100%" height="900" frameborder="0" title="LSA ROI Calculator - Blue Grid Media"></iframe>';
-      document.getElementById('copyEmbedBtn').addEventListener('click', function () {
+      copyEmbedBtn.addEventListener('click', function () {
         var btn = this;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(embedSnippet).then(function () {
@@ -1899,12 +1816,19 @@ var midpoint = midpointCpl || 60;
           setTimeout(function () { btn.textContent = 'Copy embed code'; }, 2000);
         }
       });
+    }
 
-      /* ── Init ── */
-      var initial = parseQuery() || (window.__LSA_SNAPSHOT || null);
-      if (initial) { applyParams(initial); runCalc(); }
-      else { insightLine.textContent = 'Select your industry and enter your budget to see estimated results.'; }
-    })();
+    // -------------------------------------------------------------------------
+    // 14. INITIALISE — apply any saved/shared params then run once on page load
+    // -------------------------------------------------------------------------
+    var initial = parseQuery() || (window.__LSA_SNAPSHOT || null);
+    if (initial) {
+      applyParams(initial);
+    }
+    // Always run once on load so city pages show results immediately
+    runCalc();
+
+  })();
   </script>
 
   <script>
