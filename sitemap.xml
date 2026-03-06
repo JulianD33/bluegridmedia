@@ -146,9 +146,6 @@
   </url>
 
   <!-- Snapshot calculator pages (market × industry combos) -->
-  <sitemap>
-   <loc>https://bluegridmedia.com/sitemap-index.xml</loc>
-</sitemap>
   <url>
     <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-large</loc>
     <lastmod>2026-03-04</lastmod>
