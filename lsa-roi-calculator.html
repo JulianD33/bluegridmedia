@@ -1047,6 +1047,7 @@
           </div>
 
           <!-- Results -->
+           <p id="cityCplText"></p>
           <div class="results-section">
             <h2>Your estimated results</h2>
             <div class="results-grid" id="resultsGrid" role="status" aria-live="polite" aria-atomic="true">
@@ -1313,8 +1314,93 @@
 // ---------------------------------------------------
 const params = new URLSearchParams(window.location.search);
 
-const industry = params.get("industry") || "hvac";
+const industrySlug = params.get("industry") || "hvac";
 const city = params.get("city") || "national";
+
+const cityName = city.replace(/-/g, " ");
+const cityTitle = cityName.replace(/\b\w/g, l => l.toUpperCase());
+
+document.getElementById("cityCplText").textContent =
+`Estimated CPL in ${cityTitle}: $${adjustedMin} – $${adjustedMax}`;
+
+// ---------------------------------------------------
+// Read URL parameters (industry + city)
+// ---------------------------------------------------
+const params = new URLSearchParams(window.location.search);
+
+const industrySlug = params.get("industry") || "hvac";
+const city = params.get("city") || "national";
+
+const cityName = city.replace("-", " ");
+const cityTitle = cityName.replace(/\b\w/g, l => l.toUpperCase());
+
+// ---------------------------------------------------
+// Base CPL ranges by industry
+// ---------------------------------------------------
+const BASE_CPL = {
+  hvac: [45, 90],
+  plumbing: [40, 80],
+  electrical: [35, 70],
+  roofing: [60, 120],
+  "pest-control": [35, 65],
+  landscaping: [30, 55],
+  "tree-services": [45, 85],
+  "appliance-repair": [30, 60],
+  "garage-door": [35, 70],
+  locksmith: [30, 60],
+  dentists: [60, 120],
+  lawyers: [150, 350]
+};
+
+// ---------------------------------------------------
+// City competition multipliers
+// ---------------------------------------------------
+const CITY_MULTIPLIER = {
+  "new-york": 1.35,
+  "los-angeles": 1.30,
+  "chicago": 1.25,
+  "houston": 1.15,
+  "phoenix": 1.10,
+  "philadelphia": 1.15,
+  "san-antonio": 1.05,
+  "san-diego": 1.20,
+  "dallas": 1.15,
+  "san-jose": 1.25,
+  "austin": 1.10,
+  "jacksonville": 1.05,
+  "fort-worth": 1.05,
+  "columbus": 1.05,
+  "charlotte": 1.10,
+  "indianapolis": 1.05,
+  "san-francisco": 1.35,
+  "seattle": 1.30,
+  "denver": 1.20,
+  "nashville": 1.15
+};
+
+// ---------------------------------------------------
+// Calculate adjusted CPL
+// ---------------------------------------------------
+const baseRange = BASE_CPL[industrySlug] || [40, 80];
+const multiplier = CITY_MULTIPLIER[city] || 1;
+
+const adjustedMin = Math.round(baseRange[0] * multiplier);
+const adjustedMax = Math.round(baseRange[1] * multiplier);
+
+// midpoint used by calculator
+const midpointCpl = (adjustedMin + adjustedMax) / 2;
+
+// ---------------------------------------------------
+// Display CPL range on page
+// ---------------------------------------------------
+const cityCpl = document.getElementById("cityCplText");
+
+if (cityCpl) {
+  cityCpl.textContent =
+  `Estimated CPL in ${cityTitle}: $${adjustedMin} – $${adjustedMax}`;
+}
+
+
 
     (function () {
       /* ── Animate a numeric metric value ── */
@@ -1343,6 +1429,19 @@ const city = params.get("city") || "national";
       var marketRadios     = document.querySelectorAll('input[name="market"]');
       var budget           = document.getElementById('budget');
       var jobValue         = document.getElementById('jobValue');
+
+      /* ---------------------------------------------------
+Auto-select industry from URL
+--------------------------------------------------- */
+
+if (industry) {
+  for (let option of industry.options) {
+    if (option.dataset.slug === industrySlug) {
+      option.selected = true;
+      break;
+    }
+  }
+}
       var recurringToggle  = document.getElementById('recurringToggle');
       var recurringFields  = document.getElementById('recurringFields');
       var recurringLabel   = document.getElementById('recurringLabel');
@@ -1352,6 +1451,8 @@ const city = params.get("city") || "national";
       var bookingRate      = document.getElementById('bookingRate');
       var answerRateVal    = document.getElementById('answerRateVal');
       var bookingRateVal   = document.getElementById('bookingRateVal');
+
+      
 
       var outCpl        = document.getElementById('outCpl');
       var outLeads      = document.getElementById('outLeads');
@@ -1542,7 +1643,15 @@ const city = params.get("city") || "national";
 
       /* ── Main calculation ── */
       function runCalc() {
-        var midpointCpl = parseFloat(industry.value);
+        const industrySlug = getIndustrySlug();
+
+const baseRange = BASE_CPL[industrySlug] || [40, 80];
+const multiplier = CITY_MULTIPLIER[city] || 1;
+
+const adjustedMin = Math.round(baseRange[0] * multiplier);
+const adjustedMax = Math.round(baseRange[1] * multiplier);
+
+var midpoint = midpointCpl || 60;
         if (!midpointCpl || midpointCpl <= 0) {
           outCpl.textContent = outLeads.textContent = outBooked.textContent =
           outCostPerJob.textContent = outRevenue.textContent = outRoas.textContent = '—';
