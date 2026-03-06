@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Typical CPL ${{CPL_LOW}}–${{CPL_HIGH}}." />
 
-  <!-- Existing structured data: BreadcrumbList + WebPage -->
+  <!-- Structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -130,6 +130,17 @@
     }
     .city-calc-intro strong {
       color: #0f172a;
+    }
+
+    /* CPL estimate banner */
+    .cpl-estimate-banner {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 20px;
     }
 
     /* City Market Insights */
@@ -396,18 +407,11 @@
       <!-- City Market Insights — unique per industry × city combination -->
       <section class="city-market-insights">
         <h2>{{INDUSTRY_LABEL}} LSA Market Insights — {{CITY}}, {{STATE}}</h2>
-        <p>
-          The {{CITY}}, {{STATE}} market shows {{CITY_DEMAND}}. For {{INDUSTRY_LABEL}} companies,
-          Google Local Services Ads are often one of the highest intent lead channels available.
-        </p>
-        <p>
-          Because the market is {{CITY_COMPETITION}}, businesses often compete heavily for
-          top placement in the Google Guaranteed listings.
-        </p>
+        <p>{{MARKET_PARAGRAPH}}</p>
+        <p>{{CITY_STAT}}</p>
         <p>
           Typical cost per lead for {{INDUSTRY_LABEL}} companies in {{CITY}} ranges
           between <strong>${{CPL_LOW}} and ${{CPL_HIGH}}</strong>.
-          This varies depending on seasonality, reviews, and response time.
         </p>
       </section>
 
@@ -421,6 +425,11 @@
           In competitive markets like {{CITY}}, ranking in Google Local Services Ads often depends on your review rating, response time, and profile optimization. Companies that actively manage their Google Guaranteed profiles tend to generate significantly more qualified leads.
         </p>
       </section>
+
+      <!-- CPL estimate banner -->
+      <div class="cpl-estimate-banner">
+        Estimated CPL in {{CITY}}: ${{CPL_LOW}} – ${{CPL_HIGH}}
+      </div>
 
       <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">

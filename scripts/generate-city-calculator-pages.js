@@ -92,7 +92,43 @@ const INDUSTRY_BASE_CPL = {
 };
 
 // ---------------------------------------------------------------------------
-// 5. Static hub + industry pages that live in sitemap-calculators.xml
+// 5. Market paragraph variations — one is selected per page for uniqueness
+// ---------------------------------------------------------------------------
+const MARKET_PARAGRAPH_VARIATIONS = [
+  'The {{CITY}} market for {{INDUSTRY_LABEL}} services is highly active, with many homeowners and businesses relying on Google Local Services Ads to find trusted contractors.',
+  '{{INDUSTRY_LABEL}} companies in {{CITY}} often use Google Local Services Ads as a primary lead channel because it connects them with customers actively searching for services.',
+  'In {{CITY}}, Local Services Ads have become one of the most effective ways for {{INDUSTRY_LABEL}} companies to generate qualified leads from local customers.',
+  'Demand for {{INDUSTRY_LABEL}} services in {{CITY}} continues to grow as more consumers rely on Google to find trusted local providers.',
+];
+
+// ---------------------------------------------------------------------------
+// 6. City statistic sentences — unique factual sentence per city
+// ---------------------------------------------------------------------------
+const CITY_STATS = {
+  'new-york':      'New York is the largest city in the United States, creating massive demand for home services.',
+  'los-angeles':   'Los Angeles is one of the largest metro markets in the country with millions of homeowners.',
+  'chicago':       'Chicago is a major metropolitan hub with strong demand for residential and commercial services.',
+  'houston':       'Houston is one of the fastest growing metro areas in the United States.',
+  'phoenix':       'Phoenix continues to see rapid population growth and strong demand for contractors.',
+  'philadelphia':  'Philadelphia has a dense urban population and strong demand for local services.',
+  'san-antonio':   "San Antonio's population growth has increased demand for home improvement services.",
+  'san-diego':     "San Diego's large residential market creates strong demand for service professionals.",
+  'dallas':        'Dallas is one of the fastest growing metro areas in the US.',
+  'san-jose':      'San Jose sits in the heart of Silicon Valley with strong demand for local contractors.',
+  'austin':        'Austin is one of the fastest growing cities in the United States.',
+  'jacksonville':  'Jacksonville has one of the largest land areas of any major US city.',
+  'fort-worth':    'Fort Worth continues to expand as part of the Dallas-Fort Worth metroplex.',
+  'columbus':      'Columbus is one of the fastest growing cities in the Midwest.',
+  'charlotte':     "Charlotte's rapid growth has increased demand for skilled trades.",
+  'indianapolis':  'Indianapolis is one of the largest cities in the Midwest.',
+  'san-francisco': 'San Francisco is one of the most competitive service markets in the country.',
+  'seattle':       "Seattle's booming tech economy drives strong demand for local services.",
+  'denver':        'Denver has experienced rapid population growth over the past decade.',
+  'nashville':     'Nashville is one of the fastest growing cities in the United States.',
+};
+
+// ---------------------------------------------------------------------------
+// 7. Static hub + industry pages that live in sitemap-calculators.xml
 //    (kept here so the script can re-write the full file without losing them)
 // ---------------------------------------------------------------------------
 const STATIC_CALCULATOR_URLS = [
@@ -110,7 +146,7 @@ const STATIC_CALCULATOR_URLS = [
 ];
 
 // ---------------------------------------------------------------------------
-// 6. Paths
+// 8. Paths
 // ---------------------------------------------------------------------------
 const ROOT          = path.resolve(__dirname, '..');
 const TEMPLATE_PATH = path.join(ROOT, 'templates', 'calculator-city-template.html');
@@ -119,8 +155,22 @@ const TODAY         = new Date().toISOString().slice(0, 10);
 const BASE_URL      = 'https://bluegridmedia.com';
 
 // ---------------------------------------------------------------------------
-// 7. Helpers
+// 9. Helpers
 // ---------------------------------------------------------------------------
+
+/**
+ * Deterministically pick a paragraph variation for a given industry × city
+ * combo so re-running the script produces the same output (no random drift).
+ * Uses a simple index derived from the industry and city slugs.
+ */
+function pickParagraphVariation(industrySlug, citySlug) {
+  // Build a stable numeric seed from the two slugs
+  const key   = industrySlug + '|' + citySlug;
+  let   seed  = 0;
+  for (let i = 0; i < key.length; i++) seed += key.charCodeAt(i);
+  const idx = seed % MARKET_PARAGRAPH_VARIATIONS.length;
+  return MARKET_PARAGRAPH_VARIATIONS[idx];
+}
 
 /**
  * Build related-city pill links for a given industry, excluding the current city.
@@ -165,9 +215,20 @@ function renderPage(template, industry, city) {
   };
 
   // Resolve base CPL for this industry and apply city multiplier
-  const base   = INDUSTRY_BASE_CPL[industry.slug];
+  const base    = INDUSTRY_BASE_CPL[industry.slug];
   const cplLow  = Math.round(base.low  * cityData.multiplier);
   const cplHigh = Math.round(base.high * cityData.multiplier);
+
+  // Pick a deterministic paragraph variation for this industry × city combo
+  const rawVariation = pickParagraphVariation(industry.slug, city.slug);
+  // Apply {{CITY}} and {{INDUSTRY_LABEL}} substitutions inside the variation
+  const marketParagraph = rawVariation
+    .split('{{CITY}}').join(city.name)
+    .split('{{INDUSTRY_LABEL}}').join(industry.label);
+
+  // Resolve city stat sentence — fall back to a generic sentence if not listed
+  const cityStat = CITY_STATS[city.slug] ||
+    `${city.name} is a growing market with increasing demand for ${industry.label} services.`;
 
   let html = template;
 
@@ -180,6 +241,8 @@ function renderPage(template, industry, city) {
   html = replaceAll(html, 'CPL_HIGH',               String(cplHigh));
   html = replaceAll(html, 'CITY_COMPETITION',       cityData.competition);
   html = replaceAll(html, 'CITY_DEMAND',            cityData.demand);
+  html = replaceAll(html, 'MARKET_PARAGRAPH',       marketParagraph);
+  html = replaceAll(html, 'CITY_STAT',              cityStat);
   html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
   html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
 
@@ -201,7 +264,7 @@ function urlBlock(loc, lastmod, priority, changefreq = 'monthly') {
 }
 
 // ---------------------------------------------------------------------------
-// 8. Main
+// 10. Main
 // ---------------------------------------------------------------------------
 function main() {
   // Validate template exists
