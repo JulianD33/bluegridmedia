@@ -11,6 +11,8 @@
     gtag('config', 'AW-17840803263');
   </script>
 
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -1306,6 +1308,14 @@
   </footer>
 
   <script>
+    // ---------------------------------------------------
+// Read URL parameters (industry + city)
+// ---------------------------------------------------
+const params = new URLSearchParams(window.location.search);
+
+const industry = params.get("industry") || "hvac";
+const city = params.get("city") || "national";
+
     (function () {
       /* ── Animate a numeric metric value ── */
       function animateValue(element, start, end, duration, formatter) {
