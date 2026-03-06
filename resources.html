@@ -123,6 +123,74 @@
       font-size: 0.95rem !important;
     }
 
+    /* Calculators hub card */
+    .resource-card-calculators {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #0f2d4e, #1a4a7a);
+      border-radius: 16px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.15);
+    }
+    .resource-card-calculators:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(15,23,42,0.2);
+    }
+    .resource-card-calculators-text { flex: 1; }
+    .resource-card-calculators-text .resource-tag {
+      background: rgba(255,255,255,0.15);
+      color: #d1fafa;
+    }
+    .resource-card-calculators-text h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px;
+      line-height: 1.35;
+    }
+    .resource-card-calculators-text p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .resource-card-calculators-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      flex-shrink: 0;
+      width: 260px;
+    }
+    .resource-card-calculators-grid span {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      font-weight: 500;
+      text-align: center;
+    }
+    .resource-card-calculators-cta {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ffffff;
+      color: #0f2d4e;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 11px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .resource-card-calculators-cta:hover { background: #f0fafa; }
+
     @media (max-width: 768px) {
       .resources-grid {
         grid-template-columns: 1fr;
@@ -135,6 +203,16 @@
       .resource-card-featured .resource-card-img {
         width: 100%;
         height: 200px;
+      }
+
+      .resource-card-calculators {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 20px;
+      }
+
+      .resource-card-calculators-grid {
+        width: 100%;
       }
     }
   </style>
@@ -192,13 +270,37 @@
           <span class="resource-tag">Free Tool</span>
           <h3>Free LSA ROI Calculator</h3>
           <p>
-            Plug in your industry, budget, and job value. Get instant estimates for cost per lead, 
-            booked jobs per month, and exact return on ad spend. Works for HVAC, plumbing, roofing, 
+            Plug in your industry, budget, and job value. Get instant estimates for cost per lead,
+            booked jobs per month, and exact return on ad spend. Works for HVAC, plumbing, roofing,
             electrical, pest control, and 15+ other industries.
           </p>
           <span class="btn-secondary" style="display:inline-block;">Use Calculator →</span>
         </div>
       </a>
+
+      <!-- CALCULATORS HUB CARD -->
+      <div class="resource-card-calculators">
+        <div class="resource-card-calculators-text">
+          <span class="resource-tag">Free Tools</span>
+          <h3>LSA ROI Calculators by Industry</h3>
+          <p>
+            Industry-specific calculators pre-loaded with real CPL benchmarks for HVAC, plumbing,
+            roofing, electricians, pest control, landscaping, garage door, tree service, carpet
+            cleaning, and appliance repair.
+          </p>
+          <a href="/calculators/" class="resource-card-calculators-cta">Browse All Calculators →</a>
+        </div>
+        <div class="resource-card-calculators-grid">
+          <span>🌡️ HVAC</span>
+          <span>🔧 Plumbing</span>
+          <span>⚡ Electrical</span>
+          <span>🏠 Roofing</span>
+          <span>🐛 Pest Control</span>
+          <span>🌿 Landscaping</span>
+          <span>🚪 Garage Door</span>
+          <span>🌳 Tree Service</span>
+        </div>
+      </div>
 
       <!-- CARD: Latest post -->
       <a href="how-much-does-google-lsa-cost.html" class="resource-card">
