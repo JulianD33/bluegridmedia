@@ -146,78 +146,81 @@
   </url>
 
   <!-- Snapshot calculator pages (market × industry combos) -->
+  <sitemap>
+   <loc>https://bluegridmedia.com/sitemap-calculators.xml</loc>
+</sitemap>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-hvac-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-hvac-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-hvac-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-hvac-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-roofing-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-roofing-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-roofing-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-roofing-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-electrical-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-electrical-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-electrical-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-electrical-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-pest-control-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-pest-control-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-pest-control-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-pest-control-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-landscaping-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-landscaping-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-water-damage-restoration-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-water-damage-restoration-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-general-contractors-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-general-contractors-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-lawyers-large.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-lawyers-large</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bluegridmedia.com/lsa-roi-calculator-dentists-mid.html</loc>
+    <loc>https://bluegridmedia.com/lsa-roi-calculator-dentists-mid</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
