@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Electrician LSA ROI Calculator — New York Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for Electrician companies in New York, NY. Typical CPL $41–$95." />
 
-  <!-- Existing structured data: BreadcrumbList + WebPage -->
+  <!-- Structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,6 +132,17 @@
       color: #0f172a;
     }
 
+    /* CPL estimate banner */
+    .cpl-estimate-banner {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 20px;
+    }
+
     /* City Market Insights */
     .city-market-insights {
       background: #f0fdfa;
@@ -194,12 +205,12 @@
       margin-bottom: 48px;
     }
     .iframe-wrapper iframe {
-      width: 100%;
-      min-height: 780px;
-      border: none;
-      display: block;
-    }
-
+  width: 100%;
+  height: 950px;
+  border: none;
+  display: block;
+  overflow: auto;
+}
     .city-calc-faq {
       margin-bottom: 56px;
     }
@@ -396,18 +407,11 @@
       <!-- City Market Insights — unique per industry × city combination -->
       <section class="city-market-insights">
         <h2>Electrician LSA Market Insights — New York, NY</h2>
-        <p>
-          The New York, NY market shows very high demand for home services. For Electrician companies,
-          Google Local Services Ads are often one of the highest intent lead channels available.
-        </p>
-        <p>
-          Because the market is extremely competitive, businesses often compete heavily for
-          top placement in the Google Guaranteed listings.
-        </p>
+        <p>Demand for Electrician services in New York continues to grow as more consumers rely on Google to find trusted local providers.</p>
+        <p>New York is the largest city in the United States, creating massive demand for home services.</p>
         <p>
           Typical cost per lead for Electrician companies in New York ranges
           between <strong>$41 and $95</strong>.
-          This varies depending on seasonality, reviews, and response time.
         </p>
       </section>
 
@@ -422,14 +426,19 @@
         </p>
       </section>
 
+      <!-- CPL estimate banner -->
+      <div class="cpl-estimate-banner">
+        Estimated CPL in New York: $41 – $95
+      </div>
+
       <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">
         <iframe
-          src="/lsa-roi-calculator.html?industry=electrician&city=new-york&cpl_low=41&cpl_high=95&embed=1"
-          title="Electrician LSA ROI Calculator for New York, NY"
-          loading="lazy"
-          scrolling="no"
-        ></iframe>
+  src="/lsa-roi-calculator.html?industry=electrician&city=new-york&embed=1"
+  title="Electrician LSA ROI Calculator for New York, NY"
+  loading="lazy"
+  scrolling="auto"
+></iframe>
       </div>
 
       <div class="city-calc-faq">

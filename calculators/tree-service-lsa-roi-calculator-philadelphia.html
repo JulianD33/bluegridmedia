@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Tree Service LSA ROI Calculator — Philadelphia Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for Tree Service companies in Philadelphia, PA. Typical CPL $45–$110." />
 
-  <!-- Existing structured data: BreadcrumbList + WebPage -->
+  <!-- Structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,6 +132,17 @@
       color: #0f172a;
     }
 
+    /* CPL estimate banner */
+    .cpl-estimate-banner {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 20px;
+    }
+
     /* City Market Insights */
     .city-market-insights {
       background: #f0fdfa;
@@ -194,12 +205,12 @@
       margin-bottom: 48px;
     }
     .iframe-wrapper iframe {
-      width: 100%;
-      min-height: 780px;
-      border: none;
-      display: block;
-    }
-
+  width: 100%;
+  height: 950px;
+  border: none;
+  display: block;
+  overflow: auto;
+}
     .city-calc-faq {
       margin-bottom: 56px;
     }
@@ -396,18 +407,11 @@
       <!-- City Market Insights — unique per industry × city combination -->
       <section class="city-market-insights">
         <h2>Tree Service LSA Market Insights — Philadelphia, PA</h2>
-        <p>
-          The Philadelphia, PA market shows steady demand for home services. For Tree Service companies,
-          Google Local Services Ads are often one of the highest intent lead channels available.
-        </p>
-        <p>
-          Because the market is competitive, businesses often compete heavily for
-          top placement in the Google Guaranteed listings.
-        </p>
+        <p>Demand for Tree Service services in Philadelphia continues to grow as more consumers rely on Google to find trusted local providers.</p>
+        <p>Philadelphia has a dense urban population and strong demand for local services.</p>
         <p>
           Typical cost per lead for Tree Service companies in Philadelphia ranges
           between <strong>$45 and $110</strong>.
-          This varies depending on seasonality, reviews, and response time.
         </p>
       </section>
 
@@ -422,14 +426,19 @@
         </p>
       </section>
 
+      <!-- CPL estimate banner -->
+      <div class="cpl-estimate-banner">
+        Estimated CPL in Philadelphia: $45 – $110
+      </div>
+
       <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">
         <iframe
-          src="/lsa-roi-calculator.html?industry=tree-service&city=philadelphia&cpl_low=45&cpl_high=110&embed=1"
-          title="Tree Service LSA ROI Calculator for Philadelphia, PA"
-          loading="lazy"
-          scrolling="no"
-        ></iframe>
+  src="/lsa-roi-calculator.html?industry=tree-service&city=philadelphia&embed=1"
+  title="Tree Service LSA ROI Calculator for Philadelphia, PA"
+  loading="lazy"
+  scrolling="auto"
+></iframe>
       </div>
 
       <div class="city-calc-faq">

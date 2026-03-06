@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Plumbing LSA ROI Calculator — Indianapolis Cost Per Lead &amp; ROI | Blue Grid Media" />
   <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for Plumbing companies in Indianapolis, IN. Typical CPL $35–$80." />
 
-  <!-- Existing structured data: BreadcrumbList + WebPage -->
+  <!-- Structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,6 +132,17 @@
       color: #0f172a;
     }
 
+    /* CPL estimate banner */
+    .cpl-estimate-banner {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 20px;
+    }
+
     /* City Market Insights */
     .city-market-insights {
       background: #f0fdfa;
@@ -194,12 +205,12 @@
       margin-bottom: 48px;
     }
     .iframe-wrapper iframe {
-      width: 100%;
-      min-height: 780px;
-      border: none;
-      display: block;
-    }
-
+  width: 100%;
+  height: 950px;
+  border: none;
+  display: block;
+  overflow: auto;
+}
     .city-calc-faq {
       margin-bottom: 56px;
     }
@@ -396,18 +407,11 @@
       <!-- City Market Insights — unique per industry × city combination -->
       <section class="city-market-insights">
         <h2>Plumbing LSA Market Insights — Indianapolis, IN</h2>
-        <p>
-          The Indianapolis, IN market shows steady demand for home services. For Plumbing companies,
-          Google Local Services Ads are often one of the highest intent lead channels available.
-        </p>
-        <p>
-          Because the market is competitive, businesses often compete heavily for
-          top placement in the Google Guaranteed listings.
-        </p>
+        <p>Plumbing companies in Indianapolis often use Google Local Services Ads as a primary lead channel because it connects them with customers actively searching for services.</p>
+        <p>Indianapolis is one of the largest cities in the Midwest.</p>
         <p>
           Typical cost per lead for Plumbing companies in Indianapolis ranges
           between <strong>$35 and $80</strong>.
-          This varies depending on seasonality, reviews, and response time.
         </p>
       </section>
 
@@ -422,14 +426,19 @@
         </p>
       </section>
 
+      <!-- CPL estimate banner -->
+      <div class="cpl-estimate-banner">
+        Estimated CPL in Indianapolis: $35 – $80
+      </div>
+
       <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">
         <iframe
-          src="/lsa-roi-calculator.html?industry=plumbing&city=indianapolis&cpl_low=35&cpl_high=80&embed=1"
-          title="Plumbing LSA ROI Calculator for Indianapolis, IN"
-          loading="lazy"
-          scrolling="no"
-        ></iframe>
+  src="/lsa-roi-calculator.html?industry=plumbing&city=indianapolis&embed=1"
+  title="Plumbing LSA ROI Calculator for Indianapolis, IN"
+  loading="lazy"
+  scrolling="auto"
+></iframe>
       </div>
 
       <div class="city-calc-faq">
