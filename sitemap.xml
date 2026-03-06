@@ -145,7 +145,7 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Snapshot calculator pages -->
+  <!-- Snapshot calculator pages (market × industry combos) -->
   <url>
     <loc>https://bluegridmedia.com/lsa-roi-calculator-plumbing-large.html</loc>
     <lastmod>2026-03-04</lastmod>
@@ -222,7 +222,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- /calculators/ hub and industry pages -->
+  <!-- /calculators/ hub and static industry pages -->
   <url>
     <loc>https://bluegridmedia.com/calculators/</loc>
     <lastmod>2026-05-01</lastmod>
