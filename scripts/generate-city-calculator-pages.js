@@ -131,7 +131,8 @@ function main() {
     for (const city of CITIES) {
       const filename = `${industry.slug}-lsa-roi-calculator-${city.slug}.html`;
       const outPath  = path.join(OUTPUT_DIR, filename);
-      const url      = `${BASE_URL}/calculators/${filename}`;
+      // Sitemap URL without .html extension for consistency
+      const url      = `${BASE_URL}/calculators/${industry.slug}-lsa-roi-calculator-${city.slug}`;
 
       const html = renderPage(template, industry, city);
       fs.writeFileSync(outPath, html, 'utf8');
@@ -178,7 +179,7 @@ function main() {
   const citySlugPattern = new RegExp(CITIES.map(c => c.slug).join('|'));
   const staticUrls = allExistingUrls.filter(block => !citySlugPattern.test(block));
 
-  // Build new city URL blocks
+  // Build new city URL blocks (no .html extension)
   const cityUrlBlocks = generatedUrls.map(url => [
     `  <url>`,
     `    <loc>${url}</loc>`,
