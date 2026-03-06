@@ -59,7 +59,40 @@ const CITIES = [
 ];
 
 // ---------------------------------------------------------------------------
-// 3. Static hub + industry pages that live in sitemap-calculators.xml
+// 3. City market data — multipliers and descriptive text for unique content
+//    Cities not listed here default to multiplier: 1, generic descriptions.
+// ---------------------------------------------------------------------------
+const CITY_MARKET_DATA = {
+  'new-york':      { multiplier: 1.35, competition: 'extremely competitive',    demand: 'very high demand for home services' },
+  'los-angeles':   { multiplier: 1.30, competition: 'extremely competitive',    demand: 'very strong demand for contractors' },
+  'chicago':       { multiplier: 1.20, competition: 'highly competitive',       demand: 'strong demand for local services' },
+  'houston':       { multiplier: 1.05, competition: 'competitive',              demand: 'growing demand for home services' },
+  'phoenix':       { multiplier: 1.10, competition: 'competitive',              demand: 'rapidly increasing demand for contractors' },
+  'dallas':        { multiplier: 1.00, competition: 'competitive',              demand: 'strong demand for home improvement services' },
+  'seattle':       { multiplier: 1.25, competition: 'highly competitive',       demand: 'high demand for skilled trades' },
+  'san-francisco': { multiplier: 1.40, competition: 'extremely competitive',    demand: 'very high demand for contractors' },
+  'denver':        { multiplier: 1.10, competition: 'competitive',              demand: 'strong demand for local services' },
+  'nashville':     { multiplier: 0.95, competition: 'moderately competitive',   demand: 'steady demand for home services' },
+};
+
+// ---------------------------------------------------------------------------
+// 4. Base industry CPL ranges (mid-size market baseline)
+// ---------------------------------------------------------------------------
+const INDUSTRY_BASE_CPL = {
+  'hvac':            { low: 40, high: 85  },
+  'plumbing':        { low: 35, high: 80  },
+  'electrician':     { low: 30, high: 70  },
+  'roofing':         { low: 50, high: 120 },
+  'pest-control':    { low: 25, high: 60  },
+  'landscaping':     { low: 30, high: 70  },
+  'tree-service':    { low: 45, high: 110 },
+  'carpet-cleaning': { low: 20, high: 55  },
+  'appliance-repair':{ low: 25, high: 65  },
+  'garage-door':     { low: 30, high: 75  },
+};
+
+// ---------------------------------------------------------------------------
+// 5. Static hub + industry pages that live in sitemap-calculators.xml
 //    (kept here so the script can re-write the full file without losing them)
 // ---------------------------------------------------------------------------
 const STATIC_CALCULATOR_URLS = [
@@ -77,7 +110,7 @@ const STATIC_CALCULATOR_URLS = [
 ];
 
 // ---------------------------------------------------------------------------
-// 4. Paths
+// 6. Paths
 // ---------------------------------------------------------------------------
 const ROOT          = path.resolve(__dirname, '..');
 const TEMPLATE_PATH = path.join(ROOT, 'templates', 'calculator-city-template.html');
@@ -86,7 +119,7 @@ const TODAY         = new Date().toISOString().slice(0, 10);
 const BASE_URL      = 'https://bluegridmedia.com';
 
 // ---------------------------------------------------------------------------
-// 5. Helpers
+// 7. Helpers
 // ---------------------------------------------------------------------------
 
 /**
@@ -124,6 +157,18 @@ function replaceAll(template, variable, value) {
  * Apply all substitutions to the template for a given industry × city combo.
  */
 function renderPage(template, industry, city) {
+  // Resolve city market data — default to neutral values for unlisted cities
+  const cityData = CITY_MARKET_DATA[city.slug] || {
+    multiplier:  1,
+    competition: 'competitive',
+    demand:      'steady demand for home services',
+  };
+
+  // Resolve base CPL for this industry and apply city multiplier
+  const base   = INDUSTRY_BASE_CPL[industry.slug];
+  const cplLow  = Math.round(base.low  * cityData.multiplier);
+  const cplHigh = Math.round(base.high * cityData.multiplier);
+
   let html = template;
 
   html = replaceAll(html, 'INDUSTRY',               industry.slug);
@@ -131,6 +176,10 @@ function renderPage(template, industry, city) {
   html = replaceAll(html, 'CITY',                   city.name);
   html = replaceAll(html, 'CITY_SLUG',              city.slug);
   html = replaceAll(html, 'STATE',                  city.state);
+  html = replaceAll(html, 'CPL_LOW',                String(cplLow));
+  html = replaceAll(html, 'CPL_HIGH',               String(cplHigh));
+  html = replaceAll(html, 'CITY_COMPETITION',       cityData.competition);
+  html = replaceAll(html, 'CITY_DEMAND',            cityData.demand);
   html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
   html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
 
@@ -152,7 +201,7 @@ function urlBlock(loc, lastmod, priority, changefreq = 'monthly') {
 }
 
 // ---------------------------------------------------------------------------
-// 6. Main
+// 8. Main
 // ---------------------------------------------------------------------------
 function main() {
   // Validate template exists
@@ -189,9 +238,9 @@ function main() {
   console.log(`\n✅  Generated ${count} pages into /calculators/\n`);
 
   // ---------------------------------------------------------------------------
-  // 7. Auto-write sitemap-calculators.xml
-  //    Preserves static hub + industry entries at the top.
-  //    Appends all 200 city × industry URLs below.
+  // Auto-write sitemap-calculators.xml
+  // Preserves static hub + industry entries at the top.
+  // Appends all 200 city × industry URLs below.
   // ---------------------------------------------------------------------------
   const sitemapPath = path.join(ROOT, 'sitemap-calculators.xml');
 

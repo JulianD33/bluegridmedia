@@ -11,17 +11,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media</title>
-  <meta name="description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Estimate your cost per lead, booked jobs, and return on ad spend in the {{CITY}} market.">
+  <meta name="description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Typical CPL ${{CPL_LOW}}–${{CPL_HIGH}}. Estimate your cost per lead, booked jobs, and return on ad spend.">
   <link rel="canonical" href="https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media" />
-  <meta property="og:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Estimate your cost per lead, booked jobs, and return on ad spend." />
+  <meta property="og:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Typical CPL ${{CPL_LOW}}–${{CPL_HIGH}}. Estimate your cost per lead, booked jobs, and return on ad spend." />
   <meta property="og:url" content="https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}" />
   <meta property="og:site_name" content="Blue Grid Media" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead &amp; ROI | Blue Grid Media" />
-  <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}." />
+  <meta name="twitter:description" content="Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Typical CPL ${{CPL_LOW}}–${{CPL_HIGH}}." />
 
   <!-- Existing structured data: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
@@ -41,7 +41,7 @@
         "@type": "WebPage",
         "name": "{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}} Cost Per Lead & ROI",
         "url": "https://bluegridmedia.com/calculators/{{INDUSTRY}}-lsa-roi-calculator-{{CITY_SLUG}}",
-        "description": "Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}.",
+        "description": "Free Google Local Services Ads ROI calculator for {{INDUSTRY_LABEL}} companies in {{CITY}}, {{STATE}}. Typical CPL ${{CPL_LOW}}–${{CPL_HIGH}}.",
         "publisher": {
           "@type": "Organization",
           "name": "Blue Grid Media"
@@ -62,7 +62,7 @@
         "name": "How much do Google Local Services Ads cost for {{INDUSTRY_LABEL}} companies in {{CITY}}?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cost per lead for {{INDUSTRY_LABEL}} businesses in {{CITY}}, {{STATE}} typically ranges based on competition, seasonality, and your Google Guaranteed rating. Use the calculator on this page to get a personalized estimate based on your budget and market conditions."
+          "text": "Cost per lead for {{INDUSTRY_LABEL}} businesses in {{CITY}}, {{STATE}} typically ranges from ${{CPL_LOW}} to ${{CPL_HIGH}} based on competition, seasonality, and your Google Guaranteed rating. Use the calculator on this page to get a personalized estimate based on your budget and market conditions."
         }
       },
       {
@@ -129,6 +129,34 @@
       max-width: 720px;
     }
     .city-calc-intro strong {
+      color: #0f172a;
+    }
+
+    /* City Market Insights */
+    .city-market-insights {
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      border-left: 4px solid #0ea5a4;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+    .city-market-insights h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .city-market-insights p {
+      font-size: 0.97rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .city-market-insights p:last-child {
+      margin-bottom: 0;
+    }
+    .city-market-insights strong {
       color: #0f172a;
     }
 
@@ -300,6 +328,7 @@
       .city-calc-cta { padding: 24px 20px; }
       .iframe-wrapper iframe { min-height: 900px; }
       .city-market-overview { padding: 18px 16px; }
+      .city-market-insights { padding: 18px 16px; }
     }
   </style>
 </head>
@@ -345,7 +374,7 @@
     <div class="container" style="text-align: center;">
       <h1>{{INDUSTRY_LABEL}} LSA ROI Calculator — {{CITY}}, {{STATE}}</h1>
       <p style="max-width: 640px; margin: 12px auto 0; color: #ffffff;">
-        Estimate what Google Local Services Ads could generate for your {{INDUSTRY_LABEL}} business in {{CITY}}. Get projected leads, booked jobs, and return on ad spend in seconds.
+        Estimate what Google Local Services Ads could generate for your {{INDUSTRY_LABEL}} business in {{CITY}}. Typical CPL: ${{CPL_LOW}}–${{CPL_HIGH}}. Get projected leads, booked jobs, and return on ad spend in seconds.
       </p>
     </div>
   </header>
@@ -364,6 +393,24 @@
         This calculator is pre-loaded with <strong>{{CITY}}, {{STATE}}</strong> market data for <strong>{{INDUSTRY_LABEL}}</strong> companies. Enter your monthly ad budget and average job value to instantly see how many leads, booked jobs, and how much revenue Google Local Services Ads could generate for your business in the {{CITY}} area.
       </p>
 
+      <!-- City Market Insights — unique per industry × city combination -->
+      <section class="city-market-insights">
+        <h2>{{INDUSTRY_LABEL}} LSA Market Insights — {{CITY}}, {{STATE}}</h2>
+        <p>
+          The {{CITY}}, {{STATE}} market shows {{CITY_DEMAND}}. For {{INDUSTRY_LABEL}} companies,
+          Google Local Services Ads are often one of the highest intent lead channels available.
+        </p>
+        <p>
+          Because the market is {{CITY_COMPETITION}}, businesses often compete heavily for
+          top placement in the Google Guaranteed listings.
+        </p>
+        <p>
+          Typical cost per lead for {{INDUSTRY_LABEL}} companies in {{CITY}} ranges
+          between <strong>${{CPL_LOW}} and ${{CPL_HIGH}}</strong>.
+          This varies depending on seasonality, reviews, and response time.
+        </p>
+      </section>
+
       <!-- City Market Overview -->
       <section class="city-market-overview">
         <h2>{{INDUSTRY_LABEL}} Market Overview — {{CITY}}, {{STATE}}</h2>
@@ -375,9 +422,10 @@
         </p>
       </section>
 
+      <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">
         <iframe
-          src="/lsa-roi-calculator.html?industry={{INDUSTRY}}&city={{CITY_SLUG}}&embed=1"
+          src="/lsa-roi-calculator.html?industry={{INDUSTRY}}&city={{CITY_SLUG}}&cpl_low={{CPL_LOW}}&cpl_high={{CPL_HIGH}}&embed=1"
           title="{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}}"
           loading="lazy"
           scrolling="no"
@@ -390,7 +438,7 @@
         <div class="faq-item">
           <h3>How much do Google Local Services Ads cost for {{INDUSTRY_LABEL}} companies in {{CITY}}?</h3>
           <p>
-            Cost per lead for {{INDUSTRY_LABEL}} businesses in {{CITY}}, {{STATE}} typically ranges based on competition, seasonality, and your Google Guaranteed rating. Use the calculator above to get a personalized estimate based on your budget and market conditions.
+            Cost per lead for {{INDUSTRY_LABEL}} businesses in {{CITY}}, {{STATE}} typically ranges from <strong>${{CPL_LOW}} to ${{CPL_HIGH}}</strong> based on competition, seasonality, and your Google Guaranteed rating. Use the calculator above to get a personalized estimate based on your budget and market conditions.
           </p>
         </div>
 
@@ -404,7 +452,7 @@
         <div class="faq-item">
           <h3>How many leads can I expect from LSA in {{CITY}}?</h3>
           <p>
-            Lead volume depends on your budget, your industry's average CPL in {{CITY}}, and how well your profile is optimized. The calculator above uses real benchmark data to give you a realistic estimate for the {{CITY}} market.
+            Lead volume depends on your budget, your industry's average CPL in {{CITY}} (${{CPL_LOW}}–${{CPL_HIGH}}), and how well your profile is optimized. The calculator above uses real benchmark data to give you a realistic estimate for the {{CITY}} market.
           </p>
         </div>
 
