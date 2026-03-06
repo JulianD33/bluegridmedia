@@ -734,18 +734,6 @@
     .calculator-cta-box .btn-primary { background: #fff; color: #0f2d4e !important; }
     .calculator-cta-box .btn-primary:hover { background: #f0fafa; }
 
-    /* CPL banner (shown on city pages) */
-    .city-cpl-banner {
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      padding: 14px 18px;
-      border-radius: 10px;
-      font-weight: 600;
-      color: #0369a1;
-      margin-bottom: 20px;
-      font-size: 0.97rem;
-    }
-
     body.embed-mode .site-nav,
     body.embed-mode .site-footer { display: none !important; }
     body.embed-mode { padding-top: 0; }
@@ -1225,21 +1213,21 @@
     // -------------------------------------------------------------------------
     // 3. READ URL PARAMETERS — single source of truth
     // -------------------------------------------------------------------------
-    var urlParams      = new URLSearchParams(window.location.search);
-    var urlIndustry    = (urlParams.get('industry') || '').toLowerCase().trim();
-    var urlCity        = (urlParams.get('city')     || '').toLowerCase().trim();
+    var urlParams   = new URLSearchParams(window.location.search);
+    var urlIndustry = (urlParams.get('industry') || '').toLowerCase().trim();
+    var urlCity     = (urlParams.get('city')     || '').toLowerCase().trim();
 
     // -------------------------------------------------------------------------
-    // 4. COMPUTE CITY-ADJUSTED CPL — called once here, reused everywhere
-    //    Returns { low, high, midpoint, cityMultiplier } for the URL industry+city.
-    //    If no URL industry, returns null (calculator uses dropdown + market radio).
+    // 4. COMPUTE CITY-ADJUSTED CPL MIDPOINT
+    //    Returns the midpoint CPL for a given industry + optional city.
+    //    This is used internally by the engine — never displayed as a banner.
     // -------------------------------------------------------------------------
     function computeUrlCpl(industrySlug, citySlug) {
       var base = BASE_CPL[industrySlug];
       if (!base) return null;
-      var mult    = (citySlug && CITY_MULTIPLIER[citySlug]) ? CITY_MULTIPLIER[citySlug] : 1;
-      var low     = Math.round(base.low  * mult);
-      var high    = Math.round(base.high * mult);
+      var mult     = (citySlug && CITY_MULTIPLIER[citySlug]) ? CITY_MULTIPLIER[citySlug] : 1;
+      var low      = Math.round(base.low  * mult);
+      var high     = Math.round(base.high * mult);
       var midpoint = (low + high) / 2;
       return { low: low, high: high, midpoint: midpoint, cityMultiplier: mult };
     }
@@ -1293,22 +1281,7 @@
     }
 
     // -------------------------------------------------------------------------
-    // 7. SHOW CITY CPL BANNER (optional — only when city param exists)
-    // -------------------------------------------------------------------------
-    if (urlCity && urlCplData) {
-      var cityLabel = urlCity.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-      var banner    = document.createElement('p');
-      banner.className = 'city-cpl-banner';
-      banner.textContent = 'Estimated CPL in ' + cityLabel + ': $' + urlCplData.low + ' \u2013 $' + urlCplData.high;
-      // Insert before the results section
-      var resultsSection = document.querySelector('.results-section');
-      if (resultsSection && resultsSection.parentNode) {
-        resultsSection.parentNode.insertBefore(banner, resultsSection);
-      }
-    }
-
-    // -------------------------------------------------------------------------
-    // 8. HELPERS
+    // 7. HELPERS
     // -------------------------------------------------------------------------
     var prevValues = { cpl: 0, leads: 0, booked: 0, costPerJob: 0, revenue: 0, roas: 0 };
     var lastResult = {};
@@ -1370,11 +1343,17 @@
     }
 
     // -------------------------------------------------------------------------
-    // 9. RESOLVE MIDPOINT CPL — single source of truth for the calculation engine
+    // 8. RESOLVE MIDPOINT CPL — single source of truth for the calculation engine
+    //
+    //    The CPL is the base cost per lead for the selected industry + market.
+    //    It is NOT affected by answer rate or booking rate — those affect
+    //    downstream metrics (booked jobs, cost per booked job, ROAS) which
+    //    update dynamically as the user moves the sliders.
+    //
     //    Priority:
-    //      a) If URL has industry + city → use city-adjusted CPL (urlCplData)
-    //      b) If URL has industry only   → use BASE_CPL × market radio multiplier
-    //      c) Otherwise                  → use dropdown selection × market radio multiplier
+    //      a) URL has industry + city  → city-adjusted midpoint CPL
+    //      b) URL has industry only    → BASE_CPL midpoint × market radio multiplier
+    //      c) No URL params            → dropdown selection × market radio multiplier
     // -------------------------------------------------------------------------
     function resolveMidpointCpl() {
       // (a) URL industry + city → city-adjusted, ignore market radio
@@ -1397,7 +1376,7 @@
     }
 
     // -------------------------------------------------------------------------
-    // 10. URL STATE — share / history
+    // 9. URL STATE — share / history
     // -------------------------------------------------------------------------
     function getParams() {
       return {
@@ -1426,8 +1405,8 @@
       }
       if (p.answerRate  != null) parts.push('answerRate='  + p.answerRate);
       if (p.bookingRate != null) parts.push('bookingRate=' + p.bookingRate);
-      // Preserve city/industry URL params if present
-      if (urlCity)     parts.push('city='     + encodeURIComponent(urlCity));
+      // Preserve city param if present
+      if (urlCity) parts.push('city=' + encodeURIComponent(urlCity));
       return parts.length ? '?' + parts.join('&') : '';
     }
 
@@ -1491,7 +1470,7 @@
     }
 
     // -------------------------------------------------------------------------
-    // 11. CSV EXPORT
+    // 10. CSV EXPORT
     // -------------------------------------------------------------------------
     function getCsvContent() {
       var p = getParams();
@@ -1530,11 +1509,22 @@
     }
 
     // -------------------------------------------------------------------------
-    // 12. MAIN CALCULATION ENGINE
+    // 11. MAIN CALCULATION ENGINE
+    //
+    //    CPL is fixed per industry + city/market combination.
+    //    Answer rate and booking rate affect:
+    //      - booked jobs per month
+    //      - cost per booked job
+    //      - monthly revenue
+    //      - ROAS
+    //    These update dynamically as the user moves the sliders.
+    //    The calculator only shows results once the user has entered a budget
+    //    and job value — no pre-filled results on load.
     // -------------------------------------------------------------------------
     function runCalc() {
       var adjCpl = resolveMidpointCpl();
 
+      // No industry selected yet
       if (!adjCpl || adjCpl <= 0) {
         if (outCpl)        outCpl.textContent        = '—';
         if (outLeads)      outLeads.textContent      = '—';
@@ -1549,24 +1539,44 @@
         return;
       }
 
-      var b    = parseFloat(budgetEl   ? budgetEl.value   : 0) || 0;
-      var jv   = parseFloat(jobValueEl ? jobValueEl.value : 0) || 0;
-      var ans  = parseInt(answerRate  ? answerRate.value  : 75, 10) / 100;
-      var book = parseInt(bookingRate ? bookingRate.value : 45, 10) / 100;
+      var b  = parseFloat(budgetEl   ? budgetEl.value   : 0) || 0;
+      var jv = parseFloat(jobValueEl ? jobValueEl.value : 0) || 0;
 
+      // Budget not yet entered — show CPL only, wait for user input
       if (b < 300) {
-        if (outCpl)      outCpl.textContent      = fmtMoney(adjCpl);
-        if (outLeads)    outLeads.textContent    = '—';
-        if (outBooked)   outBooked.textContent   = '—';
+        if (outCpl)        outCpl.textContent        = fmtMoney(adjCpl);
+        if (outLeads)      outLeads.textContent      = '—';
+        if (outBooked)     outBooked.textContent     = '—';
         if (outCostPerJob) outCostPerJob.textContent = '—';
-        if (outRevenue)  outRevenue.textContent  = '—';
-        if (outRoas)     outRoas.textContent     = '—';
-        if (insightLine) insightLine.textContent = 'Enter a monthly budget of at least $300 to see results.';
-        if (whatifA)     whatifA.textContent     = '—';
-        if (whatifB)     whatifB.textContent     = '—';
-        if (whatifC)     whatifC.textContent     = '—';
+        if (outRevenue)    outRevenue.textContent    = '—';
+        if (outRoas)       outRoas.textContent       = '—';
+        if (insightLine)   insightLine.textContent   = 'Enter a monthly budget of at least $300 to see your full results.';
+        if (whatifA)       whatifA.textContent       = '—';
+        if (whatifB)       whatifB.textContent       = '—';
+        if (whatifC)       whatifC.textContent       = '—';
         return;
       }
+
+      // Job value not yet entered — show CPL + leads, wait for job value
+      if (jv <= 0) {
+        var leadsOnly = b / adjCpl;
+        if (outCpl)        outCpl.textContent        = fmtMoney(adjCpl);
+        if (outLeads)      outLeads.textContent      = fmtNum(leadsOnly);
+        if (outBooked)     outBooked.textContent     = '—';
+        if (outCostPerJob) outCostPerJob.textContent = '—';
+        if (outRevenue)    outRevenue.textContent    = '—';
+        if (outRoas)       outRoas.textContent       = '—';
+        if (insightLine)   insightLine.textContent   = 'Enter your average job value to see booked jobs, revenue, and ROAS.';
+        if (whatifA)       whatifA.textContent       = '—';
+        if (whatifB)       whatifB.textContent       = '—';
+        if (whatifC)       whatifC.textContent       = '—';
+        return;
+      }
+
+      // All inputs present — run full calculation
+      // Answer rate and booking rate drive booked jobs and all downstream metrics
+      var ans  = parseInt(answerRate  ? answerRate.value  : 75, 10) / 100;
+      var book = parseInt(bookingRate ? bookingRate.value : 45, 10) / 100;
 
       var leads      = b / adjCpl;
       var answered   = leads * ans;
@@ -1583,7 +1593,16 @@
         ltvRoasVal = b > 0 ? (booked * ltv) / b : null;
       }
 
-      lastResult = { adjCpl: adjCpl, leads: leads, booked: booked, costPerJob: costPerJob, revenue: revenue, roas: roas, ltv: ltv, ltvRoasVal: ltvRoasVal };
+      lastResult = {
+        adjCpl:     adjCpl,
+        leads:      leads,
+        booked:     booked,
+        costPerJob: costPerJob,
+        revenue:    revenue,
+        roas:       roas,
+        ltv:        ltv,
+        ltvRoasVal: ltvRoasVal
+      };
 
       animateValue(outCpl,        prevValues.cpl,        adjCpl,     400, fmtMoney); prevValues.cpl        = adjCpl;
       animateValue(outLeads,      prevValues.leads,      leads,      400, fmtNum);   prevValues.leads      = leads;
@@ -1593,12 +1612,12 @@
       animateValue(outRoas,       prevValues.roas,       roas,       400, fmtRoas);  prevValues.roas       = roas;
 
       if (isRecurring()) {
-        if (cardLtv)    cardLtv.classList.remove('hidden');
+        if (cardLtv)     cardLtv.classList.remove('hidden');
         if (cardLtvRoas) cardLtvRoas.classList.remove('hidden');
-        if (outLtv)     outLtv.textContent     = fmtMoney(ltv);
-        if (outLtvRoas) outLtvRoas.textContent = fmtRoas(ltvRoasVal);
+        if (outLtv)      outLtv.textContent     = fmtMoney(ltv);
+        if (outLtvRoas)  outLtvRoas.textContent = fmtRoas(ltvRoasVal);
       } else {
-        if (cardLtv)    cardLtv.classList.add('hidden');
+        if (cardLtv)     cardLtv.classList.add('hidden');
         if (cardLtvRoas) cardLtvRoas.classList.add('hidden');
       }
 
@@ -1610,22 +1629,25 @@
                          'Strong economics. This budget is likely worth scaling. Most businesses at this ROAS benefit from increasing spend.';
       }
 
-      // What-if scenarios
+      // What-if scenarios — these also respond dynamically to slider changes
       var ansPlus = Math.min(100, (ans  * 100) + 15) / 100;
       var bookedA = leads * ansPlus * book;
       var roasA   = b > 0 ? (bookedA * jv) / b : null;
-      if (whatifA) whatifA.textContent = (bookedA - booked >= 0 ? '+' : '') + fmtNum(bookedA - booked) +
+      if (whatifA) whatifA.textContent =
+        (bookedA - booked >= 0 ? '+' : '') + fmtNum(bookedA - booked) +
         ' booked jobs/month, ' + (roasA != null ? (roasA > roas ? '+' : '') + (roasA - roas).toFixed(1) + 'x ROAS' : '—');
 
       var bookPlus = Math.min(80, (book * 100) + 10) / 100;
       var bookedB  = answered * bookPlus;
       var roasB    = b > 0 ? (bookedB * jv) / b : null;
-      if (whatifB) whatifB.textContent = (bookedB - booked >= 0 ? '+' : '') + fmtNum(bookedB - booked) +
+      if (whatifB) whatifB.textContent =
+        (bookedB - booked >= 0 ? '+' : '') + fmtNum(bookedB - booked) +
         ' booked jobs/month, ' + (roasB != null ? (roasB > roas ? '+' : '') + (roasB - roas).toFixed(1) + 'x ROAS' : '—');
 
       var b50      = b * 1.5;
       var booked50 = (b50 / adjCpl) * ans * book;
-      if (whatifC) whatifC.textContent = '+' + fmtNum((b50 / adjCpl) - leads) + ' leads, ' +
+      if (whatifC) whatifC.textContent =
+        '+' + fmtNum((b50 / adjCpl) - leads) + ' leads, ' +
         fmtMoney(booked50 * jv - revenue) + ' revenue (same CPL & rates)';
 
       updateHistory();
@@ -1634,7 +1656,7 @@
     var debouncedRunCalc = debounce(runCalc, 200);
 
     // -------------------------------------------------------------------------
-    // 13. EVENT LISTENERS
+    // 12. EVENT LISTENERS
     // -------------------------------------------------------------------------
 
     // Recurring toggle
@@ -1651,7 +1673,7 @@
       });
     }
 
-    // Sliders
+    // Sliders — update dynamically, recalculate booked jobs / ROAS immediately
     if (answerRate) {
       answerRate.addEventListener('input', function () {
         if (answerRateVal) answerRateVal.textContent = this.value + '%';
@@ -1667,7 +1689,7 @@
       });
     }
 
-    // Inputs
+    // Other inputs
     if (industryEl)       industryEl.addEventListener('change', debouncedRunCalc);
     if (budgetEl)         budgetEl.addEventListener('input', debouncedRunCalc);
     if (jobValueEl)       jobValueEl.addEventListener('input', debouncedRunCalc);
@@ -1710,11 +1732,11 @@
     }
 
     // Email results
-    var emailFormWrap  = document.getElementById('emailResultsForm');
-    var emailInnerForm = document.getElementById('emailResultsInnerForm');
-    var emailSuccess   = document.getElementById('emailResultsSuccess');
-    var emailError     = document.getElementById('emailResultsError');
-    var emailSubmitBtn = document.getElementById('emailSubmitBtn');
+    var emailFormWrap   = document.getElementById('emailResultsForm');
+    var emailInnerForm  = document.getElementById('emailResultsInnerForm');
+    var emailSuccess    = document.getElementById('emailResultsSuccess');
+    var emailError      = document.getElementById('emailResultsError');
+    var emailSubmitBtn  = document.getElementById('emailSubmitBtn');
     var emailResultsBtn = document.getElementById('emailResultsBtn');
 
     if (emailResultsBtn) {
@@ -1819,13 +1841,13 @@
     }
 
     // -------------------------------------------------------------------------
-    // 14. INITIALISE — apply any saved/shared params then run once on page load
+    // 13. INITIALISE — apply any saved/shared params then run once on page load
     // -------------------------------------------------------------------------
     var initial = parseQuery() || (window.__LSA_SNAPSHOT || null);
     if (initial) {
       applyParams(initial);
     }
-    // Always run once on load so city pages show results immediately
+    // Run once on load — shows CPL if industry is known, waits for budget/job value
     runCalc();
 
   })();
