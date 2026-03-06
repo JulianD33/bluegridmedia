@@ -8,7 +8,7 @@
  *
  * Output:
  *   /calculators/{industry}-lsa-roi-calculator-{city-slug}.html  (200 files)
- *   Console output: list of all generated URLs for sitemap inclusion.
+ *   sitemap-calculators.xml updated with all 200 city page URLs.
  */
 
 'use strict';
@@ -97,11 +97,11 @@ function replaceAll(template, variable, value) {
 function renderPage(template, industry, city) {
   let html = template;
 
-  html = replaceAll(html, 'INDUSTRY',       industry.slug);
-  html = replaceAll(html, 'INDUSTRY_LABEL', industry.label);
-  html = replaceAll(html, 'CITY',           city.name);
-  html = replaceAll(html, 'CITY_SLUG',      city.slug);
-  html = replaceAll(html, 'STATE',          city.state);
+  html = replaceAll(html, 'INDUSTRY',           industry.slug);
+  html = replaceAll(html, 'INDUSTRY_LABEL',     industry.label);
+  html = replaceAll(html, 'CITY',               city.name);
+  html = replaceAll(html, 'CITY_SLUG',          city.slug);
+  html = replaceAll(html, 'STATE',              city.state);
   html = replaceAll(html, 'RELATED_CITY_LINKS', buildRelatedCityLinks(industry, city.slug));
 
   return html;
@@ -117,7 +117,7 @@ function main() {
     process.exit(1);
   }
 
-  // Validate output directory exists
+  // Ensure output directory exists
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
@@ -143,43 +143,17 @@ function main() {
   }
 
   // ---------------------------------------------------------------------------
-  // 6. Console output — all URLs for sitemap inclusion
+  // 6. Console output — all URLs for reference
   // ---------------------------------------------------------------------------
   console.log(`\n✅  Generated ${count} pages into /calculators/\n`);
-  console.log('--- SITEMAP URLS (paste into sitemap-calculators.xml) ---\n');
-
-  for (const url of generatedUrls) {
-    console.log(`  <url>`);
-    console.log(`    <loc>${url}</loc>`);
-    console.log(`    <lastmod>${TODAY}</lastmod>`);
-    console.log(`    <changefreq>monthly</changefreq>`);
-    console.log(`    <priority>0.6</priority>`);
-    console.log(`  </url>`);
-    console.log('');
-  }
-
-  console.log('--- END SITEMAP URLS ---\n');
 
   // ---------------------------------------------------------------------------
   // 7. Auto-write sitemap-calculators.xml
+  //    Only contains city × industry programmatic pages.
+  //    Static industry pages live in sitemap.xml.
   // ---------------------------------------------------------------------------
   const sitemapPath = path.join(ROOT, 'sitemap-calculators.xml');
 
-  // Read existing sitemap to preserve the static industry pages at the top
-  let existingContent = '';
-  if (fs.existsSync(sitemapPath)) {
-    existingContent = fs.readFileSync(sitemapPath, 'utf8');
-  }
-
-  // Extract existing static <url> blocks (non-city pages) to preserve them
-  const staticUrlRegex = /<url>[\s\S]*?<\/url>/g;
-  const allExistingUrls = existingContent.match(staticUrlRegex) || [];
-
-  // Keep only the static industry calculator pages (no city slug in the URL)
-  const citySlugPattern = new RegExp(CITIES.map(c => c.slug).join('|'));
-  const staticUrls = allExistingUrls.filter(block => !citySlugPattern.test(block));
-
-  // Build new city URL blocks (no .html extension)
   const cityUrlBlocks = generatedUrls.map(url => [
     `  <url>`,
     `    <loc>${url}</loc>`,
@@ -193,10 +167,9 @@ function main() {
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
     ``,
-    `  <!-- Static industry calculator pages -->`,
-    staticUrls.join('\n\n'),
-    ``,
     `  <!-- City × industry programmatic pages (auto-generated ${TODAY}) -->`,
+    `  <!-- Static industry calculator pages are in sitemap.xml -->`,
+    ``,
     cityUrlBlocks,
     ``,
     `</urlset>`,
