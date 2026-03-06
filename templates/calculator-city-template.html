@@ -205,12 +205,12 @@
       margin-bottom: 48px;
     }
     .iframe-wrapper iframe {
-      width: 100%;
-      min-height: 780px;
-      border: none;
-      display: block;
-    }
-
+  width: 100%;
+  height: 950px;
+  border: none;
+  display: block;
+  overflow: auto;
+}
     .city-calc-faq {
       margin-bottom: 56px;
     }
@@ -434,11 +434,11 @@
       <!-- Calculator iframe — CPL values passed as query parameters -->
       <div class="iframe-wrapper">
         <iframe
-          src="/lsa-roi-calculator.html?industry={{INDUSTRY}}&city={{CITY_SLUG}}&cpl_low={{CPL_LOW}}&cpl_high={{CPL_HIGH}}&embed=1"
-          title="{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}}"
-          loading="lazy"
-          scrolling="auto"
-        ></iframe>
+  src="/lsa-roi-calculator.html?industry={{INDUSTRY}}&city={{CITY_SLUG}}&embed=1"
+  title="{{INDUSTRY_LABEL}} LSA ROI Calculator for {{CITY}}, {{STATE}}"
+  loading="lazy"
+  scrolling="auto"
+></iframe>
       </div>
 
       <div class="city-calc-faq">
