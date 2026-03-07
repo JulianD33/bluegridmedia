@@ -1,4 +1,5 @@
 # Redirect /blog/[slug] → /[slug] (canonical root URLs, prevents duplicate content)
+/blog/google-lsa-for-tree-service                     /google-lsa-for-tree-service                     301
 /blog/garage-door-local-services-ads                  /garage-door-local-services-ads                  301
 /blog/google-lsa-for-electricians                     /google-lsa-for-electricians                     301
 /blog/google-lsa-for-roofers                          /google-lsa-for-roofers                          301
@@ -12,6 +13,7 @@
 /blog/plumbing-ads-playbook-google-local-services-ads /plumbing-ads-playbook-google-local-services-ads 301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
+/google-lsa-for-tree-service                       /blog/google-lsa-for-tree-service.html                       200
 /garage-door-local-services-ads                    /blog/garage-door-local-services-ads.html                    200
 /google-lsa-for-electricians                       /blog/google-lsa-for-electricians.html                       200
 /google-lsa-for-roofers                            /blog/google-lsa-for-roofers.html                            200
