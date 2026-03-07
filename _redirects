@@ -1,3 +1,16 @@
+# Redirect /blog/[slug] → /[slug] (canonical root URLs, prevents duplicate content)
+/blog/garage-door-local-services-ads                  /garage-door-local-services-ads                  301
+/blog/google-lsa-for-electricians                     /google-lsa-for-electricians                     301
+/blog/google-lsa-for-roofers                          /google-lsa-for-roofers                          301
+/blog/google-lsa-for-water-damage-restoration         /google-lsa-for-water-damage-restoration         301
+/blog/how-much-does-google-lsa-cost                   /how-much-does-google-lsa-cost                   301
+/blog/google-lsa-ranking-factors                      /google-lsa-ranking-factors                      301
+/blog/google-lsa-for-hvac-companies                   /google-lsa-for-hvac-companies                   301
+/blog/google-lsa-for-pest-control                     /google-lsa-for-pest-control                     301
+/blog/google-ads-vs-lsa-plumbers                      /google-ads-vs-lsa-plumbers                      301
+/blog/lsa-no-calls-guide                              /lsa-no-calls-guide                              301
+/blog/plumbing-ads-playbook-google-local-services-ads /plumbing-ads-playbook-google-local-services-ads 301
+
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /garage-door-local-services-ads                    /blog/garage-door-local-services-ads.html                    200
 /google-lsa-for-electricians                       /blog/google-lsa-for-electricians.html                       200
