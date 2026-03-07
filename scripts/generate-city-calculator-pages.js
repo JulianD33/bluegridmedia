@@ -92,7 +92,23 @@ const INDUSTRY_BASE_CPL = {
 };
 
 // ---------------------------------------------------------------------------
-// 5. Market paragraph variations — one is selected per page for uniqueness
+// 5. Industry guide URLs — links to the blog post for each industry
+// ---------------------------------------------------------------------------
+const INDUSTRY_GUIDE_URL = {
+  'hvac':             '/google-lsa-for-hvac-companies',
+  'plumbing':         '/plumbing-ads-playbook-google-local-services-ads',
+  'electrician':      '/google-lsa-for-electricians',
+  'roofing':          '/google-lsa-for-roofers',
+  'pest-control':     '/google-lsa-for-pest-control',
+  'landscaping':      '/google-lsa-for-landscaping',
+  'tree-service':     '/google-lsa-for-tree-service',
+  'carpet-cleaning':  '/google-lsa-for-carpet-cleaning',
+  'appliance-repair': '/google-lsa-for-appliance-repair',
+  'garage-door':      '/garage-door-local-services-ads',
+};
+
+// ---------------------------------------------------------------------------
+// 6. Market paragraph variations — one is selected per page for uniqueness  (was §5)
 // ---------------------------------------------------------------------------
 const MARKET_PARAGRAPH_VARIATIONS = [
   'The {{CITY}} market for {{INDUSTRY_LABEL}} services is highly active, with many homeowners and businesses relying on Google Local Services Ads to find trusted contractors.',
@@ -243,6 +259,7 @@ function renderPage(template, industry, city) {
   html = replaceAll(html, 'CITY_DEMAND',            cityData.demand);
   html = replaceAll(html, 'MARKET_PARAGRAPH',       marketParagraph);
   html = replaceAll(html, 'CITY_STAT',              cityStat);
+  html = replaceAll(html, 'INDUSTRY_GUIDE_URL',     INDUSTRY_GUIDE_URL[industry.slug] || '/resources');
   html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
   html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
 
