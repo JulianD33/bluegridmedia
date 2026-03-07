@@ -144,7 +144,49 @@ const CITY_STATS = {
 };
 
 // ---------------------------------------------------------------------------
-// 7. Static hub + industry pages that live in sitemap-calculators.xml
+// 7. Industry content blocks — one paragraph per industry explaining LSA fit
+// ---------------------------------------------------------------------------
+const INDUSTRY_CONTENT_BLOCKS = {
+  'appliance-repair': 'Appliance repair companies frequently rely on urgent service calls when homeowners experience broken appliances, making Google Local Services Ads a strong source of inbound leads.',
+  'hvac':             'Heating and cooling companies often rely on emergency repair calls, which makes Google Local Services Ads especially valuable for capturing high-intent leads from homeowners searching for immediate help.',
+  'plumbing':         'Plumbing companies frequently receive emergency service requests, which makes Google Local Services Ads an effective way to capture homeowners searching for urgent repairs.',
+  'roofing':          'Roofing companies often rely on storm damage inspections and urgent repairs, making Google Local Services Ads a powerful channel for capturing high-intent homeowner searches.',
+  'electrician':      'Electrical service calls often require quick response times, and Local Services Ads allow electricians to appear prominently when homeowners search for licensed professionals.',
+  'pest-control':     'Pest control companies benefit from Local Services Ads because homeowners frequently search for immediate solutions when dealing with infestations or recurring pest problems.',
+  'landscaping':      'Landscaping companies often use Local Services Ads to capture homeowners looking for yard maintenance, seasonal cleanups, or outdoor improvement projects.',
+  'tree-service':     'Tree service companies frequently receive urgent calls for fallen or hazardous trees, and Local Services Ads can help capture these high-intent searches.',
+  'carpet-cleaning':  'Carpet cleaning companies often rely on homeowners searching online for trusted local providers, making Local Services Ads an effective lead generation channel.',
+  'garage-door':      'Garage door issues often require immediate repair, which makes Local Services Ads an effective way for technicians to capture high-intent homeowner searches.',
+};
+
+// ---------------------------------------------------------------------------
+// 8. City content blocks — one paragraph per city explaining local LSA demand
+// ---------------------------------------------------------------------------
+const CITY_CONTENT_BLOCKS = {
+  'new-york':      'New York City homeowners turn to Google Local Services Ads when they need fast, reliable service providers. With one of the densest housing markets in the country, demand for verified contractors is constant — and competition among service businesses makes profile optimization critical.',
+  'los-angeles':   'In Los Angeles, homeowners frequently search Google for trusted local contractors across a sprawling metro with millions of residential properties. Local Services Ads are especially effective here because buyers expect credentialed, Google-verified businesses before making a call.',
+  'chicago':       'Chicago homeowners rely heavily on Google searches to find home service professionals, particularly during extreme weather seasons when HVAC, plumbing, and roofing demand spike. LSA placements at the top of search results give contractors a strong advantage in this market.',
+  'houston':       "Houston's large and growing residential base generates steady search volume for local service companies year-round. Homeowners in the greater Houston area frequently search Google when they need fast, qualified contractors — making Local Services Ads a reliable lead channel.",
+  'phoenix':       "Phoenix's rapid population growth has created strong, consistent demand for home services across all industries. Homeowners in the Valley of the Sun search Google regularly for contractors, and Local Services Ads give verified businesses prominent visibility at the moment of need.",
+  'philadelphia':  'Philadelphia homeowners often search Google for licensed, trustworthy service providers, particularly in older neighborhoods where maintenance and repair needs are frequent. Local Services Ads help contractors build visibility and credibility in this densely populated market.',
+  'san-antonio':   "San Antonio's expanding residential communities have increased demand for home service professionals. Local homeowners regularly search Google for contractors, and the Google Guaranteed badge helps businesses stand out in a market where trust is a major purchasing factor.",
+  'san-diego':     "San Diego's large homeowner population and year-round mild climate keep demand for contractors steady. Homeowners in the San Diego metro frequently search Google for local service providers, and Local Services Ads deliver leads at the top of search before organic results.",
+  'dallas':        "Dallas is one of the fastest-growing metro areas in the country, with thousands of new homeowners searching Google for service contractors each month. Local Services Ads connect businesses with this high-intent audience at the exact moment they're ready to book.",
+  'san-jose':      "San Jose homeowners in the Silicon Valley area are accustomed to digital-first service discovery and frequently search Google for verified, background-checked contractors. Local Services Ads are particularly effective here because the tech-savvy market responds well to Google's credentialing process.",
+  'austin':        "Austin's booming population growth means thousands of new residents are searching Google for home service providers every month. The competitive Austin market rewards contractors who maintain strong Google Guaranteed profiles and fast response times in Local Services Ads.",
+  'jacksonville':  "Jacksonville's spread-out residential landscape means homeowners depend on Google to find local service providers across a large geographic area. Local Services Ads help contractors target specific neighborhoods and capture leads from homeowners searching for nearby professionals.",
+  'fort-worth':    "Fort Worth is one of the fastest-growing cities in the Dallas-Fort Worth metroplex, with a steady stream of new homeowners searching Google for trusted contractors. Local Services Ads give businesses prominent placement when these high-intent searches happen.",
+  'columbus':      "Columbus homeowners frequently search Google when they need local service companies, particularly during weather-driven spikes in HVAC, roofing, and plumbing demand. Local Services Ads place verified contractors at the top of results when these searches occur.",
+  'charlotte':     "Charlotte's rapid residential growth has created strong, sustained demand for home service professionals. Homeowners regularly search Google for contractors and expect to see Google-verified businesses — making Local Services Ads a key part of lead generation in this market.",
+  'indianapolis':  "Indianapolis homeowners rely on Google to find trusted local contractors, especially during Midwest weather events that drive urgent service needs. Local Services Ads help businesses capture leads at the top of search results when demand is highest.",
+  'san-francisco': "San Francisco homeowners expect Google-verified, credentialed service providers and will search online before calling anyone. The San Francisco market is one of the most competitive in the country, making a strong Local Services Ads profile essential for standing out.",
+  'seattle':       "Seattle homeowners are highly digital in how they search for and evaluate local service providers. The Pacific Northwest market has strong demand for home services year-round, and Local Services Ads allow contractors to appear prominently in Google searches at the moment homeowners are ready to act.",
+  'denver':        "Denver's rapidly growing residential base and outdoor-focused lifestyle keep demand for home services strong year-round. Homeowners in the Denver metro frequently search Google for contractors and respond well to the Google Guaranteed credentialing that Local Services Ads provide.",
+  'nashville':     "Nashville's booming growth has brought thousands of new homeowners into the market, all searching Google for trusted local contractors. Local Services Ads give businesses a way to reach these new residents early in their search, before they find a competitor.",
+};
+
+// ---------------------------------------------------------------------------
+// 9. Static hub + industry pages that live in sitemap-calculators.xml
 //    (kept here so the script can re-write the full file without losing them)
 // ---------------------------------------------------------------------------
 const STATIC_CALCULATOR_URLS = [
@@ -262,6 +304,15 @@ function renderPage(template, industry, city) {
   html = replaceAll(html, 'INDUSTRY_GUIDE_URL',     INDUSTRY_GUIDE_URL[industry.slug] || '/resources');
   html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
   html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
+
+  // New unique content blocks — industry × city
+  const industryBlock = INDUSTRY_CONTENT_BLOCKS[industry.slug] ||
+    `${industry.label} companies use Google Local Services Ads to connect with homeowners searching for trusted local providers.`;
+  const cityBlock = CITY_CONTENT_BLOCKS[city.slug] ||
+    `${city.name} homeowners frequently search Google for local service professionals, making Local Services Ads an effective lead channel for contractors in this market.`;
+
+  html = replaceAll(html, 'INDUSTRY_CONTENT_BLOCK', industryBlock);
+  html = replaceAll(html, 'CITY_CONTENT_BLOCK',     cityBlock);
 
   return html;
 }
