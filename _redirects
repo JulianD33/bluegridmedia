@@ -1,1 +1,15 @@
+# Blog article rewrites — serve files from /blog/ at their original root URLs
+/garage-door-local-services-ads                    /blog/garage-door-local-services-ads.html                    200
+/google-lsa-for-electricians                       /blog/google-lsa-for-electricians.html                       200
+/google-lsa-for-roofers                            /blog/google-lsa-for-roofers.html                            200
+/google-lsa-for-water-damage-restoration           /blog/google-lsa-for-water-damage-restoration.html           200
+/how-much-does-google-lsa-cost                     /blog/how-much-does-google-lsa-cost.html                     200
+/google-lsa-ranking-factors                        /blog/google-lsa-ranking-factors.html                        200
+/google-lsa-for-hvac-companies                     /blog/google-lsa-for-hvac-companies.html                     200
+/google-lsa-for-pest-control                       /blog/google-lsa-for-pest-control.html                       200
+/google-ads-vs-lsa-plumbers                        /blog/google-ads-vs-lsa-plumbers.html                        200
+/lsa-no-calls-guide                                /blog/lsa-no-calls-guide.html                                200
+/plumbing-ads-playbook-google-local-services-ads   /blog/plumbing-ads-playbook-google-local-services-ads.html   200
+
+# Strip .html extension from root-level URLs
 /*.html  /:splat  301!
