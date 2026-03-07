@@ -13,8 +13,10 @@
 /blog/plumbing-ads-playbook-google-local-services-ads /plumbing-ads-playbook-google-local-services-ads 301
 /blog/google-lsa-for-carpet-cleaning                  /google-lsa-for-carpet-cleaning                          301
 /blog/google-lsa-for-landscaping                      /google-lsa-for-landscaping                              301
+/blog/google-lsa-for-appliance-repair                 /google-lsa-for-appliance-repair                         301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
+/google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
 /google-lsa-for-landscaping                        /blog/google-lsa-for-landscaping.html                        200
 /google-lsa-for-carpet-cleaning                    /blog/google-lsa-for-carpet-cleaning.html                    200
 /google-lsa-for-tree-service                       /blog/google-lsa-for-tree-service.html                       200
