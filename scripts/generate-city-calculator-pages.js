@@ -108,6 +108,48 @@ const INDUSTRY_GUIDE_URL = {
 };
 
 // ---------------------------------------------------------------------------
+// 6a. Industry content blocks — unique paragraph explaining LSA demand per trade
+// ---------------------------------------------------------------------------
+const INDUSTRY_CONTENT_BLOCKS = {
+  'appliance-repair':  'Appliance repair companies frequently rely on urgent service calls when homeowners experience broken appliances, making Google Local Services Ads a strong source of inbound leads.',
+  'hvac':              'Heating and cooling companies often rely on emergency repair calls, which makes Google Local Services Ads especially valuable for capturing high-intent leads from homeowners searching for immediate help.',
+  'plumbing':          'Plumbing companies frequently receive emergency service requests, which makes Google Local Services Ads an effective way to capture homeowners searching for urgent repairs.',
+  'roofing':           'Roofing companies often rely on storm damage inspections and urgent repairs, making Google Local Services Ads a powerful channel for capturing high-intent homeowner searches.',
+  'electrician':       'Electrical service calls often require quick response times, and Local Services Ads allow electricians to appear prominently when homeowners search for licensed professionals.',
+  'pest-control':      'Pest control companies benefit from Local Services Ads because homeowners frequently search for immediate solutions when dealing with infestations or recurring pest problems.',
+  'landscaping':       'Landscaping companies often use Local Services Ads to capture homeowners looking for yard maintenance, seasonal cleanups, or outdoor improvement projects.',
+  'tree-service':      'Tree service companies frequently receive urgent calls for fallen or hazardous trees, and Local Services Ads can help capture these high-intent searches.',
+  'carpet-cleaning':   'Carpet cleaning companies often rely on homeowners searching online for trusted local providers, making Local Services Ads an effective lead generation channel.',
+  'garage-door':       'Garage door issues often require immediate repair, which makes Local Services Ads an effective way for technicians to capture high-intent homeowner searches.',
+};
+
+// ---------------------------------------------------------------------------
+// 6b. City content blocks — unique paragraph explaining local search behavior
+// ---------------------------------------------------------------------------
+const CITY_CONTENT_BLOCKS = {
+  'new-york':      'New York homeowners deal with aging housing stock, extreme weather swings, and limited time — which means they turn to Google the moment something breaks. The sheer volume of searches in the New York metro makes LSA one of the highest-opportunity markets in the country, though it also demands a competitive budget and an airtight profile.',
+  'los-angeles':   'Los Angeles spans dozens of distinct neighborhoods and micro-markets, from dense urban corridors to sprawling suburban communities. Homeowners here rely heavily on Google when evaluating local service providers, and LSA positions your business at the very top of search results before organic listings or ads.',
+  'chicago':       'Chicago homeowners contend with brutal winters, ageing infrastructure, and a strong DIY culture that eventually gives way to professional help. Seasonal spikes in HVAC, plumbing, and roofing demand make LSA especially powerful in the Chicago market, where urgency drives high conversion rates.',
+  'houston':       'Houston\'s rapid suburban expansion and hot, humid climate create year-round demand for home services. Homeowners in greater Houston are accustomed to searching Google for vetted local contractors, and the Google Guaranteed badge carries significant trust in a market where word-of-mouth still matters.',
+  'phoenix':       'Phoenix homeowners search for service providers online at some of the highest rates in the country, driven by intense summer heat and a growing population that relies on digital channels to find contractors fast. LSA reaches these high-intent searchers at the exact moment they are ready to book.',
+  'philadelphia':  'Philadelphia\'s dense rowhouse neighborhoods and older housing stock generate consistent demand for plumbing, HVAC, and electrical services. Homeowners in the Philly metro tend to research providers carefully before calling, making the trust signals embedded in LSA — like reviews and the Google badge — especially influential.',
+  'san-antonio':   'San Antonio\'s booming population growth has outpaced the local contractor supply in several trades, creating strong demand and favorable CPL dynamics for businesses running Local Services Ads. Homeowners here frequently use Google to find qualified providers, especially for urgent and emergency calls.',
+  'san-diego':     'San Diego homeowners are protective of their high-value properties and typically research service providers thoroughly before committing. The Google Guaranteed badge reduces friction significantly in this market, and LSA positions your business ahead of competitors in a metro where trust and professionalism are non-negotiable.',
+  'dallas':        'Dallas is one of the fastest-growing business hubs in the US, with thousands of new homeowners entering the market each year. Local Services Ads give contractors a direct line to these buyers at the moment of highest intent, and the Dallas metro\'s competitive landscape rewards businesses that invest in profile optimization and review generation.',
+  'san-jose':      'San Jose homeowners expect premium service and professional follow-through, reflecting the high-income, tech-oriented demographics of Silicon Valley. LSA connects you with these high-value clients at the top of search, and a well-maintained Google Guaranteed profile can command a premium CPL that converts into high job values.',
+  'austin':        'Austin\'s explosive growth means thousands of new residents are still establishing contractor relationships — a significant opportunity for LSA-active businesses. Homeowners in Austin are digitally savvy and trust Google\'s vetting process, making the Google Guaranteed badge a strong differentiator in a crowded and fast-growing market.',
+  'jacksonville':  'Jacksonville\'s geographic spread across one of the largest city footprints in the US means homeowners often struggle to find nearby, available contractors quickly. LSA solves this by surfacing your business to searchers in your specific service area, making it one of the most targeted lead channels available in the Jacksonville market.',
+  'fort-worth':    'Fort Worth\'s continued expansion as part of the DFW metroplex has created a large and growing homeowner base actively searching for reliable service providers. Local Services Ads give Fort Worth contractors visibility at the exact moment homeowners search, and the competitive landscape rewards fast response times and strong review scores.',
+  'columbus':      'Columbus has emerged as one of the Midwest\'s most dynamic metros, with a diverse population of students, young professionals, and established homeowners generating consistent demand for local services. Google Local Services Ads are increasingly the first stop for Columbus homeowners searching for trusted contractors.',
+  'charlotte':     'Charlotte\'s rapid growth in the banking and tech sectors has brought an influx of new residents who rely on Google to find contractors in an unfamiliar market. LSA positions your business prominently for these high-intent searches, and the Charlotte metro\'s competitive but not saturated landscape offers strong ROI for well-optimized profiles.',
+  'indianapolis':  'Indianapolis homeowners are practical and price-conscious, and they use Google to find service providers who combine fair pricing with verified credentials. The Google Guaranteed badge resonates strongly in the Indy market, and LSA gives local contractors a competitive edge over national aggregator platforms.',
+  'san-francisco':  'San Francisco is one of the most competitive service markets in the country, with homeowners willing to pay premium rates for trusted, vetted providers. LSA positions your business at the absolute top of search — above every organic result and standard ad — which is critical in a market where consumer expectations are high and competition is fierce.',
+  'seattle':       'Seattle\'s tech-heavy population is comfortable researching service providers online and places significant weight on reviews and verified credentials. Local Services Ads capture homeowners at the top of their search journey, and in a market known for its wet climate and older housing stock, demand for skilled trades remains consistently strong.',
+  'denver':        'Denver homeowners face both the demands of mountain weather and a rapidly growing city, creating year-round need for home services across nearly every trade. The Google Guaranteed badge carries strong trust in the Denver market, and LSA allows local contractors to compete effectively against both national brands and established local players.',
+  'nashville':     'Nashville\'s ongoing residential boom has created a steady stream of new homeowners who are unfamiliar with the local contractor landscape and rely heavily on Google to make informed decisions. LSA positions your business front and center for these searches, and Nashville\'s moderately competitive market means strong ROI is achievable without an outsized budget.',
+};
+
+// ---------------------------------------------------------------------------
 // 6. Market paragraph variations — one is selected per page for uniqueness  (was §5)
 // ---------------------------------------------------------------------------
 const MARKET_PARAGRAPH_VARIATIONS = [
@@ -248,20 +290,28 @@ function renderPage(template, industry, city) {
 
   let html = template;
 
-  html = replaceAll(html, 'INDUSTRY',               industry.slug);
-  html = replaceAll(html, 'INDUSTRY_LABEL',         industry.label);
-  html = replaceAll(html, 'CITY',                   city.name);
-  html = replaceAll(html, 'CITY_SLUG',              city.slug);
-  html = replaceAll(html, 'STATE',                  city.state);
-  html = replaceAll(html, 'CPL_LOW',                String(cplLow));
-  html = replaceAll(html, 'CPL_HIGH',               String(cplHigh));
-  html = replaceAll(html, 'CITY_COMPETITION',       cityData.competition);
-  html = replaceAll(html, 'CITY_DEMAND',            cityData.demand);
-  html = replaceAll(html, 'MARKET_PARAGRAPH',       marketParagraph);
-  html = replaceAll(html, 'CITY_STAT',              cityStat);
-  html = replaceAll(html, 'INDUSTRY_GUIDE_URL',     INDUSTRY_GUIDE_URL[industry.slug] || '/resources');
-  html = replaceAll(html, 'RELATED_CITY_LINKS',     buildRelatedCityLinks(industry, city.slug));
-  html = replaceAll(html, 'RELATED_INDUSTRY_LINKS', buildRelatedIndustryLinks(industry.slug, city));
+  // Resolve new content blocks — fall back to generic if slug not found
+  const industryContentBlock = INDUSTRY_CONTENT_BLOCKS[industry.slug] ||
+    `${industry.label} companies use Google Local Services Ads to reach homeowners searching for local professionals.`;
+  const cityContentBlock = CITY_CONTENT_BLOCKS[city.slug] ||
+    `Homeowners in ${city.name} rely on Google to find trusted local service providers, making Local Services Ads a strong lead generation channel for businesses operating in this market.`;
+
+  html = replaceAll(html, 'INDUSTRY',                industry.slug);
+  html = replaceAll(html, 'INDUSTRY_LABEL',          industry.label);
+  html = replaceAll(html, 'CITY',                    city.name);
+  html = replaceAll(html, 'CITY_SLUG',               city.slug);
+  html = replaceAll(html, 'STATE',                   city.state);
+  html = replaceAll(html, 'CPL_LOW',                 String(cplLow));
+  html = replaceAll(html, 'CPL_HIGH',                String(cplHigh));
+  html = replaceAll(html, 'CITY_COMPETITION',        cityData.competition);
+  html = replaceAll(html, 'CITY_DEMAND',             cityData.demand);
+  html = replaceAll(html, 'MARKET_PARAGRAPH',        marketParagraph);
+  html = replaceAll(html, 'CITY_STAT',               cityStat);
+  html = replaceAll(html, 'INDUSTRY_GUIDE_URL',      INDUSTRY_GUIDE_URL[industry.slug] || '/resources');
+  html = replaceAll(html, 'INDUSTRY_CONTENT_BLOCK',  industryContentBlock);
+  html = replaceAll(html, 'CITY_CONTENT_BLOCK',      cityContentBlock);
+  html = replaceAll(html, 'RELATED_CITY_LINKS',      buildRelatedCityLinks(industry, city.slug));
+  html = replaceAll(html, 'RELATED_INDUSTRY_LINKS',  buildRelatedIndustryLinks(industry.slug, city));
 
   return html;
 }
