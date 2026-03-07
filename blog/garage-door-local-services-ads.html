@@ -7,7 +7,11 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
+    // Google Analytics 4
     gtag('config', 'G-WEMSC670ZR');
+
+    // Google Ads
     gtag('config', 'AW-17840803263');
   </script>
 
@@ -18,6 +22,7 @@
 
   <meta name="description" content="Most garage door companies are missing high-intent leads on Google every day. Here's exactly how to set up LSA, rank above competitors, and only pay for real leads." />
 
+  <!-- Consolidated structured data (single JSON-LD @graph) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -140,11 +145,16 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://bluegridmedia.com/blog/garage-door-local-services-ads" />
+
+  <!-- Robots -->
   <meta name="robots" content="index, follow" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Google LSA for Garage Door Companies: How to Get More Calls in 2026 | Blue Grid Media" />
   <meta property="og:description" content="Most garage door companies are missing high-intent leads on Google every day. Here's exactly how to set up LSA, rank above competitors, and only pay for real leads." />
@@ -153,57 +163,13 @@
   <meta property="og:image:alt" content="Garage door technician on a job site with Google Local Services Ads displayed on a phone screen" />
   <meta property="og:site_name" content="Blue Grid Media" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Google LSA for Garage Door Companies: How to Get More Calls in 2026 | Blue Grid Media" />
   <meta name="twitter:description" content="Most garage door companies are missing high-intent leads on Google every day. Here's exactly how to set up LSA, rank above competitors, and only pay for real leads." />
   <meta name="twitter:image" content="https://bluegridmedia.com/assets/images/blog/garage-door-local-services-ads/garage-door-lsa-hero.png" />
 
   <style>
-    /* ── Calculator CTA inline box ── */
-    .calc-cta-inline {
-      background: linear-gradient(135deg, #f0fdfa, #e6fffe);
-      border: 1.5px solid #0ea5a4;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin: 1.75rem 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .calc-cta-inline .calc-cta-text {
-      flex: 1;
-      min-width: 200px;
-      font-size: 0.97rem;
-      color: #0f172a;
-      line-height: 1.55;
-    }
-    .calc-cta-inline .calc-cta-text strong {
-      color: #0ea5a4;
-    }
-    .calc-cta-inline a.calc-cta-btn {
-      display: inline-block;
-      background: #0ea5a4;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    .calc-cta-inline a.calc-cta-btn:hover {
-      background: #0b8f8e;
-    }
-
-    .article-sidebar {
-      width: 280px;
-    }
-
-    .article-content {
-      min-width: 0;
-    }
 
     .article-content p {
       margin-bottom: 20px;
@@ -256,12 +222,8 @@
       margin-bottom: 2.5rem;
     }
     .toc-box .toc-heading {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #0ea5a4;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0 0 0.9rem;
+      font-size: 0.88rem; font-weight: 700; color: #0ea5a4;
+      text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.9rem;
     }
     .toc-box ol { padding-left: 1.25rem; margin: 0; }
     .toc-box li { margin-bottom: 0.3rem; font-size: 0.92rem; }
@@ -271,7 +233,7 @@
     /* ── Two-column page layout ── */
     .article-page-wrap {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
+      grid-template-columns: 1fr 280px;
       gap: 3rem;
       max-width: 1120px;
       margin: 0 auto;
@@ -312,7 +274,6 @@
       text-decoration: none;
     }
     .sidebar-cta a:hover { background: #f0fafa; }
-
     .sidebar-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -352,6 +313,44 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.04);
       font-size: 0.9rem;
     }
+
+    /* ── Calculator CTA inline box ── */
+    .calc-cta-inline {
+      background: linear-gradient(135deg, #f0fdfa, #e6fffe);
+      border: 1.5px solid #0ea5a4;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .calc-cta-inline .calc-cta-text {
+      flex: 1;
+      min-width: 200px;
+      font-size: 0.97rem;
+      color: #0f172a;
+      line-height: 1.55;
+    }
+    .calc-cta-inline .calc-cta-text strong {
+      color: #0ea5a4;
+    }
+    .calc-cta-inline a.calc-cta-btn {
+      display: inline-block;
+      background: #0ea5a4;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .calc-cta-inline a.calc-cta-btn:hover {
+      background: #0b8f8e;
+    }
   </style>
 </head>
 
@@ -359,389 +358,357 @@
 
   <div id="nav-placeholder"></div>
 
-  <header style="padding: 35px 0;">
-    <div class="container" style="text-align:center;">
-      <div class="logo-container" style="margin-bottom: 20px;">
-        <a href="/">
-          <img src="/logo.png" alt="Blue Grid Media" class="logo">
-        </a>
-      </div>
-      <h1>Google LSA for Garage Door Companies</h1>
-      <p>How to get high-intent garage door leads with Google Local Services Ads</p>
+<header style="padding: 35px 0;">
+  <div class="container" style="text-align:center;">
+
+    <div class="logo-container" style="margin-bottom: 20px;">
+      <a href="/">
+        <img src="../logo.png" alt="Blue Grid Media" class="logo">
+      </a>
     </div>
-  </header>
 
-  <section class="about-section" style="padding: 40px 0;">
-    <div class="container">
-      <div class="article-page-wrap">
+    <h1>Google LSA for Garage Door Companies</h1>
 
-        <main class="article-content">
+    <p>
+      How to get high-intent garage door leads with Google Local Services Ads
+    </p>
 
-          <p style="font-size:14px; color:#6b7280; margin-bottom:30px;">
-            Published by Blue Grid Media &bull; Updated for 2026
-          </p>
+  </div>
+</header>
 
-          <div class="article-breadcrumb">
-            <a href="/">Home</a> &rsaquo; <a href="/resources">Resources</a> &rsaquo; Google LSA for Garage Door Companies
-          </div>
 
-          <div class="topic-bar-wrap">
-            <strong>Topic:</strong> Garage Door Advertising &bull; <strong>Platform:</strong> Google LSA &bull; <strong>Audience:</strong> Garage Door Business Owners
-          </div>
+<section class="about-section" style="padding: 40px 0;">
+  <div class="container">
+    <div class="article-page-wrap">
 
-          <h1>Google LSA for Garage Door Companies: How to Get More Calls and Fill Your Schedule in 2026</h1>
+      <main class="article-content">
 
-          <p>
-            Most garage door companies are invisible on Google at the exact moment homeowners in their area need help. When someone's spring snaps at 6am and their car is trapped inside, they search "garage door repair near me" — and if you're not in Google's Local Services Ads pack at the top of those results, you're handing that call to a competitor who is. You don't lose those leads because your work is worse. You lose them because you're not showing up.
-          </p>
+        <p style="font-size:14px; color:#6b7280; margin-bottom:30px;">
+          Published by Blue Grid Media &bull; Updated for 2026
+        </p>
 
-          <p>
-            Google LSA puts your business at the very top of local search results — above every Google Ad, above every organic result. You pay only when customers near you contact you directly, and the Google Verified badge on your listing does the trust-building before they even dial. The good news: most garage door companies aren't running LSA properly or at all. The bar to get ahead of your local competition is lower than you'd expect.
-          </p>
+        <div class="article-breadcrumb">
+          <a href="/">Home</a> &rsaquo; <a href="/resources">Resources</a> &rsaquo; Google LSA for Garage Door Companies
+        </div>
 
-          <p>
-            This guide covers how Google LSA works specifically for garage door businesses, what it costs, how to rank higher than your competitors, and how to build a setup that consistently turns emergency searches and installation requests into booked jobs.
-          </p>
+        <div class="topic-bar-wrap">
+          <strong>Topic:</strong> Garage Door Advertising &bull; <strong>Platform:</strong> Google LSA &bull; <strong>Audience:</strong> Garage Door Business Owners
+        </div>
 
-          <!-- HERO IMAGE -->
-          <!-- Image: Garage door technician working on a residential garage door with a phone showing Google LSA results -->
-          <!-- Alt text: "Garage door technician on a job site with Google Local Services Ads displayed on a phone screen" -->
-          <img src="/assets/images/blog/garage-door-local-services-ads/garage-door-lsa-hero.png"
-               alt="Garage door technician on a job site with Google Local Services Ads displayed on a phone screen"
-               loading="lazy">
+        <h1>Google LSA for Garage Door Companies: How to Get More Calls and Fill Your Schedule in 2026</h1>
 
-          <nav class="toc-box">
-            <p class="toc-heading">In This Guide</p>
-            <ol>
-              <li><a href="#is-lsa-worth-it">Is Google LSA Worth It for Garage Door Companies?</a></li>
-              <li><a href="#what-lsa-looks-like">What Google LSA Looks Like for Garage Door Businesses</a></li>
-              <li><a href="#how-to-set-up">Setting Up Google LSA for Your Garage Door Business</a></li>
-              <li><a href="#cost">What Does LSA Cost for Garage Door Companies?</a></li>
-              <li><a href="#how-to-rank">How to Rank Higher in Garage Door LSA Results</a></li>
-              <li><a href="#common-mistakes">Common LSA Mistakes Garage Door Companies Make</a></li>
-              <li><a href="#lsa-and-google-ads">Should Garage Door Companies Run LSA and Google Ads Together?</a></li>
-              <li><a href="#how-to-track">How to Track Your Garage Door LSA Results</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#conclusion">Conclusion &amp; Next Steps</a></li>
-            </ol>
-          </nav>
+        <p>
+          Most garage door companies are invisible on Google at the exact moment homeowners in their area need help. When someone's spring snaps at 6am and their car is trapped inside, they search "garage door repair near me" — and if you're not in Google's Local Services Ads pack at the top of those results, you're handing that call to a competitor who is. You don't lose those leads because your work is worse. You lose them because you're not showing up.
+        </p>
 
-          <!-- ============================================================ -->
-          <h2 id="is-lsa-worth-it">Is Google LSA Worth It for Garage Door Companies?</h2>
+        <p>
+          Google LSA puts your business at the very top of local search results — above every Google Ad, above every organic result. You pay only when customers near you contact you directly, and the Google Verified badge on your listing does the trust-building before they even dial. The good news: most garage door companies aren't running LSA properly or at all. The bar to get ahead of your local competition is lower than you'd expect.
+        </p>
 
-          <p>
-            Yes — especially for residential service and repair work.
-          </p>
+        <p>
+          This guide covers how Google LSA works specifically for garage door businesses, what it costs, how to rank higher than your competitors, and how to build a setup that consistently turns emergency searches and installation requests into booked jobs.
+        </p>
 
-          <p>
-            Garage door emergencies don't get comparison shopped. When someone's door is stuck open in the middle of winter or a spring breaks and their car is blocked in, they need someone today. They're going to call whoever Google puts in front of them first with a verified badge and solid reviews. That's exactly what LSA is designed to capture.
-          </p>
+        <!-- HERO IMAGE -->
+        <img src="/assets/images/blog/garage-door-local-services-ads/garage-door-lsa-hero.png"
+             alt="Garage door technician on a job site with Google Local Services Ads displayed on a phone screen"
+             loading="lazy">
 
-          <p>
-            The numbers work in your favor too. Garage door companies typically see cost per lead anywhere from $20 to $75 depending on market and job type. A single new door installation averaging $1,200 to $2,500 covers a significant number of leads. Even a spring replacement at $200 to $350 returns three to five times your lead cost if you answer the phone and show up on time.
-          </p>
-
-          <p>
-            LSA is also one of the few advertising channels where you only pay when a real customer actually contacts you. Not for clicks. Not for impressions. For contact. That's a fundamentally better risk model than traditional Google Ads for most garage door contractors — and when homeowners in your area search for urgent help, the person who wins that call is whoever is at the top of their screen.
-          </p>
-
-          <p>
-            A practical example: if your LSA leads cost $40 each in your market and you're booking 6 out of every 10 conversations, your cost per booked job is about $67. On a $300 spring repair that's a solid margin. On a $1,800 door installation it's exceptional. Most garage door companies running LSA consistently see their cost per booked job drop over the first 60 days as their profile builds review history and Google learns which leads convert best for them.
-          </p>
-
-          <table style="width:100%; border-collapse:collapse; margin:18px 0;">
-            <thead>
-              <tr>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Feature</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Local Services Ads (LSA)</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Google Search Ads</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">How you pay</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Pay per lead (calls/messages)</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Pay per click</td>
-              </tr>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Lead intent</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Very high (ready to hire now)</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Varies (research to urgent)</td>
-              </tr>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Typical CPL (garage door)</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$20–$75 per lead</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$8–$35 per click (varies)</td>
-              </tr>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Best for</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Emergency repairs, spring replacement, opener installs</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">New door installs, commercial, scale</td>
-              </tr>
-              <tr>
-                <td style="padding:8px;">Setup difficulty</td>
-                <td style="padding:8px;">Moderate (verification required)</td>
-                <td style="padding:8px;">Higher (ongoing campaign management)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- CALCULATOR CTA INLINE -->
-          <div class="calc-cta-inline">
-            <div class="calc-cta-text">
-              <strong>Want to run the numbers for your business?</strong><br>
-              Use our free LSA ROI Calculator to estimate your cost per lead, booked jobs, and return on ad spend by industry and market — in seconds.
-            </div>
-            <a class="calc-cta-btn" href="/lsa-roi-calculator">Try the Free Calculator &rarr;</a>
-          </div>
-
-          <!-- ============================================================ -->
-          <h2 id="what-lsa-looks-like">What Google LSA Looks Like for Garage Door Businesses</h2>
-
-          <p>
-            When someone searches "garage door repair near me," "broken garage door spring," "garage door opener installation," or any similar query, Google serves a row of Local Services Ads at the absolute top of the page. Above regular Google Ads. Above the map pack. Above every organic result.
-          </p>
-
-          <p>
-            Your listing shows your business name, star rating, review count, years in business, and a direct click-to-call button. On mobile, it takes up most of the visible screen before the user scrolls. That's prime real estate at the exact moment someone in your area is ready to spend money.
-          </p>
-
-          <p>
-            The Google Verified badge on your listing tells the homeowner that Google has checked your licenses, insurance, and background. It's a powerful trust signal that removes the friction of wondering whether you're legitimate. Customers who see it don't need to dig around for your credentials because Google has already vouched for you. That's why LSA listings convert at a much higher rate than standard pay-per-click ads.
-          </p>
-
-          <p>
-            One thing worth knowing: Google retired the old "Google Guaranteed" badge in October 2025 and replaced it with the unified Google Verified badge. The screening process itself hasn't changed, but the money-back guarantee that used to come with the old badge has been discontinued. If you see older content still referencing "Google Guaranteed" for garage door companies, that terminology is out of date.
-          </p>
-
-          <!-- ============================================================ -->
-          <h2 id="how-to-set-up">Setting Up Google LSA for Your Garage Door Business</h2>
-
-          <p>
-            Getting verified takes work upfront but once you're live it runs with minimal ongoing management compared to traditional Google Ads. Here's how to do it right.
-          </p>
-
+        <nav class="toc-box">
+          <p class="toc-heading">In This Guide</p>
           <ol>
-            <li><strong>Create your LSA profile.</strong> Go to ads.google.com and navigate to the Local Services Ads section. Select "Garage Door" under the home services category. Add your business name, service areas, hours, and a description. Write your description like a human — "Family-owned garage door company serving the greater Phoenix area — spring repair, opener installation, new doors, cables, and 24/7 emergency service" beats a generic paragraph every time.</li>
-            <li><strong>Enable every job type you actually offer.</strong> This is the most critical step that most garage door companies get wrong. Google will only show your ad for services you've explicitly turned on in your LSA profile. Go through every available job type and enable everything you can deliver: spring repair, opener installation, new door installation, cable repair, panel replacement, off-track repair, weatherstripping, and any others that apply. If it's not checked, you're invisible for it.</li>
-            <li><strong>Upload your license and insurance.</strong> Google requires proof of general liability insurance and your business license where applicable. Have digital copies ready before you start. Uploading everything upfront avoids verification delays that can add weeks to your launch timeline.</li>
-            <li><strong>Complete background checks.</strong> Garage door contractors enter customer homes, so Google requires background checks for business owners and any technicians who go on site. This is the slowest part of the whole process. Start it first.</li>
-            <li><strong>Connect your Google Business Profile.</strong> Your GBP feeds directly into your LSA listing. The reviews on your GBP show up on your LSA ad. If your GBP is incomplete, has wrong hours, or is missing photos, it hurts your LSA performance from day one. Clean it up before you go live.</li>
-            <li><strong>Set your budget and bid mode.</strong> Start with Maximize Leads and set a weekly budget that targets roughly 10 to 15 leads per week based on your expected cost per lead in your local market. Don't cap yourself with a low Max Per Lead bid — in competitive markets it'll throttle your visibility before you even see what LSA can do.</li>
-            <li><strong>Add real photos.</strong> Branded trucks, completed installations, before-and-after door replacements, your team on the job. Real images from your actual business. Google rewards complete profiles and customers click on photos before calling. Skip the stock photos.</li>
+            <li><a href="#is-lsa-worth-it">Is Google LSA Worth It for Garage Door Companies?</a></li>
+            <li><a href="#what-lsa-looks-like">What Google LSA Looks Like for Garage Door Businesses</a></li>
+            <li><a href="#how-to-set-up">Setting Up Google LSA for Your Garage Door Business</a></li>
+            <li><a href="#cost">What Does LSA Cost for Garage Door Companies?</a></li>
+            <li><a href="#how-to-rank">How to Rank Higher in Garage Door LSA Results</a></li>
+            <li><a href="#common-mistakes">Common LSA Mistakes Garage Door Companies Make</a></li>
+            <li><a href="#lsa-and-google-ads">Should Garage Door Companies Run LSA and Google Ads Together?</a></li>
+            <li><a href="#how-to-track">How to Track Your Garage Door LSA Results</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#conclusion">Conclusion &amp; Next Steps</a></li>
           </ol>
+        </nav>
 
-          <p style="margin-top:12px;">
-            <a href="/free-lsa-consultation.html" class="btn-primary large">Get a Free Garage Door LSA Audit</a>
-          </p>
+        <h2 id="is-lsa-worth-it">Is Google LSA Worth It for Garage Door Companies?</h2>
+        <p>
+          Yes — especially for residential service and repair work.
+        </p>
+        <p>
+          Garage door emergencies don't get comparison shopped. When someone's door is stuck open in the middle of winter or a spring breaks and their car is blocked in, they need someone today. They're going to call whoever Google puts in front of them first with a verified badge and solid reviews. That's exactly what LSA is designed to capture.
+        </p>
+        <p>
+          The numbers work in your favor too. Garage door companies typically see cost per lead anywhere from $20 to $75 depending on market and job type. A single new door installation averaging $1,200 to $2,500 covers a significant number of leads. Even a spring replacement at $200 to $350 returns three to five times your lead cost if you answer the phone and show up on time.
+        </p>
+        <p>
+          LSA is also one of the few advertising channels where you only pay when a real customer actually contacts you. Not for clicks. Not for impressions. For contact. That's a fundamentally better risk model than traditional Google Ads for most garage door contractors — and when homeowners in your area search for urgent help, the person who wins that call is whoever is at the top of their screen.
+        </p>
+        <p>
+          A practical example: if your LSA leads cost $40 each in your market and you're booking 6 out of every 10 conversations, your cost per booked job is about $67. On a $300 spring repair that's a solid margin. On a $1,800 door installation it's exceptional. Most garage door companies running LSA consistently see their cost per booked job drop over the first 60 days as their profile builds review history and Google learns which leads convert best for them.
+        </p>
 
-          <!-- ============================================================ -->
-          <h2 id="cost">What Does LSA Cost for Garage Door Companies?</h2>
+        <table style="width:100%; border-collapse:collapse; margin:18px 0;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Feature</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Local Services Ads (LSA)</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Google Search Ads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">How you pay</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Pay per lead (calls/messages)</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Pay per click</td>
+            </tr>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Lead intent</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Very high (ready to hire now)</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Varies (research to urgent)</td>
+            </tr>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Typical CPL (garage door)</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$20–$75 per lead</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$8–$35 per click (varies)</td>
+            </tr>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Best for</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Emergency repairs, spring replacement, opener installs</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">New door installs, commercial, scale</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;">Setup difficulty</td>
+              <td style="padding:8px;">Moderate (verification required)</td>
+              <td style="padding:8px;">Higher (ongoing campaign management)</td>
+            </tr>
+          </tbody>
+        </table>
 
-          <p>
-            Most US markets see garage door LSA leads ranging from $20 to $75 per lead. Bigger metros and emergency searches push toward the higher end. Smaller markets and less competitive areas come in lower.
-          </p>
-
-          <p>
-            The number that actually matters is cost per booked job, not cost per lead. If you're paying $40 per lead, answering 80% of calls, and booking 65% of those conversations, you're paying roughly $77 per booked job. For a new door installation that's an easy return. For a $250 cable repair it's tighter but still workable if your volume is right.
-          </p>
-
-          <table style="width:100%; border-collapse:collapse; margin:18px 0;">
-            <thead>
-              <tr>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Market Size</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Typical CPL Range</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Example Cities</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Small Market</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$18 – $35</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Boise, Spokane, Chattanooga</td>
-              </tr>
-              <tr>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Mid-Size Market</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$30 – $55</td>
-                <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Denver, Nashville, Indianapolis</td>
-              </tr>
-              <tr>
-                <td style="padding:8px;">Large Market</td>
-                <td style="padding:8px;">$45 – $75</td>
-                <td style="padding:8px;">Los Angeles, Chicago, Houston</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p>
-            The businesses that struggle with LSA economics are usually the ones not answering calls consistently, not dispatching quickly, or not tracking which leads actually turned into jobs. Fix the operations side and the economics almost always work out.
-          </p>
-
-          <!-- ============================================================ -->
-          <h2 id="how-to-rank">How to Rank Higher in Garage Door LSA Results</h2>
-
-          <p>
-            LSA placement isn't purely about budget. Google runs an auction that weighs your bid alongside your overall profile quality and how likely a specific customer searching near them is to contact you. A well-optimized profile with strong reviews can and regularly does outrank a competitor spending more. Here's what actually moves the needle.
-          </p>
-
-          <!-- IMAGE SUGGESTION -->
-          <!-- Image: Diagram showing LSA ranking factors: reviews, responsiveness, proximity, budget -->
-          <!-- Alt text: "Diagram of Google LSA ranking factors for garage door companies including reviews, responsiveness, and budget" -->
-
-          <ul>
-            <li><strong>Reviews are the whole game.</strong> Get to a 4.8 star average or higher with a steady flow of recent reviews and you'll outrank most of your local competitors regardless of budget. Volume matters as much as rating — 150 reviews at 4.8 beats 20 reviews at 5.0 every time. After every job, send a text to the customer with your review link. Text converts better than email for review requests. Make it a habit, not an afterthought.</li>
-            <li><strong>Answer every call.</strong> Google tracks your call answer rate directly through the LSA system. Miss calls consistently and your ranking drops. During busy periods use call forwarding or an answering service. A live voice is always better than voicemail for someone whose garage door is stuck open right now.</li>
-            <li><strong>Enable messaging.</strong> Homeowners scheduling non-emergency work like new door installations or opener upgrades often prefer to message rather than call. Turning it on increases your lead eligibility and Google factors your message response rate into your ranking too. Check it daily.</li>
-            <li><strong>Keep your profile active.</strong> Update photos after significant jobs. Update hours for holidays. Make sure your service area reflects where you actually want to work. Stale, unchanged profiles lose ranking over time.</li>
-            <li><strong>Use Maximize Leads bid mode.</strong> Setting a manual Max Per Lead cap can severely limit your ad delivery, especially in competitive markets. Maximize Leads lets Google's algorithm work with your budget to find you the most leads at the best cost. It's the setting Google recommends and it typically outperforms manual bidding for most garage door companies starting out.</li>
-          </ul>
-
-          <!-- ============================================================ -->
-          <h2 id="common-mistakes">Common LSA Mistakes Garage Door Companies Make</h2>
-
-          <ul>
-            <li><strong>Not auditing job types.</strong> If you do opener installations but "garage door opener installation" isn't checked in your LSA backend, you don't appear for it. Go through your full job type list today. Most garage door companies are missing at least two or three categories they could be appearing for.</li>
-            <li><strong>Ignoring bad leads.</strong> You'll get wrong numbers, out-of-area calls, and calls for services you don't offer. Dispute every single one in your LSA dashboard. Google issues credits for valid disputes but only within a specific time window. Set a weekly reminder to log in and clear them out.</li>
-            <li><strong>Letting reviews flatline.</strong> Getting 30 reviews in your first month and then stopping is worse than you think. Google's algorithm reads a flatline in review activity as a sign your business may be inactive. Reviews need to come in consistently month after month, year-round.</li>
-            <li><strong>Turning off LSA during slow periods.</strong> Slow periods are exactly when your competitors are pulling back. A lower budget running consistently during off-peak months keeps your profile active, builds ranking history, and captures the work that is out there even when demand is lower.</li>
-            <li><strong>Setting overly restrictive hours.</strong> Garage door emergencies happen evenings and weekends. If your hours are set to 9am–5pm Monday–Friday, you're missing the majority of urgent calls. If you offer emergency service, set your hours to reflect that.</li>
-            <li><strong>Not tracking outcomes.</strong> Mark every lead in your dashboard — booked job, no answer, wrong number, out of service area. This data directly influences how Google scores your profile going forward. Businesses that track outcomes consistently see better lead quality over time.</li>
-          </ul>
-
-          <p>If your LSA profile is live but calls aren't coming in at the volume you expect, our <a href="/lsa-no-calls-guide">LSA no-calls troubleshooting guide</a> covers the 12 most common causes and walks through the exact fix for each one.</p>
-
-          <!-- ============================================================ -->
-          <h2 id="lsa-and-google-ads">Should Garage Door Companies Run LSA and Google Ads Together?</h2>
-
-          <p>
-            Yes, and here's the practical reason why. LSA captures people who have already decided they need a garage door company right now. They're not researching. They want someone to show up today. That's LSA's sweet spot.
-          </p>
-
-          <p>
-            Google Search Ads capture everyone earlier in the process — homeowners comparing quotes for a new door, someone wondering about the cost of a belt-drive opener upgrade, a property manager looking for a commercial garage door contractor for an ongoing account. That's traffic LSA doesn't reach on its own.
-          </p>
-
-          <p>
-            The combination is particularly powerful for garage door companies that offer both emergency service and larger planned projects. LSA dominates local search results for urgent calls and fills your schedule with same-week work. Google Ads handles the prospecting side — getting your name in front of homeowners in your service area who are weeks or months away from pulling the trigger on a new door or full replacement. Together, they cover the full customer journey and your blended cost per booked job is typically lower than running either channel alone at the same total spend.
-          </p>
-
-          <p>
-            Start with LSA if you're new to paid advertising. Lower cost to enter, simpler to manage, and the lead quality is excellent. Once you have consistent LSA volume and your team can handle more work, layer in Google Ads to capture the broader market.
-          </p>
-
-          <p>For a deeper look at how the two platforms compare, see our guide on <a href="/google-ads-vs-lsa-plumbers.html">Google Ads vs. Local Services Ads</a>.</p>
-
-          <!-- ============================================================ -->
-          <h2 id="how-to-track">How to Track Your Garage Door LSA Results</h2>
-
-          <p>
-            Skip the vanity metrics. Here's what to actually track.
-          </p>
-
-          <ul>
-            <li><strong>Cost per booked job.</strong> Take your total LSA spend for the month and divide by the number of jobs you actually booked from LSA leads. That's your real cost per acquisition. If it's profitable, scale the budget. If not, find the leak — it's usually missed calls or a low booking conversion rate on the phone.</li>
-            <li><strong>Call answer rate.</strong> Check this in your LSA dashboard weekly. If it drops below 80% you have a problem that will hurt your ranking before it shows up in your lead count.</li>
-            <li><strong>Lead outcome breakdown.</strong> What percentage of your leads are becoming booked jobs vs. no answers vs. bad leads? If your bad lead rate is high, make sure you're disputing them. If your booking rate is low, the issue is probably call handling, not LSA.</li>
-            <li><strong>Review velocity.</strong> How many new reviews did you get this month? If the answer is zero your ranking will start to slip. Build the review request into your job close workflow so it's automatic.</li>
-          </ul>
-
-          <!-- ============================================================ -->
-          <h2 id="faq">FAQ</h2>
-
-          <h3>How much do Google LSA leads cost for garage door companies?</h3>
-          <p>
-            Most markets run $20 to $75 per lead for garage door companies. Emergency calls like broken springs or doors off track tend to cost more. Smaller markets and less competitive areas usually come in on the lower end. The number that matters more than cost per lead is cost per booked job — that's the one to optimize around.
-          </p>
-
-          <h3>Do garage door companies need background checks for Google LSA?</h3>
-          <p>
-            Yes. Garage door contractors enter customer homes, so Google requires background checks for business owners and any technicians who go on site. You'll also need proof of general liability insurance and your business license where applicable. Start the verification process first — it's the slowest part of getting live.
-          </p>
-
-          <h3>How long does it take to get approved for garage door LSAs?</h3>
-          <p>
-            The approval process typically takes 2 to 6 weeks. It includes a background check, license verification, and insurance verification. Having your documents ready before you start speeds up the process significantly.
-          </p>
-
-          <h3>How many leads can a garage door company expect from LSAs?</h3>
-          <p>
-            Volume depends on your market size and weekly budget. A garage door company in a mid-size market spending $500 to $1,000 per month can typically expect 15 to 40 leads per month. Larger budgets in bigger markets can generate 60 or more leads per month.
-          </p>
-
-          <h3>Can I dispute bad leads from Google LSA?</h3>
-          <p>
-            Yes. Google allows you to dispute leads that are spam, wrong number, or outside your service area. Approved disputes result in a credit back to your account. Log into your LSA dashboard, find the lead, and submit a dispute with a reason. Set a weekly reminder to review and dispute invalid leads before the window closes.
-          </p>
-
-          <h3>Are LSAs better than Google Ads for garage door companies?</h3>
-          <p>
-            For most garage door companies, LSAs deliver a lower cost per lead and higher intent traffic than traditional Google Ads. LSAs are best for capturing emergency calls and urgent service requests. Google Ads offer more control over targeting and messaging and work well for reaching homeowners earlier in their decision process. Many companies run both simultaneously for maximum coverage.
-          </p>
-
-          <!-- ============================================================ -->
-          <h2 id="conclusion">Conclusion &amp; Next Steps</h2>
-
-          <p>
-            Garage door companies that win with LSA aren't necessarily the ones with the biggest budgets. They're the ones who answer their phones, collect reviews consistently, keep their profiles complete, and enable every service they can actually deliver. The setup work is front-loaded — once you're verified and optimized, LSA becomes one of the most reliable and low-maintenance lead channels you'll run in your local market.
-          </p>
-
-          <p>
-            Start with LSA to capture customers who are ready to hire right now. Add Google Search Ads when you're ready to scale and reach homeowners earlier in their decision process. And if you want someone to walk through your current setup and tell you exactly what's working and what isn't — that's what we do at Blue Grid Media.
-          </p>
-
-          <div style="text-align:center; margin-top:30px; margin-bottom:60px;">
-            <a href="/free-lsa-consultation.html" class="btn-primary large">Get a Free Garage Door LSA Audit</a>
-            <p style="font-size:13px; color:#6b7280; margin-top:12px;">No obligation. We'll look at your setup and tell you what's working and what isn't.</p>
+        <!-- CALCULATOR CTA INLINE -->
+        <div class="calc-cta-inline">
+          <div class="calc-cta-text">
+            <strong>Want to run the numbers for your business?</strong><br>
+            Use our free LSA ROI Calculator to estimate your cost per lead, booked jobs, and return on ad spend by industry and market — in seconds.
           </div>
+          <a class="calc-cta-btn" href="/lsa-roi-calculator">Try the Free Calculator &rarr;</a>
+        </div>
 
-          <p style="font-size:13px; color:#6b7280; margin-top:40px;">
-            Results vary by market, competition, and how consistently you follow up on leads. Blue Grid Media specializes in LSA and Google Ads for local service businesses. Book a free review and let's look at your numbers together.
-          </p>
+        <h2 id="what-lsa-looks-like">What Google LSA Looks Like for Garage Door Businesses</h2>
+        <p>
+          When someone searches "garage door repair near me," "broken garage door spring," "garage door opener installation," or any similar query, Google serves a row of Local Services Ads at the absolute top of the page. Above regular Google Ads. Above the map pack. Above every organic result.
+        </p>
+        <p>
+          Your listing shows your business name, star rating, review count, years in business, and a direct click-to-call button. On mobile, it takes up most of the visible screen before the user scrolls. That's prime real estate at the exact moment someone in your area is ready to spend money.
+        </p>
+        <p>
+          The Google Verified badge on your listing tells the homeowner that Google has checked your licenses, insurance, and background. It's a powerful trust signal that removes the friction of wondering whether you're legitimate. Customers who see it don't need to dig around for your credentials because Google has already vouched for you. That's why LSA listings convert at a much higher rate than standard pay-per-click ads.
+        </p>
+        <p>
+          One thing worth knowing: Google retired the old "Google Guaranteed" badge in October 2025 and replaced it with the unified Google Verified badge. The screening process itself hasn't changed, but the money-back guarantee that used to come with the old badge has been discontinued. If you see older content still referencing "Google Guaranteed" for garage door companies, that terminology is out of date.
+        </p>
 
-        </main>
+        <h2 id="how-to-set-up">Setting Up Google LSA for Your Garage Door Business</h2>
+        <p>
+          Getting verified takes work upfront but once you're live it runs with minimal ongoing management compared to traditional Google Ads. Here's how to do it right.
+        </p>
+        <ol>
+          <li><strong>Create your LSA profile.</strong> Go to ads.google.com and navigate to the Local Services Ads section. Select "Garage Door" under the home services category. Add your business name, service areas, hours, and a description. Write your description like a human — "Family-owned garage door company serving the greater Phoenix area — spring repair, opener installation, new doors, cables, and 24/7 emergency service" beats a generic paragraph every time.</li>
+          <li><strong>Enable every job type you actually offer.</strong> This is the most critical step that most garage door companies get wrong. Google will only show your ad for services you've explicitly turned on in your LSA profile. Go through every available job type and enable everything you can deliver: spring repair, opener installation, new door installation, cable repair, panel replacement, off-track repair, weatherstripping, and any others that apply. If it's not checked, you're invisible for it.</li>
+          <li><strong>Upload your license and insurance.</strong> Google requires proof of general liability insurance and your business license where applicable. Have digital copies ready before you start. Uploading everything upfront avoids verification delays that can add weeks to your launch timeline.</li>
+          <li><strong>Complete background checks.</strong> Garage door contractors enter customer homes, so Google requires background checks for business owners and any technicians who go on site. This is the slowest part of the whole process. Start it first.</li>
+          <li><strong>Connect your Google Business Profile.</strong> Your GBP feeds directly into your LSA listing. The reviews on your GBP show up on your LSA ad. If your GBP is incomplete, has wrong hours, or is missing photos, it hurts your LSA performance from day one. Clean it up before you go live.</li>
+          <li><strong>Set your budget and bid mode.</strong> Start with Maximize Leads and set a weekly budget that targets roughly 10 to 15 leads per week based on your expected cost per lead in your local market. Don't cap yourself with a low Max Per Lead bid — in competitive markets it'll throttle your visibility before you even see what LSA can do.</li>
+          <li><strong>Add real photos.</strong> Branded trucks, completed installations, before-and-after door replacements, your team on the job. Real images from your actual business. Google rewards complete profiles and customers click on photos before calling. Skip the stock photos.</li>
+        </ol>
 
-        <aside class="article-sidebar">
-          <div class="sidebar-cta">
-            <h3>Free LSA Audit</h3>
-            <p>Find out what's costing you leads — no charge, no obligation.</p>
-            <a href="/Free-LSA-audit">Request Audit</a>
-          </div>
-          <div class="sidebar-card">
-            <h3>More LSA Guides</h3>
-            <ul>
-              <li><a href="/google-lsa-for-electricians">Google LSA for Electricians</a></li>
-              <li><a href="/google-lsa-for-roofers">Google LSA for Roofers</a></li>
-              <li><a href="/google-lsa-for-water-damage-restoration">Google LSA for Water Damage Restoration</a></li>
-              <li><a href="/google-lsa-ranking-factors">Google LSA Ranking Factors</a></li>
-              <li><a href="/lsa-no-calls-guide">Why You're Not Getting LSA Calls</a></li>
-              <li><a href="/google-ads-vs-lsa-plumbers">Google Ads vs. LSA for Plumbers</a></li>
-              <li><a href="/plumbing-ads-playbook-google-local-services-ads">Plumbing Ads Playbook</a></li>
-              <li><a href="/how-much-does-google-lsa-cost">How Much Does Google LSA Cost?</a></li>
-              <li><a href="/lsa-roi-calculator">LSA ROI Calculator</a></li>
-            </ul>
-          </div>
-        </aside>
+        <p style="margin-top:12px;">
+          <a href="/contact" class="btn-primary large">Get a Free Garage Door LSA Audit</a>
+        </p>
 
-      </div>
+        <h2 id="cost">What Does LSA Cost for Garage Door Companies?</h2>
+        <p>
+          Most US markets see garage door LSA leads ranging from $20 to $75 per lead. Bigger metros and emergency searches push toward the higher end. Smaller markets and less competitive areas come in lower.
+        </p>
+        <p>
+          The number that actually matters is cost per booked job, not cost per lead. If you're paying $40 per lead, answering 80% of calls, and booking 65% of those conversations, you're paying roughly $77 per booked job. For a new door installation that's an easy return. For a $250 cable repair it's tighter but still workable if your volume is right.
+        </p>
+
+        <table style="width:100%; border-collapse:collapse; margin:18px 0;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Market Size</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Typical CPL Range</th>
+              <th style="text-align:left; padding:8px; border-bottom:1px solid #e5e7eb;">Example Cities</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Small Market</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$18 – $35</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Boise, Spokane, Chattanooga</td>
+            </tr>
+            <tr>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Mid-Size Market</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">$30 – $55</td>
+              <td style="padding:8px; border-bottom:1px solid #f3f4f6;">Denver, Nashville, Indianapolis</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;">Large Market</td>
+              <td style="padding:8px;">$45 – $75</td>
+              <td style="padding:8px;">Los Angeles, Chicago, Houston</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          The businesses that struggle with LSA economics are usually the ones not answering calls consistently, not dispatching quickly, or not tracking which leads actually turned into jobs. Fix the operations side and the economics almost always work out.
+        </p>
+
+        <h2 id="how-to-rank">How to Rank Higher in Garage Door LSA Results</h2>
+        <p>
+          LSA placement isn't purely about budget. Google runs an auction that weighs your bid alongside your overall profile quality and how likely a specific customer searching near them is to contact you. A well-optimized profile with strong reviews can and regularly does outrank a competitor spending more. Here's what actually moves the needle.
+        </p>
+        <ul>
+          <li><strong>Reviews are the whole game.</strong> Get to a 4.8 star average or higher with a steady flow of recent reviews and you'll outrank most of your local competitors regardless of budget. Volume matters as much as rating — 150 reviews at 4.8 beats 20 reviews at 5.0 every time. After every job, send a text to the customer with your review link. Text converts better than email for review requests. Make it a habit, not an afterthought.</li>
+          <li><strong>Answer every call.</strong> Google tracks your call answer rate directly through the LSA system. Miss calls consistently and your ranking drops. During busy periods use call forwarding or an answering service. A live voice is always better than voicemail for someone whose garage door is stuck open right now.</li>
+          <li><strong>Enable messaging.</strong> Homeowners scheduling non-emergency work like new door installations or opener upgrades often prefer to message rather than call. Turning it on increases your lead eligibility and Google factors your message response rate into your ranking too. Check it daily.</li>
+          <li><strong>Keep your profile active.</strong> Update photos after significant jobs. Update hours for holidays. Make sure your service area reflects where you actually want to work. Stale, unchanged profiles lose ranking over time.</li>
+          <li><strong>Use Maximize Leads bid mode.</strong> Setting a manual Max Per Lead cap can severely limit your ad delivery, especially in competitive markets. Maximize Leads lets Google's algorithm work with your budget to find you the most leads at the best cost. It's the setting Google recommends and it typically outperforms manual bidding for most garage door companies starting out.</li>
+        </ul>
+
+        <p>For a complete breakdown of every signal Google factors into your LSA ranking — from review velocity to bid mode to GBP accuracy — see our <a href="/google-lsa-ranking-factors">guide to LSA ranking factors</a>.</p>
+
+        <h2 id="common-mistakes">Common LSA Mistakes Garage Door Companies Make</h2>
+        <ul>
+          <li><strong>Not auditing job types.</strong> If you do opener installations but "garage door opener installation" isn't checked in your LSA backend, you don't appear for it. Go through your full job type list today. Most garage door companies are missing at least two or three categories they could be appearing for.</li>
+          <li><strong>Ignoring bad leads.</strong> You'll get wrong numbers, out-of-area calls, and calls for services you don't offer. Dispute every single one in your LSA dashboard. Google issues credits for valid disputes but only within a specific time window. Set a weekly reminder to log in and clear them out.</li>
+          <li><strong>Letting reviews flatline.</strong> Getting 30 reviews in your first month and then stopping is worse than you think. Google's algorithm reads a flatline in review activity as a sign your business may be inactive. Reviews need to come in consistently month after month, year-round.</li>
+          <li><strong>Turning off LSA during slow periods.</strong> Slow periods are exactly when your competitors are pulling back. A lower budget running consistently during off-peak months keeps your profile active, builds ranking history, and captures the work that is out there even when demand is lower.</li>
+          <li><strong>Setting overly restrictive hours.</strong> Garage door emergencies happen evenings and weekends. If your hours are set to 9am–5pm Monday–Friday, you're missing the majority of urgent calls. If you offer emergency service, set your hours to reflect that.</li>
+          <li><strong>Not tracking outcomes.</strong> Mark every lead in your dashboard — booked job, no answer, wrong number, out of service area. This data directly influences how Google scores your profile going forward. Businesses that track outcomes consistently see better lead quality over time.</li>
+        </ul>
+
+        <p>If your LSA profile is live but calls aren't coming in at the volume you expect, our <a href="/lsa-no-calls-guide">LSA no-calls troubleshooting guide</a> covers the 12 most common causes and walks through the exact fix for each one.</p>
+
+        <h2 id="lsa-and-google-ads">Should Garage Door Companies Run LSA and Google Ads Together?</h2>
+        <p>
+          Yes, and here's the practical reason why. LSA captures people who have already decided they need a garage door company right now. They're not researching. They want someone to show up today. That's LSA's sweet spot.
+        </p>
+        <p>
+          Google Search Ads capture everyone earlier in the process — homeowners comparing quotes for a new door, someone wondering about the cost of a belt-drive opener upgrade, a property manager looking for a commercial garage door contractor for an ongoing account. That's traffic LSA doesn't reach on its own.
+        </p>
+        <p>
+          The combination is particularly powerful for garage door companies that offer both emergency service and larger planned projects. LSA dominates local search results for urgent calls and fills your schedule with same-week work. Google Ads handles the prospecting side — getting your name in front of homeowners in your service area who are weeks or months away from pulling the trigger on a new door or full replacement. Together, they cover the full customer journey and your blended cost per booked job is typically lower than running either channel alone at the same total spend.
+        </p>
+        <p>
+          Start with LSA if you're new to paid advertising. Lower cost to enter, simpler to manage, and the lead quality is excellent. Once you have consistent LSA volume and your team can handle more work, layer in Google Ads to capture the broader market.
+        </p>
+        <p>For a deeper look at how the two platforms compare, see our guide on <a href="/google-ads-vs-lsa-plumbers.html">Google Ads vs. Local Services Ads</a>.</p>
+
+        <h2 id="how-to-track">How to Track Your Garage Door LSA Results</h2>
+        <p>
+          Skip the vanity metrics. Here's what to actually track.
+        </p>
+        <ul>
+          <li><strong>Cost per booked job.</strong> Take your total LSA spend for the month and divide by the number of jobs you actually booked from LSA leads. That's your real cost per acquisition. If it's profitable, scale the budget. If not, find the leak — it's usually missed calls or a low booking conversion rate on the phone.</li>
+          <li><strong>Call answer rate.</strong> Check this in your LSA dashboard weekly. If it drops below 80% you have a problem that will hurt your ranking before it shows up in your lead count.</li>
+          <li><strong>Lead outcome breakdown.</strong> What percentage of your leads are becoming booked jobs vs. no answers vs. bad leads? If your bad lead rate is high, make sure you're disputing them. If your booking rate is low, the issue is probably call handling, not LSA.</li>
+          <li><strong>Review velocity.</strong> How many new reviews did you get this month? If the answer is zero your ranking will start to slip. Build the review request into your job close workflow so it's automatic.</li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+
+        <h3>How much do Google LSA leads cost for garage door companies?</h3>
+        <p>
+          Most markets run $20 to $75 per lead for garage door companies. Emergency calls like broken springs or doors off track tend to cost more. Smaller markets and less competitive areas usually come in on the lower end. The number that matters more than cost per lead is cost per booked job — that's the one to optimize around.
+        </p>
+
+        <h3>Do garage door companies need background checks for Google LSA?</h3>
+        <p>
+          Yes. Garage door contractors enter customer homes, so Google requires background checks for business owners and any technicians who go on site. You'll also need proof of general liability insurance and your business license where applicable. Start the verification process first — it's the slowest part of getting live.
+        </p>
+
+        <h3>How long does it take to get approved for garage door LSAs?</h3>
+        <p>
+          The approval process typically takes 2 to 6 weeks. It includes a background check, license verification, and insurance verification. Having your documents ready before you start speeds up the process significantly.
+        </p>
+
+        <h3>How many leads can a garage door company expect from LSAs?</h3>
+        <p>
+          Volume depends on your market size and weekly budget. A garage door company in a mid-size market spending $500 to $1,000 per month can typically expect 15 to 40 leads per month. Larger budgets in bigger markets can generate 60 or more leads per month.
+        </p>
+
+        <h3>Can I dispute bad leads from Google LSA?</h3>
+        <p>
+          Yes. Google allows you to dispute leads that are spam, wrong number, or outside your service area. Approved disputes result in a credit back to your account. Log into your LSA dashboard, find the lead, and submit a dispute with a reason. Set a weekly reminder to review and dispute invalid leads before the window closes.
+        </p>
+
+        <h3>Are LSAs better than Google Ads for garage door companies?</h3>
+        <p>
+          For most garage door companies, LSAs deliver a lower cost per lead and higher intent traffic than traditional Google Ads. LSAs are best for capturing emergency calls and urgent service requests. Google Ads offer more control over targeting and messaging and work well for reaching homeowners earlier in their decision process. Many companies run both simultaneously for maximum coverage.
+        </p>
+
+        <h2 id="conclusion">Conclusion &amp; Next Steps</h2>
+        <p>
+          Garage door companies that win with LSA aren't necessarily the ones with the biggest budgets. They're the ones who answer their phones, collect reviews consistently, keep their profiles complete, and enable every service they can actually deliver. The setup work is front-loaded — once you're verified and optimized, LSA becomes one of the most reliable and low-maintenance lead channels you'll run in your local market.
+        </p>
+        <p>
+          Start with LSA to capture customers who are ready to hire right now. Add Google Search Ads when you're ready to scale and reach homeowners earlier in their decision process. And if you want someone to walk through your current setup and tell you exactly what's working and what isn't — that's what we do at Blue Grid Media.
+        </p>
+
+        <div style="text-align:center; margin-top:30px; margin-bottom:60px;">
+          <a href="/contact" class="btn-primary large">Get a Free Garage Door LSA Audit</a>
+          <p style="font-size:13px; color:#6b7280; margin-top:12px;">No obligation. We'll look at your setup and tell you what's working and what isn't.</p>
+        </div>
+
+        <p style="font-size:13px; color:#6b7280; margin-top:40px;">
+          Results vary by market, competition, and how consistently you follow up on leads. Blue Grid Media specializes in LSA and Google Ads for local service businesses — <a href="/contact">book a free review</a> and let's look at your numbers together.
+        </p>
+
+      </main>
+      <aside class="article-sidebar">
+        <div class="sidebar-cta">
+          <h3>Free LSA Audit</h3>
+          <p>Find out what's costing you leads — no charge, no obligation.</p>
+          <a href="/Free-LSA-audit">Request Audit</a>
+        </div>
+        <div class="sidebar-card">
+          <h3>More LSA Guides</h3>
+          <ul>
+            <li><a href="/google-lsa-for-hvac-companies">Google LSA for HVAC Companies</a></li>
+            <li><a href="/google-lsa-for-electricians">Google LSA for Electricians</a></li>
+            <li><a href="/google-lsa-for-roofers">Google LSA for Roofers</a></li>
+            <li><a href="/google-lsa-for-water-damage-restoration">Google LSA for Water Damage Restoration</a></li>
+            <li><a href="/google-lsa-ranking-factors">Google LSA Ranking Factors</a></li>
+            <li><a href="/lsa-no-calls-guide">Why You're Not Getting LSA Calls</a></li>
+            <li><a href="/google-ads-vs-lsa-plumbers">Google Ads vs. LSA for Plumbers</a></li>
+            <li><a href="/plumbing-ads-playbook-google-local-services-ads">Plumbing Ads Playbook</a></li>
+            <li><a href="/how-much-does-google-lsa-cost">How Much Does Google LSA Cost?</a></li>
+            <li><a href="/google-lsa-for-pest-control">Google LSA for Pest Control</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div id="footer-placeholder"></div>
 
-  <script>
-    fetch("/nav.html").then(r => r.text()).then(html => {
-      document.getElementById("nav-placeholder").innerHTML = html;
-      const nav = document.getElementById("siteNav");
-      window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
-      document.getElementById("navHamburger").addEventListener("click", () => {
-        const open = document.getElementById("navLinks").classList.toggle("open");
-        document.getElementById("navHamburger").classList.toggle("open", open);
-      });
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("/nav.html").then(r => r.text()).then(html => {
+    document.getElementById("nav-placeholder").innerHTML = html;
+    const nav = document.getElementById("siteNav");
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+    document.getElementById("navHamburger").addEventListener("click", () => {
+      const open = document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navHamburger").classList.toggle("open", open);
     });
-    fetch("/footer.html").then(r => r.text()).then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
-  </script>
+  });
+  fetch("/footer.html").then(r => r.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
 
 </body>
 </html>
