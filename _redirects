@@ -12,8 +12,10 @@
 /blog/lsa-no-calls-guide                              /lsa-no-calls-guide                              301
 /blog/plumbing-ads-playbook-google-local-services-ads /plumbing-ads-playbook-google-local-services-ads 301
 /blog/google-lsa-for-carpet-cleaning                  /google-lsa-for-carpet-cleaning                          301
+/blog/google-lsa-for-landscaping                      /google-lsa-for-landscaping                              301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
+/google-lsa-for-landscaping                        /blog/google-lsa-for-landscaping.html                        200
 /google-lsa-for-carpet-cleaning                    /blog/google-lsa-for-carpet-cleaning.html                    200
 /google-lsa-for-tree-service                       /blog/google-lsa-for-tree-service.html                       200
 /garage-door-local-services-ads                    /blog/garage-door-local-services-ads.html                    200
