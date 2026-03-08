@@ -991,6 +991,36 @@ footer.site-footer .footer-links { display: none !important; }
   header h1 { font-size: 1.85rem; }
   .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 0.92rem; }
 }
+
+/* =========================
+   Blog Article Mobile Fixes
+   ========================= */
+
+/* Prevent CSS Grid children from overflowing their container */
+.article-page-wrap {
+  min-width: 0;
+  overflow: hidden;
+}
+.article-content {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Universal visual component overflow prevention */
+[class*="visual-"] {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .article-page-wrap { gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.65rem; line-height: 1.25; }
+  header p  { font-size: 0.92rem; }
+}
 /* ---------- Results layout fixes (drop at end of style.css or <style>) ---------- */
 
 /* Give the results section horizontal breathing room so cards don't look "cut" */

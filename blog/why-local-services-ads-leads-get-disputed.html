@@ -315,6 +315,121 @@
     .visual-loop-return { display: flex; align-items: center; justify-content: center; margin-top: 0.5rem; gap: 0.5rem; padding: 0.5rem 1rem; background: #f0fafa; border: 1px dashed #0ea5a4; border-radius: 8px; }
     .visual-loop-return-text { font-size: 0.76rem; font-weight: 600; color: #0ea5a4; }
     .visual-loop-return svg { width: 16px; height: 16px; }
+
+    /* ===== MOBILE RESPONSIVE OVERRIDES ===== */
+
+    @media (max-width: 768px) {
+      /* Typography */
+      .article-content h1 { font-size: 1.55rem; line-height: 1.25; }
+      .article-content h2 { font-size: 1.25rem; margin-top: 36px; }
+      .article-content h3 { font-size: 1.02rem; }
+
+      /* Layout helpers */
+      .topic-bar-wrap { font-size: 0.82rem; line-height: 1.6; }
+      .toc-box { padding: 1.25rem 1rem; }
+      .callout { padding: 0.85rem 1rem; font-size: 0.9rem; }
+      .stat-card .stat-number { font-size: 1.5rem; }
+
+      /* CTA components */
+      .cta-box { padding: 1.75rem 1.25rem; }
+      .cta-box h2 { font-size: 1.25rem !important; }
+      .calc-cta-inline { padding: 1.25rem; flex-direction: column; text-align: center; }
+      .calc-cta-inline .calc-cta-text { min-width: 0; }
+      .calc-cta-inline a.calc-cta-btn { width: 100%; text-align: center; box-sizing: border-box; }
+
+      /* Visual component containers */
+      .visual-pipeline { padding: 1.5rem 1rem; }
+      .visual-compare-card { padding: 1.5rem 1rem; }
+      .visual-eligibility { padding: 1.5rem 1rem; }
+      .visual-checklist { padding: 1.5rem 1rem; }
+      .visual-loop { padding: 1.5rem 1rem; }
+      .visual-title { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      /* Typography */
+      .article-content h1 { font-size: 1.35rem; }
+      .article-content h2 { font-size: 1.15rem; }
+      .article-breadcrumb { font-size: 0.72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+      /* CTA components */
+      .cta-box { padding: 1.5rem 1rem; }
+      .cta-box h2 { font-size: 1.15rem !important; }
+      .cta-btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+
+      /* Visual component containers */
+      .visual-pipeline { padding: 1.25rem 0.75rem; }
+      .visual-compare-card { padding: 1rem; }
+      .visual-eligibility { padding: 1.25rem 0.75rem; }
+      .visual-checklist { padding: 1.25rem 0.75rem; }
+      .visual-loop { padding: 1.25rem 0.75rem; }
+
+      /* Pipeline flow */
+      .visual-pipeline-step { min-width: 80px; max-width: 160px; }
+      .visual-pipeline-box { font-size: 0.72rem; padding: 0.5rem 0.6rem; }
+      .visual-pipeline-sub { font-size: 0.65rem; }
+      .visual-pipeline-arrow { font-size: 1.1rem; }
+
+      /* Compare cards */
+      .visual-compare-list li { font-size: 0.8rem; }
+      .visual-compare-badge { font-size: 0.68rem; padding: 0.2rem 0.6rem; }
+
+      /* Stages process */
+      .visual-stage-card { padding: 0.75rem; }
+      .visual-stage-heading { font-size: 0.84rem; }
+      .visual-stage-desc { font-size: 0.78rem; }
+      .visual-stage-bar { font-size: 0.68rem; padding: 0.25rem 0.6rem; }
+      .visual-stage-left { width: 32px; }
+      .visual-stage-num { width: 26px; height: 26px; font-size: 0.72rem; }
+
+      /* Eligibility grid */
+      .visual-eligibility-items { padding: 0.4rem 0.75rem; }
+      .visual-eligibility-items li { font-size: 0.78rem; padding: 0.35rem 0; }
+      .visual-eligibility-header { font-size: 0.78rem; padding: 0.55rem 0.75rem; }
+      .visual-eligibility-callout { font-size: 0.76rem; padding: 0.6rem 0.75rem; }
+
+      /* Checklist */
+      .visual-checklist-item { padding: 0.7rem 0.75rem; gap: 0.65rem; }
+      .visual-checklist-num { width: 24px; height: 24px; font-size: 0.7rem; }
+      .visual-checklist-label { font-size: 0.82rem; }
+      .visual-checklist-note { font-size: 0.72rem; }
+
+      /* Loop / cycle */
+      .visual-loop-step { gap: 0.5rem; max-width: 280px; }
+      .visual-loop-label { font-size: 0.78rem; padding: 0.45rem 0.75rem; }
+      .visual-loop-return { padding: 0.4rem 0.75rem; }
+      .visual-loop-return-text { font-size: 0.7rem; }
+
+      /* Tables */
+      .article-content th { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+      .article-content td { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+
+      /* Stat cards */
+      .stat-card { padding: 1rem; }
+    }
+
+    @media (max-width: 380px) {
+      /* Prevent horizontal overflow */
+      .visual-pipeline-flow { flex-wrap: wrap; }
+      .visual-loop-step { flex-wrap: wrap; justify-content: center; }
+      .visual-compare-list li { flex-wrap: wrap; }
+      .calc-cta-inline { flex-wrap: wrap; }
+
+      /* Further reduce sizes */
+      .stat-card .stat-number { font-size: 1.3rem; }
+      .visual-pipeline-sub { display: none; }
+      .visual-pipeline-step { min-width: 70px; }
+      .visual-pipeline-box { font-size: 0.68rem; padding: 0.45rem 0.5rem; }
+      .visual-stage-left { width: 28px; }
+      .visual-stage-num { width: 22px; height: 22px; font-size: 0.65rem; }
+      .visual-loop-label { font-size: 0.74rem; padding: 0.4rem 0.6rem; }
+      .visual-loop-step { max-width: 240px; }
+      .visual-checklist-item { padding: 0.6rem 0.65rem; }
+      .visual-eligibility-items li { font-size: 0.74rem; }
+      .visual-compare-list li { font-size: 0.76rem; }
+      .article-content th { padding: 0.4rem 0.5rem; font-size: 0.78rem; }
+      .article-content td { padding: 0.4rem 0.5rem; font-size: 0.78rem; }
+    }
   </style>
 </head>
 

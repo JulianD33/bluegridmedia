@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Sitemap Index for bluegridmedia.com
-  Submit THIS file to Google Search Console:
-    https://bluegridmedia.com/sitemap-index.xml
 
-  It references:
-    1. sitemap.xml            — core site pages, blog posts, static calculator pages
-    2. sitemap-calculators.xml — 200 programmatic city × industry calculator pages
--->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <sitemap>
