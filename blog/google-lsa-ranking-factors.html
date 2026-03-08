@@ -85,7 +85,7 @@
           }
         },
         "datePublished": "2026-02-28",
-        "dateModified": "2026-03-03"
+        "dateModified": "2026-03-08"
       },
       {
         "@type": "FAQPage",
@@ -352,6 +352,317 @@
     .calc-cta-inline a.calc-cta-btn:hover {
       background: #0b8f8e;
     }
+
+    /* ── Visual Components ── */
+    .visual-component {
+      margin: 2rem 0;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+    }
+    .visual-component-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      text-align: center;
+      margin: 0 0 1.5rem;
+    }
+
+    /* ── Ranking Pyramid ── */
+    .visual-pyramid-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .visual-pyramid-row {
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      gap: 10px;
+      transition: transform 0.15s;
+    }
+    .visual-pyramid-row:hover { transform: scale(1.02); }
+    .visual-pyramid-row .pyramid-rank {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(255,255,255,0.25); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+    }
+    .visual-pyramid-row .pyramid-name { flex: 1; }
+    .visual-pyramid-row .pyramid-badge {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      background: rgba(255,255,255,0.2); padding: 3px 8px;
+      border-radius: 4px; letter-spacing: 0.03em; white-space: nowrap;
+    }
+
+    /* ── Response Time Chart ── */
+    .visual-response-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .visual-response-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .visual-response-label {
+      min-width: 110px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #334155;
+      text-align: right;
+    }
+    .visual-response-track {
+      flex: 1;
+      background: #e2e8f0;
+      border-radius: 6px;
+      height: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .visual-response-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .visual-response-impact {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      min-width: 90px;
+      text-align: left;
+    }
+
+    /* ── Bid Mode Comparison ── */
+    .visual-bidmode {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .visual-bidmode-card {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .visual-bidmode-card.recommended {
+      border-color: #0ea5a4;
+      box-shadow: 0 4px 16px rgba(14,165,164,0.12);
+    }
+    .visual-bidmode-card .card-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .visual-bidmode-card.recommended .card-badge {
+      background: #0ea5a4; color: #fff;
+    }
+    .visual-bidmode-card:not(.recommended) .card-badge {
+      background: #f1f5f9; color: #64748b;
+    }
+    .visual-bidmode-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      margin: 0 0 8px;
+    }
+    .visual-bidmode-card .card-desc {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .visual-bidmode-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .visual-bidmode-card ul li {
+      font-size: 0.8rem;
+      color: #334155;
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .visual-bidmode-card ul li::before {
+      position: absolute;
+      left: 0;
+      font-size: 0.75rem;
+    }
+    .visual-bidmode-card.recommended ul li::before { content: '✓'; color: #16a34a; }
+    .visual-bidmode-card:not(.recommended) ul li::before { content: '⚠'; color: #eab308; }
+
+    /* ── Profile Checklist ── */
+    .visual-profile-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .visual-profile-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .visual-profile-item:hover { border-color: #0ea5a4; }
+    .visual-profile-item .profile-check {
+      width: 20px; height: 20px; border: 2px solid #cbd5e1;
+      border-radius: 4px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .visual-profile-item.checked .profile-check {
+      background: #0ea5a4; border-color: #0ea5a4;
+    }
+    .visual-profile-item.checked .profile-check::after {
+      content: '✓'; color: #fff; font-size: 12px; font-weight: 700;
+    }
+    .visual-profile-item .profile-text {
+      font-size: 0.82rem; font-weight: 500; color: #334155;
+    }
+    .visual-profile-item.checked .profile-text {
+      color: #94a3b8; text-decoration: line-through;
+    }
+    .visual-profile-progress {
+      margin-top: 12px;
+      text-align: center;
+    }
+    .visual-profile-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .visual-profile-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0ea5a4, #16a34a);
+      border-radius: 4px;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    .visual-profile-pct {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #0ea5a4;
+    }
+
+    /* ── CPBJ Calculator ── */
+    .visual-cpbj {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .visual-cpbj-scenario {
+      flex: 1;
+      min-width: 240px;
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .visual-cpbj-scenario.good { border-color: #16a34a; }
+    .visual-cpbj-scenario.bad { border-color: #dc2626; }
+    .visual-cpbj-scenario .scenario-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 10px;
+    }
+    .visual-cpbj-scenario.good .scenario-label { color: #16a34a; }
+    .visual-cpbj-scenario.bad .scenario-label { color: #dc2626; }
+    .visual-cpbj-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 0.82rem;
+      color: #475569;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .visual-cpbj-row:last-child { border-bottom: none; }
+    .visual-cpbj-row strong { color: #0f2d4e; }
+    .visual-cpbj-result {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 2px solid #e2e8f0;
+      font-family: 'Poppins', sans-serif;
+    }
+    .visual-cpbj-result .cpbj-number {
+      font-size: 1.8rem; font-weight: 800; line-height: 1;
+    }
+    .visual-cpbj-scenario.good .cpbj-number { color: #16a34a; }
+    .visual-cpbj-scenario.bad .cpbj-number { color: #dc2626; }
+    .visual-cpbj-result .cpbj-label {
+      font-size: 0.75rem; color: #64748b; font-weight: 500; margin-top: 2px;
+    }
+
+    /* ── Callout Box ── */
+    .visual-callout {
+      background: #f0fdfa;
+      border-left: 4px solid #0ea5a4;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #0f2d4e;
+      line-height: 1.6;
+    }
+    .visual-callout strong { color: #0ea5a4; }
+
+    /* ── Mobile Responsive ── */
+    @media (max-width: 768px) {
+      .visual-component { padding: 1.5rem 1rem; }
+      .visual-component-title { font-size: 1rem; }
+      .visual-pyramid-row { padding: 8px 12px; font-size: 0.78rem; }
+      .visual-pyramid-row .pyramid-badge { font-size: 0.62rem; padding: 2px 6px; }
+      .visual-response-label { min-width: 80px; font-size: 0.75rem; }
+      .visual-response-fill { font-size: 0.7rem; padding: 0 8px; }
+      .visual-response-impact { min-width: 70px; font-size: 0.68rem; }
+      .visual-bidmode { grid-template-columns: 1fr; }
+      .visual-profile-checklist { grid-template-columns: 1fr; }
+      .visual-cpbj { flex-direction: column; }
+      .calc-cta-inline { flex-direction: column; text-align: center; }
+      .calc-cta-inline .calc-cta-text { min-width: 0; }
+      .calc-cta-inline a.calc-cta-btn { width: 100%; text-align: center; box-sizing: border-box; }
+    }
+    @media (max-width: 480px) {
+      .visual-pyramid-row { padding: 7px 10px; font-size: 0.72rem; gap: 6px; }
+      .visual-pyramid-row .pyramid-rank { width: 22px; height: 22px; font-size: 0.65rem; }
+      .visual-pyramid-row .pyramid-badge { display: none; }
+      .visual-response-row { flex-wrap: wrap; }
+      .visual-response-label { min-width: 100%; text-align: left; font-size: 0.72rem; }
+      .visual-response-impact { min-width: 100%; text-align: left; margin-top: -4px; }
+      .visual-cpbj-scenario { min-width: 0; }
+    }
   </style>
 </head>
 
@@ -401,6 +712,10 @@
         <p>
           Your LSA position determines how many calls you get. The business in spot one gets the majority of leads. Spots two and three split the rest. Below that, you're mostly invisible. If you're running Local Services Ads but not ranking in the top three, you're paying for a product that isn't working as hard as it should. This guide breaks down every confirmed LSA ranking factor, what Google actually weighs, and the specific actions you can take to move up.
         </p>
+
+        <div class="visual-callout">
+          <strong>Looking for the full strategy playbook?</strong> This page is a factor-by-factor reference guide. For a week-by-week improvement plan with advanced tactics, see our in-depth guide on <a href="/how-to-rank-number-1-google-local-services-ads">how to rank #1 in Google Local Services Ads</a>.
+        </div>
 
         <!-- HERO IMAGE -->
         <img src="/assets/images/blog/google-lsa-ranking-factors/lsa-ranking-factors-hero.png"
@@ -479,13 +794,55 @@
           </tbody>
         </table>
 
+        <!-- Visual: Ranking Factor Impact Pyramid -->
+        <div class="visual-component" role="img" aria-label="Pyramid chart showing the seven Google LSA ranking factors ordered by impact level from highest to lowest">
+          <div class="visual-component-title">LSA Ranking Factors by Impact Level</div>
+          <div class="visual-pyramid-stack">
+            <div class="visual-pyramid-row" style="width:100%; background: linear-gradient(135deg, #0f2d4e, #1a4a7a);">
+              <span class="pyramid-rank">1</span>
+              <span class="pyramid-name">Reviews (Volume, Rating, Recency)</span>
+              <span class="pyramid-badge">Very High</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:92%; background: linear-gradient(135deg, #0b6e6d, #0ea5a4);">
+              <span class="pyramid-rank">2</span>
+              <span class="pyramid-name">Response Speed (Calls + Messages)</span>
+              <span class="pyramid-badge">Very High</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:84%; background: linear-gradient(135deg, #0e7490, #06b6d4);">
+              <span class="pyramid-rank">3</span>
+              <span class="pyramid-name">Bid Mode + Weekly Budget</span>
+              <span class="pyramid-badge">High</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:76%; background: linear-gradient(135deg, #1d7a54, #22c55e);">
+              <span class="pyramid-rank">4</span>
+              <span class="pyramid-name">Profile Completeness + Photos</span>
+              <span class="pyramid-badge">Med-High</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:68%; background: linear-gradient(135deg, #65730e, #a3e635);">
+              <span class="pyramid-rank">5</span>
+              <span class="pyramid-name">Services + Job Types Enabled</span>
+              <span class="pyramid-badge">Med-High</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:60%; background: linear-gradient(135deg, #b45309, #f59e0b);">
+              <span class="pyramid-rank">6</span>
+              <span class="pyramid-name">Messaging Enabled</span>
+              <span class="pyramid-badge">Medium</span>
+            </div>
+            <div class="visual-pyramid-row" style="width:52%; background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+              <span class="pyramid-rank">7</span>
+              <span class="pyramid-name">GBP Accuracy + NAP</span>
+              <span class="pyramid-badge">Medium</span>
+            </div>
+          </div>
+        </div>
+
         <!-- CALCULATOR CTA INLINE -->
         <div class="calc-cta-inline">
           <div class="calc-cta-text">
             <strong>Want to run the numbers for your business?</strong><br>
-            Use our free LSA ROI Calculator to estimate your cost per lead, booked jobs, and return on ad spend by industry and market — in seconds.
+            Use our free LSA ROI Calculator to estimate your cost per lead, booked jobs, and return on ad spend by industry and market in seconds.
           </div>
-          <a class='calc-cta-btn' href='/lsa-roi-calculator'>Try the Free Calculator →</a>
+          <a class='calc-cta-btn' href='/lsa-roi-calculator'>Try the Free Calculator &rarr;</a>
         </div>
 
         <h2 id="how-auction-works">How Google's LSA Auction Actually Works</h2>
@@ -522,16 +879,83 @@
           <li><strong>Use call forwarding or an answering service</strong> — if you can't always answer directly, route calls to a live person rather than voicemail.</li>
         </ul>
 
+        <!-- Visual: Response Time Impact Chart -->
+        <div class="visual-component" role="img" aria-label="Bar chart showing how call answer speed affects Google LSA ranking placement">
+          <div class="visual-component-title">How Response Speed Affects Your LSA Placement</div>
+          <div class="visual-response-chart">
+            <div class="visual-response-row">
+              <span class="visual-response-label">&lt; 15 seconds</span>
+              <div class="visual-response-track">
+                <div class="visual-response-fill" style="width:100%; background: linear-gradient(90deg, #16a34a, #22c55e);">Top 3 placement</div>
+              </div>
+              <span class="visual-response-impact" style="color:#16a34a;">Maximum boost</span>
+            </div>
+            <div class="visual-response-row">
+              <span class="visual-response-label">15s to 2 min</span>
+              <div class="visual-response-track">
+                <div class="visual-response-fill" style="width:72%; background: linear-gradient(90deg, #0ea5a4, #2dd4bf);">Competitive</div>
+              </div>
+              <span class="visual-response-impact" style="color:#0ea5a4;">Good standing</span>
+            </div>
+            <div class="visual-response-row">
+              <span class="visual-response-label">2 to 5 min</span>
+              <div class="visual-response-track">
+                <div class="visual-response-fill" style="width:42%; background: linear-gradient(90deg, #eab308, #facc15);">Below average</div>
+              </div>
+              <span class="visual-response-impact" style="color:#ca8a04;">Ranking slips</span>
+            </div>
+            <div class="visual-response-row">
+              <span class="visual-response-label">5+ min / missed</span>
+              <div class="visual-response-track">
+                <div class="visual-response-fill" style="width:18%; background: linear-gradient(90deg, #dc2626, #ef4444);">Penalty</div>
+              </div>
+              <span class="visual-response-impact" style="color:#dc2626;">Active demotion</span>
+            </div>
+          </div>
+          <p style="font-size:0.78rem; color:#64748b; font-style:italic; text-align:center; margin: 12px 0 0;">Based on observed ranking patterns across hundreds of LSA accounts. A single bad week of missed calls can take 2 to 3 weeks of perfect answering to recover from.</p>
+        </div>
+
         <h2 id="bid-mode">Factor 3: Bid Mode and Budget</h2>
         <p>
-          Your bid is a direct input into the LSA auction. Google offers two modes: Maximize Leads and Max Per Lead. Google's own documentation recommends Maximize Leads for most businesses — it lets the algorithm set bids dynamically to get the most leads within your budget, rather than capping each lead at a fixed price that can artificially suppress your volume.
+          Your bid is a direct input into the LSA auction. Google offers two modes: Maximize Leads and Max Per Lead. Google's own documentation recommends Maximize Leads for most businesses. It lets the algorithm set bids dynamically to get the most leads within your budget, rather than capping each lead at a fixed price that can suppress your volume.
         </p>
         <p>
-          Budget pacing matters too. If your weekly budget runs out mid-week, your ads stop showing entirely. Competitors with more consistent pacing capture the leads you miss. Start with a budget that won't exhaust before the week ends, then scale based on actual lead quality. For trade-specific guidance on running LSA alongside Google Ads together efficiently, the <a href="/plumbing-ads-playbook-google-local-services-ads">Plumbing Ads Playbook</a> walks through the full combined strategy with worked examples.
+          Budget pacing matters too. If your weekly budget runs out mid-week, your ads stop showing entirely. Competitors with more consistent pacing capture the leads you miss. Start with a budget that won't exhaust before the week ends, then scale based on actual lead quality. For trade-specific guidance on running LSA alongside Google Ads, the <a href="/google-ads-vs-local-services-ads-contractors">Google Ads vs. LSA comparison for contractors</a> breaks down when to use each channel. The <a href="/plumbing-ads-playbook-google-local-services-ads">Plumbing Ads Playbook</a> walks through a combined strategy with worked examples.
         </p>
+
+        <!-- Visual: Bid Mode Comparison -->
+        <div class="visual-component" role="img" aria-label="Side by side comparison of Google LSA Maximize Leads bid mode versus Max Per Lead bid mode">
+          <div class="visual-component-title">Bid Mode Comparison: Which Should You Use?</div>
+          <div class="visual-bidmode">
+            <div class="visual-bidmode-card recommended">
+              <span class="card-badge">Recommended</span>
+              <h4>Maximize Leads</h4>
+              <p class="card-desc">Google sets your bid dynamically per auction to get the most leads within your weekly budget.</p>
+              <ul>
+                <li>Higher lead volume at same budget</li>
+                <li>Algorithm optimizes bid per search</li>
+                <li>Best for most businesses</li>
+                <li>Adapts to competitive pressure automatically</li>
+              </ul>
+            </div>
+            <div class="visual-bidmode-card">
+              <span class="card-badge">Use with caution</span>
+              <h4>Max Per Lead</h4>
+              <p class="card-desc">You set a ceiling on what you'll pay per lead. Google won't bid above your cap.</p>
+              <ul>
+                <li>Lower lead volume (Google limits delivery)</li>
+                <li>Useful only if your margins are very tight</li>
+                <li>Risk of ads not showing if cap is too low</li>
+                <li>Doesn't adapt to auction dynamics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <ul>
-          <li><strong>Switch to Maximize Leads</strong> if you're currently on manual Max Per Lead bidding — this alone can lift lead volume without changing anything else.</li>
-          <li><strong>Review your weekly spend cap</strong> — if you're hitting it early, either increase budget or narrow your service area to concentrate spend on your best territory.</li>
+          <li><strong>Switch to Maximize Leads</strong> if you're currently on manual Max Per Lead bidding. This alone can lift lead volume without changing anything else.</li>
+          <li><strong>Review your weekly spend cap</strong> each Monday. If you're hitting it by Wednesday or Thursday, either increase budget or narrow your service area to concentrate spend on your best territory.</li>
+          <li><strong>Don't chase the cheapest leads.</strong> A $60 lead that books a $3,000 job is far more valuable than a $25 lead that ghosts you. Track cost per booked job, not cost per lead. Our guide on <a href="/how-much-does-google-lsa-cost">how much LSA actually costs by industry</a> has detailed CPL benchmarks.</li>
         </ul>
 
         <h2 id="profile-completeness">Factor 4: Profile Completeness and Photos</h2>
@@ -546,6 +970,60 @@
           <li><strong>Fill out your business description fully</strong> — describe what you do, where you serve, and why customers choose you in natural language.</li>
           <li><strong>Complete every available profile field</strong> — hours, service areas, business attributes. Incomplete fields are a ranking disadvantage.</li>
         </ul>
+
+        <!-- Visual: Profile Completeness Scorecard -->
+        <div class="visual-component" role="img" aria-label="Interactive checklist showing the elements of a complete Google LSA profile">
+          <div class="visual-component-title">LSA Profile Completeness Scorecard</div>
+          <p style="font-size:0.82rem; color:#64748b; text-align:center; margin: -8px 0 16px;">Click each item as you complete it. Your progress is saved automatically.</p>
+          <div class="visual-profile-checklist" id="profileChecklist">
+            <div class="visual-profile-item" data-idx="0">
+              <span class="profile-check"></span>
+              <span class="profile-text">5+ real photos (team, jobs, vehicles)</span>
+            </div>
+            <div class="visual-profile-item" data-idx="1">
+              <span class="profile-check"></span>
+              <span class="profile-text">Business description filled out</span>
+            </div>
+            <div class="visual-profile-item" data-idx="2">
+              <span class="profile-check"></span>
+              <span class="profile-text">All service areas defined</span>
+            </div>
+            <div class="visual-profile-item" data-idx="3">
+              <span class="profile-check"></span>
+              <span class="profile-text">Business hours set and accurate</span>
+            </div>
+            <div class="visual-profile-item" data-idx="4">
+              <span class="profile-check"></span>
+              <span class="profile-text">All job types enabled</span>
+            </div>
+            <div class="visual-profile-item" data-idx="5">
+              <span class="profile-check"></span>
+              <span class="profile-text">Messaging turned on</span>
+            </div>
+            <div class="visual-profile-item" data-idx="6">
+              <span class="profile-check"></span>
+              <span class="profile-text">Google Business Profile linked</span>
+            </div>
+            <div class="visual-profile-item" data-idx="7">
+              <span class="profile-check"></span>
+              <span class="profile-text">License + insurance uploaded</span>
+            </div>
+            <div class="visual-profile-item" data-idx="8">
+              <span class="profile-check"></span>
+              <span class="profile-text">Background check complete</span>
+            </div>
+            <div class="visual-profile-item" data-idx="9">
+              <span class="profile-check"></span>
+              <span class="profile-text">NAP matches GBP exactly</span>
+            </div>
+          </div>
+          <div class="visual-profile-progress">
+            <div class="visual-profile-bar"><div class="visual-profile-bar-fill" id="profileBarFill"></div></div>
+            <span class="visual-profile-pct" id="profilePct">0% complete</span>
+          </div>
+        </div>
+
+        <p>For a step-by-step walkthrough of the full verification and setup process (including what documents you need), see our guide on <a href="/how-to-get-google-guaranteed">how to get Google Verified</a>.</p>
 
         <h2 id="services-enabled">Factor 5: Services and Job Types Enabled</h2>
         <p>
@@ -620,12 +1098,46 @@
         <ol>
           <li>Check your LSA dashboard weekly for missed calls, response rate, and lead volume trends.</li>
           <li>Log every lead outcome (booked job, no answer, spam, out of service area) so you can calculate your true cost per booked job — not just cost per lead.</li>
-          <li>Dispute invalid leads promptly inside the LSA dashboard. Google has a defined window for disputes — don't let credits expire.</li>
+          <li>Dispute invalid leads promptly inside the LSA dashboard. Google has a defined window for disputes. Our guide on <a href="/why-local-services-ads-leads-get-disputed">why LSA leads get disputed</a> covers the full process and what qualifies.</li>
           <li>Track your review velocity month over month. If new reviews slow down, your ranking will follow.</li>
         </ol>
 
         <p>
-          The number most home service businesses skip is cost per booked job by lead source. Your LSA dashboard shows cost per lead. Your job close process tells you how many of those leads became actual work. Divide your total LSA spend by booked jobs — not just leads contacted — and you have the metric that actually tells you whether the channel is profitable. Review this weekly. If your cost per booked job is rising, the issue is usually one of three things: call answer rate dropping, review velocity slowing, or a service area mismatch bringing in leads outside your most profitable zones.
+          The number most home service businesses skip is cost per booked job. Your LSA dashboard shows cost per lead. Your job close process tells you how many of those leads became actual work. Divide your total LSA spend by booked jobs and you have the metric that actually tells you whether the channel is profitable.
+        </p>
+
+        <!-- Visual: CPBJ Worked Example -->
+        <div class="visual-component" role="img" aria-label="Side by side comparison showing how call answer rate impacts cost per booked job">
+          <div class="visual-component-title">Cost Per Booked Job: Why Call Answer Rate Matters</div>
+          <div class="visual-cpbj">
+            <div class="visual-cpbj-scenario good">
+              <div class="scenario-label">Optimized Account</div>
+              <div class="visual-cpbj-row"><span>Weekly LSA Spend</span><strong>$2,000</strong></div>
+              <div class="visual-cpbj-row"><span>Total Leads</span><strong>40</strong></div>
+              <div class="visual-cpbj-row"><span>Call Answer Rate</span><strong>95%</strong></div>
+              <div class="visual-cpbj-row"><span>Booked Jobs</span><strong>12</strong></div>
+              <div class="visual-cpbj-result">
+                <div class="cpbj-number">$167</div>
+                <div class="cpbj-label">Cost Per Booked Job</div>
+              </div>
+            </div>
+            <div class="visual-cpbj-scenario bad">
+              <div class="scenario-label">Same Budget, Missed Calls</div>
+              <div class="visual-cpbj-row"><span>Weekly LSA Spend</span><strong>$2,000</strong></div>
+              <div class="visual-cpbj-row"><span>Total Leads</span><strong>40</strong></div>
+              <div class="visual-cpbj-row"><span>Call Answer Rate</span><strong>60%</strong></div>
+              <div class="visual-cpbj-row"><span>Booked Jobs</span><strong>5</strong></div>
+              <div class="visual-cpbj-result">
+                <div class="cpbj-number">$400</div>
+                <div class="cpbj-label">Cost Per Booked Job</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.78rem; color:#64748b; font-style:italic; text-align:center; margin: 12px 0 0;">Same spend, same lead volume. The only difference is how many calls get answered. Missed calls compound: fewer bookings AND a ranking penalty that reduces future lead volume.</p>
+        </div>
+
+        <p>
+          Review this weekly. If your cost per booked job is rising, the issue is usually one of three things: call answer rate dropping, review velocity slowing, or a service area mismatch bringing in leads outside your most profitable zones. For a deeper look at expected lead volume and what to budget, see <a href="/how-many-leads-google-local-services-ads">how many leads LSA actually generates by budget tier</a>.
         </p>
 
         <h2 id="faq">FAQ</h2>
@@ -681,16 +1193,25 @@
           <a href="/Free-LSA-audit">Request Audit</a>
         </div>
         <div class="sidebar-card">
-          <h3>More LSA Guides</h3>
+          <h3>Pillar Guides</h3>
           <ul>
-            <li><a href="/google-lsa-for-hvac-companies">Google LSA for HVAC Companies</a></li>
+            <li><a href="/how-to-rank-number-1-google-local-services-ads">How to Rank #1 in LSA</a></li>
+            <li><a href="/how-many-leads-google-local-services-ads">How Many Leads Does LSA Generate?</a></li>
+            <li><a href="/google-ads-vs-local-services-ads-contractors">Google Ads vs. LSA for Contractors</a></li>
+            <li><a href="/how-to-get-google-guaranteed">How to Get Google Verified</a></li>
+            <li><a href="/why-local-services-ads-leads-get-disputed">Why LSA Leads Get Disputed</a></li>
+            <li><a href="/how-much-does-google-lsa-cost">How Much Does Google LSA Cost?</a></li>
+            <li><a href="/lsa-no-calls-guide">Why You’re Not Getting LSA Calls</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Industry Guides</h3>
+          <ul>
+            <li><a href="/google-lsa-for-hvac-companies">Google LSA for HVAC</a></li>
             <li><a href="/google-lsa-for-roofers">Google LSA for Roofers</a></li>
             <li><a href="/google-lsa-for-electricians">Google LSA for Electricians</a></li>
-            <li><a href="/google-lsa-for-water-damage-restoration">Google LSA for Water Damage Restoration</a></li>
-            <li><a href="/lsa-no-calls-guide">Why You’re Not Getting LSA Calls</a></li>
-            <li><a href="/google-ads-vs-lsa-plumbers">Google Ads vs. LSA for Plumbers</a></li>
-            <li><a href="/plumbing-ads-playbook-google-local-services-ads">Plumbing Ads Playbook</a></li>
-            <li><a href="/how-much-does-google-lsa-cost">How Much Does Google LSA Cost?</a></li>
+            <li><a href="/google-lsa-for-plumbers">Google LSA for Plumbers</a></li>
+            <li><a href="/google-lsa-for-water-damage-restoration">Google LSA for Water Damage</a></li>
             <li><a href="/google-lsa-for-pest-control">Google LSA for Pest Control</a></li>
             <li><a href="/google-lsa-for-appliance-repair">Google LSA for Appliance Repair</a></li>
             <li><a href="/google-lsa-for-landscaping">Google LSA for Landscaping</a></li>
@@ -722,5 +1243,37 @@
   });
 </script>
 
+<script>
+  // Interactive profile completeness checklist
+  (function() {
+    var KEY = 'bgm-rf-profile';
+    var items = document.querySelectorAll('#profileChecklist .visual-profile-item');
+    var total = items.length;
+    var saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY)) || []; } catch(e) {}
+
+    function updateBar() {
+      var count = document.querySelectorAll('#profileChecklist .visual-profile-item.checked').length;
+      var pct = Math.round((count / total) * 100);
+      var fill = document.getElementById('profileBarFill');
+      var label = document.getElementById('profilePct');
+      if (fill) fill.style.width = pct + '%';
+      if (label) label.textContent = pct + '% complete' + (pct === 100 ? ' — your profile is fully optimized!' : '');
+    }
+
+    items.forEach(function(item) {
+      var idx = parseInt(item.getAttribute('data-idx'));
+      if (saved.indexOf(idx) !== -1) item.classList.add('checked');
+      item.addEventListener('click', function() {
+        item.classList.toggle('checked');
+        var state = [];
+        items.forEach(function(el) { if (el.classList.contains('checked')) state.push(parseInt(el.getAttribute('data-idx'))); });
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+        updateBar();
+      });
+    });
+    updateBar();
+  })();
+</script>
 </body>
 </html>
