@@ -960,6 +960,100 @@
       color: #0f172a;
       line-height: 1.4;
     }
+
+    /* ═══════════════════════════════════════════
+       MOBILE RESPONSIVENESS
+    ════════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+      .article-content h1 { font-size: 1.55rem; line-height: 1.25; }
+      .article-content h2 { font-size: 1.25rem; margin-top: 36px; }
+      .article-content h3 { font-size: 1.02rem; }
+      .topic-bar-wrap { font-size: 0.82rem; line-height: 1.6; }
+      .cta-box { padding: 1.75rem 1.25rem; }
+      .cta-box h2 { font-size: 1.25rem !important; }
+      .toc-box { padding: 1.25rem 1rem; }
+      .calc-cta-inline { padding: 1rem; }
+      .calc-cta-inline .calc-cta-text { min-width: 0; }
+      .callout, .callout-yellow { padding: 0.85rem 1rem; font-size: 0.9rem; }
+      .stat-card .stat-number { font-size: 1.5rem; }
+
+      /* Visual components — reduce padding */
+      .visual-pyramid,
+      .visual-bar-chart,
+      .visual-scorecard,
+      .visual-comparison,
+      .visual-badge-transition,
+      .visual-timeline { padding: 1.5rem 1rem; }
+      .visual-component-title { font-size: 1rem; }
+
+      /* Pyramid — full width bars on mobile */
+      .visual-pyramid-bar { width: 100% !important; }
+
+      /* Scorecard ring */
+      .visual-score-ring { width: 110px; height: 110px; }
+      .visual-score-ring-inner { width: 86px; height: 86px; }
+      .visual-score-number { font-size: 1.6rem; }
+      .visual-score-details { min-width: 0; }
+      .visual-bench-label { min-width: 60px; }
+    }
+
+    @media (max-width: 480px) {
+      .article-content h1 { font-size: 1.35rem; }
+      .article-content h2 { font-size: 1.15rem; }
+      .cta-box { padding: 1.5rem 1rem; }
+      .cta-box h2 { font-size: 1.15rem !important; }
+      .cta-btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+      .article-breadcrumb { font-size: 0.72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+      /* Visual components — further reduce padding */
+      .visual-pyramid,
+      .visual-bar-chart,
+      .visual-scorecard,
+      .visual-comparison,
+      .visual-badge-transition,
+      .visual-timeline { padding: 1.25rem 0.75rem; }
+
+      /* Pyramid bars — force full width on mobile to prevent text wrapping */
+      .visual-pyramid-bar { padding: 8px 10px; font-size: 0.78rem; width: 100% !important; }
+      .visual-pyramid-bar .bar-num { width: 20px; height: 20px; font-size: 0.65rem; margin-right: 6px; }
+      .visual-pyramid-bar .bar-impact { font-size: 0.6rem; margin-left: 6px; }
+
+      /* Bar chart */
+      .visual-bar-position { min-width: 70px; font-size: 0.75rem; }
+      .visual-bar-stars { min-width: 55px; font-size: 0.75rem; }
+      .visual-bar-track { height: 28px; }
+      .visual-bar-fill-text { font-size: 0.7rem; }
+
+      /* Badge cards */
+      .visual-badge-card { padding: 1rem; }
+      .visual-badge-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+
+      /* Timeline */
+      .visual-timeline-track { padding-left: 36px; }
+      .visual-timeline-dot { left: -36px; width: 28px; height: 28px; font-size: 0.7rem; }
+      .visual-timeline-track::before { left: 13px; }
+      .visual-timeline-content { padding: 10px 12px; }
+      .visual-timeline-desc { font-size: 0.82rem; }
+
+      /* Compare cards */
+      .visual-compare-card { padding: 1rem; }
+      .visual-compare-list li { font-size: 0.8rem; }
+
+      /* Table cells */
+      .article-content th,
+      .article-content td { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
+    }
+
+    @media (max-width: 380px) {
+      /* Extra narrow (iPhone SE) */
+      .visual-bar-row { flex-wrap: wrap; }
+      .visual-bar-position { min-width: 100%; text-align: left; margin-bottom: -4px; }
+      .visual-bar-stars { min-width: auto; }
+      .visual-pyramid-bar .bar-impact { display: none; }
+      .visual-scorecard-inner { gap: 1rem; }
+      .stat-card .stat-number { font-size: 1.3rem; }
+    }
   </style>
 </head>
 
