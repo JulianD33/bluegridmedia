@@ -14,6 +14,11 @@
 /blog/google-lsa-for-carpet-cleaning                  /google-lsa-for-carpet-cleaning                          301
 /blog/google-lsa-for-landscaping                      /google-lsa-for-landscaping                              301
 /blog/google-lsa-for-appliance-repair                 /google-lsa-for-appliance-repair                         301
+/blog/how-to-rank-number-1-google-local-services-ads /how-to-rank-number-1-google-local-services-ads           301
+/blog/how-many-leads-google-local-services-ads       /how-many-leads-google-local-services-ads                 301
+/blog/google-ads-vs-local-services-ads-contractors   /google-ads-vs-local-services-ads-contractors             301
+/blog/how-to-get-google-guaranteed                   /how-to-get-google-guaranteed                             301
+/blog/why-local-services-ads-leads-get-disputed      /why-local-services-ads-leads-get-disputed                301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -31,6 +36,11 @@
 /google-ads-vs-lsa-plumbers                        /blog/google-ads-vs-lsa-plumbers.html                        200
 /lsa-no-calls-guide                                /blog/lsa-no-calls-guide.html                                200
 /plumbing-ads-playbook-google-local-services-ads   /blog/plumbing-ads-playbook-google-local-services-ads.html   200
+/how-to-rank-number-1-google-local-services-ads    /blog/how-to-rank-number-1-google-local-services-ads.html    200
+/how-many-leads-google-local-services-ads          /blog/how-many-leads-google-local-services-ads.html          200
+/google-ads-vs-local-services-ads-contractors      /blog/google-ads-vs-local-services-ads-contractors.html      200
+/how-to-get-google-guaranteed                      /blog/how-to-get-google-guaranteed.html                      200
+/why-local-services-ads-leads-get-disputed         /blog/why-local-services-ads-leads-get-disputed.html         200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
