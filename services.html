@@ -91,43 +91,7 @@
     .pricing-card strong { color: var(--primary); }
     .pricing-details { font-size: 0.88rem; color: var(--text-light); margin-top: 10px; }
 
-    /* FAQ */
-    .faq-item {
-      background: white;
-      border-radius: 10px;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow-sm);
-      padding: 0 22px;
-      overflow: hidden;
-      border-left: 3px solid var(--accent);
-    }
-    .faq-item summary {
-      cursor: pointer;
-      padding: 18px 0;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      list-style: none;
-      position: relative;
-    }
-    .faq-item summary::marker { display: none; }
-    .faq-item summary::after {
-      content: "▼";
-      position: absolute;
-      right: 0; top: 18px;
-      font-size: 0.85rem;
-      color: var(--text-light);
-      transition: transform 0.2s ease;
-    }
-    .faq-item[open] summary::after { transform: rotate(180deg); }
-    .faq-item p { padding-bottom: 18px; margin-top: 0; color: var(--text-light); line-height: 1.65; }
-
-    .faq-section {
-      background: linear-gradient(150deg, #0f2d4e 0%, var(--primary) 55%, #1d5fa0 100%);
-      padding: 72px 20px;
-    }
-    .faq-section h2 { color: white; margin-bottom: 36px; }
-    .faq-container  { max-width: 900px; margin: 0 auto; }
+    /* FAQ styles now in shared style.css */
 
     @media (max-width: 640px) {
       .pricing-card { flex-direction: column; gap: 16px; }

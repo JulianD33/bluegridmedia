@@ -228,7 +228,7 @@ body {
 header {
   background: linear-gradient(150deg, #0f2d4e 0%, var(--primary) 55%, #1d5fa0 100%);
   color: white;
-  padding: 90px 0 80px;
+  padding: 56px 0 90px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -257,16 +257,16 @@ header .container { position: relative; z-index: 1; }
 header .logo-container { display: none; }
 
 header h1 {
-  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.13;
   letter-spacing: -0.025em;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 header p {
-  font-size: clamp(1rem, 2vw, 1.18rem);
-  margin-bottom: 38px;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: 28px;
   opacity: 0.88;
   max-width: 720px;
   margin-left: auto;
@@ -632,6 +632,7 @@ h2 {
 /* Prevent section-level link color rules from bleeding into buttons */
 a.btn-primary { color: white !important; }
 a.btn-secondary { color: white !important; }
+a.btn-secondary.light { color: var(--primary) !important; }
 
 .section-divider {
   max-width: 80px;
@@ -1021,6 +1022,282 @@ footer.site-footer .footer-links { display: none !important; }
   header h1 { font-size: 1.65rem; line-height: 1.25; }
   header p  { font-size: 0.92rem; }
 }
+/* =========================
+   Homepage Stats Bar
+   ========================= */
+.homepage-stats {
+  padding: 72px 0;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+.homepage-stats .results-stats { margin-top: 0; }
+.homepage-stats .stat-card {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.homepage-stats .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+.stats-source {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+.stats-source a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.stats-source a:hover { border-color: var(--primary); }
+
+/* =========================
+   Industries Grid
+   ========================= */
+.industries-section {
+  padding: 90px 0;
+  background: white;
+}
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 44px;
+}
+.industry-card {
+  background: var(--bg-light);
+  padding: 28px 18px;
+  border-radius: var(--radius);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1.5px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+.industry-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  color: white;
+}
+.industry-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.industry-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================
+   Case Study Showcase
+   ========================= */
+.case-study-section {
+  padding: 90px 0;
+  background: var(--bg-light);
+}
+.case-study-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-top: 44px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.case-study-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  padding: 36px 28px;
+  gap: 20px;
+}
+.case-metric { text-align: center; color: white; }
+.case-metric-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.case-metric-label {
+  display: block;
+  font-size: 0.88rem;
+  opacity: 0.88;
+  line-height: 1.4;
+}
+.case-study-summary { padding: 36px 32px; }
+.case-study-summary h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  text-align: left;
+}
+.case-study-summary ul { list-style: none; padding: 0; }
+.case-study-summary li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  color: var(--text-body);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+.case-study-summary li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================
+   FAQ Section (shared)
+   ========================= */
+.faq-section {
+  background: linear-gradient(150deg, #0f2d4e 0%, var(--primary) 55%, #1d5fa0 100%);
+  padding: 90px 20px;
+}
+.faq-section h2 { color: white; margin-bottom: 36px; }
+.faq-container { max-width: 900px; margin: 0 auto; }
+.faq-item {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 0 22px;
+  overflow: hidden;
+  border-left: 3px solid var(--accent);
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 18px 28px 18px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  list-style: none;
+  position: relative;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
+.faq-item summary::after {
+  content: "\25BC";
+  position: absolute;
+  right: 0;
+  top: 18px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(180deg); }
+.faq-item p {
+  padding-bottom: 18px;
+  margin-top: 0;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+.faq-item a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.faq-item a:hover { text-decoration: underline; }
+
+/* =========================
+   Resources Hub
+   ========================= */
+.resources-hub-section {
+  padding: 90px 0;
+  background: var(--bg-light);
+}
+.resources-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 44px;
+}
+.resource-link-card {
+  background: white;
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  border-top: 3px solid var(--accent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: block;
+}
+.resource-link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.resource-link-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--bg-subtle);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.resource-link-card h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  text-align: left;
+}
+.resource-link-card p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================
+   Homepage Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .homepage-stats { padding: 48px 0; }
+  .industries-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+  }
+  .industry-card { padding: 20px 14px; }
+  .case-study-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 28px 20px;
+  }
+  .case-study-summary { padding: 28px 24px; }
+  .resources-hub-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-metric-number { font-size: 1.8rem; }
+  .case-study-metrics { gap: 16px; }
+}
+
 /* ---------- Results layout fixes (drop at end of style.css or <style>) ---------- */
 
 /* Give the results section horizontal breathing room so cards don't look "cut" */
@@ -1068,9 +1345,9 @@ footer.site-footer .footer-links { display: none !important; }
   margin-top: 0;            /* make first panel sit closer to the header */
 }
 
-/* If the header is creating too much space, reduce it slightly on medium screens */
+/* Reduce header padding on calculator pages only */
 @media (min-width: 768px) {
-  header { padding: 28px 0; }  /* down from 35px */
+  .calculator-page header { padding: 28px 0; }
 }
 @media (max-width: 767px) {
   .results-section { padding: 0 14px; }
