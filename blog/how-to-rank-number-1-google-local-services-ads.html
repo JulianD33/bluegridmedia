@@ -627,8 +627,8 @@
       justify-content: center;
     }
     .visual-score-ring {
-      width: 140px;
-      height: 140px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       background: conic-gradient(#16a34a 0% 92%, #e2e8f0 92% 100%);
       display: flex;
@@ -637,17 +637,18 @@
       flex-shrink: 0;
     }
     .visual-score-ring-inner {
-      width: 110px;
-      height: 110px;
+      width: 136px;
+      height: 136px;
       border-radius: 50%;
       background: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 8px;
     }
     .visual-score-number {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 800;
       color: #16a34a;
       line-height: 1;
@@ -658,12 +659,14 @@
       color: #16a34a;
     }
     .visual-score-label {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 600;
       color: #64748b;
-      margin-top: 4px;
+      margin-top: 2px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1.3;
     }
     .visual-score-details {
       flex: 1;
@@ -992,9 +995,9 @@
       .visual-pyramid-bar { width: 100% !important; }
 
       /* Scorecard ring */
-      .visual-score-ring { width: 110px; height: 110px; }
-      .visual-score-ring-inner { width: 86px; height: 86px; }
-      .visual-score-number { font-size: 1.6rem; }
+      .visual-score-ring { width: 140px; height: 140px; }
+      .visual-score-ring-inner { width: 112px; height: 112px; padding: 6px; }
+      .visual-score-number { font-size: 1.8rem; }
       .visual-score-details { min-width: 0; }
       .visual-bench-label { min-width: 60px; }
     }
@@ -1041,6 +1044,12 @@
       .visual-compare-card { padding: 1rem; }
       .visual-compare-list li { font-size: 0.8rem; }
 
+      /* Scorecard ring — 480px */
+      .visual-score-ring { width: 120px; height: 120px; }
+      .visual-score-ring-inner { width: 96px; height: 96px; padding: 4px; }
+      .visual-score-number { font-size: 1.5rem; }
+      .visual-score-label { font-size: 0.58rem; letter-spacing: 0.3px; }
+
       /* Table cells */
       .article-content th,
       .article-content td { padding: 0.5rem 0.65rem; font-size: 0.82rem; }
@@ -1054,6 +1063,9 @@
       .visual-pyramid-bar .bar-impact { display: none; }
       .visual-scorecard-inner { gap: 1rem; }
       .stat-card .stat-number { font-size: 1.3rem; }
+      .visual-score-ring { width: 110px; height: 110px; }
+      .visual-score-ring-inner { width: 88px; height: 88px; }
+      .visual-score-number { font-size: 1.3rem; }
     }
   </style>
 </head>
