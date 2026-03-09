@@ -647,7 +647,7 @@ a.btn-secondary.light { color: var(--primary) !important; }
    CTA section
    ========================= */
 .cta-section {
-  padding: 100px 0;
+  padding: 72px 0;
   background: linear-gradient(150deg, #0f2d4e 0%, var(--primary) 55%, #1d5fa0 100%);
   color: white;
   text-align: center;
