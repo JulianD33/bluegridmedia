@@ -85,3 +85,169 @@
 - 5 pillar article cards added to `resources.html` at the top of the grid (after calculator sections)
 - "New — Lead Disputes" tag on the latest pillar article (Why LSA Leads Get Disputed)
 - Previous "New" tag on "How Much Does Google LSA Cost?" changed to "LSA Pricing"
+
+---
+
+## Homepage Optimization (2026-03-08)
+
+### COMPLETED: Homepage SEO, Conversion & Design Overhaul
+Major changes to `index.html` and `style.css`:
+
+#### Hero Section
+- Bolded stat line: "28% more qualified leads. 15% lower cost per lead."
+- Two CTA buttons: "Get My Free LSA Audit" (primary) + "View Services & Pricing" (secondary)
+- Trust badges row: Google Verified, No Contracts, Qualified Leads, 7–10 Day Setup
+- Tagline: "Precision Ads. Real Results."
+
+#### Stats Bar (new section)
+- 4 animated counter cards: 28% More Leads, 15% Lower CPL, 4x ROAS, 40% More Booked Jobs
+- IntersectionObserver-powered counter animation
+- Source line linking to case study
+
+#### Services Section
+- 3 service cards with SVG icons: LSA Setup & Management, Profile Optimization, Call Audits & Optimization
+- Each card has internal links to relevant blog posts
+- "View All Services & Pricing" CTA button
+
+#### Industries Section
+- 11 industry cards in responsive grid with SVG icons
+- Heading: "Most Popular Industries on Local Services Ads"
+- Subtitle: "These are the trades we work with most — but we manage LSA for any Google-eligible service business"
+- "Don't see your industry? Contact us" line below grid
+- "Calculate Your LSA ROI" CTA button
+
+#### How It Works Section
+- 3-step process cards with numbered circles: Audit, Setup, Optimization
+
+#### Case Study Showcase Section
+- 4 metric cards (28%, 15%, $62, 4x) in gradient banner
+- Strategy bullet points + "Read the Full Case Study" CTA
+
+#### Eligibility Section
+- 3 requirement cards with icons: Documentation, Business Profile, Background Check
+- "Free Eligibility Check" highlight box
+
+#### About Section
+- Company description + "Why Contractors Trust Blue Grid Media"
+- Internal links to services, case studies, pricing, resources
+
+#### FAQ Section
+- 6 FAQ items using `<details>` elements
+- FAQPage schema in JSON-LD `@graph`
+- Each answer includes internal links to relevant pages
+
+#### Resources Hub Section (new)
+- 6 resource cards: Rank #1 Guide, Lead Volume Data, LSA Cost, Ranking Factors, No Calls Guide, ROI Calculator
+- Tag badges (Guide, Data, Pricing, Troubleshoot, Tool)
+
+#### CTA Section
+- "Get Your Free LSA Performance Review" with urgency line
+- Contact modal with form (name, email, phone, business type, message)
+- Netlify function form submission
+
+#### Schema Markup
+- `@graph` array: Organization, FAQPage (6 Qs), Service (with offers), WebSite
+- Open Graph + Twitter Card meta tags
+
+### COMPLETED: Homepage CSS (style.css additions)
+- Design tokens in `:root`: `--primary: #1a4b7a`, `--bg-light: #f5f7fa`, `--shadow`, `--radius-lg`, `--text-light`
+- Stats bar: `.homepage-stats`, `.results-stats`, `.stat-card`, `.stat-number`, `.stat-label`
+- Industries: `.industries-section`, `.industries-grid`, `.industry-card`, `.industry-icon`
+- Case study: `.case-study-section`, `.case-study-card`, `.case-study-metrics`, `.case-metric`
+- Eligibility: `.eligibility-section`, `.eligibility-grid`, `.eligibility-item`, `.eligibility-icon`
+- Resources hub: `.resources-hub-section`, `.resources-hub-grid`, `.resource-link-card`, `.resource-link-tag`
+- CTA: `.cta-section`, `.cta-buttons`, `.btn-primary`, `.btn-secondary`
+- Modal: `.modal`, `.modal-content`, `.contact-form`
+- Animations: `.fade-up` with IntersectionObserver, counter animations
+- Full responsive breakpoints at 768px, 600px
+
+---
+
+## Case Study Page Redesign (2026-03-08)
+
+### COMPLETED: Visual Overhaul of case-studies.html
+Complete redesign from plain text (~179 lines) to rich visual page (~680 lines):
+
+#### Layout
+- Two-column grid: main content (1fr) + sticky sidebar (300px)
+- Responsive: stacks to single column at 920px
+
+#### Visual Components
+- **Hero metrics strip**: 4 gradient cards (28% leads, 15% CPL reduction, $62 avg CPL, 4x ROAS)
+- **Overview box**: 2-column grid (Industry, Location, Timeline, Budget)
+- **Before/after bar charts**: CSS-only with gradient fills and percentage labels
+- **SVG donut chart**: Lead source breakdown (75% LSA, 15% referrals, 10% organic)
+- **Timeline diagram**: 4 optimization phases with connected dots
+- **Campaign structure tree**: 3 ad group branches from "Main LSA Campaign"
+- **Comparison table**: Week-by-week metrics (Weeks 1-2, 3-6, 7-12)
+- **Impact cards**: 3 cards with SVG icons showing key improvements
+- **Combined impact bar chart**: Before vs after comparison
+
+#### Sidebar
+- Sticky table of contents with numbered links
+- Quick stats box (5 key metrics)
+- CTA box: "Want Results Like These?"
+- Related resources (6 internal links)
+
+#### CSS
+- All styles in inline `<style>` tag (~400 lines)
+- Classes prefixed with `cs-` (e.g., `.cs-page`, `.cs-grid`, `.cs-main`, `.cs-sidebar`)
+- Responsive breakpoints: 920px, 700px, 600px, 520px, 420px
+
+---
+
+## Calculator FAQPage Schema Fix (2026-03-08)
+
+### COMPLETED: Fix Duplicate FAQPage on 200 City Calculator Pages
+Google Search Console reported "Duplicate field FAQPage" errors.
+
+#### Root Cause
+- City template (`templates/calculator-city-template.html`) had its own FAQPage (5 city-specific Qs)
+- Embedded iframe (`lsa-roi-calculator.html`) also had a FAQPage (7 generic Qs)
+- Google detected both → duplicate schema error
+
+#### Fix (two-pronged)
+1. **Merged FAQs in city template**: Combined into single FAQPage with 10 questions (5 city-specific + 5 generic from calculator)
+   - Added: "How do I estimate booked jobs from LSA?", "What is a good cost per lead?", "Why does cost per booked job matter more than CPL?", "How is ROAS calculated?", "How do I improve my LSA economics?"
+2. **Strip JSON-LD in iframe**: Added script to `lsa-roi-calculator.html` that removes all `<script type="application/ld+json">` tags when `?embed=1` parameter is present
+3. **Regenerated all 200 pages**: `node scripts/generate-city-calculator-pages.js`
+
+#### Result
+- Each city page: 1 FAQPage with 10 questions ✅
+- Iframe when embedded: 0 JSON-LD schemas ✅
+
+---
+
+## Homepage Spacing Fix (2026-03-08)
+
+### COMPLETED: Tighten Section Spacing Across Homepage
+Fixed excessive whitespace between sections and between headings/content.
+
+#### Changes in style.css
+- **Base section padding**: `90px 0` → `72px 0` (all sections)
+- **Industries section**: `90px 0` → `64px 0` (extra tight for small cards)
+- **Section-intro margin-bottom**: `52px` → `36px`
+- **All grid margin-tops**: `44-52px` → `8px` (section-intro already provides spacing)
+  - `.feature-grid`, `.industries-grid`, `.eligibility-grid`, `.results-stats`, `.case-study-card`, `.resources-hub-grid`
+
+#### Sections updated
+- `.feature-section`, `.process-section`, `.results-section`, `.eligibility-section`, `.about-section`, `.case-study-section`, `.resources-hub-section`, `.faq-section`, `.industries-section`
+
+---
+
+## Development Setup
+
+### Local Server
+- `server.js` — Node.js static file server on port 8181
+- `.claude/launch.json` — Preview server config (name: `dev`, port: 8181)
+- Start with: `node server.js` or use preview tool
+
+### Git Workflow
+- Work happens on worktree branch `claude/modest-jemison`
+- Worktree path: `.claude/worktrees/modest-jemison/`
+- **Cannot checkout main from worktree** — merge from main repo directory:
+  ```
+  cd "C:\Users\julia\OneDrive\Desktop\BGM - Repository Git\bluegridmedia"
+  git merge <commit-hash> --no-edit && git push origin main
+  ```
+- Deploy: push to `main` branch → Netlify auto-deploys
