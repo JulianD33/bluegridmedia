@@ -44,7 +44,7 @@
 - `/google-lsa-for-hvac-companies`
 - `/google-lsa-for-electricians`
 - `/google-lsa-for-roofers`
-- `/google-lsa-for-plumbers` (plumbing-ads-playbook)
+- `/plumbing-ads-playbook-google-local-services-ads`
 - `/google-lsa-for-pest-control`
 - `/google-lsa-for-landscaping`
 - `/google-lsa-for-carpet-cleaning`
