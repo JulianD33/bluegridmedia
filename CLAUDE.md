@@ -33,6 +33,23 @@
 - Link to relevant calculator pages where appropriate
 - Link to LSA hub pages where appropriate
 
+### New Blog Post Checklist
+Every new blog post MUST include ALL of the following steps:
+1. Create the HTML file in `/blog/` directory
+2. Add 301 redirect (`/blog/slug → /slug`) and 200 rewrite (`/slug → /blog/slug.html`) to `_redirects`
+3. Add the URL to `sitemap.xml` with appropriate priority and lastmod date
+4. Add a resource card to `resources.html` with correct thumbnail path
+5. Update the "Existing Blog Posts" list below in this file
+6. Generate and add hero image to `/assets/images/blog/[slug]/`
+
+### Tone & Writing Style
+- Write in a relatable, human tone that targets reader pain points
+- Make readers feel understood with "we get it" empathy moments
+- Add light humor where appropriate
+- Use contractor language, not corporate speak
+- AVOID em dashes (`&mdash;` or `—`), use commas, periods, or other natural punctuation instead
+- Vary section structure, don't repeat the same rigid format for every section
+
 ### URL Conventions
 - Blog post URLs do NOT include `.html` at the end
 - Blog post URLs do NOT require `/blog/` prefix — all posts work without it
