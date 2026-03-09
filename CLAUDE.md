@@ -61,6 +61,8 @@
 
 #### Pillar Articles (added 2026-03-07)
 - `/lsa-vs-thumbtack-vs-angi-contractors` — LSA vs. Thumbtack vs. Angi for Contractors (added 2026-03-09)
+- `/google-local-services-ads-not-working` — LSA Not Working? 12 Reasons + Fixes (added 2026-03-09)
+- `/google-lsa-review-strategy` — LSA Review Strategy: Get More Reviews, Rank Higher (added 2026-03-09)
 - `/how-to-rank-number-1-google-local-services-ads` — How to Rank #1 in Google LSA
 - `/how-many-leads-google-local-services-ads` — How Many Leads Do LSA Generate?
 - `/google-ads-vs-local-services-ads-contractors` — Google Ads vs. LSA for Contractors
@@ -269,6 +271,56 @@ Full comparison article — 1,454 lines, 6 visual components, FAQPage schema.
 - Added resource card to `resources.html` (top of pillar articles, "New — Comparison" tag)
 - Previous "New — Lead Disputes" tag changed to "Lead Disputes"
 - Image directory created: `/assets/images/blog/lsa-vs-thumbtack-vs-angi-contractors/` (hero image TBD)
+
+---
+
+## New Blog Posts: LSA Not Working + LSA Review Strategy (2026-03-09)
+
+### COMPLETED: `/google-local-services-ads-not-working`
+Troubleshooting guide — 1,246 lines, 6 visual components, FAQPage schema.
+
+#### Visual Components
+1. **Diagnostic flowchart**: "Is your LSA showing?" Yes/No decision tree
+2. **Impact severity cards**: Critical (red), Moderate (orange), Minor (green)
+3. **Fix timeline bar chart**: Recovery time for each of the 12 issues
+4. **Before/After metrics cards**: Lead volume, ranking, CPL changes after fixing top issues
+5. **Common mistakes comparison**: Wrong vs. right approaches (7 rows)
+6. **Response time impact chart**: Lead conversion rate at 5 response time intervals
+
+#### Content Sections
+- Quick Diagnostic Checklist (5 items)
+- 12 Reasons with diagnosis + fix for each
+- How to Contact LSA Support
+- When to Hire an LSA Management Agency
+- FAQ (6 questions)
+
+### COMPLETED: `/google-lsa-review-strategy`
+Review strategy deep-dive — 1,327 lines, 6 visual components, FAQPage schema.
+
+#### Visual Components
+1. **Review count impact chart**: Review ranges correlated with ranking positions
+2. **Star rating benchmark cards**: 4 tiers from Below 3.0 (paused) to 4.8+ (dominant)
+3. **Review velocity comparison**: Burst vs. consistent strategy side-by-side
+4. **Before/After metrics**: Contractor transformation (12→87 reviews, impact on leads/CPL)
+5. **Review request timing diagram**: 4-step optimal timing timeline
+6. **Common mistakes comparison**: What hurts vs. what helps (8 items each)
+
+#### Content Sections
+- Why Reviews Are the #1 LSA Ranking Factor
+- The Review Benchmarks That Matter (50+, 100+, 4.8★)
+- The GBP Review Merger: What Changed in 2025
+- 5-Step Review Collection System
+- How to Handle Negative Reviews
+- Review Velocity: Consistency Beats Bursts
+- Copy-Paste Templates (SMS, follow-up, response)
+- Common Review Strategy Mistakes
+
+#### Supporting Changes for Both Articles
+- Added to `sitemap.xml` with priority 0.7 and lastmod 2026-03-09
+- Added `_redirects` rules (301 redirects + 200 rewrites) for both slugs
+- Added 2 resource cards to `resources.html` (top of pillar articles, "New" tags)
+- Previous "New — Comparison" tag on LSA vs Thumbtack changed to "Comparison"
+- Image directories created for both articles (hero images TBD)
 
 ---
 
