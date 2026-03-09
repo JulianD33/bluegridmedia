@@ -60,6 +60,7 @@
 - `/lsa-no-calls-guide`
 
 #### Pillar Articles (added 2026-03-07)
+- `/lsa-vs-thumbtack-vs-angi-contractors` — LSA vs. Thumbtack vs. Angi for Contractors (added 2026-03-09)
 - `/how-to-rank-number-1-google-local-services-ads` — How to Rank #1 in Google LSA
 - `/how-many-leads-google-local-services-ads` — How Many Leads Do LSA Generate?
 - `/google-ads-vs-local-services-ads-contractors` — Google Ads vs. LSA for Contractors
@@ -232,6 +233,42 @@ Fixed excessive whitespace between sections and between headings/content.
 
 #### Sections updated
 - `.feature-section`, `.process-section`, `.results-section`, `.eligibility-section`, `.about-section`, `.case-study-section`, `.resources-hub-section`, `.faq-section`, `.industries-section`
+
+---
+
+## SEO Fixes (2026-03-09)
+
+### COMPLETED: robots.txt, Breadcrumb Schema, Orphan File Cleanup
+- **robots.txt**: Changed sitemap reference from `sitemap.xml` → `sitemap-index.xml` (unlocks 200 calculator pages for Google)
+- **resources.html**: Added BreadcrumbList JSON-LD schema (Home → Resources)
+- **Deleted**: `LP.html` (orphan landing page variant) and `4af92731-951c-4770-abcc-f2332abea9c3.html` (UUID test file)
+
+---
+
+## New Blog Post: LSA vs. Thumbtack vs. Angi (2026-03-09)
+
+### COMPLETED: `/lsa-vs-thumbtack-vs-angi-contractors`
+Full comparison article — 1,454 lines, 6 visual components, FAQPage schema.
+
+#### Visual Components
+1. **Platform flow cards**: 3-column comparison (LSA teal, Thumbtack navy, Angi orange)
+2. **Scorecard table**: Star ratings across 8 categories
+3. **Cost per booked job bar chart**: 3 industries × 3 platforms
+4. **Lead quality comparison cards**: 3-column with bullet points and icons
+5. **Pros/cons cards**: Checkmarks and X icons for each platform
+6. **Decision framework cards**: When to use each platform
+
+#### Key Data Points
+- LSA: $25-$80 CPL, 31% close rate, exclusive leads, Google Guaranteed badge
+- Thumbtack: $15-$150+ CPL, 18% close rate, shared with 4-5 contractors
+- Angi: $15-$100+ CPL + subscription, 12% close rate, shared with 2-4 contractors
+- Cost per booked job: LSA $168 vs Thumbtack $250 vs Angi $542
+
+#### Supporting Changes
+- Added to `sitemap.xml` with priority 0.7 and lastmod 2026-03-09
+- Added resource card to `resources.html` (top of pillar articles, "New — Comparison" tag)
+- Previous "New — Lead Disputes" tag changed to "Lead Disputes"
+- Image directory created: `/assets/images/blog/lsa-vs-thumbtack-vs-angi-contractors/` (hero image TBD)
 
 ---
 
