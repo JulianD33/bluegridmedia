@@ -22,6 +22,8 @@
 /blog/lsa-vs-thumbtack-vs-angi-contractors           /lsa-vs-thumbtack-vs-angi-contractors                     301
 /blog/google-local-services-ads-not-working          /google-local-services-ads-not-working                    301
 /blog/google-lsa-review-strategy                     /google-lsa-review-strategy                              301
+/blog/google-lsa-for-painters                        /google-lsa-for-painters                                 301
+/blog/google-lsa-for-handyman                        /google-lsa-for-handyman                                 301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -47,6 +49,8 @@
 /lsa-vs-thumbtack-vs-angi-contractors              /blog/lsa-vs-thumbtack-vs-angi-contractors.html              200
 /google-local-services-ads-not-working             /blog/google-local-services-ads-not-working.html             200
 /google-lsa-review-strategy                        /blog/google-lsa-review-strategy.html                        200
+/google-lsa-for-painters                           /blog/google-lsa-for-painters.html                           200
+/google-lsa-for-handyman                           /blog/google-lsa-for-handyman.html                           200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
