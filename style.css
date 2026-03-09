@@ -542,7 +542,7 @@ h2 {
 /* =========================
    Eligibility
    ========================= */
-.eligibility-section { padding: 72px 0; background: var(--bg-light); }
+.eligibility-section { padding: 48px 0; background: var(--bg-light); }
 .eligibility-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -591,7 +591,7 @@ h2 {
   padding: 32px;
   border-radius: var(--radius);
   text-align: center;
-  margin-top: 44px;
+  margin-top: 28px;
   font-size: 1.08rem;
   line-height: 1.65;
   box-shadow: 0 8px 28px rgba(26,74,122,0.25);
@@ -600,7 +600,7 @@ h2 {
 /* =========================
    About section
    ========================= */
-.about-section { padding: 72px 0; background: white; }
+.about-section { padding: 48px 0 72px; background: white; }
 .about-content { text-align: center; max-width: 820px; margin: 0 auto; }
 .about-content .tagline {
   font-size: 1.4rem;
@@ -1109,7 +1109,7 @@ footer.site-footer .footer-links { display: none !important; }
    Case Study Showcase
    ========================= */
 .case-study-section {
-  padding: 72px 0;
+  padding: 64px 0 48px;
   background: var(--bg-light);
 }
 .case-study-card {
