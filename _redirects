@@ -54,3 +54,9 @@
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
+
+/blog/google-lsa-for-locksmiths   /google-lsa-for-locksmiths   301
+/google-lsa-for-locksmiths        /blog/google-lsa-for-locksmiths.html   200
+
+/blog/google-lsa-for-pressure-washing   /google-lsa-for-pressure-washing   301
+/google-lsa-for-pressure-washing        /blog/google-lsa-for-pressure-washing.html   200
