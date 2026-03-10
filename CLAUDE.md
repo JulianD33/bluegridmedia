@@ -85,6 +85,7 @@ Every new blog post MUST include ALL of the following steps:
 - `/lsa-no-calls-guide`
 
 #### Pillar Articles (added 2026-03-07)
+- `/seo-vs-local-services-ads-contractors` — SEO vs. LSA for Contractors (added 2026-03-10)
 - `/google-business-profile-optimization-contractors` — GBP Optimization for Contractors (added 2026-03-10)
 - `/lsa-vs-thumbtack-vs-angi-contractors` — LSA vs. Thumbtack vs. Angi for Contractors (added 2026-03-09)
 - `/google-local-services-ads-not-working` — LSA Not Working? 12 Reasons + Fixes (added 2026-03-09)
