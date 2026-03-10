@@ -69,6 +69,14 @@ Every new blog post MUST include ALL of the following steps:
 - `/google-lsa-for-tree-service`
 - `/google-lsa-for-water-damage-restoration`
 - `/garage-door-local-services-ads`
+- `/google-lsa-for-painters`
+- `/google-lsa-for-locksmiths`
+- `/google-lsa-for-house-cleaning`
+- `/google-lsa-for-movers`
+- `/google-lsa-for-junk-removal`
+- `/google-lsa-for-fencing`
+- `/google-lsa-for-pool-service`
+- `/google-lsa-for-handyman`
 
 #### General LSA Resources
 - `/google-ads-vs-lsa-plumbers`
