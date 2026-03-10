@@ -30,6 +30,7 @@
 /blog/google-lsa-for-fencing                         /google-lsa-for-fencing                                  301
 /blog/google-lsa-for-pool-service                    /google-lsa-for-pool-service                              301
 /blog/google-lsa-for-handyman                        /google-lsa-for-handyman                                  301
+/blog/google-business-profile-optimization-contractors /google-business-profile-optimization-contractors          301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -63,6 +64,7 @@
 /google-lsa-for-fencing                            /blog/google-lsa-for-fencing.html                            200
 /google-lsa-for-pool-service                       /blog/google-lsa-for-pool-service.html                       200
 /google-lsa-for-handyman                           /blog/google-lsa-for-handyman.html                           200
+/google-business-profile-optimization-contractors  /blog/google-business-profile-optimization-contractors.html  200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
