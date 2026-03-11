@@ -79,8 +79,7 @@ Every new blog post MUST include ALL of the following steps:
 - `/google-lsa-for-handyman`
 - `/google-lsa-for-general-contractors` (added 2026-03-11)
 - `/google-lsa-for-flooring-contractors` (added 2026-03-11)
-- `/google-lsa-for-pressure-washing` (added 2026-03-11)
-- `/google-lsa-for-gutter-companies` (added 2026-03-11)
+- `/google-lsa-for-pressure-washing` — covers pressure washing, window cleaning, and gutter cleaning (all under Google's Window Cleaning LSA vertical) (added 2026-03-11)
 - `/google-lsa-for-multi-location-businesses` (added 2026-03-11)
 
 #### General LSA Resources
@@ -455,8 +454,7 @@ All 19 industry guides share the same core template skeleton:
 | `/google-lsa-for-handyman` | Job stacking (4-8 jobs/day), 12-15+ job types (broadest category), per-task vs. hourly pricing, 25-30% return customer rate | State-by-state licensing, licensed trade referrals |
 | `/google-lsa-for-general-contractors` | Large project lead qualification (4-question first-call script), commercial vs. residential LSA split, $18K-$45K avg job ROI math, 6 KPI tracking table | Subcontractor management, new-build projects, detailed state licensing |
 | `/google-lsa-for-flooring-contractors` | Material upsell conversation (LVP vs. hardwood vs. tile), measure-and-quote as closing opportunity, pet-owner niche, spring/fall seasonal strategy | Commercial flooring contracts, subfloor structural repairs |
-| `/google-lsa-for-pressure-washing` | Job stacking strategy (3-6 jobs/day), upsell conversation (driveway to whole-property package), spring surge + warm-climate year-round, race-to-bottom pricing defense | Hazardous cleaning, industrial/fleet washing |
-| `/google-lsa-for-gutter-companies` | Fall/spring dual-peak seasonal playbook, storm surge CPL spike strategy, gutter guard upsell pitch on the ladder, roof inspection tie-in | Copper/premium gutter materials, new-construction gutter installation |
+| `/google-lsa-for-pressure-washing` | **Merged guide covering all 3 services under Google's Window Cleaning LSA vertical** (pressure washing, window cleaning, gutter cleaning). Job stacking (3-6 jobs/day), service tabs comparing CPL/tickets/season for all 3, upsell conversation (driveway to whole-property), gutter guard upsell, spring surge + warm-climate year-round, race-to-bottom pricing defense | Hazardous cleaning, industrial/fleet washing, copper gutters, new-construction installation |
 | `/google-lsa-for-multi-location-businesses` | One profile per location (golden rule), budget allocation by market ROAS score, review velocity per location, market research before expansion, GBP management at scale | Franchise-specific legal/brand requirements, international expansion |
 
 **Industries eligible for LSA but NOT yet covered:**
