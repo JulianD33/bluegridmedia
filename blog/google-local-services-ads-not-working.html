@@ -253,12 +253,12 @@
     /* Component 2: Impact Severity Cards */
     .visual-severity-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     @media (max-width: 700px) { .visual-severity-cards { grid-template-columns: 1fr; } }
-    .visual-severity-card { border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; }
+    .visual-severity-card { border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; display: flex; flex-direction: column; }
     .visual-severity-header { padding: 0.75rem 1rem; font-weight: 700; font-size: 0.92rem; color: #fff; text-align: center; }
     .visual-severity-header--critical { background: #ef4444; }
     .visual-severity-header--moderate { background: #f59e0b; }
     .visual-severity-header--minor { background: #10b981; }
-    .visual-severity-body { padding: 1rem; }
+    .visual-severity-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
     .visual-severity-item { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.84rem; color: #334155; line-height: 1.45; }
     .visual-severity-item:last-child { border-bottom: none; }
     .visual-severity-icon { flex-shrink: 0; font-size: 0.85rem; width: 18px; text-align: center; }
@@ -617,7 +617,7 @@
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9888;</span> Billing failure / payment declined</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9888;</span> Account suspended for policy violation</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9888;</span> Updated terms not accepted</div>
-                  <div style="text-align:center; margin-top:0.5rem;"><span class="visual-severity-note visual-severity-note--critical">Leads stop immediately</span></div>
+                  <div style="text-align:center; margin-top:auto; padding-top:0.75rem;"><span class="visual-severity-note visual-severity-note--critical">Leads stop immediately</span></div>
                 </div>
               </div>
               <div class="visual-severity-card">
@@ -627,7 +627,7 @@
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9679;</span> Google Business Profile mismatch</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9679;</span> Service area too broad or narrow</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9679;</span> Reviews dropped below 3.0 stars</div>
-                  <div style="text-align:center; margin-top:0.5rem;"><span class="visual-severity-note visual-severity-note--moderate">Leads drop 30&ndash;70%</span></div>
+                  <div style="text-align:center; margin-top:auto; padding-top:0.75rem;"><span class="visual-severity-note visual-severity-note--moderate">Leads drop 30&ndash;70%</span></div>
                 </div>
               </div>
               <div class="visual-severity-card">
@@ -636,7 +636,7 @@
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9675;</span> Not answering calls fast enough</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9675;</span> Seasonal demand dropped</div>
                   <div class="visual-severity-item"><span class="visual-severity-icon">&#9675;</span> Algorithm rotation</div>
-                  <div style="text-align:center; margin-top:0.5rem;"><span class="visual-severity-note visual-severity-note--minor">Leads dip 10&ndash;30%</span></div>
+                  <div style="text-align:center; margin-top:auto; padding-top:0.75rem;"><span class="visual-severity-note visual-severity-note--minor">Leads dip 10&ndash;30%</span></div>
                 </div>
               </div>
             </div>
