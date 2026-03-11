@@ -397,6 +397,125 @@ Transformed single case study page into hub + 3 individual case study pages.
 
 ---
 
+## Blog Content Index (for Overlap Detection)
+
+> Updated 2026-03-11. **Always check this section before planning new posts** to avoid duplicate content and identify genuine gaps.
+
+---
+
+### How to Use This Index
+
+Before proposing a new blog post, scan:
+1. The "Industry Angle / Unique Sections" column — does any existing post already own the angle?
+2. The "Does NOT Cover" column — these are genuine gaps that a new post could fill
+3. The "Content Gaps" section at the bottom for pre-identified opportunities
+
+---
+
+### Industry LSA Guides (19 posts)
+
+All 19 industry guides share the same core template skeleton:
+- Is LSA worth it for this industry?
+- What LSA looks like in search results
+- Step-by-step setup + job type checklist
+- LSA cost / CPL ranges
+- How to rank higher (5 factors: reviews, response time, job types, profile completeness, proximity)
+- Common mistakes
+- LSA vs. Google Ads comparison
+- How to track results
+- FAQ (6 questions)
+
+**What makes each post unique (the industry-specific angle):**
+
+| Slug | Unique Angle / Extra Sections | Does NOT Cover |
+|------|-------------------------------|----------------|
+| `/google-lsa-for-hvac-companies` | Seasonality strategy, repair-to-replacement pipeline, maintenance plan economics, after-hours call value, dispatch optimization | Advanced Google Ads, furnace/AC technical specs |
+| `/google-lsa-for-electricians` | EV charger opportunity, residential vs. commercial lead split | Seasonal strategy, maintenance plans, after-hours specifics |
+| `/google-lsa-for-roofers` | Storm/hail seasonality, insurance claim lead quality, review photo impact, storm chaser differentiation | Maintenance/recurring, dispatch optimization |
+| `/plumbing-ads-playbook-google-local-services-ads` | LSA + Google Ads dual strategy (8-step Google Ads blueprint), mini case study, water heater vs. drain economics | Seasonal strategy, plumbing maintenance plans |
+| `/google-lsa-for-pest-control` | Recurring revenue model, one-time to plan conversion ($1,800+ LTV), inspection package upsells | Detailed job type list, seasonal budget strategy |
+| `/google-lsa-for-landscaping` | Residential vs. commercial split, 5-phase seasonal strategy, hardscaping vs. maintenance economics, project photo ranking | Recurring maintenance plan economics |
+| `/google-lsa-for-carpet-cleaning` | Commercial vs. residential value, service upsells (tile, upholstery, water damage) | Job type checklist, seasonal strategy |
+| `/google-lsa-for-appliance-repair` | Brand authorization impact, first-visit fix rates, repair vs. replace call handling | Seasonal strategy, maintenance plans |
+| `/google-lsa-for-tree-service` | Storm surge strategy (50-100% budget spike), HOA commercial jobs ($5K-$20K), stump grinding upsell | Google Ads comparison, specific ROI by market |
+| `/google-lsa-for-water-damage-restoration` | Emergency call handling, insurance vs. cash-pay job economics, mold remediation (15-25% lead volume) | Commercial restoration, fire damage economics |
+| `/garage-door-local-services-ads` | High ROI on door installations ($1,200-$2,500), dispute process and lead validation focus | Maintenance/preventative service, commercial systems |
+| `/google-lsa-for-painters` | Large-ticket advantage ($3,200 avg cost/booked job), estimate-to-booking gap (2hr/24hr/72hr follow-up), interior vs. exterior seasonality | Commercial/industrial painting, specialty finishes |
+| `/google-lsa-for-locksmiths` | Trust problem + how Google Verified solves it, upsell strategy ($100 lockout → $400 job), after-hours ranking advantage | Commercial access control, automotive locksmith |
+| `/google-lsa-for-house-cleaning` | Recurring revenue model (LTV $3K-$6K/year), converting first clean to recurring (30-40%), in-person pitch vs. email (under 10%) | Commercial office cleaning, post-construction |
+| `/google-lsa-for-movers` | Speed-to-quote as the #1 variable, peak season (May-Sep = 70% of annual volume), packing service upsells | International relocation, military PCS, warehouse moves |
+| `/google-lsa-for-junk-removal` | Zone-based scheduling, stacking small jobs around anchor jobs, niche services (estate cleanouts, hoarding, construction debris), pricing models | Hazardous waste, recycling/landfill partnerships |
+| `/google-lsa-for-fencing` | High-ticket overlooked category, materials conversation (wood/vinyl/composite), permit/HOA navigation, estimate-to-contract in 72hrs | Detailed CPL pricing, broader ad platforms |
+| `/google-lsa-for-pool-service` | Recurring route economics, route density (20-pool profitability threshold), one-time repair to recurring conversion (30-40%), geography-specific seasonality | CPL by market, equipment install in depth |
+| `/google-lsa-for-handyman` | Job stacking (4-8 jobs/day), 12-15+ job types (broadest category), per-task vs. hourly pricing, 25-30% return customer rate | State-by-state licensing, licensed trade referrals |
+
+**Industries eligible for LSA but NOT yet covered:**
+- General contractors (residential remodeling)
+- Flooring (carpet install, hardwood, tile)
+- Gutters (install + cleaning)
+- Pressure washing / exterior cleaning
+- Chimney sweep / fireplace
+- Irrigation / sprinkler systems
+- Siding / exterior cladding
+- Windows / glass replacement
+
+---
+
+### General LSA Resource Posts (4 posts)
+
+| Slug | Core Topic | Does NOT Cover |
+|------|------------|----------------|
+| `/google-lsa-ranking-factors` | 7 ranking factors deep-dive: reviews, response time, bid mode, GBP connection, messaging, service area, profile completeness | Industry-specific ranking differences, competitor analysis, historical data |
+| `/how-much-does-google-lsa-cost` | CPL by industry, budget sizing formula (target leads × CPL × 4), ways to lower CPL, week-to-week variance (20-40%) | Regional price variations by city, historical pricing trends |
+| `/lsa-no-calls-guide` | 12 reasons + fixes, 2-min diagnostic checklist, KPIs to track weekly, copy-paste scripts, support escalation | Industry-specific troubleshooting, competitive market analysis |
+| `/google-ads-vs-lsa-plumbers` | LSA vs. Google Ads for plumbers: cost, quality, setup difficulty, recommendations | Google Ads campaign structure, detailed ROI modeling for combined strategy |
+
+---
+
+### Pillar Articles (10 posts)
+
+| Slug | Core Topic | Does NOT Cover |
+|------|------------|----------------|
+| `/how-to-rank-number-1-google-local-services-ads` | 8-week ranking roadmap, all 6 ranking factors, review system, bidding strategy (Maximize Leads vs. Max/Lead), 6 ranking killers | Industry-specific data, budget sizing, competitor analysis |
+| `/how-many-leads-google-local-services-ads` | Lead volume by budget tier, CPL by industry, booking rates by industry, unbookable lead problem (45%), 7 volume factors | Dispute/credit process, detailed ranking factors |
+| `/google-ads-vs-local-services-ads-contractors` | Full head-to-head: cost, lead quality, ease of management, SERP position, when to use each, budget split recommendations | SEO comparison, Google Ads bid strategies, brand building |
+| `/lsa-vs-thumbtack-vs-angi-contractors` | 3-platform comparison: how each works, scorecard, cost per booked job by industry, lead quality deep-dive, $2K budget ROI | Multi-platform management strategy, regional pricing, platform-specific optimization |
+| `/why-local-services-ads-leads-get-disputed` | AI credit system (4 stages), eligible vs. ineligible leads, 6-step dispute process, how dispute behavior affects ranking | Fraud detection methodology, long-term dispute trends |
+| `/google-local-services-ads-not-working` | 12 specific reasons leads stopped + fixes, quick diagnostic checklist, support contact guide, when to hire agency | Recovery timelines per issue, competitive market analysis, advanced optimization |
+| `/google-lsa-review-strategy` | Review benchmarks (50+/150+/4.8★), GBP review merger (2025), 5-step collection system, velocity strategy, copy-paste templates | Paid review methods, industry-specific templates, review sentiment analysis |
+| `/seo-vs-local-services-ads-contractors` | Channel comparison: cost, timeline to ROI, SERP positions, compound SEO effect, phased budget approach | Advanced SEO tactics (on-page, link building), other paid channels |
+| `/google-business-profile-optimization-contractors` | 7 GBP ranking factors, category selection (the #1 mistake), NAP consistency, GBP-to-LSA connection, fighting fake competitors | Advanced photo optimization, Google Ads integration, long-term GBP roadmap |
+| `/how-to-get-google-guaranteed` | Google Verified badge (Oct 2025 rebrand), step-by-step verification process, insurance/background check requirements, annual renewal | State-by-state licensing specifics, background check disqualification criteria |
+
+---
+
+### Content Gap Analysis (Genuine Opportunities)
+
+These topics are NOT yet covered by any existing post and have meaningful search demand:
+
+**High priority (strong search intent + no overlap):**
+1. **"Is Google LSA Worth It for Contractors?"** — Every industry guide has a brief "is it worth it" section but no standalone deep-dive with break-even analysis, ROI calculator integration, and "LSA vs. doing nothing" framing. Estimated 1,500-3,000 searches/mo.
+2. **"How to Lower Your Google LSA Cost Per Lead"** — CPL reduction is mentioned across ranking factors, disputes, no-calls guide, and cost posts but never as a dedicated, comprehensive guide. High-intent keyword for contractors already running LSA who want to optimize. Estimated 600-1,200/mo.
+3. **"Google LSA for General Contractors"** — Major eligible industry not covered. Unique angle: large projects, lead qualification challenges, commercial vs. residential split, subcontractor coordination. Estimated 800-1,500/mo.
+4. **"Google Verified Badge: What Changed in 2025 and What It Means for Your LSA"** — The Oct 2025 Google Guaranteed → Google Verified rebrand + money-back guarantee removal is mentioned in how-to-get-google-guaranteed but a standalone "what changed" explainer could capture time-sensitive searchers. High topical authority play.
+5. **"LSA for Flooring Contractors"** — Not covered. High-ticket installs ($3K-$10K), seasonal spring peak, good LSA fit. Estimated 400-800/mo.
+6. **"Google LSA Lead Quality: How to Get Fewer Tire-Kickers"** — Unbookable lead problem (45%) touched on in how-many-leads but a dedicated post on qualifying leads, disputing bad ones, and optimizing for quality doesn't exist.
+
+**Medium priority:**
+7. **"Google LSA for Multi-Location Businesses"** — Scaling across multiple cities/locations is a completely different setup challenge. No overlap with existing posts.
+8. **"LSA for Pressure Washing / Exterior Cleaning"** — Not covered. Low CPL industry, strong seasonal demand.
+9. **"LSA for Gutter Companies"** — Not covered. Strong fall/storm season lead demand.
+
+**Avoid (would heavily overlap existing content):**
+- "How to rank in LSA" → already `/how-to-rank-number-1-google-local-services-ads` and `/google-lsa-ranking-factors`
+- "LSA pricing/cost" → already `/how-much-does-google-lsa-cost`
+- "LSA vs. Google Ads" → already covered (plumbers + general contractors)
+- "LSA reviews" → already `/google-lsa-review-strategy`
+- "LSA not working / troubleshooting" → already covered
+- Industry guide for HVAC, plumbing, electricians, roofing, landscaping, pest control, carpet cleaning, appliance repair, tree service, water damage, garage door, painters, locksmiths, house cleaning, movers, junk removal, fencing, pool service, handyman — all done
+
+---
+
 ## Development Setup
 
 ### Local Server
