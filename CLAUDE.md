@@ -77,6 +77,11 @@ Every new blog post MUST include ALL of the following steps:
 - `/google-lsa-for-fencing`
 - `/google-lsa-for-pool-service`
 - `/google-lsa-for-handyman`
+- `/google-lsa-for-general-contractors` (added 2026-03-11)
+- `/google-lsa-for-flooring-contractors` (added 2026-03-11)
+- `/google-lsa-for-pressure-washing` (added 2026-03-11)
+- `/google-lsa-for-gutter-companies` (added 2026-03-11)
+- `/google-lsa-for-multi-location-businesses` (added 2026-03-11)
 
 #### General LSA Resources
 - `/google-ads-vs-lsa-plumbers`
@@ -448,12 +453,13 @@ All 19 industry guides share the same core template skeleton:
 | `/google-lsa-for-fencing` | High-ticket overlooked category, materials conversation (wood/vinyl/composite), permit/HOA navigation, estimate-to-contract in 72hrs | Detailed CPL pricing, broader ad platforms |
 | `/google-lsa-for-pool-service` | Recurring route economics, route density (20-pool profitability threshold), one-time repair to recurring conversion (30-40%), geography-specific seasonality | CPL by market, equipment install in depth |
 | `/google-lsa-for-handyman` | Job stacking (4-8 jobs/day), 12-15+ job types (broadest category), per-task vs. hourly pricing, 25-30% return customer rate | State-by-state licensing, licensed trade referrals |
+| `/google-lsa-for-general-contractors` | Large project lead qualification (4-question first-call script), commercial vs. residential LSA split, $18K-$45K avg job ROI math, 6 KPI tracking table | Subcontractor management, new-build projects, detailed state licensing |
+| `/google-lsa-for-flooring-contractors` | Material upsell conversation (LVP vs. hardwood vs. tile), measure-and-quote as closing opportunity, pet-owner niche, spring/fall seasonal strategy | Commercial flooring contracts, subfloor structural repairs |
+| `/google-lsa-for-pressure-washing` | Job stacking strategy (3-6 jobs/day), upsell conversation (driveway to whole-property package), spring surge + warm-climate year-round, race-to-bottom pricing defense | Hazardous cleaning, industrial/fleet washing |
+| `/google-lsa-for-gutter-companies` | Fall/spring dual-peak seasonal playbook, storm surge CPL spike strategy, gutter guard upsell pitch on the ladder, roof inspection tie-in | Copper/premium gutter materials, new-construction gutter installation |
+| `/google-lsa-for-multi-location-businesses` | One profile per location (golden rule), budget allocation by market ROAS score, review velocity per location, market research before expansion, GBP management at scale | Franchise-specific legal/brand requirements, international expansion |
 
 **Industries eligible for LSA but NOT yet covered:**
-- General contractors (residential remodeling)
-- Flooring (carpet install, hardwood, tile)
-- Gutters (install + cleaning)
-- Pressure washing / exterior cleaning
 - Chimney sweep / fireplace
 - Irrigation / sprinkler systems
 - Siding / exterior cladding
@@ -512,7 +518,8 @@ These topics are NOT yet covered by any existing post and have meaningful search
 - "LSA vs. Google Ads" → already covered (plumbers + general contractors)
 - "LSA reviews" → already `/google-lsa-review-strategy`
 - "LSA not working / troubleshooting" → already covered
-- Industry guide for HVAC, plumbing, electricians, roofing, landscaping, pest control, carpet cleaning, appliance repair, tree service, water damage, garage door, painters, locksmiths, house cleaning, movers, junk removal, fencing, pool service, handyman — all done
+- Industry guide for HVAC, plumbing, electricians, roofing, landscaping, pest control, carpet cleaning, appliance repair, tree service, water damage, garage door, painters, locksmiths, house cleaning, movers, junk removal, fencing, pool service, handyman, general contractors, flooring, pressure washing, gutters — all done
+- Multi-location LSA strategy guide → already `/google-lsa-for-multi-location-businesses`
 
 ---
 
