@@ -51,7 +51,25 @@
 
   <url>
     <loc>https://bluegridmedia.com/case-studies</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bluegridmedia.com/case-study-hvac-illinois</loc>
+    <lastmod>2026-03-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bluegridmedia.com/case-study-plumbing-dallas</loc>
+    <lastmod>2026-03-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bluegridmedia.com/case-study-electrician-denver</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
 

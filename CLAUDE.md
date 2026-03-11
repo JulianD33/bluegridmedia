@@ -351,6 +351,52 @@ Review strategy deep-dive — 1,327 lines, 6 visual components, FAQPage schema.
 
 ---
 
+## Case Studies Hub + New Case Study Pages (2026-03-10)
+
+### COMPLETED: Case Studies Architecture Overhaul
+Transformed single case study page into hub + 3 individual case study pages.
+
+#### New Pages
+- **`case-study-hvac-illinois.html`** — Existing HVAC content moved to standalone page
+  - Article + BreadcrumbList + WebSite schema in @graph
+  - Canonical URL: `/case-study-hvac-illinois`
+  - Results: 28% more leads, 15% lower CPL, 4x ROAS, 40% more booked jobs
+
+- **`case-study-plumbing-dallas.html`** — New plumbing case study (Dallas, TX)
+  - Mid-size residential plumbing company, 3 trucks, 8 years in business
+  - Strategy: GBP + review overhaul, then LSA optimization
+  - Results: 22% more leads, 18% lower CPL, 3.2x ROAS, reviews 23→51
+  - Timeline: 8 weeks, budget $1,200–$1,600/mo
+
+- **`case-study-electrician-denver.html`** — New electrician case study (Denver, CO)
+  - Owner-operator + 1 apprentice, 4 years in business
+  - Strategy: Service category expansion (3→9) + response time protocol (47→8 min)
+  - Results: 35% more booked jobs, 31% lower cost/job, 2.8x ROAS
+  - Timeline: 10 weeks, budget $800–$1,200/mo
+
+#### Modified Pages
+- **`case-studies.html`** — Transformed into hub/listing page
+  - Card grid layout (`.csh-` CSS prefix) modeled on resources.html
+  - Featured HVAC card (full-width) + plumbing/electrician side-by-side
+  - Each card shows metrics strip, industry tag, overview, summary
+  - CollectionPage + BreadcrumbList schema
+  - CTA section at bottom
+
+- **`index.html`** — Updated 4 internal links
+  - HVAC-specific links → `/case-study-hvac-illinois`
+  - General references → `/case-studies`
+
+- **`sitemap.xml`** — Added 3 new URLs, updated `/case-studies` lastmod and priority
+- **`blog/lsa-vs-thumbtack-vs-angi-contractors.html`** — Fixed case study link
+
+#### URL Structure
+- `/case-studies` — Hub/listing page
+- `/case-study-hvac-illinois` — HVAC case study
+- `/case-study-plumbing-dallas` — Plumbing case study
+- `/case-study-electrician-denver` — Electrician case study
+
+---
+
 ## Development Setup
 
 ### Local Server
