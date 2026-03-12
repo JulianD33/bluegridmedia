@@ -48,402 +48,131 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ── Page layout ── */
+  .article-page-wrap { display:grid; grid-template-columns:1fr 280px; gap:48px; max-width:1080px; margin:0 auto; padding:48px 24px 80px; }
+  @media(max-width:860px) { .article-page-wrap { grid-template-columns:1fr; } .article-sidebar { display:none; } }
 
-    /* ── Core article styles ── */
-    .article-content p {
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-    .article-content ul,
-    .article-content ol {
-      margin: 22px 0 26px;
-      padding-left: 22px;
-    }
-    .article-content li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-    .article-content h2 {
-      margin-top: 50px;
-      margin-bottom: 22px;
-    }
-    .article-content h3 {
-      margin-top: 32px;
-      margin-bottom: 14px;
-      font-size: 1.1rem;
-    }
-    .article-content img {
-      width: 100%;
-      max-width: 820px;
-      height: auto;
-      border-radius: 12px;
-      margin: 35px 0;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-    .article-content hr {
-      border: none;
-      border-top: 1px solid #e2e8f0;
-      margin: 2.5rem 0;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: #0ea5a4;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
+  /* ── Article typography ── */
+  .article-content h1 { font-size:2rem; font-weight:700; color:#1a2e44; margin-bottom:8px; line-height:1.25; }
+  .article-content .article-meta { font-size:0.85rem; color:#6b7a8d; margin-bottom:24px; }
+  .article-content h2 { font-size:1.35rem; font-weight:700; color:#1a2e44; margin:40px 0 14px; padding-top:8px; border-top:2px solid #e8edf2; }
+  .article-content h3 { font-size:1.1rem; font-weight:600; color:#1a2e44; margin:28px 0 10px; }
+  .article-content p { color:#3d4f63; line-height:1.75; margin-bottom:16px; }
+  .article-content ul, .article-content ol { color:#3d4f63; line-height:1.75; margin:0 0 16px 20px; }
+  .article-content li { margin-bottom:6px; }
+  .article-content a { color:#1a6fc4; text-decoration:none; }
+  .article-content a:hover { text-decoration:underline; }
+  .article-content img { width:100%; border-radius:10px; margin-bottom:32px; }
+  .article-content hr { border:none; border-top:1px solid #e8edf2; margin:2rem 0; }
+  .article-content table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+  .article-content th { background:#1a4b7a; color:#fff; padding:10px 14px; text-align:left; }
+  .article-content td { padding:9px 14px; border-bottom:1px solid #e8edf2; color:#3d4f63; vertical-align:top; }
+  .article-content tr:nth-child(even) td { background:#f7f9fc; }
 
-    /* ── Two-column page layout ── */
-    .article-page-wrap {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 3rem;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    @media (max-width: 900px) {
-      .article-page-wrap {
-        grid-template-columns: 1fr;
-      }
-      .article-sidebar {
-        order: -1;
-      }
-    }
+  /* ── Breadcrumb ── */
+  .article-breadcrumb { font-size:0.8rem; color:#6b7a8d; margin-bottom:20px; }
+  .article-breadcrumb a { color:#6b7a8d; text-decoration:none; }
+  .article-breadcrumb a:hover { text-decoration:underline; }
 
-    /* ── Table of contents ── */
-    .toc-box {
-      background: #f0fafa;
-      border: 1px solid #0ea5a4;
-      border-radius: 10px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-    .toc-box .toc-heading {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #0ea5a4;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0 0 0.9rem;
-    }
-    .toc-box ol {
-      padding-left: 1.25rem;
-      margin: 0;
-    }
-    .toc-box li {
-      margin-bottom: 0.3rem;
-      font-size: 0.92rem;
-    }
-    .toc-box a {
-      color: #0ea5a4;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .toc-box a:hover {
-      text-decoration: underline;
-    }
+  /* ── Topic tags ── */
+  .topic-bar-wrap { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .topic-tag { background:#e8edf2; color:#3d4f63; font-size:0.75rem; font-weight:600; padding:4px 11px; border-radius:20px; }
 
-    /* ── Stats row ── */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    @media (max-width: 600px) {
-      .stats-row { grid-template-columns: 1fr; }
-    }
-    .stat-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-top: 3px solid #0ea5a4;
-      border-radius: 10px;
-      padding: 1.25rem;
-      text-align: center;
-    }
-    .stat-card .stat-number {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #0ea5a4;
-      display: block;
-      line-height: 1.1;
-    }
-    .stat-card .stat-label {
-      font-size: 0.82rem;
-      color: #64748b;
-      margin-top: 0.25rem;
-    }
+  /* ── Stats row ── */
+  .stats-row { display:flex; gap:16px; flex-wrap:wrap; margin:24px 0 32px; }
+  .stat-card { background:#f0f5fb; border-left:4px solid #1a6fc4; border-radius:8px; padding:16px 20px; flex:1; min-width:130px; }
+  .stat-card .stat-number, .stat-card .stat-num { font-size:1.55rem; font-weight:700; color:#1a4b7a; line-height:1.1; }
+  .stat-card .stat-label { font-size:0.78rem; color:#6b7a8d; margin-top:3px; }
 
-    /* ── Callout boxes ── */
-    .callout {
-      background: #f0fafa;
-      border-left: 4px solid #0ea5a4;
-      border-radius: 0 8px 8px 0;
-      padding: 1rem 1.25rem;
-      margin: 1.75rem 0;
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-    .callout-yellow {
-      background: #fefce8;
-      border-left: 4px solid #eab308;
-      border-radius: 0 8px 8px 0;
-      padding: 1rem 1.25rem;
-      margin: 1.75rem 0;
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: #713f12;
-    }
-    .callout-yellow strong { color: #422006; }
+  /* ── Callout boxes ── */
+  .callout { background:#eaf3fb; border-left:4px solid #1a6fc4; border-radius:6px; padding:16px 20px; margin:24px 0; color:#1a2e44; }
+  .callout strong { color:#1a4b7a; }
+  .callout-yellow { background:#fffbea; border-left:4px solid #f59e0b; border-radius:6px; padding:16px 20px; margin:24px 0; color:#1a2e44; }
+  .callout-yellow strong { color:#b45309; }
 
-    /* ── Comparison / data tables ── */
-    .table-wrap {
-      overflow-x: auto;
-      margin: 1.5rem 0 2rem;
-    }
-    .article-content table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-    }
-    .article-content th {
-      background: #0f2d4e;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .article-content td {
-      padding: 0.7rem 1rem;
-      border-bottom: 1px solid #e2e8f0;
-      color: #334155;
-      vertical-align: top;
-    }
-    .article-content tr:nth-child(even) td {
-      background: #f8fafc;
-    }
-    .article-content tr:hover td {
-      background: #f0fafa;
-    }
+  /* ── Tables ── */
+  .table-wrap { overflow-x:auto; margin:20px 0; }
+  .table-wrap table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+  .table-wrap th { background:#1a4b7a; color:#fff; padding:10px 14px; text-align:left; }
+  .table-wrap td { padding:9px 14px; border-bottom:1px solid #e8edf2; color:#3d4f63; vertical-align:top; }
+  .table-wrap tr:nth-child(even) td { background:#f7f9fc; }
 
-    /* ── Formula / code box ── */
-    .formula-box {
-      background: #0f172a;
-      color: #e2e8f0;
-      border-radius: 10px;
-      padding: 1.5rem 1.75rem;
-      margin: 1.75rem 0;
-      font-family: 'Courier New', monospace;
-      font-size: 0.93rem;
-      line-height: 2;
-    }
-    .formula-box .comment { color: #64748b; }
-    .formula-box .result  { color: #34d399; font-weight: 700; }
+  /* ── Formula box ── */
+  .formula-box { background:#f0f5fb; border:1px solid #c5d5e8; border-radius:8px; padding:20px 24px; margin:20px 0; font-family:inherit; }
+  .formula-box .comment, .formula-box .formula-title { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:#6b7a8d; margin-bottom:10px; font-weight:600; display:block; }
+  .formula-box .result, .formula-box .formula-line { font-size:1rem; font-weight:700; color:#1a4b7a; margin-bottom:6px; display:block; }
+  .formula-box .formula-example { font-size:0.88rem; color:#3d4f63; margin-top:8px; }
 
-    /* ── FAQ items ── */
-    .faq-item {
-      border-bottom: 1px solid #e2e8f0;
-      padding: 1.1rem 1.25rem;
-    }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q {
-      font-weight: 700;
-      color: #0f172a;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .faq-a {
-      color: #475569;
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
+  /* ── Setup steps ── */
+  .setup-step { display:flex; gap:16px; align-items:flex-start; margin-bottom:22px; }
+  .step-num { background:#1a4b7a; color:#fff; font-weight:700; font-size:1rem; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .step-body h3 { margin:0 0 6px; font-size:1rem; }
+  .step-body p { margin:0; font-size:0.92rem; }
 
-    /* ── End CTA box ── */
-    .cta-box {
-      background: linear-gradient(135deg, #0f2d4e 0%, #0ea5a4 100%);
-      color: #fff;
-      border-radius: 12px;
-      padding: 2.5rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .cta-box h2 {
-      color: #fff !important;
-      font-size: 1.5rem;
-      margin: 0 0 0.75rem !important;
-      padding: 0 !important;
-    }
-    .cta-box p {
-      color: #d1fafa;
-      margin-bottom: 1.5rem;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: #fff;
-      color: #0f2d4e;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .cta-btn:hover {
-      background: #f0fafa;
-      text-decoration: none;
-    }
+  /* ── FAQ items ── */
+  .faq-item { border-bottom:1px solid #e8edf2; padding:18px 0; }
+  .faq-item summary { font-weight:600; color:#1a2e44; cursor:pointer; font-size:1rem; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary::after { content:'+'; font-size:1.3rem; color:#1a6fc4; flex-shrink:0; margin-left:12px; }
+  .faq-item[open] summary::after { content:'-'; }
+  .faq-item p { margin-top:12px; color:#3d4f63; line-height:1.7; }
+  .faq-q { font-weight:700; color:#1a2e44; font-size:1rem; margin-bottom:6px; }
+  .faq-a { color:#3d4f63; font-size:0.95rem; line-height:1.65; }
 
-    /* ── Sidebar ── */
-    .sidebar-cta {
-      background: linear-gradient(135deg, #0f2d4e, #0ea5a4);
-      color: #fff;
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .sidebar-cta h3 {
-      color: #d1fafa;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-    .sidebar-cta p {
-      color: #e2e8f0;
-      font-size: 0.88rem;
-      margin-bottom: 1rem;
-    }
-    .sidebar-cta a {
-      display: block;
-      background: #fff;
-      color: #0f2d4e;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.7rem 1rem;
-      border-radius: 7px;
-      text-decoration: none;
-    }
-    .sidebar-cta a:hover { background: #f0fafa; }
-    .sidebar-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .sidebar-card h3 {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #64748b;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .sidebar-card ul { list-style: none; padding: 0; margin: 0; }
-    .sidebar-card ul li { padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; font-size: 0.92rem; }
-    .sidebar-card ul li:last-child { border-bottom: none; }
-    .sidebar-card a { color: #0ea5a4; text-decoration: none; }
-    .sidebar-card a:hover { text-decoration: underline; }
-    .sidebar-card .ltv-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.45rem 0;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.88rem;
-    }
-    .sidebar-card .ltv-row:last-child { border-bottom: none; }
-    .sidebar-card .ltv-val {
-      font-weight: 700;
-      color: #0ea5a4;
-    }
+  /* ── End CTA box ── */
+  .cta-box { background:linear-gradient(135deg,#1a4b7a 0%,#1a6fc4 100%); color:#fff; border-radius:12px; padding:32px 36px; margin:40px 0; text-align:center; }
+  .cta-box h2, .cta-box h3 { color:#fff; font-size:1.3rem; margin:0 0 10px; border:none; padding:0; }
+  .cta-box p { color:rgba(255,255,255,0.88); margin-bottom:20px; }
+  .cta-box .btn, .cta-btn { background:#fff; color:#1a4b7a; font-weight:700; padding:13px 28px; border-radius:8px; text-decoration:none; display:inline-block; font-size:0.95rem; }
+  .cta-box .btn:hover, .cta-btn:hover { background:#f0f5fb; text-decoration:none; }
 
-    /* ── Breadcrumb ── */
-    .article-breadcrumb {
-      font-size: 0.8rem;
-      color: #94a3b8;
-      margin-bottom: 30px;
-    }
-    .article-breadcrumb a { color: #0ea5a4; text-decoration: none; }
-    .article-breadcrumb a:hover { text-decoration: underline; }
+  /* ── Inline calculator CTA ── */
+  .calc-cta-inline { background:#fff8e1; border:1px solid #f59e0b; border-radius:8px; padding:16px 20px; margin:24px 0; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .calc-cta-inline p { margin:0; font-size:0.9rem; color:#7c4a00; flex:1; }
+  .calc-cta-inline .btn-sm { background:#f59e0b; color:#fff; font-weight:700; padding:9px 18px; border-radius:6px; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
 
-    /* ── Topic bar ── */
-    .topic-bar-wrap {
-      background: #f7f9fc;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      font-size: 0.9rem;
-    }
+  /* ── Sidebar ── */
+  .sidebar-cta { background:linear-gradient(135deg,#1a4b7a,#1a6fc4); color:#fff; border-radius:10px; padding:24px 20px; margin-bottom:24px; text-align:center; }
+  .sidebar-cta h3 { color:#fff; font-size:1rem; margin:0 0 8px; border:none; padding:0; }
+  .sidebar-cta p { color:rgba(255,255,255,0.85); font-size:0.85rem; margin-bottom:16px; }
+  .sidebar-cta a, .sidebar-cta .btn { background:#fff; color:#1a4b7a; font-weight:700; padding:10px 20px; border-radius:7px; text-decoration:none; display:block; font-size:0.88rem; }
+  .sidebar-cta a:hover, .sidebar-cta .btn:hover { background:#f0f5fb; }
+  .sidebar-card { background:#f7f9fc; border:1px solid #e0e8f0; border-radius:10px; padding:20px; margin-bottom:20px; }
+  .sidebar-card h3, .sidebar-card h4 { font-size:0.9rem; font-weight:700; color:#1a2e44; margin:0 0 12px; }
+  .sidebar-card ul { margin:0; padding-left:18px; }
+  .sidebar-card li { font-size:0.85rem; color:#3d4f63; margin-bottom:7px; }
+  .sidebar-card li a, .sidebar-card a { color:#1a6fc4; text-decoration:none; }
+  .sidebar-card li a:hover, .sidebar-card a:hover { text-decoration:underline; }
+  .ltv-row { display:flex; justify-content:space-between; align-items:center; padding:0.45rem 0; border-bottom:1px solid #e8edf2; font-size:0.88rem; }
+  .ltv-row:last-child { border-bottom:none; }
+  .ltv-val { font-weight:700; color:#1a6fc4; }
 
-    /* ── Setup steps ── */
-    .setup-step {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      align-items: flex-start;
-    }
-    .step-num {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      background: #0ea5a4;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-top: 2px;
-    }
-    .step-body { flex: 1; }
-    .step-body strong { display: block; margin-bottom: 0.3rem; font-size: 1rem; color: #0f2d4e; }
+  /* ── Table of contents ── */
+  .toc-box { background:#f0f5fb; border:1px solid #c5d5e8; border-radius:10px; padding:20px; margin-bottom:20px; }
+  .toc-box h4, .toc-box .toc-heading { font-size:0.88rem; font-weight:700; color:#1a2e44; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 12px; }
+  .toc-box ol { margin:0; padding-left:20px; }
+  .toc-box li { font-size:0.82rem; color:#3d4f63; margin-bottom:6px; }
+  .toc-box li a, .toc-box a { color:#1a6fc4; text-decoration:none; }
+  .toc-box li a:hover, .toc-box a:hover { text-decoration:underline; }
 
-    /* ── Calculator CTA inline box ── */
-    .calc-cta-inline {
-      background: linear-gradient(135deg, #f0fdfa, #e6fffe);
-      border: 1.5px solid #0ea5a4;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin: 1.75rem 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .calc-cta-inline .calc-cta-text {
-      flex: 1;
-      min-width: 200px;
-      font-size: 0.97rem;
-      color: #0f172a;
-      line-height: 1.55;
-    }
-    .calc-cta-inline .calc-cta-text strong {
-      color: #0ea5a4;
-    }
-    .calc-cta-inline a.calc-cta-btn {
-      display: inline-block;
-      background: #0ea5a4;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    .calc-cta-inline a.calc-cta-btn:hover {
-      background: #0b8f8e;
-    }
+  /* ── Service tabs (pressure washing) ── */
+  .service-tabs { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
+  @media(max-width:640px) { .service-tabs { grid-template-columns:1fr; } }
+  .service-tab { background:#f7f9fc; border:1px solid #e0e8f0; border-radius:10px; padding:20px; }
+  .service-tab.primary { background:#f0f5fb; border-color:#c5d5e8; }
+  .service-tab h4 { color:#1a4b7a; font-size:0.95rem; font-weight:700; margin:0 0 12px; }
+  .service-tab ul { margin:0; padding-left:16px; }
+  .service-tab li { font-size:0.85rem; color:#3d4f63; margin-bottom:5px; }
 
-  </style>
+  /* ── Misc ── */
+  .btn-primary { display:inline-block; background:#1a6fc4; color:white; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600; }
+  .value-highlight { color:#166534; font-weight:600; }
+  .material-table td:first-child { font-weight:600; }
+</style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
+
   <header style="padding: 35px 0;">
     <div class="container" style="text-align:center;">
       <div class="logo-container" style="margin-bottom: 20px;">
@@ -464,6 +193,8 @@
           <div class="topic-bar-wrap">
             <strong>Topic:</strong> LSA for General Contractors &nbsp;&bull;&nbsp; <strong>Coverage:</strong> Setup, Cost, Lead Qualification, Job Types, Ranking &nbsp;&bull;&nbsp; <strong>Updated:</strong> 2026
           </div>
+          <h1>Google LSA for General Contractors: Get More Remodeling Jobs in 2026</h1>
+          <p class="article-meta">By Blue Grid Media &bull; Updated March 2026 &bull; 14 min read</p>
           <img src="/assets/images/blog/google-lsa-for-general-contractors/general-contractors-lsa-hero.png" alt="Google LSA for general contractors: GC reviewing remodeling plans with homeowner at a job site" loading="eager">
           <nav class="toc-box" aria-label="Table of contents">
             <p class="toc-heading">In This Guide</p>
