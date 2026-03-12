@@ -82,6 +82,10 @@ Every new blog post MUST include ALL of the following steps:
 - `/google-lsa-for-pressure-washing` — covers pressure washing, window cleaning, and gutter cleaning (all under Google's Window Cleaning LSA vertical) (added 2026-03-11)
 - `/google-lsa-for-multi-location-businesses` (added 2026-03-11)
 
+#### Optimization Guides (added 2026-03-12)
+- `/how-to-lower-google-lsa-cost-per-lead` — 10 tactics to reduce LSA CPL (reviews, response time, bid strategy, job types, service area, lead rating, seasonal budgets, profile completeness)
+- `/lsa-message-leads-vs-phone-calls` — Message leads cost ~50% less than phone leads; covers setup, templates, when to enable/disable, hybrid strategy
+
 #### General LSA Resources
 - `/google-ads-vs-lsa-plumbers`
 - `/google-lsa-ranking-factors`
@@ -499,16 +503,16 @@ These topics are NOT yet covered by any existing post and have meaningful search
 
 **High priority (strong search intent + no overlap):**
 1. **"Is Google LSA Worth It for Contractors?"** — Every industry guide has a brief "is it worth it" section but no standalone deep-dive with break-even analysis, ROI calculator integration, and "LSA vs. doing nothing" framing. Estimated 1,500-3,000 searches/mo.
-2. **"How to Lower Your Google LSA Cost Per Lead"** — CPL reduction is mentioned across ranking factors, disputes, no-calls guide, and cost posts but never as a dedicated, comprehensive guide. High-intent keyword for contractors already running LSA who want to optimize. Estimated 600-1,200/mo.
-3. **"Google LSA for General Contractors"** — Major eligible industry not covered. Unique angle: large projects, lead qualification challenges, commercial vs. residential split, subcontractor coordination. Estimated 800-1,500/mo.
+2. ~~**"How to Lower Your Google LSA Cost Per Lead"**~~ — COMPLETED 2026-03-12 → `/how-to-lower-google-lsa-cost-per-lead`
+3. ~~**"Google LSA for General Contractors"**~~ — COMPLETED 2026-03-11 → `/google-lsa-for-general-contractors`
 4. **"Google Verified Badge: What Changed in 2025 and What It Means for Your LSA"** — The Oct 2025 Google Guaranteed → Google Verified rebrand + money-back guarantee removal is mentioned in how-to-get-google-guaranteed but a standalone "what changed" explainer could capture time-sensitive searchers. High topical authority play.
-5. **"LSA for Flooring Contractors"** — Not covered. High-ticket installs ($3K-$10K), seasonal spring peak, good LSA fit. Estimated 400-800/mo.
+5. ~~**"LSA for Flooring Contractors"**~~ — COMPLETED 2026-03-11 → `/google-lsa-for-flooring-contractors`
 6. **"Google LSA Lead Quality: How to Get Fewer Tire-Kickers"** — Unbookable lead problem (45%) touched on in how-many-leads but a dedicated post on qualifying leads, disputing bad ones, and optimizing for quality doesn't exist.
 
 **Medium priority:**
-7. **"Google LSA for Multi-Location Businesses"** — Scaling across multiple cities/locations is a completely different setup challenge. No overlap with existing posts.
-8. **"LSA for Pressure Washing / Exterior Cleaning"** — Not covered. Low CPL industry, strong seasonal demand.
-9. **"LSA for Gutter Companies"** — Not covered. Strong fall/storm season lead demand.
+7. ~~**"Google LSA for Multi-Location Businesses"**~~ — COMPLETED 2026-03-11 → `/google-lsa-for-multi-location-businesses`
+8. ~~**"LSA for Pressure Washing / Exterior Cleaning"**~~ — COMPLETED 2026-03-11 → `/google-lsa-for-pressure-washing` (merged with gutters)
+9. ~~**"LSA for Gutter Companies"**~~ — COMPLETED 2026-03-11 → merged into `/google-lsa-for-pressure-washing`
 
 **Avoid (would heavily overlap existing content):**
 - "How to rank in LSA" → already `/how-to-rank-number-1-google-local-services-ads` and `/google-lsa-ranking-factors`
