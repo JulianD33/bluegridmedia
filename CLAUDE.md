@@ -35,6 +35,22 @@
 
 ### New Blog Post Checklist
 Every new blog post MUST include ALL of the following steps:
+
+#### Pre-step: Content Overlap Check (do this BEFORE writing anything)
+Before creating any new blog post — especially cluster pages for an industry that already has a hub — answer all three questions:
+1. Does a hub page already exist for this industry? If yes, what angles does it own? (See "Unique Angle / Extra Sections" column in the Blog Content Index below)
+2. Does the new post cover an angle that is explicitly absent from the hub? (See "Does NOT Cover" column)
+3. Do any general LSA posts (`/google-lsa-ranking-factors`, `/how-much-does-google-lsa-cost`, `/google-lsa-review-strategy`, `/how-to-lower-google-lsa-cost-per-lead`) already cover this angle generically?
+
+If any existing post already covers the same angle at the same depth, reframe or do not proceed.
+
+**Cluster page overlap rules (apply to every industry cluster):**
+- **Budget guide vs. hub's seasonality section**: The hub owns the seasonal strategy and timing logic. The budget guide owns dollar amounts, weekly/monthly budgets by company size (1-truck, 3-truck, 5+ truck), and spend adjustment protocols (e.g. heat wave/storm surge). Do NOT restate the hub's seasonal framing.
+- **Mistakes cluster page vs. hub's mistakes list**: The hub lists mistakes briefly. The cluster page owns root cause diagnosis, severity ratings (Critical/Moderate/Minor), and step-by-step fix protocols. It should expand on OR add to the hub's list, not repeat it.
+- **Ranking factors cluster page vs. hub's "how to rank higher" section**: The hub covers 5 generic factors. The cluster page owns industry-specific benchmarks, timing strategies, and data points the hub does not have (e.g. review velocity for seasonal industries, response time targets specific to emergency call types).
+- **ROI benchmarks cluster page vs. hub's CPL/ticket figures**: The hub gives rough dollar ranges. The cluster page owns break-even CPL by company type, ROAS scenarios (good/great/exceptional), multi-year LTV models, and company-size-specific math.
+- **Cost per lead cluster page vs. hub's CPL section**: The hub gives a single range. The cluster page owns CPL broken down by season, market size (rural/suburban/major metro), job type, and includes an audit + dispute process guide.
+
 1. Create the HTML file in `/blog/` directory
 2. Add 301 redirect (`/blog/slug → /slug`) and 200 rewrite (`/slug → /blog/slug.html`) to `_redirects`
 3. Add the URL to `sitemap.xml` with appropriate priority and lastmod date
@@ -111,6 +127,14 @@ Every new blog post MUST include ALL of the following steps:
 - `/plumbing-lsa-ranking-factors` — Plumbing-specific ranking tactics: emergency response, job type completeness (tankless WH, sewer, repipe), review velocity, GBP connection
 - `/plumbing-lsa-roi-benchmarks` — ROI models for drain calls, water heater installs, repipes, commercial contracts; ROAS benchmarks; break-even CPL by company type
 - `/plumbing-lsa-mistakes` — 12 plumbing LSA mistakes with severity ratings, diagnosis signs, and step-by-step fixes; interactive checklist
+
+#### Roofing LSA Cluster (added 2026-03-13)
+- `/google-lsa-for-roofers` — Hub page (updated: H1 in header, cluster nav, contextual deep-dive links, updated meta)
+- `/roofing-lsa-cost-per-lead` — CPL by month, market size, job type (repair/replacement/inspection/insurance claim); audit process; dispute decision framework; break-even CPL by company type
+- `/roofing-lsa-budget-guide` — Month-by-month budget calendar for 1-truck, 3-truck, 5+ truck companies; storm event protocols; regional hail/hurricane season calendars; ice dam protocol
+- `/roofing-lsa-ranking-factors` — Job type completeness checklist (12+ types), review velocity targets, emergency response protocol, GBP category setup, service area optimization, seasonal pause recovery timelines
+- `/roofing-lsa-roi-benchmarks` — ROI models for repair-focused, replacement-focused, and insurance claim companies; repair-to-replacement LTV model; ROAS benchmarks; seasonal ROI variance
+- `/roofing-lsa-mistakes` — 12 roofing LSA mistakes with severity ratings (Critical/Moderate), diagnosis signs, root causes, and step-by-step fix protocols; interactive checklist
 
 #### Optimization Guides (added 2026-03-12)
 - `/how-to-lower-google-lsa-cost-per-lead` — 10 tactics to reduce LSA CPL (reviews, response time, bid strategy, job types, service area, lead rating, seasonal budgets, profile completeness)
@@ -437,16 +461,23 @@ Transformed single case study page into hub + 3 individual case study pages.
 
 ## Blog Content Index (for Overlap Detection)
 
-> Updated 2026-03-11. **Always check this section before planning new posts** to avoid duplicate content and identify genuine gaps.
+> Updated 2026-03-13. **Always check this section before planning new posts** to avoid duplicate content and identify genuine gaps. See also: "Pre-step: Content Overlap Check" in the New Blog Post Checklist above.
 
 ---
 
 ### How to Use This Index
 
 Before proposing a new blog post, scan:
-1. The "Industry Angle / Unique Sections" column — does any existing post already own the angle?
+1. The "Unique Angle / Extra Sections" column — does any existing post already own the angle?
 2. The "Does NOT Cover" column — these are genuine gaps that a new post could fill
-3. The "Content Gaps" section at the bottom for pre-identified opportunities
+3. For cluster pages: map each proposed cluster page angle against both the hub AND the general LSA posts below
+4. The "Content Gaps" section at the bottom for pre-identified opportunities
+
+**Red flags that indicate overlap:**
+- Proposed post covers the "seasonal strategy" for an industry whose hub already has a detailed seasonal section (e.g. landscaping 5-phase, HVAC seasonality, roofing storm strategy)
+- Proposed post is a "ranking factors" page but the hub already has a deep "how to rank higher" section with industry-specific tactics
+- Proposed post covers "mistakes" but repeats the same list from the hub without adding root causes, severity levels, or fix protocols
+- Proposed post covers ROI/CPL but only states the same ranges already in the hub, without company-size models or break-even math
 
 ---
 

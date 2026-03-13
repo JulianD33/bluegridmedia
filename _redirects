@@ -53,6 +53,11 @@
 /blog/plumbing-lsa-ranking-factors                     /plumbing-lsa-ranking-factors                               301
 /blog/plumbing-lsa-roi-benchmarks                      /plumbing-lsa-roi-benchmarks                                301
 /blog/plumbing-lsa-mistakes                            /plumbing-lsa-mistakes                                      301
+/blog/roofing-lsa-cost-per-lead                        /roofing-lsa-cost-per-lead                                  301
+/blog/roofing-lsa-budget-guide                         /roofing-lsa-budget-guide                                   301
+/blog/roofing-lsa-ranking-factors                      /roofing-lsa-ranking-factors                                301
+/blog/roofing-lsa-roi-benchmarks                       /roofing-lsa-roi-benchmarks                                 301
+/blog/roofing-lsa-mistakes                             /roofing-lsa-mistakes                                       301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -107,6 +112,11 @@
 /plumbing-lsa-ranking-factors                      /blog/plumbing-lsa-ranking-factors.html                      200
 /plumbing-lsa-roi-benchmarks                       /blog/plumbing-lsa-roi-benchmarks.html                       200
 /plumbing-lsa-mistakes                             /blog/plumbing-lsa-mistakes.html                             200
+/roofing-lsa-cost-per-lead                         /blog/roofing-lsa-cost-per-lead.html                         200
+/roofing-lsa-budget-guide                          /blog/roofing-lsa-budget-guide.html                          200
+/roofing-lsa-ranking-factors                       /blog/roofing-lsa-ranking-factors.html                       200
+/roofing-lsa-roi-benchmarks                        /blog/roofing-lsa-roi-benchmarks.html                        200
+/roofing-lsa-mistakes                              /blog/roofing-lsa-mistakes.html                              200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
