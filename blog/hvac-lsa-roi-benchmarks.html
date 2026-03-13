@@ -352,9 +352,18 @@
       background: #eff6ff;
     }
     /* prevent data columns from wrapping; last column (descriptions) may still wrap */
-    .article-content td:not(:last-child),
-    .article-content th {
+    .article-content td:not(:last-child) {
       white-space: nowrap;
+    }
+    /* allow text-description columns to wrap in wide tables */
+    .article-content td.td-wrap,
+    .article-content th.td-wrap {
+      white-space: normal;
+    }
+    /* platform comparison table: all columns have descriptions, allow full wrap */
+    .visual-platform-table td,
+    .visual-platform-table th {
+      white-space: normal !important;
     }
 
     /* ── FAQ ── */
