@@ -294,6 +294,7 @@
       letter-spacing: 0.06em;
       margin-bottom: 0.6rem;
       vertical-align: middle;
+      white-space: nowrap;
     }
     .severity-critical {
       background: #fef2f2;
@@ -466,12 +467,48 @@
     .article-content tr:hover td {
       background: #eff6ff;
     }
-    .check-yes {
-      color: #16a34a;
-      font-weight: 700;
+    /* number column: never wrap */
+    .article-content table td:first-child {
+      white-space: nowrap;
+      width: 2rem;
+      text-align: center;
     }
-    .check-no {
-      color: #94a3b8;
+    /* severity column: never wrap */
+    .article-content table td:nth-child(3) {
+      white-space: nowrap;
+    }
+    /* interactive audit checkboxes */
+    .audit-check {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #cbd5e1;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: background 0.15s, border-color 0.15s;
+      background: #fff;
+      vertical-align: middle;
+    }
+    .audit-check:hover {
+      border-color: #16a34a;
+    }
+    .audit-check:checked {
+      background: #16a34a;
+      border-color: #16a34a;
+    }
+    .audit-check:checked::after {
+      content: '\2713';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1;
     }
 
     /* ── FAQ items ── */
@@ -1243,73 +1280,73 @@
                   <td>1</td>
                   <td>GBP connected, verified, and NAP matches LSA exactly</td>
                   <td><span class="severity-badge severity-critical">Critical</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>2</td>
                   <td>Budget never goes to zero between July and October</td>
                   <td><span class="severity-badge severity-critical">Critical</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>3</td>
                   <td>Mini-split and heat pump job types enabled</td>
                   <td><span class="severity-badge severity-critical">Critical</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>4</td>
                   <td>Bid mode and max bid set to current market rate during peak season</td>
                   <td><span class="severity-badge severity-critical">Critical</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>5</td>
                   <td>Invalid leads disputed on a weekly schedule</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>6</td>
                   <td>Lead quality reviewed weekly even during peak season</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>7</td>
                   <td>Service area matches actual dispatch zone, not an inflated radius</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>8</td>
                   <td>After-hours call handling in place (live answering or clear callback protocol)</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>9</td>
                   <td>Techs trained on repair-to-replacement conversation for systems over 8 years old</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>10</td>
                   <td>Review requests sent after every job, not just great ones</td>
                   <td><span class="severity-badge severity-moderate">Moderate</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>11</td>
                   <td>Profile photos updated seasonally (AC shots in summer, heating shots in fall)</td>
                   <td><span class="severity-badge severity-minor">Minor</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
                 <tr>
                   <td>12</td>
                   <td>Booking rate tracked weekly alongside CPL and lead volume</td>
                   <td><span class="severity-badge severity-minor">Minor</span></td>
-                  <td><span class="check-no">[ ]</span></td>
+                  <td><input type="checkbox" class="audit-check" aria-label="Mark as fixed"></td>
                 </tr>
               </tbody>
             </table>
@@ -1487,6 +1524,20 @@
   <div id="footer-placeholder"></div>
 
   <script>
+    // Persist audit checklist state across page reloads
+    (function() {
+      const KEY = 'hvac-mistakes-checklist';
+      const boxes = document.querySelectorAll('.audit-check');
+      const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+      boxes.forEach((cb, i) => {
+        if (saved[i]) cb.checked = true;
+        cb.addEventListener('change', function() {
+          const states = Array.from(boxes).map(c => c.checked);
+          localStorage.setItem(KEY, JSON.stringify(states));
+        });
+      });
+    })();
+
     fetch("/nav.html").then(r => r.text()).then(html => {
       document.getElementById("nav-placeholder").innerHTML = html;
       const nav = document.getElementById("siteNav");
