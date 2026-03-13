@@ -344,9 +344,13 @@
     .article-content tr:hover td {
       background: #eff6ff;
     }
-    .article-content td:not(:last-child),
-    .article-content th {
+    .article-content td:not(:last-child) {
       white-space: nowrap;
+    }
+    /* Allow text-description columns to wrap in wide tables */
+    .article-content td.td-wrap,
+    .article-content th.td-wrap {
+      white-space: normal;
     }
 
     /* FAQ */
@@ -963,9 +967,9 @@
               <thead>
                 <tr>
                   <th>Season</th>
-                  <th>Dominant Job Types</th>
+                  <th class="td-wrap">Dominant Job Types</th>
                   <th>Volume</th>
-                  <th>Avg Ticket</th>
+                  <th class="td-wrap">Avg Ticket</th>
                   <th>Booking Rate</th>
                   <th>ROI Outlook</th>
                 </tr>
@@ -973,33 +977,33 @@
               <tbody>
                 <tr>
                   <td>Winter (Dec-Feb)</td>
-                  <td>Burst pipes, frozen lines, emergency drain</td>
+                  <td class="td-wrap">Burst pipes, frozen lines, emergency drain</td>
                   <td>High</td>
-                  <td>Lower ($200-$450)</td>
+                  <td class="td-wrap">Lower ($200-$450)</td>
                   <td>Very high (80-90%)</td>
                   <td>High volume, modest ticket, excellent booking rate</td>
                 </tr>
                 <tr>
                   <td>Spring (Mar-May)</td>
-                  <td>Repipes, bathroom rough-ins, water heater installs</td>
+                  <td class="td-wrap">Repipes, bathroom rough-ins, water heater installs</td>
                   <td>Moderate-High</td>
-                  <td>High ($1,500-$12,000)</td>
+                  <td class="td-wrap">High ($1,500-$12,000)</td>
                   <td>60-70%</td>
                   <td>Best overall ROI due to project work mix</td>
                 </tr>
                 <tr>
                   <td>Summer (Jun-Aug)</td>
-                  <td>Water heater failures, slab leaks, outdoor plumbing</td>
+                  <td class="td-wrap">Water heater failures, slab leaks, outdoor plumbing</td>
                   <td>Moderate</td>
-                  <td>High ($800-$5,500)</td>
+                  <td class="td-wrap">High ($800-$5,500)</td>
                   <td>65-78%</td>
                   <td>Water heater failures spike, strong ROAS on installs</td>
                 </tr>
                 <tr>
                   <td>Fall (Sep-Nov)</td>
-                  <td>Pre-winter inspections, water heater replacements, drain maintenance</td>
+                  <td class="td-wrap">Pre-winter inspections, water heater replacements, drain maintenance</td>
                   <td>Moderate</td>
-                  <td>Moderate ($400-$2,000)</td>
+                  <td class="td-wrap">Moderate ($400-$2,000)</td>
                   <td>62-70%</td>
                   <td>Good mix, slightly softer volume than peak seasons</td>
                 </tr>
@@ -1024,7 +1028,7 @@
                 <tr>
                   <th>Channel</th>
                   <th>Typical CPL</th>
-                  <th>Lead Type</th>
+                  <th class="td-wrap">Lead Type</th>
                   <th>Booking Rate</th>
                   <th>Cost Per Booked Job</th>
                   <th>ROI Outlook</th>
@@ -1034,7 +1038,7 @@
                 <tr>
                   <td>Google LSA</td>
                   <td>$40-$90</td>
-                  <td>Exclusive phone call or message</td>
+                  <td class="td-wrap">Exclusive phone call or message</td>
                   <td>65-80%</td>
                   <td>$55-$130</td>
                   <td>Best for emergency and project work</td>
@@ -1042,7 +1046,7 @@
                 <tr>
                   <td>Google Ads (PPC)</td>
                   <td>$12-$30 CPC</td>
-                  <td>Click to website (not a call)</td>
+                  <td class="td-wrap">Click to website (not a call)</td>
                   <td>15-25% call rate</td>
                   <td>$120-$200</td>
                   <td>Good for brand building, higher friction</td>
@@ -1050,7 +1054,7 @@
                 <tr>
                   <td>Angi / HomeAdvisor</td>
                   <td>$20-$80 per lead</td>
-                  <td>Shared with 2-4 contractors</td>
+                  <td class="td-wrap">Shared with 2-4 contractors</td>
                   <td>20-30%</td>
                   <td>$100-$400</td>
                   <td>High cost per booked job, competitive friction</td>
