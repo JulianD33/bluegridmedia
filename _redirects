@@ -40,6 +40,9 @@
 /blog/google-lsa-for-multi-location-businesses        /google-lsa-for-multi-location-businesses                  301
 /blog/how-to-lower-google-lsa-cost-per-lead            /how-to-lower-google-lsa-cost-per-lead                      301
 /blog/lsa-message-leads-vs-phone-calls                 /lsa-message-leads-vs-phone-calls                           301
+/blog/google-lsa-vs-yelp-ads                           /google-lsa-vs-yelp-ads                                     301
+/blog/google-lsa-vs-facebook-ads-contractors           /google-lsa-vs-facebook-ads-contractors                     301
+/blog/google-lsa-vs-homeadvisor                        /google-lsa-vs-homeadvisor                                  301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -81,6 +84,9 @@
 /google-lsa-for-multi-location-businesses          /blog/google-lsa-for-multi-location-businesses.html          200
 /how-to-lower-google-lsa-cost-per-lead             /blog/how-to-lower-google-lsa-cost-per-lead.html             200
 /lsa-message-leads-vs-phone-calls                  /blog/lsa-message-leads-vs-phone-calls.html                  200
+/google-lsa-vs-yelp-ads                            /blog/google-lsa-vs-yelp-ads.html                            200
+/google-lsa-vs-facebook-ads-contractors            /blog/google-lsa-vs-facebook-ads-contractors.html            200
+/google-lsa-vs-homeadvisor                         /blog/google-lsa-vs-homeadvisor.html                         200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
