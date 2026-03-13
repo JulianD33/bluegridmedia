@@ -104,6 +104,14 @@ Every new blog post MUST include ALL of the following steps:
 - `/hvac-lsa-roi-benchmarks` — ROI benchmarks for repair/replacement/maintenance plan models; ROAS targets; break-even CPL by company type
 - `/hvac-lsa-mistakes` — 12 HVAC LSA mistakes with severity ratings, diagnosis signs, and step-by-step fixes
 
+#### Plumbing LSA Cluster (added 2026-03-13)
+- `/plumbing-ads-playbook-google-local-services-ads` — Hub page (updated with cluster nav, H1 in header, links to all 5 cluster pages)
+- `/plumbing-lsa-cost-per-lead` — CPL by season, market size, job type (drain vs. water heater vs. repipe); audit process; dispute guide
+- `/plumbing-lsa-budget-guide` — Month-by-month budget calendar for 1-truck, 3-truck, 5+ truck companies; freeze event and heat wave protocols
+- `/plumbing-lsa-ranking-factors` — Plumbing-specific ranking tactics: emergency response, job type completeness (tankless WH, sewer, repipe), review velocity, GBP connection
+- `/plumbing-lsa-roi-benchmarks` — ROI models for drain calls, water heater installs, repipes, commercial contracts; ROAS benchmarks; break-even CPL by company type
+- `/plumbing-lsa-mistakes` — 12 plumbing LSA mistakes with severity ratings, diagnosis signs, and step-by-step fixes; interactive checklist
+
 #### Optimization Guides (added 2026-03-12)
 - `/how-to-lower-google-lsa-cost-per-lead` — 10 tactics to reduce LSA CPL (reviews, response time, bid strategy, job types, service area, lead rating, seasonal budgets, profile completeness)
 - `/lsa-message-leads-vs-phone-calls` — Message leads cost ~50% less than phone leads; covers setup, templates, when to enable/disable, hybrid strategy
