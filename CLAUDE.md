@@ -42,6 +42,20 @@ Every new blog post MUST include ALL of the following steps:
 5. Update the "Existing Blog Posts" list below in this file
 6. Generate and add hero image to `/assets/images/blog/[slug]/`
 
+### Blog Post HTML Structure: H1 Title Position
+**CRITICAL**: The `<h1>` title (and subtitle `<p>`) must be inside the `<header>` block (the blue banner at the top), NOT inside `<main class="article-content">`. Agents frequently make this mistake. Correct structure:
+```html
+<header style="padding: 35px 0;">
+  <div class="container" style="text-align:center;">
+    <div class="logo-container" style="margin-bottom: 20px;">
+      <a href="/"><img src="logo.png" alt="Blue Grid Media" class="logo"></a>
+    </div>
+    <h1>Post Title Here</h1>
+    <p>Subtitle / Tagline Here</p>
+  </div>
+</header>
+```
+
 ### Tone & Writing Style
 - Write in a relatable, human tone that targets reader pain points
 - Make readers feel understood with "we get it" empathy moments
