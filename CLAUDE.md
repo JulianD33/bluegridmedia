@@ -82,6 +82,14 @@ Every new blog post MUST include ALL of the following steps:
 - `/google-lsa-for-pressure-washing` — covers pressure washing, window cleaning, and gutter cleaning (all under Google's Window Cleaning LSA vertical) (added 2026-03-11)
 - `/google-lsa-for-multi-location-businesses` (added 2026-03-11)
 
+#### HVAC LSA Cluster (added 2026-03-13)
+- `/google-lsa-for-hvac-companies` — Hub page (updated to link to all 5 cluster pages)
+- `/hvac-lsa-cost-per-lead` — CPL by season, market size, job type; audit process; break-even formula
+- `/hvac-lsa-budget-guide` — Month-by-month budget calendar for 1-truck, 3-truck, 5+ truck companies; heat wave/cold snap protocols
+- `/hvac-lsa-ranking-factors` — HVAC-specific ranking tactics: review velocity, emergency response time, job type completeness, seasonal pause penalties
+- `/hvac-lsa-roi-benchmarks` — ROI benchmarks for repair/replacement/maintenance plan models; ROAS targets; break-even CPL by company type
+- `/hvac-lsa-mistakes` — 12 HVAC LSA mistakes with severity ratings, diagnosis signs, and step-by-step fixes
+
 #### Optimization Guides (added 2026-03-12)
 - `/how-to-lower-google-lsa-cost-per-lead` — 10 tactics to reduce LSA CPL (reviews, response time, bid strategy, job types, service area, lead rating, seasonal budgets, profile completeness)
 - `/lsa-message-leads-vs-phone-calls` — Message leads cost ~50% less than phone leads; covers setup, templates, when to enable/disable, hybrid strategy

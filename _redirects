@@ -43,6 +43,11 @@
 /blog/google-lsa-vs-yelp-ads                           /google-lsa-vs-yelp-ads                                     301
 /blog/google-lsa-vs-facebook-ads-contractors           /google-lsa-vs-facebook-ads-contractors                     301
 /blog/google-lsa-vs-homeadvisor                        /google-lsa-vs-homeadvisor                                  301
+/blog/hvac-lsa-cost-per-lead                           /hvac-lsa-cost-per-lead                                     301
+/blog/hvac-lsa-budget-guide                            /hvac-lsa-budget-guide                                      301
+/blog/hvac-lsa-ranking-factors                         /hvac-lsa-ranking-factors                                   301
+/blog/hvac-lsa-roi-benchmarks                          /hvac-lsa-roi-benchmarks                                    301
+/blog/hvac-lsa-mistakes                                /hvac-lsa-mistakes                                          301
 
 # Blog article rewrites — serve files from /blog/ at their original root URLs
 /google-lsa-for-appliance-repair                   /blog/google-lsa-for-appliance-repair.html                   200
@@ -87,6 +92,11 @@
 /google-lsa-vs-yelp-ads                            /blog/google-lsa-vs-yelp-ads.html                            200
 /google-lsa-vs-facebook-ads-contractors            /blog/google-lsa-vs-facebook-ads-contractors.html            200
 /google-lsa-vs-homeadvisor                         /blog/google-lsa-vs-homeadvisor.html                         200
+/hvac-lsa-cost-per-lead                            /blog/hvac-lsa-cost-per-lead.html                            200
+/hvac-lsa-budget-guide                             /blog/hvac-lsa-budget-guide.html                             200
+/hvac-lsa-ranking-factors                          /blog/hvac-lsa-ranking-factors.html                          200
+/hvac-lsa-roi-benchmarks                           /blog/hvac-lsa-roi-benchmarks.html                           200
+/hvac-lsa-mistakes                                 /blog/hvac-lsa-mistakes.html                                 200
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
