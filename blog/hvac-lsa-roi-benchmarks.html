@@ -351,6 +351,11 @@
     .article-content tr:hover td {
       background: #eff6ff;
     }
+    /* prevent data columns from wrapping; last column (descriptions) may still wrap */
+    .article-content td:not(:last-child),
+    .article-content th {
+      white-space: nowrap;
+    }
 
     /* ── FAQ ── */
     .faq-item {
