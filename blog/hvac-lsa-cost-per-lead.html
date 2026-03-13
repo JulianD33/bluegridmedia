@@ -349,6 +349,11 @@
     .article-content tr:hover td {
       background: #eff6ff;
     }
+    /* prevent data columns from wrapping; last column (descriptions) may still wrap */
+    .article-content td:not(:last-child),
+    .article-content th {
+      white-space: nowrap;
+    }
     .td-high { color: #dc2626; font-weight: 600; }
     .td-med  { color: #d97706; font-weight: 600; }
     .td-low  { color: #16a34a; font-weight: 600; }
