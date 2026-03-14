@@ -137,7 +137,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -370,11 +370,14 @@
     .article-content tr:hover td {
       background: #eff6ff;
     }
+    .table-wrap table { width: auto; min-width: 100%; }
     /* prevent data columns from wrapping; last column (descriptions) may still wrap */
     .article-content td:not(:last-child),
     .article-content th {
       white-space: nowrap;
     }
+    .article-content td.td-wrap,
+    .article-content th.td-wrap { white-space: normal; min-width: 250px; }
     .peak-row td { background: #fef2f2 !important; }
     .peak-row:hover td { background: #fee2e2 !important; }
     .ramp-row td { background: #fefce8 !important; }
@@ -865,7 +868,7 @@
                   <th>1-Truck Weekly</th>
                   <th>3-Truck Weekly</th>
                   <th>5+ Truck Weekly</th>
-                  <th>Key Event / Action</th>
+                  <th class="td-wrap">Key Event / Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -1125,7 +1128,7 @@
                 <tr>
                   <th>Inactivity Period</th>
                   <th>Ranking Impact</th>
-                  <th>Recovery Time</th>
+                  <th class="td-wrap">Recovery Time</th>
                 </tr>
               </thead>
               <tbody>
