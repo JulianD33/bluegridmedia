@@ -136,6 +136,14 @@ If any existing post already covers the same angle at the same depth, reframe or
 - `/roofing-lsa-roi-benchmarks` — ROI models for repair-focused, replacement-focused, and insurance claim companies; repair-to-replacement LTV model; ROAS benchmarks; seasonal ROI variance
 - `/roofing-lsa-mistakes` — 12 roofing LSA mistakes with severity ratings (Critical/Moderate), diagnosis signs, root causes, and step-by-step fix protocols; interactive checklist
 
+#### Landscaping LSA Cluster (added 2026-03-14)
+- `/google-lsa-for-landscaping` — Hub page (updated: H1 in header, cluster nav, contextual deep-dive links, updated meta)
+- `/landscaping-lsa-cost-per-lead` — CPL by month, market size, job type (mowing/cleanup/hardscape/irrigation/commercial); break-even formula; lead audit process; dispute decision guide
+- `/landscaping-lsa-budget-guide` — Month-by-month budget calendar for 1-crew, 3-crew, 5+ crew companies; spring surge protocol; fall push strategy; off-season floor math; monthly vs weekly cap guidance
+- `/landscaping-lsa-ranking-factors` — Review velocity targets by season, seasonal photo protocol, job type completeness checklist (18 types), service area optimization, GBP category setup, ranking recovery timelines
+- `/landscaping-lsa-roi-benchmarks` — ROI models for maintenance-focused, hardscape/install, and commercial companies; maintenance contract LTV formula; break-even CPL by company type; ROAS benchmarks; seasonal ROI variance
+- `/landscaping-lsa-mistakes` — 12 landscaping LSA mistakes with severity ratings (Critical/Moderate), diagnosis signs, root causes, and step-by-step fix protocols; interactive audit checklist
+
 #### Ranking Factors Deep Dive Series (added 2026-03-14)
 - `/google-lsa-ranking-factors` — Hub page (updated: cluster nav, deep-dive links after Factors 2/3/4/5, updated sidebar, updated meta)
 - `/lsa-response-time-guide` — Operational infrastructure for instant response: call forwarding setup, answering service comparison, after-hours routing, how to audit responsiveness score, missed-call compounding effect
