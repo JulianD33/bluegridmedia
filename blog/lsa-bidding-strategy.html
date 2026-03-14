@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEMSC670ZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WEMSC670ZR');
+    gtag('config', 'AW-17840803263');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LSA Bidding Strategy: Maximize Leads vs. Max Per Lead (Complete Guide) [2026] | Blue Grid Media</title>
+  <meta name="description" content="When to use Maximize Leads vs. Max Per Lead in Google LSA. Includes cap calculation math, seasonal bid adjustments, weekly vs. monthly budget caps, and how to diagnose bid-related ranking drops.">
+  <link rel="canonical" href="https://bluegridmedia.com/lsa-bidding-strategy">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LSA Bidding Strategy: Maximize Leads vs. Max Per Lead (Complete Guide) [2026]">
+  <meta property="og:description" content="When to use Maximize Leads vs. Max Per Lead in Google LSA. Includes cap calculation math, seasonal bid adjustments, weekly vs. monthly budget caps, and how to diagnose bid-related ranking drops.">
+  <meta property="og:url" content="https://bluegridmedia.com/lsa-bidding-strategy">
+  <meta property="og:site_name" content="Blue Grid Media">
+  <meta property="og:image" content="https://bluegridmedia.com/assets/images/blog/lsa-bidding-strategy/lsa-bidding-strategy-hero.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LSA Bidding Strategy: Maximize Leads vs. Max Per Lead (Complete Guide) [2026]">
+  <meta name="twitter:description" content="When to use Maximize Leads vs. Max Per Lead in Google LSA. Includes cap calculation math, seasonal bid adjustments, weekly vs. monthly budget caps, and how to diagnose bid-related ranking drops.">
+  <meta name="twitter:image" content="https://bluegridmedia.com/assets/images/blog/lsa-bidding-strategy/lsa-bidding-strategy-hero.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"></noscript>
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://bluegridmedia.com/#website",
+        "url": "https://bluegridmedia.com/",
+        "name": "Blue Grid Media"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://bluegridmedia.com/lsa-bidding-strategy#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bluegridmedia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Resources",
+            "item": "https://bluegridmedia.com/resources"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "LSA Ranking Factors Guide",
+            "item": "https://bluegridmedia.com/google-lsa-ranking-factors"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "LSA Bidding Strategy",
+            "item": "https://bluegridmedia.com/lsa-bidding-strategy"
+          }
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://bluegridmedia.com/lsa-bidding-strategy#blogposting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://bluegridmedia.com/lsa-bidding-strategy"
+        },
+        "headline": "LSA Bidding Strategy: The Complete Guide to Bid Modes, Caps, and Budget Timing",
+        "description": "When to use Maximize Leads vs. Max Per Lead in Google LSA. Includes cap calculation math, seasonal bid adjustments, weekly vs. monthly budget caps, and how to diagnose bid-related ranking drops.",
+        "author": {
+          "@type": "Person",
+          "name": "Julian Diep",
+          "url": "https://bluegridmedia.com/about",
+          "jobTitle": "Google Ads and LSA Specialist",
+          "sameAs": "https://www.linkedin.com/in/juliandiep"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Blue Grid Media",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bluegridmedia.com/assets/images/logo.png"
+          }
+        },
+        "datePublished": "2026-03-14",
+        "dateModified": "2026-03-14"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://bluegridmedia.com/lsa-bidding-strategy#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should I use Maximize Leads or Max Per Lead for LSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your account maturity. If your account is under 30 days old or has fewer than 10 reviews, start with Max Per Lead using a calibrated cap for your trade. Once you have 30 to 60 days of lead history, 30 or more reviews, and a consistent response rate above 90 percent, switch to Maximize Leads. Google's algorithm needs data to optimize Maximize Leads effectively. Running it on a brand-new account is like hiring a new employee and sending them straight to your biggest job site with no training."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I calculate my Max Per Lead cap?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use this formula: (average job ticket) multiplied by (your LSA close rate) multiplied by (target gross margin percentage). That gives you your maximum sustainable CPL. Then set your actual cap at 70 to 80 percent of that number to leave room for algorithm variability. For example, an HVAC company with a $450 average repair ticket, 35 percent close rate, and 25 percent margin calculates: $450 times 0.35 times 0.25 equals $39 maximum sustainable CPL. A cap of $45 gives comfortable cushion. Setting it at exactly $39 leaves no room for a bad week."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is my LSA budget exhausting before the week ends?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weekly budget exhaustion is one of the most common and damaging bidding mistakes. When your weekly cap runs out on Wednesday, you go dark Thursday through Sunday, which is exactly when many homeowners have time to search. The fix has two parts: either increase your weekly budget to cover the full week's demand, or narrow your service area to reduce total lead volume while maintaining consistent daily spend. For storm-dependent industries like roofing and water damage, switching from a weekly to a monthly budget cap usually solves this automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the LSA algorithm training period and how long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you switch to Maximize Leads mode, Google's algorithm enters a learning phase where it adjusts bids in real time based on your account's historical data. This training period typically lasts four to six weeks. During that window, expect your CPL to be higher and less consistent than normal. This is not a sign that something is wrong. The algorithm is gathering the data it needs to optimize effectively. Avoid making major changes to budget, service area, or job types during the training period, as each change can reset or extend the learning phase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use a weekly or monthly budget cap in LSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Year-round businesses with consistent daily lead volume generally do well with weekly caps, since the spending smooths naturally across seven days. However, seasonal businesses or those in storm-dependent industries almost always benefit from monthly caps. A monthly cap gives Google's algorithm room to spend aggressively on high-demand days and pull back on slow days, rather than exhausting the week's allotment on one surge event and going dark the rest of the week. If your business regularly sees Monday and Tuesday lead spikes, a monthly cap prevents that mid-week budget exhaustion problem."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Core article styles ── */
+    .article-content p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 22px 0 26px;
+      padding-left: 22px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .article-content h2 {
+      margin-top: 50px;
+      margin-bottom: 22px;
+    }
+    .article-content h3 {
+      margin-top: 32px;
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 2.5rem 0;
+    }
+
+    /* ── Two-column page layout ── */
+    .article-page-wrap {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .article-page-wrap {
+        grid-template-columns: 1fr;
+      }
+      .article-sidebar {
+        order: -1;
+      }
+    }
+
+    /* ── Table of contents ── */
+    .toc-box {
+      background: #eff6ff;
+      border: 1px solid #1a6fc4;
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .toc-box .toc-heading {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1a6fc4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.9rem;
+    }
+    .toc-box ol {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .toc-box li {
+      margin-bottom: 0.3rem;
+      font-size: 0.92rem;
+    }
+    .toc-box a {
+      color: #1a6fc4;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .toc-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr; }
+    }
+    .stat-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3px solid #1a6fc4;
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-card .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1a6fc4;
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-card .stat-label {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #1a6fc4;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .callout-yellow {
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #713f12;
+    }
+    .callout-yellow strong {
+      color: #422006;
+    }
+    .callout-green {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #14532d;
+    }
+    .callout-red {
+      background: #fef2f2;
+      border-left: 4px solid #dc2626;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #7f1d1d;
+    }
+
+    /* ── Tables ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+    }
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .article-content th {
+      background: #0f2d4e;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .article-content td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+      vertical-align: top;
+    }
+    .article-content tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .article-content tr:hover td {
+      background: #eff6ff;
+    }
+    .article-content td:not(:last-child) {
+      white-space: nowrap;
+    }
+    .article-content td.td-wrap,
+    .article-content th.td-wrap {
+      white-space: normal;
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1.1rem 1.25rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-a {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* ── CTA box ── */
+    .cta-box {
+      background: linear-gradient(135deg, #0f2d4e 0%, #1a6fc4 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta-box h2 {
+      color: #fff !important;
+      font-size: 1.5rem;
+      margin: 0 0 0.75rem !important;
+      padding: 0 !important;
+    }
+    .cta-box p {
+      color: #dbeafe;
+      margin-bottom: 1.5rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #0f2d4e;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .cta-btn:hover {
+      background: #eff6ff;
+      text-decoration: none;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar-cta {
+      background: linear-gradient(135deg, #1a4b7a, #1a6fc4);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .sidebar-cta h3 {
+      color: #dbeafe;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.5rem;
+    }
+    .sidebar-cta p {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 0.6rem;
+      line-height: 1.35;
+    }
+    .sidebar-cta span {
+      display: block;
+      font-size: 0.85rem;
+      color: #bfdbfe;
+      margin-bottom: 1rem;
+    }
+    .sidebar-cta a {
+      display: inline-block;
+      background: #fff;
+      color: #0f2d4e;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .sidebar-card h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      margin: 0 0 0.75rem;
+    }
+    .sidebar-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar-card ul li {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 0.45rem 0;
+      font-size: 0.88rem;
+    }
+    .sidebar-card ul li:last-child {
+      border-bottom: none;
+    }
+    .sidebar-card ul li a {
+      color: #1a6fc4;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sidebar-card ul li a:hover {
+      text-decoration: underline;
+    }
+    .sidebar-card p {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin: 0 0 0.75rem;
+    }
+    .sidebar-card a.sidebar-btn {
+      display: inline-block;
+      background: #1a6fc4;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 7px;
+      text-decoration: none;
+    }
+
+    /* ── COMPONENT 1: Decision Flowchart ── */
+    .visual-flowchart {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .visual-flowchart-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .flow-question {
+      background: #0f2d4e;
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      max-width: 480px;
+    }
+    .flow-branches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 560px;
+      margin-top: 0;
+    }
+    .flow-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .flow-connector-down {
+      width: 2px;
+      height: 24px;
+      background: #94a3b8;
+      margin: 0 auto;
+    }
+    .flow-connector-fork {
+      width: 100%;
+      max-width: 480px;
+      height: 24px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .flow-connector-fork::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #94a3b8;
+    }
+    .flow-connector-fork::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(25% + 1px);
+      width: calc(50% - 2px);
+      height: 2px;
+      background: #94a3b8;
+    }
+    .flow-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 0.25rem;
+    }
+    .flow-answer {
+      border-radius: 9px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+    .flow-answer-sub {
+      font-size: 0.78rem;
+      font-weight: 400;
+      margin-top: 0.3rem;
+      line-height: 1.45;
+    }
+    .flow-answer.yes {
+      background: #dcfce7;
+      border: 1px solid #86efac;
+      color: #14532d;
+    }
+    .flow-answer.no {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #7f1d1d;
+    }
+    .flow-answer.neutral {
+      background: #eff6ff;
+      border: 1px solid #93c5fd;
+      color: #1e3a5f;
+    }
+    .flow-result {
+      background: linear-gradient(135deg, #0f2d4e, #1a6fc4);
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+    }
+    .flow-result-sub {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #bfdbfe;
+      margin-top: 0.25rem;
+    }
+    .flow-result.max-per-lead {
+      background: linear-gradient(135deg, #78350f, #d97706);
+    }
+    .flow-and-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 480px;
+      margin: 0.35rem 0;
+    }
+    .flow-and-connector span {
+      background: #e2e8f0;
+      color: #64748b;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+    }
+    .flow-and-connector::before,
+    .flow-and-connector::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+    @media (max-width: 600px) {
+      .flow-branches {
+        grid-template-columns: 1fr;
+      }
+      .flow-connector-fork::after {
+        display: none;
+      }
+    }
+
+    /* ── COMPONENT 2: Cap Calculation Cards ── */
+    .visual-cap-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 720px) {
+      .visual-cap-cards { grid-template-columns: 1fr; }
+    }
+    .cap-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .cap-card-header {
+      padding: 0.85rem 1.1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .cap-card-header.hvac { background: #1a4b7a; }
+    .cap-card-header.roofing { background: #0f2d4e; }
+    .cap-card-header.locksmith { background: #374151; }
+    .cap-card-body {
+      padding: 1.1rem;
+    }
+    .cap-formula-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+    .cap-formula-row:last-of-type {
+      border-bottom: none;
+    }
+    .cap-formula-row .label {
+      color: #64748b;
+    }
+    .cap-formula-row .value {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .cap-formula-operator {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      padding: 0.1rem 0;
+    }
+    .cap-result-bar {
+      margin-top: 0.85rem;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+    }
+    .cap-result-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #16a34a;
+      letter-spacing: 0.05em;
+    }
+    .cap-result-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #14532d;
+      display: block;
+      line-height: 1.2;
+    }
+    .cap-result-recommended {
+      font-size: 0.78rem;
+      color: #166534;
+      margin-top: 0.2rem;
+    }
+    .cap-warning-bar {
+      margin-top: 0.6rem;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      color: #7f1d1d;
+    }
+
+    /* ── COMPONENT 3: Budget Exhaustion Diagnostic ── */
+    .visual-exhaustion {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .visual-exhaustion-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .visual-exhaustion-subtitle {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 1.75rem;
+    }
+    .exhaustion-scenarios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .exhaustion-scenarios { grid-template-columns: 1fr; }
+    }
+    .exhaustion-scenario {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+    .exhaustion-scenario-header {
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .exhaustion-scenario-header.bad {
+      background: #fef2f2;
+      color: #dc2626;
+      border-bottom: 1px solid #fecaca;
+    }
+    .exhaustion-scenario-header.good {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-bottom: 1px solid #bbf7d0;
+    }
+    .exhaustion-days {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .exhaustion-day {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .exhaustion-day-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #374151;
+      width: 36px;
+      flex-shrink: 0;
+    }
+    .exhaustion-bar-wrap {
+      flex: 1;
+      background: #f1f5f9;
+      border-radius: 4px;
+      height: 18px;
+      overflow: hidden;
+    }
+    .exhaustion-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .exhaustion-bar.spent { background: #1a6fc4; }
+    .exhaustion-bar.zero { background: #dc2626; width: 100% !important; }
+    .exhaustion-bar.healthy { background: #16a34a; }
+    .exhaustion-day-note {
+      font-size: 0.72rem;
+      color: #64748b;
+      width: 80px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .exhaustion-day-note.alert {
+      color: #dc2626;
+      font-weight: 700;
+    }
+    .exhaustion-total {
+      padding: 0.75rem 1rem;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.82rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* ── Series nav strip ── */
+    .series-nav {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.88rem;
+    }
+    .series-nav-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #1a6fc4;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .series-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.75rem;
+    }
+    .series-nav-links a {
+      color: #1e3a5f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .series-nav-links a:hover { text-decoration: underline; }
+    .series-nav-links .current {
+      color: #0f2d4e;
+      font-weight: 700;
+      pointer-events: none;
+    }
+    .series-sep {
+      color: #94a3b8;
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      vertical-align: middle;
+    }
+    .badge-blue { background: #dbeafe; color: #1e3a5f; }
+    .badge-orange { background: #ffedd5; color: #9a3412; }
+    .badge-green { background: #dcfce7; color: #14532d; }
+
+    /* ── Market cap reference table ── */
+    .market-cap-table td { white-space: nowrap; }
+    .market-cap-table td.td-wrap { white-space: normal; }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <header style="padding: 35px 0;">
+    <div class="container" style="text-align:center;">
+      <div class="logo-container" style="margin-bottom: 20px;">
+        <a href="/"><img src="/logo.png" alt="Blue Grid Media" class="logo"></a>
+      </div>
+      <h1>LSA Bidding Strategy: The Complete Guide to Bid Modes, Caps, and Budget Timing</h1>
+      <p>Factor 3 of 7 in Google's LSA ranking algorithm — and the one most contractors set once and never revisit</p>
+    </div>
+  </header>
+
+  <section class="about-section" style="padding: 40px 0;">
+    <div class="container">
+      <div class="article-page-wrap">
+
+        <main class="article-content">
+
+          <!-- Series nav -->
+          <div class="series-nav">
+            <div class="series-nav-label">LSA Ranking Factors Deep Dive Series</div>
+            <div class="series-nav-links">
+              <a href="/google-lsa-ranking-factors">Hub Guide</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-response-time-guide">Response Time</a>
+              <span class="series-sep">|</span>
+              <span class="current">Bidding Strategy (You Are Here)</span>
+              <span class="series-sep">|</span>
+              <a href="/lsa-job-type-optimization">Job Types</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-profile-completeness-guide">Profile Completeness</a>
+            </div>
+          </div>
+
+          <!-- TOC -->
+          <div class="toc-box">
+            <div class="toc-heading">In This Guide</div>
+            <ol>
+              <li><a href="#how-lsa-auction-works">How the LSA auction actually works</a></li>
+              <li><a href="#maximize-leads">Maximize Leads: when it works, when it fails</a></li>
+              <li><a href="#max-per-lead">Max Per Lead: who should stay on manual bidding</a></li>
+              <li><a href="#cap-calculation">The cap calculation formula (with trade examples)</a></li>
+              <li><a href="#weekly-vs-monthly">Weekly vs. monthly budget caps</a></li>
+              <li><a href="#seasonal-strategy">Seasonal bid strategy</a></li>
+              <li><a href="#diagnosing-problems">Diagnosing bid-related ranking problems</a></li>
+              <li><a href="#bid-and-quality">Advanced: how bid mode interacts with profile quality</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </div>
+
+          <p>Most contractors make one bidding decision when they set up LSA, then never look at it again. That is usually fine for the first 30 days. After that, it becomes a slow leak. Your bid mode is one of seven factors Google uses to rank your listing in the LSA auction, and it is the factor most directly under your control. Getting it wrong does not mean your account crashes. It means you quietly overpay for leads, run dark on weekends, and wonder why your competitor with fewer reviews seems to get more calls.</p>
+
+          <p>This guide covers what the other posts on this topic skip: how the auction actually works under the hood, the math behind setting a cap, which businesses should NOT switch to Maximize Leads, and a step-by-step diagnostic for when your spend looks wrong. If you are new to LSA bidding basics, start with the <a href="/google-lsa-ranking-factors">LSA ranking factors hub</a>, then come back here.</p>
+
+          <!-- SECTION 1 -->
+          <h2 id="how-lsa-auction-works">How the LSA Auction Actually Works</h2>
+
+          <p>Here is the thing most contractors do not realize: the LSA auction is not a simple "highest bid wins" model. Google's system works more like this:</p>
+
+          <p><strong>Your effective rank = bid × predicted quality score</strong></p>
+
+          <p>Your bid is one input. Your quality score is the other. Quality score is Google's estimate of how likely a searcher is to contact your business AND how good of an experience they will have. It rolls in your review rating, response rate, profile completeness, and how many past leads you have closed versus disputed.</p>
+
+          <p>Why does this matter for bidding strategy? Because two businesses with identical bids can get completely different CPLs and ranking positions if their quality scores differ. A contractor with 85 reviews and a 4.9 star rating is competing with a very different effective rank multiplier than a contractor with 9 reviews and a 4.2, even if they are spending the same weekly budget.</p>
+
+          <div class="callout">
+            <strong>Translation for contractors:</strong> Throwing more budget at LSA when your profile has weak quality signals is like stepping on the gas while the parking brake is on. The money moves, but you are not going anywhere. Fix the quality signals first, then worry about bid optimization.
+          </div>
+
+          <h3>What "predicted conversion probability" means in practice</h3>
+
+          <p>Google's algorithm is trying to predict: if we show this contractor's listing to this searcher right now, what is the probability the searcher contacts them? That prediction is based on the contractor's historical performance with similar searchers in similar contexts. Time of day, searcher intent signals, job type match, location proximity, and competitor activity all feed into that calculation in real time.</p>
+
+          <p>This is why your CPL can vary 30 to 50 percent week to week even when you change nothing. The competitive landscape shifts constantly, and Google's predictions update accordingly. A new well-funded competitor entering your market can raise your CPL without you doing a single thing wrong. Understanding that is key to not over-reacting to short-term data.</p>
+
+          <!-- SECTION 2 -->
+          <h2 id="maximize-leads">Maximize Leads: When It Works and When It Does Not</h2>
+
+          <p>Google recommends Maximize Leads for almost everyone, and that recommendation is correct most of the time. The algorithm adjusts your bids in real time based on predicted conversion probability, time of day, searcher intent signals, and competitor activity. On a well-seasoned account, it outperforms any manual cap you could set.</p>
+
+          <p>The catch is that word "seasoned."</p>
+
+          <h3>When Maximize Leads works well</h3>
+
+          <ul>
+            <li>Your profile has 30 or more reviews (enough signal for Google to build a meaningful quality estimate)</li>
+            <li>Your account has at least 3 months of lead history in the current market</li>
+            <li>Your response rate is consistently above 90 percent</li>
+            <li>You have enough weekly lead volume for the algorithm to learn (typically 10 or more leads per week)</li>
+            <li>Your CPL market is relatively stable, meaning no extreme spikes from seasonal events</li>
+          </ul>
+
+          <h3>When Maximize Leads struggles</h3>
+
+          <ul>
+            <li><strong>New accounts under 30 days:</strong> The algorithm has almost no data. It is essentially guessing, and those guesses often result in either very high CPL or very low lead volume while it calibrates.</li>
+            <li><strong>Low review counts (under 10):</strong> Google cannot build a reliable quality estimate without review data. The algorithm flies somewhat blind, which hurts efficiency.</li>
+            <li><strong>Irregular response patterns:</strong> If your team answers calls erratically, the algorithm learns that your "predicted conversion probability" is lower. It may reduce your effective rank accordingly.</li>
+            <li><strong>Very high CPL markets with tight margins:</strong> An emergency locksmith in a competitive metro doing lockout-only work may find Maximize Leads drives CPL past profitable levels, since the algorithm optimizes for volume, not margin.</li>
+          </ul>
+
+          <h3>The training period: expect turbulence before stability</h3>
+
+          <p>When you switch to Maximize Leads (or switch from manual to auto), expect a 4 to 6 week training period where CPL is higher and less consistent than it will be once the algorithm settles. This is normal. Google is learning your account's performance patterns.</p>
+
+          <div class="callout-yellow">
+            <strong>Common mistake:</strong> Contractors switch to Maximize Leads, see CPL spike in week 2, panic, and switch back to Max Per Lead. That resets the training period. If you are going to switch to Maximize Leads, commit to 6 full weeks before evaluating whether it is working.
+          </div>
+
+          <!-- SECTION 3 -->
+          <h2 id="max-per-lead">Max Per Lead: Who Should Stay on Manual Bidding</h2>
+
+          <p>The conventional wisdom is "switch to Maximize Leads as soon as possible." That advice is right for most established accounts. But here is who should actually stay on Max Per Lead, at least temporarily.</p>
+
+          <h3>The new account protocol</h3>
+
+          <p>If your account is less than 30 days old, start on Max Per Lead. Set a cap that is reasonable for your trade category (reference table below). Run it for 30 to 60 days. You are collecting the baseline data that Maximize Leads needs to work effectively. Once you have 30 or more days of lead history and 15 or more reviews, transition to Maximize Leads.</p>
+
+          <p>Running Maximize Leads on a brand-new account is like hiring a new employee and sending them to run your biggest job alone on day one. They might figure it out, but the odds of expensive mistakes are much higher than if they shadowed a pro for a month first.</p>
+
+          <h3>Tight-margin, single-service businesses</h3>
+
+          <p>Some trade categories have a combination of low average ticket and high competition that makes the math on Maximize Leads precarious. Emergency locksmiths doing lockout-only work are the clearest example. When your average job is $120 and your margin is under 40 percent, even a modest CPL variance above $35 starts eating into your return. In these cases, a carefully calibrated Max Per Lead cap gives you consistent CPL control that Maximize Leads cannot guarantee.</p>
+
+          <h3>Testing a new market before scaling</h3>
+
+          <p>If you are expanding to a new city or a new service area and want to understand the CPL baseline before committing budget, Max Per Lead lets you set a ceiling and observe. Once you have 30 to 60 days of data in that market, you can make an informed Maximize Leads switch with real numbers behind it.</p>
+
+          <h3>Starting caps by trade category (approximate market ranges)</h3>
+
+          <div class="table-wrap">
+            <table class="market-cap-table">
+              <thead>
+                <tr>
+                  <th>Trade Category</th>
+                  <th>Suggested Starting Cap Range</th>
+                  <th class="td-wrap">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Locksmith (emergency)</td>
+                  <td>$35 to $55</td>
+                  <td class="td-wrap">Tight margins; keep close to calculation floor</td>
+                </tr>
+                <tr>
+                  <td>HVAC (repair focus)</td>
+                  <td>$50 to $80</td>
+                  <td class="td-wrap">Varies heavily by market; check Google's suggested range</td>
+                </tr>
+                <tr>
+                  <td>Plumbing (general)</td>
+                  <td>$45 to $75</td>
+                  <td class="td-wrap">Higher for water heater or repipe leads; lower for drain</td>
+                </tr>
+                <tr>
+                  <td>Electrician</td>
+                  <td>$50 to $85</td>
+                  <td class="td-wrap">Commercial adds significant value per lead</td>
+                </tr>
+                <tr>
+                  <td>Roofing</td>
+                  <td>$70 to $110</td>
+                  <td class="td-wrap">High tickets justify higher caps; see calculation example</td>
+                </tr>
+                <tr>
+                  <td>HVAC (replacement focus)</td>
+                  <td>$80 to $140</td>
+                  <td class="td-wrap">Replacement ticket economics support higher caps</td>
+                </tr>
+                <tr>
+                  <td>General Contractor</td>
+                  <td>$80 to $150</td>
+                  <td class="td-wrap">Large project leads justify the range; filter aggressively</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>These are starting caps for calibration, not permanent settings. Run the formula in the next section to calculate your actual sustainable cap once you have 30 days of real lead and booking data.</p>
+
+          <!-- SECTION 4 -->
+          <h2 id="cap-calculation">The Cap Calculation Formula (Don't Guess)</h2>
+
+          <p>Most contractors either copy a competitor's cap, use Google's suggested range, or pick a number that "feels right." All three approaches leave money on the table or kill volume unnecessarily. Here is the formula:</p>
+
+          <div class="callout">
+            <strong>Max sustainable CPL = (average job ticket) × (LSA close rate) × (target gross margin %)</strong><br>
+            <br>
+            Set your cap at 70 to 80 percent of max sustainable CPL. That buffer handles weekly variance without threatening profitability.
+          </div>
+
+          <p>The three examples below show how dramatically the numbers differ by trade.</p>
+
+          <div class="visual-cap-cards">
+
+            <!-- HVAC Repair -->
+            <div class="cap-card">
+              <div class="cap-card-header hvac">HVAC Repair Example</div>
+              <div class="cap-card-body">
+                <div class="cap-formula-row">
+                  <span class="label">Avg ticket</span>
+                  <span class="value">$450</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">LSA close rate</span>
+                  <span class="value">35%</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">Target margin</span>
+                  <span class="value">25%</span>
+                </div>
+                <div class="cap-formula-operator">=</div>
+                <div class="cap-result-bar">
+                  <div class="cap-result-label">Max Sustainable CPL</div>
+                  <span class="cap-result-value">$39</span>
+                  <div class="cap-result-recommended">Set cap at: $30 to $35</div>
+                </div>
+                <div class="cap-warning-bar">Cap at $25 kills volume. Cap at $39 leaves no cushion for a bad week.</div>
+              </div>
+            </div>
+
+            <!-- Roofing Replacement -->
+            <div class="cap-card">
+              <div class="cap-card-header roofing">Roof Replacement Example</div>
+              <div class="cap-card-body">
+                <div class="cap-formula-row">
+                  <span class="label">Avg ticket</span>
+                  <span class="value">$11,000</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">LSA close rate</span>
+                  <span class="value">28%</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">Target margin</span>
+                  <span class="value">20%</span>
+                </div>
+                <div class="cap-formula-operator">=</div>
+                <div class="cap-result-bar">
+                  <div class="cap-result-label">Max Sustainable CPL</div>
+                  <span class="cap-result-value">$616</span>
+                  <div class="cap-result-recommended">Set cap at: $80 to $120</div>
+                </div>
+                <div class="cap-warning-bar">You can sustain $616 CPL. In practice, caps above $120 invite volume, not quality.</div>
+              </div>
+            </div>
+
+            <!-- Locksmith Emergency -->
+            <div class="cap-card">
+              <div class="cap-card-header locksmith">Locksmith Emergency Example</div>
+              <div class="cap-card-body">
+                <div class="cap-formula-row">
+                  <span class="label">Avg ticket</span>
+                  <span class="value">$120</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">LSA close rate</span>
+                  <span class="value">60%</span>
+                </div>
+                <div class="cap-formula-operator">x</div>
+                <div class="cap-formula-row">
+                  <span class="label">Target margin</span>
+                  <span class="value">40%</span>
+                </div>
+                <div class="cap-formula-operator">=</div>
+                <div class="cap-result-bar">
+                  <div class="cap-result-label">Max Sustainable CPL</div>
+                  <span class="cap-result-value">$29</span>
+                  <div class="cap-result-recommended">Set cap at: $22 to $26</div>
+                </div>
+                <div class="cap-warning-bar">Why locksmiths feel CPL pressure even at "cheap" $30 to $35 rates.</div>
+              </div>
+            </div>
+
+          </div>
+
+          <p>Notice how a roofer can theoretically sustain a $616 CPL while a locksmith is already under pressure at $30. The cap calculation explains why contractors in high-ticket industries often succeed with higher bids than seems intuitive, and why low-ticket service businesses need to be much more precise.</p>
+
+          <h3>The "cap trap" you want to avoid</h3>
+
+          <p>Setting your Max Per Lead cap at exactly your break-even number is a mistake. That leaves zero cushion for the variance that is inherent in LSA bidding. Any week where CPL runs 10 percent above normal destroys your margin for the whole month. Set it at 70 to 80 percent of your max sustainable CPL. That gap is your buffer, not slack money. If your actual CPL consistently comes in well below your cap, it means Maximize Leads mode would probably perform better. Consider switching once you have enough account history.</p>
+
+          <!-- SECTION 5 -->
+          <h2 id="weekly-vs-monthly">Weekly vs. Monthly Budget Caps</h2>
+
+          <p>Google LSA lets you set either a weekly budget cap or a monthly budget cap. Most contractors use whichever default Google presents. That default is often the wrong choice for their business type.</p>
+
+          <h3>How weekly caps work</h3>
+
+          <p>A weekly budget spreads your spending across 7 days. Google aims to distribute it roughly evenly. If you set a $400 weekly cap, Google tries to spend around $57 per day. For businesses with consistent, predictable daily demand, this works well. For businesses where Monday and Tuesday are slow and Thursday through Sunday are busy (or where storm events can spike demand 5x in a single day), weekly caps create a serious problem.</p>
+
+          <h3>The Wednesday exhaustion problem</h3>
+
+          <p>Here is what happens to a roofing company after a storm on Monday: leads start pouring in. The algorithm spends aggressively Tuesday and Wednesday to capture the surge. By Wednesday afternoon, the weekly budget is exhausted. The account goes dark Thursday through Sunday, exactly when the homeowners who were NOT home during the storm have time to call around. The company misses the tail end of the surge entirely.</p>
+
+          <div class="visual-exhaustion">
+            <div class="visual-exhaustion-title">Budget Exhaustion: Problem vs. Healthy Pacing</div>
+            <div class="visual-exhaustion-subtitle">Weekly cap of $400. Storm event Monday. Scenario comparison.</div>
+            <div class="exhaustion-scenarios">
+
+              <!-- Bad scenario -->
+              <div class="exhaustion-scenario">
+                <div class="exhaustion-scenario-header bad">
+                  Bad Pacing (Storm + Weekly Cap)
+                </div>
+                <div class="exhaustion-days">
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Mon</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar spent" style="width:32%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$128 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Tue</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar spent" style="width:36%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$144 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Wed</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar spent" style="width:32%"></div>
+                    </div>
+                    <div class="exhaustion-day-note alert">$128 spent — CAP HIT</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Thu</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar zero"></div>
+                    </div>
+                    <div class="exhaustion-day-note alert">$0 — DARK</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Fri</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar zero"></div>
+                    </div>
+                    <div class="exhaustion-day-note alert">$0 — DARK</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Sat</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar zero"></div>
+                    </div>
+                    <div class="exhaustion-day-note alert">$0 — DARK</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Sun</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar zero"></div>
+                    </div>
+                    <div class="exhaustion-day-note alert">$0 — DARK</div>
+                  </div>
+                </div>
+                <div class="exhaustion-total">4 days invisible. Competitors clean up the weekend leads.</div>
+              </div>
+
+              <!-- Good scenario -->
+              <div class="exhaustion-scenario">
+                <div class="exhaustion-scenario-header good">
+                  Healthy Pacing (Same Storm, Monthly Cap)
+                </div>
+                <div class="exhaustion-days">
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Mon</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:55%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$128 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Tue</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:62%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$144 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Wed</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:45%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$105 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Thu</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:40%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$93 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Fri</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:38%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$88 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Sat</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:35%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$81 spent</div>
+                  </div>
+                  <div class="exhaustion-day">
+                    <div class="exhaustion-day-label">Sun</div>
+                    <div class="exhaustion-bar-wrap">
+                      <div class="exhaustion-bar healthy" style="width:28%"></div>
+                    </div>
+                    <div class="exhaustion-day-note">$65 spent</div>
+                  </div>
+                </div>
+                <div class="exhaustion-total">Visible all 7 days. Algorithm surges on storm days, tapers naturally.</div>
+              </div>
+
+            </div>
+          </div>
+
+          <h3>Which cap type to use for your business</h3>
+
+          <ul>
+            <li><strong>Use weekly caps if:</strong> Your business has consistent daily lead demand year-round (house cleaning, handyman, appliance repair), and a surge event in one day is unlikely to exhaust the whole week's budget.</li>
+            <li><strong>Use monthly caps if:</strong> Your business is storm-dependent (roofing, water damage, tree service), heavily seasonal, or you regularly see Monday morning lead spikes that throw off weekly pacing.</li>
+            <li><strong>If you use weekly caps:</strong> Check your LSA dashboard every Monday. Look at the spend rate chart. If you hit cap before Thursday more than twice in a month, increase the cap or switch to monthly.</li>
+          </ul>
+
+          <p>For more detail on how bid strategy affects your overall cost per lead, the <a href="/how-to-lower-google-lsa-cost-per-lead">complete CPL reduction guide</a> covers this alongside 9 other cost levers.</p>
+
+          <!-- SECTION 6 -->
+          <h2 id="seasonal-strategy">Seasonal Bid Strategy: The Ramp You Keep Skipping</h2>
+
+          <p>Most contractors have a simple seasonal strategy: spend more in summer, less in winter. The execution of that strategy is usually where things go wrong. Here is what a well-managed seasonal bidding calendar actually looks like.</p>
+
+          <h3>Off-season: hold, don't zero out</h3>
+
+          <p>Cutting to zero (or near zero) in your slow season is one of the most damaging things you can do. Going dark for 2 to 3 months triggers what is essentially a ranking reset. When you turn the account back on in spring, the algorithm has to re-learn your market. You lose the benefit of all the quality signals you built up during peak season.</p>
+
+          <p>The rule of thumb: hold at 50 to 60 percent of your peak budget during off-season months. You will still get leads (they are just less frequent). More importantly, you keep the algorithm warm and your quality signals intact.</p>
+
+          <h3>Pre-peak ramp: start 4 to 6 weeks early</h3>
+
+          <p>Do not wait until peak season to turn up the budget. Start your ramp 4 to 6 weeks before your peak demand window. Increase budget by 20 to 25 percent each week. This gives Google's algorithm time to scale lead delivery gradually, rather than shocking the system with a sudden budget jump right when you need it most.</p>
+
+          <p>What goes wrong when you skip the ramp: you double your budget overnight on April 1st. The algorithm, which has been in low-activity mode all winter, needs time to recalibrate. You spend April 1 to 14 at elevated budget but with lower lead volume than expected, while the algorithm catches up. That is 2 weeks of budget partially wasted.</p>
+
+          <h3>Peak season: monitor weekly for exhaustion</h3>
+
+          <p>During your peak months, check your spend pacing weekly. The key question is: does your spend chart show steady daily spending, or does it spike and then flat-line? Flat-lining mid-week means you are exhausting your cap. Either increase the budget, narrow the service area, or switch from weekly to monthly cap.</p>
+
+          <div class="callout-green">
+            <strong>Storm and emergency event protocol:</strong> For roofing, water damage, and tree service companies, have a "surge plan" ready before storm season begins. When a severe weather alert hits your market, manually increase your budget before the leads start. Waiting for the algorithm to figure out demand is happening means you miss the first 12 to 24 hours, which are often the highest-value leads.
+          </div>
+
+          <h3>Post-peak taper: slow down, don't slam the brakes</h3>
+
+          <p>When your busy season ends, reduce budget gradually over 3 to 4 weeks, by 20 percent per step. A sharp overnight cut signals to the algorithm that the account is entering hibernation and accelerates the quality score decay you are trying to avoid.</p>
+
+          <p>For HVAC specifically, the <a href="/hvac-lsa-budget-guide">HVAC LSA budget guide</a> has a month-by-month budget calendar with exact dollar amounts by company size. The <a href="/roofing-lsa-budget-guide">roofing budget guide</a> covers storm event protocols and regional hail season calendars.</p>
+
+          <!-- SECTION 7 -->
+          <h2 id="diagnosing-problems">Diagnosing Bid-Related Ranking and Lead Problems</h2>
+
+          <p>When leads dry up or CPL spikes, bidding is often the first thing contractors blame. Sometimes it is the problem. Often it is not. Here is how to tell the difference.</p>
+
+          <h3>Decision flowchart: which bid mode should you use?</h3>
+
+          <div class="visual-flowchart">
+            <div class="visual-flowchart-title">Which Bid Mode Is Right for Your Account?</div>
+
+            <div class="flow-step">
+              <div class="flow-question">Is your LSA account less than 30 days old?</div>
+              <div class="flow-connector-fork"></div>
+              <div class="flow-branches">
+                <div class="flow-branch">
+                  <div class="flow-label">Yes</div>
+                  <div class="flow-connector-down"></div>
+                  <div class="flow-result max-per-lead">
+                    Use Max Per Lead
+                    <div class="flow-result-sub">Set cap using the formula. Collect data for 30-60 days, then reassess.</div>
+                  </div>
+                </div>
+                <div class="flow-branch">
+                  <div class="flow-label">No (30+ days)</div>
+                  <div class="flow-connector-down"></div>
+                  <div class="flow-question">Do you have fewer than 15 reviews?</div>
+                  <div class="flow-connector-fork"></div>
+                  <div class="flow-branches">
+                    <div class="flow-branch">
+                      <div class="flow-label">Yes</div>
+                      <div class="flow-connector-down"></div>
+                      <div class="flow-result max-per-lead">
+                        Use Max Per Lead
+                        <div class="flow-result-sub">Build reviews first. Switch to Maximize Leads at 30+ reviews.</div>
+                      </div>
+                    </div>
+                    <div class="flow-branch">
+                      <div class="flow-label">No (15+ reviews)</div>
+                      <div class="flow-connector-down"></div>
+                      <div class="flow-question">Is your avg job ticket under $150 with margins under 40%?</div>
+                      <div class="flow-connector-fork"></div>
+                      <div class="flow-branches">
+                        <div class="flow-branch">
+                          <div class="flow-label">Yes</div>
+                          <div class="flow-connector-down"></div>
+                          <div class="flow-result max-per-lead">
+                            Stay on Max Per Lead
+                            <div class="flow-result-sub">Tight margins require CPL control. Maximize Leads may overpay.</div>
+                          </div>
+                        </div>
+                        <div class="flow-branch">
+                          <div class="flow-label">No</div>
+                          <div class="flow-connector-down"></div>
+                          <div class="flow-result">
+                            Switch to Maximize Leads
+                            <div class="flow-result-sub">Expect 4-6 week training period. Don't panic if CPL is elevated initially.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <h3>Symptom: impressions dropped, everything else looks fine</h3>
+
+          <p><strong>First check:</strong> Is your weekly budget exhausting before the week ends? Open your LSA dashboard and look at the spend chart. If spend spikes on Monday and Tuesday and then flatlines, you are exhausting the weekly cap.</p>
+          <p><strong>Fix:</strong> Increase your weekly budget or narrow your service area to reduce total lead volume and let the budget last the full week.</p>
+
+          <h3>Symptom: getting leads but they are all low-value job types</h3>
+
+          <p><strong>What might be happening:</strong> On Maximize Leads, Google's algorithm can optimize toward the cheapest leads to hit your volume target. If those cheapest leads happen to be service calls rather than replacements, the algorithm will send you more service calls because it can get more of them for the same budget.</p>
+          <p><strong>Fix:</strong> Switch to Max Per Lead with a higher cap specifically calibrated to your higher-value job types. A higher cap filters toward higher-intent, more competitive leads. Also make sure your job type list is dialed in — this is covered in detail in the <a href="/lsa-job-type-optimization">LSA job type optimization guide</a>.</p>
+
+          <h3>Symptom: CPL keeps climbing week over week</h3>
+
+          <p><strong>Check this first:</strong> Has a new well-funded competitor entered your market? Has your review count or response rate slipped? Gradually climbing CPL is almost never a bidding problem. It is usually a quality signal problem or a competitive pressure problem.</p>
+          <p><strong>What not to do:</strong> Do not lower your cap in response to rising CPL. Lowering the cap reduces volume, not CPL. The real fix is improving the quality signals that affect your ranking position. See the <a href="/google-lsa-ranking-factors">ranking factors guide</a> for a full breakdown.</p>
+
+          <h3>Symptom: account shows "active" but calls are trickling</h3>
+
+          <p><strong>Check:</strong> Is your Max Per Lead cap significantly below the market average for your category? Your LSA dashboard shows a "suggested bid range" under the bidding section. If your cap is at the bottom of or below that range, Google is rarely winning auctions on your behalf.</p>
+          <p><strong>Fix:</strong> Test increasing your cap by $15 to $20 for one week. If lead volume increases meaningfully, your cap was the constraint. If volume stays the same, the problem is elsewhere, likely profile quality, response time, or service area size.</p>
+
+          <div class="callout">
+            For more detailed troubleshooting when leads stop coming in, the <a href="/google-local-services-ads-not-working">LSA not working guide</a> covers 12 specific diagnostic scenarios with step-by-step fixes.
+          </div>
+
+          <!-- SECTION 8 -->
+          <h2 id="bid-and-quality">Advanced: How Bid Mode Interacts with Profile Quality</h2>
+
+          <p>Here is the part most bidding strategy discussions skip entirely. Your bid is not the most powerful lever in the LSA ranking auction. Your profile quality score is. Bid mode is how you apply your budget. Quality score is the multiplier that determines how efficiently that budget translates into impressions and leads.</p>
+
+          <h3>The quality multiplier effect</h3>
+
+          <p>Think of it this way: two contractors, same market, both on Maximize Leads at the same weekly budget. Contractor A has 95 reviews at 4.9 stars and a 96 percent response rate. Contractor B has 18 reviews at 4.4 stars and a 78 percent response rate. Contractor A will get more leads, at a lower CPL, despite spending the same amount. The quality score multiplier is doing more work than the bid itself.</p>
+
+          <p>This is also why new well-funded competitors do not immediately dominate established accounts even when they enter with large budgets. Their quality score starts low (no reviews, no history, no response data). They pay more per lead and get fewer impressions per dollar spent, at least initially. That is the moat that established contractors have, and it is worth protecting aggressively.</p>
+
+          <h3>What this means for bidding decisions</h3>
+
+          <ul>
+            <li>If you are considering a budget increase to get more leads, first ask: are my quality signals maxed out? A budget increase on a weak profile improves volume less than the same money invested in getting 20 more reviews.</li>
+            <li>If you switched to Maximize Leads and CPL is high, the first fix to try is profile quality improvement, not reverting to Max Per Lead.</li>
+            <li>If a competitor is outranking you despite what looks like lower spend, they probably have a significantly higher quality score. Matching their bid will not close the gap. Closing the review and response rate gap will.</li>
+          </ul>
+
+          <p>The <a href="/how-to-rank-number-1-google-local-services-ads">complete LSA ranking guide</a> covers all seven ranking factors together and shows how bidding interacts with the other six. Understanding the full picture is what separates accounts that grow steadily from accounts that plateau at mediocre lead volume.</p>
+
+          <h3>Response time as a quality signal (and why it amplifies bidding results)</h3>
+
+          <p>Your response time directly affects your quality score. A contractor who responds to leads within 5 minutes has a meaningfully higher predicted conversion probability in Google's model than one who responds in 47 minutes. That higher probability gets multiplied by your bid in the auction. The same bid produces more lead volume for the faster responder.</p>
+
+          <p>The <a href="/lsa-response-time-guide">LSA response time guide</a> covers how to build a response system that keeps you under 5 minutes consistently, even with a small team, even overnight.</p>
+
+          <hr>
+
+          <!-- FAQ -->
+          <h2 id="faq">Frequently Asked Questions</h2>
+
+          <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; overflow:hidden; margin-top:1.5rem;">
+
+            <div class="faq-item">
+              <div class="faq-q">Should I use Maximize Leads or Max Per Lead for LSA?</div>
+              <div class="faq-a">It depends on your account maturity. If your account is under 30 days old or has fewer than 10 reviews, start with Max Per Lead using a calibrated cap for your trade. Once you have 30 to 60 days of lead history, 30 or more reviews, and a consistent response rate above 90 percent, switch to Maximize Leads. Google's algorithm needs data to optimize Maximize Leads effectively. Running it on a brand-new account is like sending a new hire to run your biggest job alone on day one.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">How do I calculate my Max Per Lead cap?</div>
+              <div class="faq-a">Use this formula: (average job ticket) multiplied by (your LSA close rate) multiplied by (target gross margin percentage). That gives you your maximum sustainable CPL. Then set your cap at 70 to 80 percent of that number to leave room for algorithm variability. For example, an HVAC company with a $450 average repair ticket, 35 percent close rate, and 25 percent margin gets: $450 x 0.35 x 0.25 = $39 maximum sustainable CPL. Set the cap around $30 to $35, not at $39.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Why is my LSA budget exhausting before the week ends?</div>
+              <div class="faq-a">Weekly budget exhaustion is one of the most common and costly bidding problems. When your weekly cap runs out on Wednesday, your listing goes dark Thursday through Sunday, which is exactly when many homeowners have time to search. Fix: either increase your weekly budget to cover full-week demand, or narrow your service area to reduce total lead volume while maintaining consistent daily spend. Storm-dependent industries should switch from a weekly to a monthly budget cap to handle surge days without going dark afterward.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">How long does the Maximize Leads training period take?</div>
+              <div class="faq-a">Plan for 4 to 6 weeks after switching to Maximize Leads before CPL stabilizes. During the training period, CPL will likely be higher and more variable than your long-term average. This is normal. The algorithm is gathering the data it needs to optimize effectively. Avoid making major changes to your budget, service area, or job types during this window. Each significant change can reset or extend the learning phase.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Should I use a weekly or monthly budget cap in LSA?</div>
+              <div class="faq-a">Year-round businesses with consistent daily lead volume generally do well with weekly caps. However, seasonal businesses or those in storm-dependent industries almost always benefit from monthly caps. A monthly cap gives Google's algorithm room to spend aggressively on high-demand days and pull back naturally on slow days. If your business regularly sees surge days where demand spikes 3x to 5x (storms, heat waves, freeze events), a monthly cap prevents that surge from exhausting the rest of the week's budget.</div>
+            </div>
+
+          </div>
+
+          <!-- CTA -->
+          <div class="cta-box">
+            <h2>Not Sure If Your Bidding Setup Is Leaving Money on the Table?</h2>
+            <p>A free LSA audit will show you exactly where your bid mode, cap, and budget timing are costing you leads. No sales pitch, just the numbers.</p>
+            <a href="/Free-LSA-audit" class="cta-btn">Request Your Free Audit</a>
+          </div>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar">
+
+          <div class="sidebar-cta">
+            <h3>Free LSA Audit</h3>
+            <p>Find out what's costing you leads.</p>
+            <span>No charge, no obligation.</span>
+            <a href="/Free-LSA-audit">Request Audit</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Ranking Factors Deep Dive Series</h3>
+            <ul>
+              <li><a href="/google-lsa-ranking-factors">Complete Ranking Factors Guide (Hub)</a></li>
+              <li><a href="/lsa-response-time-guide">Response Time System</a></li>
+              <li><strong>Bidding Strategy Guide (You Are Here)</strong></li>
+              <li><a href="/lsa-job-type-optimization">Job Type Optimization Guide</a></li>
+              <li><a href="/lsa-profile-completeness-guide">Profile Completeness Guide</a></li>
+              <li><a href="/lsa-competitor-analysis">LSA Competitor Analysis Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Related Guides</h3>
+            <ul>
+              <li><a href="/how-to-rank-number-1-google-local-services-ads">How to Rank #1 in LSA</a></li>
+              <li><a href="/how-to-lower-google-lsa-cost-per-lead">How to Lower Your CPL</a></li>
+              <li><a href="/how-much-does-google-lsa-cost">How Much Does LSA Cost?</a></li>
+              <li><a href="/lsa-response-time-guide">LSA Response Time System</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Industry Budget Guides</h3>
+            <ul>
+              <li><a href="/hvac-lsa-budget-guide">HVAC Budget Calendar</a></li>
+              <li><a href="/plumbing-lsa-budget-guide">Plumbing Budget Calendar</a></li>
+              <li><a href="/roofing-lsa-budget-guide">Roofing Budget Calendar</a></li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch("/nav.html").then(r => r.text()).then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+      const nav = document.getElementById("siteNav");
+      window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 20); });
+      document.getElementById("navHamburger").addEventListener("click", () => {
+        const open = document.getElementById("navLinks").classList.toggle("open");
+        document.getElementById("navHamburger").classList.toggle("open", open);
+      });
+    });
+    fetch("/footer.html").then(r => r.text()).then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+  </script>
+</body>
+</html>

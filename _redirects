@@ -120,3 +120,15 @@
 
 # Strip .html extension from root-level URLs
 /*.html  /:splat  301!
+
+/blog/lsa-response-time-guide              /lsa-response-time-guide              301
+/blog/lsa-bidding-strategy                 /lsa-bidding-strategy                 301
+/blog/lsa-job-type-optimization            /lsa-job-type-optimization            301
+/blog/lsa-profile-completeness-guide       /lsa-profile-completeness-guide       301
+/blog/lsa-competitor-analysis              /lsa-competitor-analysis              301
+
+/lsa-response-time-guide              /blog/lsa-response-time-guide.html              200
+/lsa-bidding-strategy                 /blog/lsa-bidding-strategy.html                 200
+/lsa-job-type-optimization            /blog/lsa-job-type-optimization.html            200
+/lsa-profile-completeness-guide       /blog/lsa-profile-completeness-guide.html       200
+/lsa-competitor-analysis              /blog/lsa-competitor-analysis.html              200
