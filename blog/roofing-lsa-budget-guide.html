@@ -143,7 +143,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -377,9 +377,10 @@
       background: #eff6ff;
     }
     /* CRITICAL table overflow fix — non-last-child tds only, not th */
+    .table-wrap table { width: auto; min-width: 100%; }
     .article-content td:not(:last-child) { white-space: nowrap; }
     .article-content td.td-wrap,
-    .article-content th.td-wrap { white-space: normal; }
+    .article-content th.td-wrap { white-space: normal; min-width: 250px; }
 
     .peak-row td { background: #fef2f2 !important; }
     .peak-row:hover td { background: #fee2e2 !important; }

@@ -343,6 +343,10 @@
       border-collapse: collapse;
       font-size: 0.92rem;
     }
+    .table-wrap table {
+      width: auto;
+      min-width: 100%;
+    }
     .article-content th {
       background: #0f2d4e;
       color: #fff;
@@ -366,7 +370,7 @@
     .article-content td:not(:last-child) { white-space: nowrap; }
     /* Do NOT add th to the nowrap rule - it causes overflow on wide tables */
     .article-content td.td-wrap,
-    .article-content th.td-wrap { white-space: normal; }
+    .article-content th.td-wrap { white-space: normal; min-width: 400px; }
 
     .td-high { color: #dc2626; font-weight: 600; }
     .td-med  { color: #d97706; font-weight: 600; }
@@ -1300,7 +1304,7 @@
                   <th style="white-space: nowrap">Close Rate</th>
                   <th style="white-space: nowrap">Cost Per Booked Job</th>
                   <th style="white-space: nowrap">Avg Ticket</th>
-                  <th>Return on Lead Spend</th>
+                  <th style="white-space: nowrap">Return on Lead Spend</th>
                 </tr>
               </thead>
               <tbody>
