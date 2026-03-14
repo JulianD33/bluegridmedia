@@ -136,6 +136,14 @@ If any existing post already covers the same angle at the same depth, reframe or
 - `/roofing-lsa-roi-benchmarks` — ROI models for repair-focused, replacement-focused, and insurance claim companies; repair-to-replacement LTV model; ROAS benchmarks; seasonal ROI variance
 - `/roofing-lsa-mistakes` — 12 roofing LSA mistakes with severity ratings (Critical/Moderate), diagnosis signs, root causes, and step-by-step fix protocols; interactive checklist
 
+#### Ranking Factors Deep Dive Series (added 2026-03-14)
+- `/google-lsa-ranking-factors` — Hub page (updated: cluster nav, deep-dive links after Factors 2/3/4/5, updated sidebar, updated meta)
+- `/lsa-response-time-guide` — Operational infrastructure for instant response: call forwarding setup, answering service comparison, after-hours routing, how to audit responsiveness score, missed-call compounding effect
+- `/lsa-bidding-strategy` — Advanced bid modes: when to use Maximize Leads vs Max Per Lead, cap calculation formula, weekly vs monthly cap behavior, seasonal bid adjustments, diagnosing bid-related ranking drops
+- `/lsa-job-type-optimization` — Complete job type strategy: full lists by trade (HVAC/plumbing/electrical/roofing), which types attract high-value vs price-shopper leads, seasonal type management, CPL impact by type mix
+- `/lsa-profile-completeness-guide` — LSA dashboard profile (NOT GBP): business description formula, photo strategy, per-service descriptions, credential display, years in business signal, quality score impact
+- `/lsa-competitor-analysis` — Competitive intelligence: identify who outranks you (incognito search), 6-point profile analysis, gap analysis framework, catchable vs not-catchable gaps, response strategy
+
 #### Optimization Guides (added 2026-03-12)
 - `/how-to-lower-google-lsa-cost-per-lead` — 10 tactics to reduce LSA CPL (reviews, response time, bid strategy, job types, service area, lead rating, seasonal budgets, profile completeness)
 - `/lsa-message-leads-vs-phone-calls` — Message leads cost ~50% less than phone leads; covers setup, templates, when to enable/disable, hybrid strategy
