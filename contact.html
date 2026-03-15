@@ -68,6 +68,14 @@
         >
           <input type="hidden" name="form-name" value="contact" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <!-- UTM tracking (auto-filled by utm-tracker.js) -->
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_content" value="">
+          <input type="hidden" name="utm_term" value="">
+          <input type="hidden" name="referrer" value="">
+          <input type="hidden" name="landing_page" value="">
 
           <div class="form-group">
             <label>Google LSA Status *</label>
@@ -163,5 +171,6 @@
     document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
   </script>
   <script src="script.js"></script>
+<script src="/utm-tracker.js"></script>
 </body>
 </html>
