@@ -909,6 +909,108 @@
     /* ── Market cap reference table ── */
     .market-cap-table td { white-space: nowrap; }
     .market-cap-table td.td-wrap { white-space: normal; }
+
+    /* ── Bid mode decision tree (replaces nested flowchart) ── */
+    .bid-tree {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin: 2rem 0;
+    }
+    .bid-tree-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f2d4e;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .bid-tree-step { margin-bottom: 1rem; }
+    .bid-tree-step:last-child { margin-bottom: 0; }
+    .bid-tree-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .bid-tree-num {
+      background: #0f2d4e;
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .bid-tree-q-text {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+      padding-top: 3px;
+      line-height: 1.4;
+    }
+    .bid-tree-answers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      padding-left: 2.2rem;
+    }
+    @media (max-width: 520px) {
+      .bid-tree-answers { grid-template-columns: 1fr; }
+    }
+    .bid-tree-answer {
+      border-radius: 9px;
+      padding: 0.75rem 0.95rem;
+      border: 1px solid transparent;
+    }
+    .bid-tree-answer.yes {
+      background: #fff7ed;
+      border-color: #fdba74;
+    }
+    .bid-tree-answer.no {
+      background: #eff6ff;
+      border-color: #93c5fd;
+    }
+    .bid-tree-answer.result {
+      background: linear-gradient(135deg, #0f2d4e, #1a6fc4);
+      border-color: transparent;
+    }
+    .bid-tree-answer-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+    .bid-tree-answer.yes .bid-tree-answer-label { color: #9a3412; }
+    .bid-tree-answer.no .bid-tree-answer-label { color: #1d4ed8; }
+    .bid-tree-answer.result .bid-tree-answer-label { color: #bfdbfe; }
+    .bid-tree-answer-text {
+      font-size: 0.86rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .bid-tree-answer.result .bid-tree-answer-text {
+      color: #fff;
+      font-weight: 600;
+    }
+    .bid-tree-answer-sub {
+      font-size: 0.8rem;
+      color: #bfdbfe;
+      margin-top: 0.25rem;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+    .bid-tree-divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 1rem 0 1rem 2.2rem;
+    }
   </style>
 </head>
 <body>
@@ -943,6 +1045,8 @@
               <a href="/lsa-job-type-optimization">Job Types</a>
               <span class="series-sep">|</span>
               <a href="/lsa-profile-completeness-guide">Profile Completeness</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-competitor-analysis">Competitor Analysis</a>
             </div>
           </div>
 
@@ -1391,60 +1495,64 @@
 
           <h3>Decision flowchart: which bid mode should you use?</h3>
 
-          <div class="visual-flowchart">
-            <div class="visual-flowchart-title">Which Bid Mode Is Right for Your Account?</div>
+          <div class="bid-tree">
+            <div class="bid-tree-title">Which Bid Mode Is Right for Your Account?</div>
 
-            <div class="flow-step">
-              <div class="flow-question">Is your LSA account less than 30 days old?</div>
-              <div class="flow-connector-fork"></div>
-              <div class="flow-branches">
-                <div class="flow-branch">
-                  <div class="flow-label">Yes</div>
-                  <div class="flow-connector-down"></div>
-                  <div class="flow-result max-per-lead">
-                    Use Max Per Lead
-                    <div class="flow-result-sub">Set cap using the formula. Collect data for 30-60 days, then reassess.</div>
-                  </div>
+            <div class="bid-tree-step">
+              <div class="bid-tree-q">
+                <div class="bid-tree-num">1</div>
+                <div class="bid-tree-q-text">Is your LSA account less than 30 days old?</div>
+              </div>
+              <div class="bid-tree-answers">
+                <div class="bid-tree-answer result">
+                  <div class="bid-tree-answer-label">Yes</div>
+                  <div class="bid-tree-answer-text">Use Max Per Lead</div>
+                  <div class="bid-tree-answer-sub">Set your cap using the formula in Section 4. Collect 30-60 days of lead data, then reassess.</div>
                 </div>
-                <div class="flow-branch">
-                  <div class="flow-label">No (30+ days)</div>
-                  <div class="flow-connector-down"></div>
-                  <div class="flow-question">Do you have fewer than 15 reviews?</div>
-                  <div class="flow-connector-fork"></div>
-                  <div class="flow-branches">
-                    <div class="flow-branch">
-                      <div class="flow-label">Yes</div>
-                      <div class="flow-connector-down"></div>
-                      <div class="flow-result max-per-lead">
-                        Use Max Per Lead
-                        <div class="flow-result-sub">Build reviews first. Switch to Maximize Leads at 30+ reviews.</div>
-                      </div>
-                    </div>
-                    <div class="flow-branch">
-                      <div class="flow-label">No (15+ reviews)</div>
-                      <div class="flow-connector-down"></div>
-                      <div class="flow-question">Is your avg job ticket under $150 with margins under 40%?</div>
-                      <div class="flow-connector-fork"></div>
-                      <div class="flow-branches">
-                        <div class="flow-branch">
-                          <div class="flow-label">Yes</div>
-                          <div class="flow-connector-down"></div>
-                          <div class="flow-result max-per-lead">
-                            Stay on Max Per Lead
-                            <div class="flow-result-sub">Tight margins require CPL control. Maximize Leads may overpay.</div>
-                          </div>
-                        </div>
-                        <div class="flow-branch">
-                          <div class="flow-label">No</div>
-                          <div class="flow-connector-down"></div>
-                          <div class="flow-result">
-                            Switch to Maximize Leads
-                            <div class="flow-result-sub">Expect 4-6 week training period. Don't panic if CPL is elevated initially.</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="bid-tree-answer no">
+                  <div class="bid-tree-answer-label">No (30+ days old)</div>
+                  <div class="bid-tree-answer-text">Continue to Question 2.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bid-tree-divider"></div>
+
+            <div class="bid-tree-step">
+              <div class="bid-tree-q">
+                <div class="bid-tree-num">2</div>
+                <div class="bid-tree-q-text">Do you have fewer than 15 reviews?</div>
+              </div>
+              <div class="bid-tree-answers">
+                <div class="bid-tree-answer result">
+                  <div class="bid-tree-answer-label">Yes</div>
+                  <div class="bid-tree-answer-text">Use Max Per Lead</div>
+                  <div class="bid-tree-answer-sub">Build reviews first. Switch to Maximize Leads once you reach 30 or more reviews.</div>
+                </div>
+                <div class="bid-tree-answer no">
+                  <div class="bid-tree-answer-label">No (15+ reviews)</div>
+                  <div class="bid-tree-answer-text">Continue to Question 3.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bid-tree-divider"></div>
+
+            <div class="bid-tree-step">
+              <div class="bid-tree-q">
+                <div class="bid-tree-num">3</div>
+                <div class="bid-tree-q-text">Is your average job ticket under $150 with gross margins under 40%?</div>
+              </div>
+              <div class="bid-tree-answers">
+                <div class="bid-tree-answer result">
+                  <div class="bid-tree-answer-label">Yes</div>
+                  <div class="bid-tree-answer-text">Stay on Max Per Lead</div>
+                  <div class="bid-tree-answer-sub">Tight margins require CPL control. Maximize Leads may overpay relative to your job value.</div>
+                </div>
+                <div class="bid-tree-answer result">
+                  <div class="bid-tree-answer-label">No</div>
+                  <div class="bid-tree-answer-text">Switch to Maximize Leads</div>
+                  <div class="bid-tree-answer-sub">Expect a 4-6 week training period before CPL stabilizes. Normal to see elevated CPL initially.</div>
                 </div>
               </div>
             </div>

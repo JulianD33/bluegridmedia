@@ -590,74 +590,58 @@
     /* FAQ section */
     .faq-item {
       border-bottom: 1px solid #e2e8f0;
-      padding: 1.25rem 0;
+      padding: 1.1rem 1.25rem;
     }
-    .faq-item summary {
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 700;
       color: #0f172a;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-size: 1.3rem;
-      color: #1a6fc4;
-      flex-shrink: 0;
-    }
-    details[open] .faq-item summary::after { content: '\2212'; }
-    .faq-answer {
-      padding-top: 0.85rem;
+    .faq-a {
+      color: #475569;
       font-size: 0.95rem;
-      line-height: 1.7;
-      color: #334155;
+      line-height: 1.65;
     }
 
     /* Inline series nav */
     .series-nav {
-      background: #f0f7ff;
+      background: #eff6ff;
       border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin: 2rem 0;
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.88rem;
     }
-    .series-nav .series-label {
-      font-size: 0.8rem;
+    .series-nav-label {
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
       color: #1a4b7a;
-      margin-bottom: 0.7rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
     }
-    .series-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .series-nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem 0.75rem;
     }
-    .series-nav li a {
-      display: inline-block;
-      background: white;
-      border: 1px solid #bfdbfe;
-      border-radius: 6px;
-      padding: 0.3rem 0.75rem;
-      font-size: 0.84rem;
-      color: #1a6fc4;
+    .series-nav-links a {
+      color: #1e3a5f;
       text-decoration: none;
       font-weight: 500;
     }
-    .series-nav li a:hover { background: #dbeafe; }
-    .series-nav li.current a {
-      background: #1a4b7a;
-      color: white;
-      border-color: #1a4b7a;
+    .series-nav-links a:hover { text-decoration: underline; }
+    .series-nav-links .current {
+      color: #0f2d4e;
+      font-weight: 700;
+      pointer-events: none;
+    }
+    .series-sep {
+      color: #94a3b8;
     }
   </style>
 </head>
@@ -694,15 +678,20 @@
           </p>
 
           <div class="series-nav">
-            <p class="series-label">LSA Ranking Factors Deep Dive Series</p>
-            <ul>
-              <li><a href="/google-lsa-ranking-factors">Complete Ranking Factors Guide (Hub)</a></li>
-              <li><a href="/lsa-response-time-guide">Response Time System</a></li>
-              <li><a href="/lsa-bidding-strategy">Bidding Strategy</a></li>
-              <li><a href="/lsa-job-type-optimization">Job Type Optimization</a></li>
-              <li><a href="/lsa-profile-completeness-guide">Profile Completeness</a></li>
-              <li class="current"><a href="/lsa-competitor-analysis">Competitor Analysis (You Are Here)</a></li>
-            </ul>
+            <div class="series-nav-label">LSA Ranking Factors Deep Dive Series</div>
+            <div class="series-nav-links">
+              <a href="/google-lsa-ranking-factors">Hub Guide</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-response-time-guide">Response Time</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-bidding-strategy">Bidding Strategy</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-job-type-optimization">Job Types</a>
+              <span class="series-sep">|</span>
+              <a href="/lsa-profile-completeness-guide">Profile Completeness</a>
+              <span class="series-sep">|</span>
+              <span class="current">Competitor Analysis (You Are Here)</span>
+            </div>
           </div>
 
           <nav class="toc-box">
@@ -1277,40 +1266,34 @@
 
           <h2 id="faq">Frequently Asked Questions</h2>
 
-          <details class="faq-item">
-            <summary>Can I see who my LSA competitors are inside the Google LSA dashboard?</summary>
-            <div class="faq-answer">
-              <p>No. The LSA dashboard does not show you who you are competing against in the auction. It shows your own metrics: leads, responses, review count, and budget spend. To see who is actually ranking above you, you have to run manual searches in an incognito browser window, searching your target service and city combinations. This manual process is the only way to get real visibility into your LSA competitive landscape.</p>
-            </div>
-          </details>
+          <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; overflow:hidden; margin-top:1.5rem;">
 
-          <details class="faq-item">
-            <summary>Does a competitor's bid affect whether they rank above me?</summary>
-            <div class="faq-answer">
-              <p>Yes, but bid is one factor among several. Google weights profile quality heavily, which means reviews, response rate, and job type completeness all affect ranking alongside bid. In most cases, if a competitor with a similar or weaker profile consistently ranks above you, the most likely explanation is a higher bid or weekly budget. The fix is to increase your weekly budget or switch to Maximize Leads bid mode, which lets Google optimize your bids automatically. See our <a href="/lsa-bidding-strategy">bidding strategy guide</a> for how to adjust without overpaying.</p>
+            <div class="faq-item">
+              <div class="faq-q">Can I see who my LSA competitors are inside the Google LSA dashboard?</div>
+              <div class="faq-a">No. The LSA dashboard does not show you who you are competing against in the auction. It shows your own metrics: leads, responses, review count, and budget spend. To see who is actually ranking above you, you have to run manual searches in an incognito browser window, searching your target service and city combinations. This manual process is the only way to get real visibility into your LSA competitive landscape.</div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary>How do I know if a competitor is using fake reviews to rank higher?</summary>
-            <div class="faq-answer">
-              <p>Warning signs include a sudden spike of reviews in a short window (20 or more in one week), reviews that are all generic with no service-specific detail, a high percentage of reviewers with no other reviews on their Google accounts, and near-identical review language across multiple reviews. If you notice these patterns, you can report the profile to Google through the Business Profile support system. However, do not submit a report unless you have genuine evidence. False reports do not help you and may flag your own account for review gaming activity.</p>
+            <div class="faq-item">
+              <div class="faq-q">Does a competitor's bid affect whether they rank above me?</div>
+              <div class="faq-a">Yes, but bid is one factor among several. Google weights profile quality heavily, which means reviews, response rate, and job type completeness all affect ranking alongside bid. In most cases, if a competitor with a similar or weaker profile consistently ranks above you, the most likely explanation is a higher bid or weekly budget. The fix is to increase your weekly budget or switch to Maximize Leads bid mode, which lets Google optimize your bids automatically. See our <a href="/lsa-bidding-strategy">bidding strategy guide</a> for how to adjust without overpaying.</div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary>How often should I run a competitor analysis for my LSA account?</summary>
-            <div class="faq-answer">
-              <p>At minimum, run a full competitor audit once per quarter. For seasonal businesses like roofing, HVAC, or landscaping, also run one before each major season begins. Run an immediate audit any time your lead volume drops suddenly without a clear cause on your own profile, since a competitor may have made a significant move. Keep a simple log with the date, your competitors' review counts, and your ranking position so you can see whether you are closing or losing ground over time.</p>
+            <div class="faq-item">
+              <div class="faq-q">How do I know if a competitor is using fake reviews to rank higher?</div>
+              <div class="faq-a">Warning signs include a sudden spike of reviews in a short window (20 or more in one week), reviews that are all generic with no service-specific detail, a high percentage of reviewers with no other reviews on their Google accounts, and near-identical review language across multiple reviews. If you notice these patterns, you can report the profile to Google through the Business Profile support system. However, do not submit a report unless you have genuine evidence. False reports do not help you and may flag your own account for review gaming activity.</div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary>What if my competitors have 200 or more reviews and I only have 30? Is there any point in competing?</summary>
-            <div class="faq-answer">
-              <p>Yes. The review gap is closeable, it just takes time and a system. The key is velocity. If you implement a consistent post-job review request process and collect 8 to 10 reviews per month, you will reach 150 reviews within 12 to 18 months. In the meantime, you can compete on other dimensions: enable every job type they have enabled, keep your response time under 60 seconds, and make sure your service area is calibrated correctly. Contractors with strong profiles at 50 to 80 reviews regularly appear in the top 3 in competitive markets because their other signals are excellent. For a complete ranking overview, see <a href="/how-to-rank-number-1-google-local-services-ads">how to rank number 1 in LSA</a>.</p>
+            <div class="faq-item">
+              <div class="faq-q">How often should I run a competitor analysis for my LSA account?</div>
+              <div class="faq-a">At minimum, run a full competitor audit once per quarter. For seasonal businesses like roofing, HVAC, or landscaping, also run one before each major season begins. Run an immediate audit any time your lead volume drops suddenly without a clear cause on your own profile, since a competitor may have made a significant move. Keep a simple log with the date, your competitors' review counts, and your ranking position so you can see whether you are closing or losing ground over time.</div>
             </div>
-          </details>
+
+            <div class="faq-item">
+              <div class="faq-q">What if my competitors have 200 or more reviews and I only have 30? Is there any point in competing?</div>
+              <div class="faq-a">Yes. The review gap is closeable, it just takes time and a system. The key is velocity. If you implement a consistent post-job review request process and collect 8 to 10 reviews per month, you will reach 150 reviews within 12 to 18 months. In the meantime, you can compete on other dimensions: enable every job type they have enabled, keep your response time under 60 seconds, and make sure your service area is calibrated correctly. Contractors with strong profiles at 50 to 80 reviews regularly appear in the top 3 in competitive markets because their other signals are excellent. For a complete ranking overview, see <a href="/how-to-rank-number-1-google-local-services-ads">how to rank number 1 in LSA</a>.</div>
+            </div>
+
+          </div>
 
           <hr>
 
