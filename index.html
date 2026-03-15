@@ -611,6 +611,14 @@
       </div>
       <div class="modal-body">
         <form class="contact-form" onsubmit="handleSubmit(event)">
+          <!-- UTM tracking (auto-filled by utm-tracker.js) -->
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_content" value="">
+          <input type="hidden" name="utm_term" value="">
+          <input type="hidden" name="referrer" value="">
+          <input type="hidden" name="landing_page" value="">
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required>
@@ -728,5 +736,6 @@
     }
   </script>
   <script src="script.js"></script>
+<script src="/utm-tracker.js"></script>
 </body>
 </html>
